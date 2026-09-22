@@ -1,0 +1,20 @@
+# =========================================
+#   Configurações do CoinsEconomy
+# =========================================
+
+# Saldo inicial de um jogador quando sua conta é criada pela primeira vez
+# (ao entrar no servidor ou ao ser usado em /coins, /pagar, /cobrar etc.)
+saldo-inicial: 0.0
+
+# Nome da moeda, usado na formatação (ex: "150,00 coins")
+moeda:
+  singular: 'coin'
+  plural: 'coins'
+
+# Se "true", o comando /cobrar pode deixar o saldo do jogador negativo.
+# Se "false" (padrão), o comando falha quando o jogador não tem coins suficientes.
+cobranca-permite-saldo-negativo: false
+
+# Intervalo (em ticks, 20 ticks = 1 segundo) entre os salvamentos
+# automáticos dos dados em disco. Padrão: 6000 ticks = 5 minutos.
+salvamento-automatico-ticks: 6000

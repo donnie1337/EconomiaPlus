@@ -1,0 +1,59 @@
+name: CoinsEconomy
+version: '${project.version}'
+main: com.coinseconomy.plugin.CoinsEconomyPlugin
+api-version: '26.2'
+author: SeuNome
+description: >
+  Sistema de economia (coins) que se registra como provedor de Economy
+  do Vault. Inclui /coins, /pagar, /cobrar e um ranking (/topcoins) dos
+  10 jogadores com mais coins, exibido em uma GUI com as cabeças deles.
+softdepend: [Vault]
+
+commands:
+  coins:
+    description: Mostra seu saldo de coins ou o de outro jogador.
+    usage: "/<command> [jogador|give|set|top]"
+    permission: coinseconomy.coins
+    permission-message: "§cVocê não tem permissão para usar este comando."
+  pagar:
+    description: Paga uma quantidade de coins para outro jogador.
+    usage: "/<command> <jogador> <quantidade>"
+    permission: coinseconomy.pagar
+    permission-message: "§cVocê não tem permissão para usar este comando."
+  cobrar:
+    description: Cobra (remove) uma quantidade de coins de um jogador.
+    usage: "/<command> <jogador> <quantidade>"
+    permission: coinseconomy.cobrar
+    permission-message: "§cVocê não tem permissão para usar este comando."
+  topcoins:
+    aliases: [coinstop, baltop]
+    description: Mostra o ranking dos 10 jogadores com mais coins.
+    usage: "/<command>"
+    permission: coinseconomy.top
+    permission-message: "§cVocê não tem permissão para usar este comando."
+
+permissions:
+  coinseconomy.*:
+    description: Concede acesso a todos os comandos do CoinsEconomy.
+    default: op
+    children:
+      coinseconomy.coins: true
+      coinseconomy.pagar: true
+      coinseconomy.cobrar: true
+      coinseconomy.top: true
+      coinseconomy.admin: true
+  coinseconomy.coins:
+    description: Permite ver o próprio saldo e o saldo de outros jogadores.
+    default: true
+  coinseconomy.pagar:
+    description: Permite pagar coins para outros jogadores.
+    default: true
+  coinseconomy.cobrar:
+    description: Permite cobrar (remover) coins de um jogador.
+    default: op
+  coinseconomy.top:
+    description: Permite ver o ranking dos 10 jogadores com mais coins.
+    default: true
+  coinseconomy.admin:
+    description: Permite usar "/coins give" e "/coins set" para gerenciar o saldo de qualquer jogador.
+    default: op

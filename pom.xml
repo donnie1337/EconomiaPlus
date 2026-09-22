@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.coinseconomy</groupId>
+    <artifactId>CoinsEconomy</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>CoinsEconomy</name>
+    <description>Plugin de economia (coins) baseado na API do Vault, para Spigot/Paper 26.2</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!--
+            O Minecraft 26.2 exige Java 25+ para RODAR o servidor.
+            Compilamos com --release 21 (LTS) para gerar um bytecode
+            compatível com qualquer JVM 21, 25 ou 26 - assim o plugin
+            roda normalmente mesmo que o servidor use só o Java 25
+            mínimo exigido, e você pode compilar tanto com JDK 21
+            quanto com o seu JDK 26.
+        -->
+        <maven.compiler.release>21</maven.compiler.release>
+    </properties>
+
+    <repositories>
+        <!-- Repositório oficial do Spigot -->
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+
+        <!-- JitPack: usado para obter a VaultAPI (MilkBowl/Vault) -->
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!-- API do Spigot para o Minecraft 26.2 (Chaos Cubed) -->
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>26.2-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- API do Vault, usada só em tempo de compilação (o Vault já
+             fica instalado no servidor como plugin separado) -->
+        <dependency>
+            <groupId>com.github.MilkBowl</groupId>
+            <artifactId>VaultAPI</artifactId>
+            <version>1.7.1</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${project.name}-${project.version}</finalName>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
