@@ -10,7 +10,7 @@
     <packaging>jar</packaging>
 
     <name>CoinsEconomy</name>
-    <description>Plugin de economia (coins) baseado na API do Vault, para Paper 26.3</description>
+    <description>Plugin de economia independente com API própria, para Paper 26.3</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -29,11 +29,6 @@
             <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
 
-        <!-- JitPack: usado para obter a VaultAPI (MilkBowl/Vault) -->
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
-        </repository>
     </repositories>
 
     <dependencies>
@@ -45,14 +40,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- API do Vault, usada só em tempo de compilação (o Vault já
-             fica instalado no servidor como plugin separado) -->
-        <dependency>
-            <groupId>com.github.MilkBowl</groupId>
-            <artifactId>VaultAPI</artifactId>
-            <version>1.7.1</version>
-            <scope>provided</scope>
-        </dependency>
     </dependencies>
 
     <build>

@@ -1,6 +1,7 @@
 package com.coinseconomy.plugin.economy;
 
 import com.coinseconomy.plugin.CoinsEconomyPlugin;
+import com.coinseconomy.plugin.api.EconomyApi;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -24,7 +25,7 @@ import java.util.logging.Level;
  * O armazenamento é feito em um único arquivo "data.yml", de forma
  * simples, inspirado no handler "file" do BetterEconomy.
  */
-public class EconomyManager {
+public class EconomyManager implements EconomyApi {
 
     private final CoinsEconomyPlugin plugin;
     private final File dataFile;

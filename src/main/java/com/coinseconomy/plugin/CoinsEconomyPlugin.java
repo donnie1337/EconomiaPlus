@@ -5,18 +5,17 @@ import com.coinseconomy.plugin.commands.CoinsCommand;
 import com.coinseconomy.plugin.commands.PagarCommand;
 import com.coinseconomy.plugin.commands.TopCoinsCommand;
 import com.coinseconomy.plugin.economy.EconomyManager;
-import com.coinseconomy.plugin.economy.VaultEconomyProvider;
+import com.coinseconomy.plugin.api.EconomyApi;
+import org.bukkit.plugin.ServicePriority;
 import com.coinseconomy.plugin.gui.TopCoinsGUIListener;
 import com.coinseconomy.plugin.listeners.JoinListener;
-import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
-import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
- * Plugin de economia baseado na API do Vault (MilkBowl/Vault), com uma
- * implementação de armazenamento simples em arquivo, inspirada no
- * HSGamer/BetterEconomy.
+ * Plugin de economia independente, com API própria registrada no
+ * ServicesManager do Bukkit. A arquitetura segue o padrão provider/service
+ * popularizado pelo Vault, mas sem depender do Vault.
  */
 public final class CoinsEconomyPlugin extends JavaPlugin {
 
@@ -33,7 +32,7 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
         this.economyManager = new EconomyManager(this);
         this.economyManager.load();
 
-        registrarNoVault();
+        registrarApi();
         registrarComandos();
         registrarEventos();
         agendarSalvamentoAutomatico();
@@ -50,28 +49,14 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
         getLogger().info("CoinsEconomy foi desativado. Dados salvos em disco.");
     }
 
-    private void registrarNoVault() {
-        if (getServer().getPluginManager().getPlugin("Vault") == null) {
-            getLogger().warning("Vault não foi encontrado. O EconomiaPlus continuará funcionando " +
-                    "normalmente com seus próprios comandos e API; apenas a ponte Vault ficará desativada.");
-            return;
-        }
-
-        try {
-            VaultEconomyProvider vaultProvider = new VaultEconomyProvider(economyManager);
-            Bukkit.getServicesManager().register(
-                    Economy.class,
-                    vaultProvider,
-                    this,
-                    ServicePriority.Highest
-            );
-            getLogger().info("Integração com Vault registrada com sucesso.");
-        } catch (Throwable error) {
-            getLogger().log(java.util.logging.Level.WARNING,
-                    "Não foi possível registrar a integração com Vault. " +
-                            "O EconomiaPlus continuará funcionando sem a ponte Vault.",
-                    error);
-        }
+    private void registrarApi() {
+        Bukkit.getServicesManager().register(
+                EconomyApi.class,
+                economyManager,
+                this,
+                ServicePriority.Highest
+        );
+        getLogger().info("API própria do EconomiaPlus registrada com sucesso.");
     }
 
     private void registrarComandos() {

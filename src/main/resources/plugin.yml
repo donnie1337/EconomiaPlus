@@ -4,10 +4,8 @@ main: com.coinseconomy.plugin.CoinsEconomyPlugin
 api-version: '26.3'
 author: SeuNome
 description: >
-  Sistema de economia (coins) que se registra como provedor de Economy
-  do Vault. Inclui /coins, /pagar, /cobrar e um ranking (/topcoins) dos
-  10 jogadores com mais coins, exibido em uma GUI com as cabeças deles.
-softdepend: [Vault]
+  Sistema de economia independente com API própria. Inclui /coins, /pagar,
+  /cobrar e um ranking (/topcoins) dos 10 jogadores com mais coins.
 
 commands:
   coins:
