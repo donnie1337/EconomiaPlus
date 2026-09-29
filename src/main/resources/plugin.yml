@@ -1,7 +1,7 @@
 name: CoinsEconomy
 version: '${project.version}'
 main: com.coinseconomy.plugin.CoinsEconomyPlugin
-api-version: '26.2'
+api-version: '26.3'
 author: SeuNome
 description: >
   Sistema de economia (coins) que se registra como provedor de Economy

@@ -10,27 +10,23 @@
     <packaging>jar</packaging>
 
     <name>CoinsEconomy</name>
-    <description>Plugin de economia (coins) baseado na API do Vault, para Spigot/Paper 26.2</description>
+    <description>Plugin de economia (coins) baseado na API do Vault, para Paper 26.3</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!--
-            O Minecraft 26.2 exige Java 25+ para RODAR o servidor.
-            Compilamos com --release 21 (LTS) para gerar um bytecode
-            compatível com qualquer JVM 21, 25 ou 26 - assim o plugin
-            roda normalmente mesmo que o servidor use só o Java 25
-            mínimo exigido, e você pode compilar tanto com JDK 21
-            quanto com o seu JDK 26.
+            Paper 26.3 exige Java 25 para desenvolvimento e execução.
+            O plugin é compilado diretamente para Java 25.
         -->
-        <maven.compiler.release>21</maven.compiler.release>
+        <maven.compiler.release>25</maven.compiler.release>
     </properties>
 
     <repositories>
-        <!-- Repositório oficial do Spigot -->
+        <!-- Repositório oficial do Paper -->
         <repository>
-            <id>spigot-repo</id>
-            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+            <id>papermc</id>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
 
         <!-- JitPack: usado para obter a VaultAPI (MilkBowl/Vault) -->
@@ -41,11 +37,11 @@
     </repositories>
 
     <dependencies>
-        <!-- API do Spigot para o Minecraft 26.2 (Chaos Cubed) -->
+        <!-- API do Paper para o Minecraft 26.3 -->
         <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>26.2-R0.1-SNAPSHOT</version>
+            <groupId>io.papermc.paper</groupId>
+            <artifactId>paper-api</artifactId>
+            <version>[26.3.build,)</version>
             <scope>provided</scope>
         </dependency>
 
