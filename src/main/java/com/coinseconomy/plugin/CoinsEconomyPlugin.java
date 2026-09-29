@@ -23,7 +23,6 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
     private static CoinsEconomyPlugin instance;
 
     private EconomyManager economyManager;
-    private VaultEconomyProvider vaultProvider;
 
     @Override
     public void onEnable() {
@@ -53,18 +52,26 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
 
     private void registrarNoVault() {
         if (getServer().getPluginManager().getPlugin("Vault") == null) {
-            getLogger().warning("O plugin Vault não foi encontrado! O CoinsEconomy vai continuar " +
-                    "funcionando normalmente, mas nenhum outro plugin conseguirá acessar os coins " +
-                    "através da API do Vault até que o Vault seja instalado.");
+            getLogger().warning("Vault não foi encontrado. O EconomiaPlus continuará funcionando " +
+                    "normalmente com seus próprios comandos e API; apenas a ponte Vault ficará desativada.");
+            return;
         }
 
-        this.vaultProvider = new VaultEconomyProvider(economyManager);
-        Bukkit.getServicesManager().register(
-                Economy.class,
-                vaultProvider,
-                this,
-                ServicePriority.Highest
-        );
+        try {
+            VaultEconomyProvider vaultProvider = new VaultEconomyProvider(economyManager);
+            Bukkit.getServicesManager().register(
+                    Economy.class,
+                    vaultProvider,
+                    this,
+                    ServicePriority.Highest
+            );
+            getLogger().info("Integração com Vault registrada com sucesso.");
+        } catch (Throwable error) {
+            getLogger().log(java.util.logging.Level.WARNING,
+                    "Não foi possível registrar a integração com Vault. " +
+                            "O EconomiaPlus continuará funcionando sem a ponte Vault.",
+                    error);
+        }
     }
 
     private void registrarComandos() {
