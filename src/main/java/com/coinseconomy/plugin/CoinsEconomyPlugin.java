@@ -8,6 +8,7 @@ import com.coinseconomy.plugin.economy.EconomyManager;
 import com.coinseconomy.plugin.api.EconomyApi;
 import org.bukkit.plugin.ServicePriority;
 import com.coinseconomy.plugin.gui.TopCoinsGUIListener;
+import com.coinseconomy.plugin.gui.CoinsWalletGUIListener;
 import com.coinseconomy.plugin.listeners.JoinListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -111,6 +112,7 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
 
     private void registrarEventos() {
         Bukkit.getPluginManager().registerEvents(new TopCoinsGUIListener(), this);
+        Bukkit.getPluginManager().registerEvents(new CoinsWalletGUIListener(this, economyManager), this);
         Bukkit.getPluginManager().registerEvents(new JoinListener(economyManager), this);
     }
 

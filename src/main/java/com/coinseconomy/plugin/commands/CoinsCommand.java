@@ -2,6 +2,7 @@ package com.coinseconomy.plugin.commands;
 
 import com.coinseconomy.plugin.CoinsEconomyPlugin;
 import com.coinseconomy.plugin.economy.EconomyManager;
+import com.coinseconomy.plugin.gui.CoinsWalletGUI;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
@@ -16,7 +17,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * /coins            -> mostra o próprio saldo
+ * /coins            -> abre a carteira em GUI
  * /coins <jogador>  -> mostra o saldo de outro jogador
  * /coins ajuda      -> mostra todos os comandos de Coins
  * /coins help       -> alias de /coins ajuda
@@ -65,17 +66,12 @@ public class CoinsCommand implements CommandExecutor, TabCompleter {
     }
 
     private boolean mostrarSaldoProprio(CommandSender sender) {
-        if (!(sender instanceof Player)) {
+        if (!(sender instanceof Player jogador)) {
             sender.sendMessage(ChatColor.RED + "Use /coins <jogador> quando executar pelo console.");
             return true;
         }
 
-        Player jogador = (Player) sender;
-        economia.criarConta(jogador);
-        double saldo = economia.getSaldo(jogador.getUniqueId());
-
-        sender.sendMessage(ChatColor.GOLD + "Você possui " + ChatColor.YELLOW +
-                economia.formatar(saldo) + ChatColor.GOLD + ".");
+        jogador.openInventory(CoinsWalletGUI.construir(jogador, economia));
         return true;
     }
 
