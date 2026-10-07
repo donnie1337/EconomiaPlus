@@ -17,13 +17,13 @@ import java.util.UUID;
 /** Ranking paginado de jogadores, seguindo o layout visual do menu de Coins. */
 public final class TopCoinsGUI {
 
-    private static final int TAMANHO = 27;
+    private static final int TAMANHO = 36;
     private static final int POR_PAGINA = 7;
     private static final int[] SLOTS_JOGADORES = {10, 11, 12, 13, 14, 15, 16};
 
-    public static final int SLOT_ANTERIOR = 21;
-    public static final int SLOT_VOLTAR = 22;
-    public static final int SLOT_PROXIMA = 23;
+    public static final int SLOT_ANTERIOR = 30;
+    public static final int SLOT_VOLTAR = 31;
+    public static final int SLOT_PROXIMA = 32;
 
     private TopCoinsGUI() {
     }
@@ -63,8 +63,8 @@ public final class TopCoinsGUI {
 
         inventario.setItem(SLOT_VOLTAR, criarBotao(
                 Material.ARROW,
-                "&fVoltar",
-                List.of("", "&8Retornar à sua carteira")
+                "&cVoltar",
+                List.of("", "&7Clique para voltar ao menu de Coins.")
         ));
 
         if (paginaValida + 1 < totalPaginas) {
