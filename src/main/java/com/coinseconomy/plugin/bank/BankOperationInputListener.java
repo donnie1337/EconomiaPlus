@@ -43,7 +43,7 @@ public final class BankOperationInputListener implements Listener {
         BukkitTask timeout = Bukkit.getScheduler().runTaskLater(plugin, () -> {
             PendingOperation current = pending.remove(player.getUniqueId());
             if (current != null && player.isOnline()) {
-                player.sendMessage(color("&c&lERRO &8• &fTempo esgotado. A operação bancária foi cancelada."));
+                player.sendMessage(color("&c&lʙᴀɴᴄᴏ &8• &fTempo esgotado. A operação bancária foi cancelada."));
             }
         }, timeoutSeconds * 20L);
 
@@ -94,7 +94,7 @@ public final class BankOperationInputListener implements Listener {
         String input = rawInput == null ? "" : rawInput.trim();
         if (CANCEL_WORD.equalsIgnoreCase(input)) {
             cancelPending(player.getUniqueId(), true);
-            player.sendMessage(color("&c&lERRO &8• &fOperação bancária cancelada."));
+            player.sendMessage(color("&c&lʙᴀɴᴄᴏ &8• &fOperação bancária cancelada."));
             return;
         }
 
@@ -115,41 +115,41 @@ public final class BankOperationInputListener implements Listener {
 
         double minimum = Math.max(0.0D, plugin.getConfig().getDouble("banco.operacoes.minimo", 1000.0D));
         if (amount + 0.0000001D < minimum) {
-            player.sendMessage(color("&c&lERRO &8• &fO valor mínimo para esta operação é &a"
+            player.sendMessage(color("&c&lʙᴀɴᴄᴏ &8• &fO valor mínimo para esta operação é &a"
                     + compact(minimum) + " Coins&f."));
             return;
         }
 
         if (current.operation() == Operation.DEPOSIT) {
             if (!economy.sacar(player, amount)) {
-                player.sendMessage(color("&c&lERRO &8• &fVocê não possui Coins suficientes na carteira."));
+                player.sendMessage(color("&c&lʙᴀɴᴄᴏ &8• &fVocê não possui Coins suficientes na carteira."));
                 return;
             }
 
             bank.deposit(player.getUniqueId(), amount);
             finish(player.getUniqueId());
-            player.sendMessage(color("&a&lBANCO &8• &fVocê depositou &a" + compact(amount) + " Coins &fcom sucesso."));
+            player.sendMessage(color("&a&lʙᴀɴᴄᴏ &8• &fVocê depositou &a" + compact(amount) + " Coins &fcom sucesso."));
             return;
         }
 
         int dailyLimit = plugin.getConfig().getInt("banco.operacoes.limite-saques-diarios", 10);
         if (!bank.canWithdraw(player.getUniqueId(), dailyLimit)) {
-            player.sendMessage(color("&c&lERRO &8• &fVocê atingiu o limite diário de saques."));
+            player.sendMessage(color("&c&lʙᴀɴᴄᴏ &8• &fVocê atingiu o limite diário de saques."));
             return;
         }
 
         if (!bank.withdraw(player.getUniqueId(), amount)) {
-            player.sendMessage(color("&c&lERRO &8• &fVocê não possui Coins suficientes no banco."));
+            player.sendMessage(color("&c&lʙᴀɴᴄᴏ &8• &fVocê não possui Coins suficientes no banco."));
             return;
         }
 
         economy.depositar(player, amount);
         finish(player.getUniqueId());
-        player.sendMessage(color("&a&lBANCO &8• &fVocê sacou &a" + compact(amount) + " Coins &fcom sucesso."));
+        player.sendMessage(color("&a&lʙᴀɴᴄᴏ &8• &fVocê sacou &a" + compact(amount) + " Coins &fcom sucesso."));
     }
 
     private void sendInvalid(Player player) {
-        player.sendMessage(color("&c&lERRO &8• &fAção não cancelada. Digite uma quantidade ou &7cancelar &fpara cancelar!"));
+        player.sendMessage(color("&c&lʙᴀɴᴄᴏ &8• &fAção não cancelada. Digite uma quantidade ou &7cancelar &fpara cancelar!"));
     }
 
     private double parseAmount(String raw) {
