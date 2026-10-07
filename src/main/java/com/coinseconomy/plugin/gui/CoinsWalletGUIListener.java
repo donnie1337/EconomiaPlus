@@ -31,10 +31,7 @@ public final class CoinsWalletGUIListener implements Listener {
 
             switch (slot) {
                 case CoinsWalletGUI.SLOT_INFORMACOES -> {
-                    boolean enabled = plugin.getWalletSettingsManager().toggleReceiving(player.getUniqueId());
-                    player.sendMessage(color(enabled
-                            ? "&a&lᴄᴏɪɴs &8• &fRecebimento de Coins de outros jogadores &aativado&f."
-                            : "&c&lᴄᴏɪɴs &8• &fRecebimento de Coins de outros jogadores &cdesativado&f."));
+                    plugin.getWalletSettingsManager().toggleReceiving(player.getUniqueId());
                     player.openInventory(CoinsWalletGUI.construir(player, economia));
                 }
                 case CoinsWalletGUI.SLOT_TRANSACOES ->
