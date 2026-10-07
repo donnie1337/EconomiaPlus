@@ -151,4 +151,8 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
     public String getMagnataTag(java.util.UUID playerId) {
         return isMagnata(playerId) ? "§a$" : "";
     }
+
+    public String getMagnataChatTag(java.util.UUID playerId) {
+        return isMagnata(playerId) ? "§a[$]" : "";
+    }
 }
