@@ -100,17 +100,8 @@ public class CoinsCommand implements CommandExecutor, TabCompleter {
         sender.sendMessage(color("&8» &f/coins &8- &bMostra seu saldo."));
         sender.sendMessage(color("&8» &f/coins <jogador> &8- &bMostra o saldo de outro jogador."));
         sender.sendMessage(color("&8» &f/coins pagar <jogador> <quantidade> &8- &bEnvia coins para outro jogador."));
-        sender.sendMessage(color("&8» &f/coins pay <jogador> <quantidade> &8- &bAlias de /coins pagar."));
-        sender.sendMessage(color("&8» &f/pagar <jogador> <quantidade> &8- &bForma direta de pagar."));
-        sender.sendMessage(color("&8» &f/coins top &8- &bAbre o ranking de coins."));
         sender.sendMessage(color("&8» &f/topcoins &8- &bAbre o ranking de coins."));
         sender.sendMessage(color("&8» &f/coins ajuda &8- &bExibe todos os comandos disponíveis."));
-
-        if (sender.hasPermission("coinseconomy.admin")) {
-            sender.sendMessage(color("&8» &f/coins give <jogador> <quantidade> &8- &bAdiciona coins."));
-            sender.sendMessage(color("&8» &f/coins set <jogador> <quantidade> &8- &bDefine o saldo."));
-        }
-
         return true;
     }
 
