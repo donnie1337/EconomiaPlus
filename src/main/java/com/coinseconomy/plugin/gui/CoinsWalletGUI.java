@@ -41,11 +41,13 @@ public final class CoinsWalletGUI {
                 "&bSUAS INFORMAÇÕES",
                 List.of(
                         "",
-                        "&fSaldo atual: &a" + economia.formatar(saldo),
-                        "&fTransações: &b0",
-                        "&fRecebimento: &aON",
+                        "&7Sua carteira está com",
+                        "&a" + economia.formatar(saldo),
                         "",
-                        "&aClique para alternar o status"
+                        "&7Pagamentos recebidos: &aAtivados",
+                        "&8O histórico será contabilizado em breve.",
+                        "",
+                        "&eClique para gerenciar recebimentos"
                 )
         ));
 
@@ -54,10 +56,12 @@ public final class CoinsWalletGUI {
                 "&bTRANSAÇÕES",
                 List.of(
                         "",
-                        "&fHistórico de movimentações",
-                        "&frealizadas no servidor",
+                        "&7Acompanhe tudo que entrou",
+                        "&7e saiu da sua carteira.",
                         "",
-                        "&aClique para visualizar"
+                        "&8Envios, recebimentos e ajustes.",
+                        "",
+                        "&eClique para abrir o extrato"
                 )
         ));
 
@@ -66,10 +70,12 @@ public final class CoinsWalletGUI {
                 "&bTOP JOGADORES",
                 List.of(
                         "",
-                        "&fRanking dos jogadores",
-                        "&fmais ricos do servidor",
+                        "&7Veja quem domina a economia",
+                        "&7e ocupa as maiores fortunas.",
                         "",
-                        "&aClique para visualizar"
+                        "&8Somente saldos acima de zero entram.",
+                        "",
+                        "&eClique para ver o ranking"
                 )
         ));
 
@@ -84,7 +90,11 @@ public final class CoinsWalletGUI {
             return item(
                     Material.EMERALD_BLOCK,
                     "&bMAGNATA",
-                    List.of("", "&7Nenhum jogador no ranking ainda.")
+                    List.of(
+                            "",
+                            "&7Ainda não existe um Magnata.",
+                            "&8É necessário possuir saldo positivo."
+                    )
             );
         }
 
@@ -95,12 +105,15 @@ public final class CoinsWalletGUI {
         ItemStack stack = new ItemStack(Material.EMERALD_BLOCK);
         ItemMeta meta = stack.getItemMeta();
         if (meta != null) {
-            meta.setDisplayName(color("&b&lMAGNATA"));
+            meta.setDisplayName(color("&bMAGNATA"));
             meta.setLore(List.of(
                     "",
-                    color("&fJogador: &a" + name),
+                    color("&7O jogador no topo da economia."),
                     "",
-                    color("&fFortuna: &a" + economia.formatar(first.getValue()))
+                    color("&fMagnata atual: &a" + name),
+                    color("&fPatrimônio: &a" + economia.formatar(first.getValue())),
+                    "",
+                    color("&8Quem assumir o 1º lugar recebe a tag [$].")
             ));
             stack.setItemMeta(meta);
         }

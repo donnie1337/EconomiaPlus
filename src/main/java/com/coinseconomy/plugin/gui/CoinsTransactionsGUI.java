@@ -30,15 +30,17 @@ public final class CoinsTransactionsGUI {
                 "&7Nenhuma transação registrada",
                 List.of(
                         "",
-                        "&8O histórico persistente será exibido",
-                        "&8aqui quando o ledger for ativado."
+                        "&7Seu extrato ainda está vazio.",
+                        "",
+                        "&8Quando o histórico for ativado,",
+                        "&8suas movimentações aparecerão aqui."
                 )
         ));
 
         inventory.setItem(SLOT_VOLTAR, item(
                 Material.ARROW,
                 "&fVoltar",
-                List.of("", "&7Clique para voltar ao menu de Coins.")
+                List.of("", "&8Retornar à sua carteira.")
         ));
 
         return inventory;

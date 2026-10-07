@@ -57,21 +57,21 @@ public final class TopCoinsGUI {
             inventario.setItem(SLOT_ANTERIOR, criarBotao(
                     Material.ARROW,
                     "&aAnterior",
-                    List.of("", "&7Clique para voltar")
+                    List.of("", "&8Página anterior")
             ));
         }
 
         inventario.setItem(SLOT_VOLTAR, criarBotao(
                 Material.ARROW,
                 "&fVoltar",
-                List.of("", "&7Clique para voltar ao menu de Coins")
+                List.of("", "&8Retornar à sua carteira")
         ));
 
         if (paginaValida + 1 < totalPaginas) {
             inventario.setItem(SLOT_PROXIMA, criarBotao(
                     Material.ARROW,
                     "&aPróxima",
-                    List.of("", "&7Clique para avançar")
+                    List.of("", "&8Próxima página")
             ));
         }
 
@@ -92,7 +92,10 @@ public final class TopCoinsGUI {
             meta.setDisplayName(color("&b" + posicao + "º &8- &a" + nome));
             meta.setLore(List.of(
                     "",
-                    color("&fFortuna: &a" + economia.formatar(saldo))
+                    color("&7Patrimônio contabilizado:"),
+                    color("&a" + economia.formatar(saldo)),
+                    "",
+                    color("&8Posição geral: &f#" + posicao)
             ));
             cabeca.setItemMeta(meta);
         }

@@ -39,13 +39,15 @@ public final class BankGUI {
                 "&bSUAS INFORMAÇÕES",
                 List.of(
                         "",
-                        "&fEconomia: &aCoins",
+                        "&7Resumo da sua vida financeira",
                         "",
-                        "&fSaldo no banco: &a" + economia.formatar(0.0),
-                        "&fRendimento diário: &b" + formatPercent(diaria) + "%",
-                        "&fRendimento mensal: &b" + formatPercent(mensal) + "%",
+                        "&fCarteira: &a" + economia.formatar(saldoCarteira),
+                        "&fReserva bancária: &a" + economia.formatar(0.0),
                         "",
-                        "&fSaldo em mãos: &a" + economia.formatar(saldoCarteira)
+                        "&fProjeção diária: &b+" + formatPercent(diaria) + "%",
+                        "&fProjeção mensal: &b+" + formatPercent(mensal) + "%",
+                        "",
+                        "&8Taxas exibidas são a referência atual do banco."
                 )
         ));
 
@@ -54,10 +56,12 @@ public final class BankGUI {
                 "&bOPERAÇÕES",
                 List.of(
                         "",
-                        "&fRealize depósitos, saques",
-                        "&fou consulte operações bancárias",
+                        "&7Organize seus Coins entre",
+                        "&7carteira e reserva bancária.",
                         "",
-                        "&aClique para acessar"
+                        "&8Deposite ou retire quando precisar.",
+                        "",
+                        "&eClique para movimentar"
                 )
         ));
 
@@ -66,10 +70,12 @@ public final class BankGUI {
                 "&bHISTÓRICO",
                 List.of(
                         "",
-                        "&fHistórico de movimentações",
-                        "&frealizadas no banco",
+                        "&7Consulte o caminho dos seus Coins.",
                         "",
-                        "&aClique para visualizar"
+                        "&8Depósitos, saques e rendimentos",
+                        "&8ficarão registrados neste extrato.",
+                        "",
+                        "&eClique para consultar"
                 )
         ));
 
@@ -89,12 +95,13 @@ public final class BankGUI {
                 "&bDepositar",
                 List.of(
                         "",
-                        "&fGuardar coins das mãos",
-                        "&fno banco com segurança",
+                        "&7Transfira parte da carteira",
+                        "&7para sua reserva no banco.",
                         "",
-                        "&fMínimo: &a" + compact(minimo),
+                        "&fEntrada mínima: &a" + compact(minimo) + " coins",
+                        "&8O valor deixa sua carteira e vai ao banco.",
                         "",
-                        "&aClique para depositar"
+                        "&eClique para iniciar um depósito"
                 )
         ));
 
@@ -103,20 +110,20 @@ public final class BankGUI {
                 "&bSacar",
                 List.of(
                         "",
-                        "&fRetirar coins do banco",
-                        "&fpara as suas mãos",
+                        "&7Traga Coins da reserva",
+                        "&7de volta para sua carteira.",
                         "",
-                        "&fMínimo: &a" + compact(minimo),
-                        "&fLimite diário usado: &c0&f/&b" + limite,
+                        "&fRetirada mínima: &a" + compact(minimo) + " coins",
+                        "&fSaques de hoje: &c0&7/&b" + limite,
                         "",
-                        "&aClique para sacar"
+                        "&eClique para iniciar um saque"
                 )
         ));
 
         inv.setItem(SLOT_VOLTAR, item(
                 Material.ARROW,
                 "&fVoltar",
-                List.of("", "&7Clique para voltar ao Banco.")
+                List.of("", "&8Retornar ao menu do banco.")
         ));
 
         return inv;
@@ -132,8 +139,10 @@ public final class BankGUI {
                 "&7Nenhuma movimentação bancária",
                 List.of(
                         "",
-                        "&8Depósitos, saques e rendimentos",
-                        "&8serão exibidos aqui."
+                        "&7Seu extrato bancário está vazio.",
+                        "",
+                        "&8As próximas movimentações e",
+                        "&8rendimentos aparecerão aqui."
                 )
         ));
 
