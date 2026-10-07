@@ -101,11 +101,11 @@ public final class BankManager {
 
             List<Map<String, Object>> savedHistory = new ArrayList<>();
             for (BankTransaction transaction : history.getOrDefault(uuid, List.of())) {
-                Map<String, Object> entry = new LinkedHashMap<>();
-                entry.put("tipo", transaction.type().name());
-                entry.put("valor", transaction.amount());
-                entry.put("data", transaction.timestamp());
-                savedHistory.add(entry);
+                Map<String, Object> historyEntry = new LinkedHashMap<>();
+                historyEntry.put("tipo", transaction.type().name());
+                historyEntry.put("valor", transaction.amount());
+                historyEntry.put("data", transaction.timestamp());
+                savedHistory.add(historyEntry);
             }
             data.set(path + ".historico", savedHistory);
         }
