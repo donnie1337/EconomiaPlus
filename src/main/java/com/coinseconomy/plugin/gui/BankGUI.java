@@ -135,7 +135,7 @@ public final class BankGUI {
 
     public static Inventory historico(List<ItemStack> movimentacoes, int pagina) {
         List<ItemStack> registros = movimentacoes == null ? List.of() : movimentacoes;
-        final int maxPorPagina = 28;
+        final int maxPorPagina = 21;
         int totalPaginas = Math.max(1, (int) Math.ceil(registros.size() / (double) maxPorPagina));
         int paginaValida = Math.max(0, Math.min(pagina, totalPaginas - 1));
 
@@ -198,17 +198,18 @@ public final class BankGUI {
 
     private static int tamanhoHistorico(int quantidade) {
         int linhasConteudo = Math.max(1, (int) Math.ceil(Math.max(1, quantidade) / 7.0D));
-        return Math.min(54, (linhasConteudo + 2) * 9);
+        // 1 linha vazia no topo + conteúdo + 1 linha vazia de separação + navegação.
+        return Math.min(54, (linhasConteudo + 3) * 9);
     }
 
     private static int slotCentralHistorico(int tamanho) {
-        int linhasConteudo = (tamanho / 9) - 2;
+        int linhasConteudo = (tamanho / 9) - 3;
         int linha = 1 + Math.max(0, (linhasConteudo - 1) / 2);
         return linha * 9 + 4;
     }
 
     private static int[] slotsHistorico(int tamanho) {
-        int linhasConteudo = (tamanho / 9) - 2;
+        int linhasConteudo = (tamanho / 9) - 3;
         int[] slots = new int[linhasConteudo * 7];
         int indice = 0;
 
