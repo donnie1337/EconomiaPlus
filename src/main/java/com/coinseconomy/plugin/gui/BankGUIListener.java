@@ -46,7 +46,7 @@ public final class BankGUIListener implements Listener {
                 }
             }
             case HISTORY -> {
-                if (slot == BankGUI.SLOT_VOLTAR) {
+                if (slot == BankGUI.slotVoltarHistorico(event.getInventory().getSize())) {
                     player.openInventory(BankGUI.principal(plugin, player, economia));
                 }
             }

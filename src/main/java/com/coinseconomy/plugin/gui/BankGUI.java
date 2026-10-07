@@ -130,29 +130,94 @@ public final class BankGUI {
     }
 
     public static Inventory historico() {
+        return historico(List.of(), 0);
+    }
+
+    public static Inventory historico(List<ItemStack> movimentacoes, int pagina) {
+        List<ItemStack> registros = movimentacoes == null ? List.of() : movimentacoes;
+        final int maxPorPagina = 28;
+        int totalPaginas = Math.max(1, (int) Math.ceil(registros.size() / (double) maxPorPagina));
+        int paginaValida = Math.max(0, Math.min(pagina, totalPaginas - 1));
+
+        int inicio = paginaValida * maxPorPagina;
+        int quantidadePagina = Math.min(maxPorPagina, Math.max(0, registros.size() - inicio));
+        int tamanho = tamanhoHistorico(quantidadePagina);
+
         BankGUIHolder holder = new BankGUIHolder(BankGUIHolder.Screen.HISTORY);
-        Inventory inv = Bukkit.createInventory(holder, 36, "Banco > Histórico");
+        Inventory inv = Bukkit.createInventory(holder, tamanho, "Banco > Histórico");
         holder.setInventory(inv);
 
-        inv.setItem(13, item(
-                Material.GRAY_DYE,
-                "&7Nenhuma movimentação bancária",
-                List.of(
-                        "",
-                        "&7Seu extrato bancário está vazio.",
-                        "",
-                        "&8As próximas movimentações e",
-                        "&8rendimentos aparecerão aqui."
-                )
+        if (quantidadePagina == 0) {
+            inv.setItem(slotCentralHistorico(tamanho), item(
+                    Material.GRAY_DYE,
+                    "&7Nenhuma movimentação bancária",
+                    List.of(
+                            "",
+                            "&7Seu extrato bancário está vazio.",
+                            "",
+                            "&8Depósitos, saques e rendimentos",
+                            "&8aparecerão organizados aqui."
+                    )
+            ));
+        } else {
+            int[] slots = slotsHistorico(tamanho);
+            for (int i = 0; i < quantidadePagina; i++) {
+                inv.setItem(slots[i], registros.get(inicio + i));
+            }
+        }
+
+        int base = tamanho - 9;
+        if (paginaValida > 0) {
+            inv.setItem(base + 3, item(
+                    Material.ARROW,
+                    "&aAnterior",
+                    List.of("", "&7Clique para voltar à página anterior.")
+            ));
+        }
+
+        inv.setItem(base + 4, item(
+                Material.ARROW,
+                "&cVoltar",
+                List.of("", "&7Clique para voltar ao menu do banco.")
         ));
 
-        inv.setItem(SLOT_VOLTAR, item(
-                Material.ARROW,
-                "&fVoltar",
-                List.of("", "&7Clique para voltar ao Banco.")
-        ));
+        if (paginaValida + 1 < totalPaginas) {
+            inv.setItem(base + 5, item(
+                    Material.ARROW,
+                    "&aPróxima",
+                    List.of("", "&7Clique para avançar para a próxima página.")
+            ));
+        }
 
         return inv;
+    }
+
+    public static int slotVoltarHistorico(int tamanhoInventario) {
+        return tamanhoInventario - 5;
+    }
+
+    private static int tamanhoHistorico(int quantidade) {
+        int linhasConteudo = Math.max(1, (int) Math.ceil(Math.max(1, quantidade) / 7.0D));
+        return Math.min(54, (linhasConteudo + 2) * 9);
+    }
+
+    private static int slotCentralHistorico(int tamanho) {
+        int linhasConteudo = (tamanho / 9) - 2;
+        int linha = 1 + Math.max(0, (linhasConteudo - 1) / 2);
+        return linha * 9 + 4;
+    }
+
+    private static int[] slotsHistorico(int tamanho) {
+        int linhasConteudo = (tamanho / 9) - 2;
+        int[] slots = new int[linhasConteudo * 7];
+        int indice = 0;
+
+        for (int linha = 1; linha <= linhasConteudo; linha++) {
+            for (int coluna = 1; coluna <= 7; coluna++) {
+                slots[indice++] = linha * 9 + coluna;
+            }
+        }
+        return slots;
     }
 
     private static ItemStack item(Material material, String name, List<String> lore) {

@@ -47,7 +47,7 @@ public final class CoinsWalletGUIListener implements Listener {
 
         if (event.getInventory().getHolder() instanceof CoinsTransactionsGUIHolder) {
             event.setCancelled(true);
-            if (event.getRawSlot() == CoinsTransactionsGUI.SLOT_VOLTAR) {
+            if (event.getRawSlot() == CoinsTransactionsGUI.slotVoltar(event.getInventory().getSize())) {
                 player.openInventory(CoinsWalletGUI.construir(player, economia));
             }
         }
