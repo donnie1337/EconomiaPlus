@@ -96,18 +96,19 @@ public class CoinsCommand implements CommandExecutor, TabCompleter {
     }
 
     private boolean mostrarAjuda(CommandSender sender) {
-        sender.sendMessage(ChatColor.GOLD + "===== EconomiaPlus - Coins =====");
-        sender.sendMessage(ChatColor.YELLOW + "/coins" + ChatColor.GRAY + " - Mostra seu saldo.");
-        sender.sendMessage(ChatColor.YELLOW + "/coins <jogador>" + ChatColor.GRAY + " - Mostra o saldo de outro jogador.");
-        sender.sendMessage(ChatColor.YELLOW + "/coins pagar <jogador> <quantidade>" + ChatColor.GRAY + " - Envia coins para outro jogador.");
-        sender.sendMessage(ChatColor.YELLOW + "/coins pay <jogador> <quantidade>" + ChatColor.GRAY + " - Alias de /coins pagar.");
-        sender.sendMessage(ChatColor.YELLOW + "/pagar <jogador> <quantidade>" + ChatColor.GRAY + " - Forma direta de pagar.");
-        sender.sendMessage(ChatColor.YELLOW + "/coins top" + ChatColor.GRAY + " - Abre o ranking de coins.");
-        sender.sendMessage(ChatColor.YELLOW + "/topcoins" + ChatColor.GRAY + " - Abre o ranking de coins.");
+        sender.sendMessage(color("&6[Coins] &fComandos disponíveis para economia:"));
+        sender.sendMessage(color("&8» &f/coins &8- &bMostra seu saldo."));
+        sender.sendMessage(color("&8» &f/coins <jogador> &8- &bMostra o saldo de outro jogador."));
+        sender.sendMessage(color("&8» &f/coins pagar <jogador> <quantidade> &8- &bEnvia coins para outro jogador."));
+        sender.sendMessage(color("&8» &f/coins pay <jogador> <quantidade> &8- &bAlias de /coins pagar."));
+        sender.sendMessage(color("&8» &f/pagar <jogador> <quantidade> &8- &bForma direta de pagar."));
+        sender.sendMessage(color("&8» &f/coins top &8- &bAbre o ranking de coins."));
+        sender.sendMessage(color("&8» &f/topcoins &8- &bAbre o ranking de coins."));
+        sender.sendMessage(color("&8» &f/coins ajuda &8- &bExibe todos os comandos disponíveis."));
 
         if (sender.hasPermission("coinseconomy.admin")) {
-            sender.sendMessage(ChatColor.RED + "/coins give <jogador> <quantidade>" + ChatColor.GRAY + " - Adiciona coins.");
-            sender.sendMessage(ChatColor.RED + "/coins set <jogador> <quantidade>" + ChatColor.GRAY + " - Define o saldo.");
+            sender.sendMessage(color("&8» &f/coins give <jogador> <quantidade> &8- &bAdiciona coins."));
+            sender.sendMessage(color("&8» &f/coins set <jogador> <quantidade> &8- &bDefine o saldo."));
         }
 
         return true;
@@ -251,6 +252,10 @@ public class CoinsCommand implements CommandExecutor, TabCompleter {
         }
 
         return List.of();
+    }
+
+    private String color(String text) {
+        return ChatColor.translateAlternateColorCodes('&', text == null ? "" : text);
     }
 
     private List<String> nomesOnline() {
