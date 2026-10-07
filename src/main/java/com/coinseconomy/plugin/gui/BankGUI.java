@@ -20,7 +20,7 @@ public final class BankGUI {
     public static final int SLOT_HISTORICO = 15;
     public static final int SLOT_DEPOSITAR = 11;
     public static final int SLOT_SACAR = 15;
-    public static final int SLOT_VOLTAR = 22;
+    public static final int SLOT_VOLTAR = 31;
 
     private BankGUI() {
     }
@@ -84,7 +84,7 @@ public final class BankGUI {
 
     public static Inventory operacoes(CoinsEconomyPlugin plugin) {
         BankGUIHolder holder = new BankGUIHolder(BankGUIHolder.Screen.OPERATIONS);
-        Inventory inv = Bukkit.createInventory(holder, 27, "Banco > Operações");
+        Inventory inv = Bukkit.createInventory(holder, 36, "Banco > Operações");
         holder.setInventory(inv);
 
         double minimo = plugin.getConfig().getDouble("banco.operacoes.minimo", 1000.0);
@@ -122,8 +122,8 @@ public final class BankGUI {
 
         inv.setItem(SLOT_VOLTAR, item(
                 Material.ARROW,
-                "&fVoltar",
-                List.of("", "&8Retornar ao menu do banco.")
+                "&cVoltar",
+                List.of("", "&7Clique para voltar ao menu do banco.")
         ));
 
         return inv;
@@ -131,7 +131,7 @@ public final class BankGUI {
 
     public static Inventory historico() {
         BankGUIHolder holder = new BankGUIHolder(BankGUIHolder.Screen.HISTORY);
-        Inventory inv = Bukkit.createInventory(holder, 27, "Banco > Histórico");
+        Inventory inv = Bukkit.createInventory(holder, 36, "Banco > Histórico");
         holder.setInventory(inv);
 
         inv.setItem(13, item(
