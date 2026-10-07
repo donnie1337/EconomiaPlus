@@ -10,88 +10,72 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-/**
- * Monta a GUI de ranking (estilo "pódio") com as cabeças dos 10 jogadores
- * com mais coins do servidor.
- *
- * Layout de uma inventory de 27 slots (3 linhas):
- * - slot 4  -> 1º lugar, em destaque na linha de cima
- * - slots 9-17 -> 2º ao 10º lugar, na linha do meio
- * - linha de baixo e o resto da linha de cima -> vidro decorativo
- */
+/** Ranking paginado de jogadores, seguindo o layout visual do menu de Coins. */
 public final class TopCoinsGUI {
 
     private static final int TAMANHO = 27;
-    private static final int SLOT_PRIMEIRO_LUGAR = 4;
-    private static final int[] SLOTS_DEMAIS_LUGARES = {9, 10, 11, 12, 13, 14, 15, 16, 17};
+    private static final int POR_PAGINA = 7;
+    private static final int[] SLOTS_JOGADORES = {10, 11, 12, 13, 14, 15, 16};
+
+    public static final int SLOT_ANTERIOR = 21;
+    public static final int SLOT_VOLTAR = 22;
+    public static final int SLOT_PROXIMA = 23;
 
     private TopCoinsGUI() {
     }
 
     public static Inventory construir(EconomyManager economia) {
-        TopCoinsGUIHolder holder = new TopCoinsGUIHolder();
-        Inventory inventario = Bukkit.createInventory(
-                holder, TAMANHO, ChatColor.GOLD + "" + ChatColor.BOLD + "Top 10 - Coins");
+        return construir(economia, 0);
+    }
+
+    public static Inventory construir(EconomyManager economia, int pagina) {
+        List<Map.Entry<UUID, Double>> ranking = economia.getTop(Integer.MAX_VALUE);
+        int totalPaginas = Math.max(1, (int) Math.ceil(ranking.size() / (double) POR_PAGINA));
+        int paginaValida = Math.max(0, Math.min(pagina, totalPaginas - 1));
+
+        TopCoinsGUIHolder holder = new TopCoinsGUIHolder(paginaValida);
+        Inventory inventario = Bukkit.createInventory(holder, TAMANHO, "Coins > Top jogadores");
         holder.setInventory(inventario);
 
-        preencherComVidro(inventario);
+        int inicio = paginaValida * POR_PAGINA;
+        for (int i = 0; i < POR_PAGINA; i++) {
+            int indice = inicio + i;
+            if (indice >= ranking.size()) break;
 
-        List<Map.Entry<UUID, Double>> top = economia.getTop(10);
-
-        // 1º lugar, em destaque
-        if (!top.isEmpty()) {
-            Map.Entry<UUID, Double> primeiro = top.get(0);
-            inventario.setItem(SLOT_PRIMEIRO_LUGAR, criarCabeca(economia, primeiro.getKey(), primeiro.getValue(), 1));
-        } else {
-            inventario.setItem(SLOT_PRIMEIRO_LUGAR, criarSlotVazio(1));
+            Map.Entry<UUID, Double> entrada = ranking.get(indice);
+            inventario.setItem(
+                    SLOTS_JOGADORES[i],
+                    criarCabeca(economia, entrada.getKey(), entrada.getValue(), indice + 1)
+            );
         }
 
-        // 2º ao 10º lugar
-        for (int i = 0; i < SLOTS_DEMAIS_LUGARES.length; i++) {
-            int posicao = i + 2;
-            int slot = SLOTS_DEMAIS_LUGARES[i];
+        if (paginaValida > 0) {
+            inventario.setItem(SLOT_ANTERIOR, criarBotao(
+                    Material.ARROW,
+                    "&aAnterior",
+                    List.of("", "&7Clique para voltar")
+            ));
+        }
 
-            if (i + 1 < top.size()) {
-                Map.Entry<UUID, Double> entrada = top.get(i + 1);
-                inventario.setItem(slot, criarCabeca(economia, entrada.getKey(), entrada.getValue(), posicao));
-            } else {
-                inventario.setItem(slot, criarSlotVazio(posicao));
-            }
+        inventario.setItem(SLOT_VOLTAR, criarBotao(
+                Material.ARROW,
+                "&fVoltar",
+                List.of("", "&7Clique para voltar ao menu de Coins")
+        ));
+
+        if (paginaValida + 1 < totalPaginas) {
+            inventario.setItem(SLOT_PROXIMA, criarBotao(
+                    Material.ARROW,
+                    "&aPróxima",
+                    List.of("", "&7Clique para avançar")
+            ));
         }
 
         return inventario;
-    }
-
-    private static void preencherComVidro(Inventory inventario) {
-        ItemStack vidroEscuro = criarVidro(Material.BLACK_STAINED_GLASS_PANE, " ");
-        for (int slot = 0; slot < TAMANHO; slot++) {
-            inventario.setItem(slot, vidroEscuro);
-        }
-    }
-
-    private static ItemStack criarVidro(Material material, String nome) {
-        ItemStack item = new ItemStack(material);
-        ItemMeta meta = item.getItemMeta();
-        if (meta != null) {
-            meta.setDisplayName(nome);
-            item.setItemMeta(meta);
-        }
-        return item;
-    }
-
-    private static ItemStack criarSlotVazio(int posicao) {
-        ItemStack item = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
-        ItemMeta meta = item.getItemMeta();
-        if (meta != null) {
-            meta.setDisplayName(ChatColor.GRAY + "#" + posicao + ChatColor.DARK_GRAY + " - Vago");
-            item.setItemMeta(meta);
-        }
-        return item;
     }
 
     private static ItemStack criarCabeca(EconomyManager economia, UUID uuid, double saldo, int posicao) {
@@ -101,32 +85,33 @@ public final class TopCoinsGUI {
 
         if (meta != null) {
             meta.setOwningPlayer(jogador);
+            String nome = jogador.getName() != null
+                    ? jogador.getName()
+                    : economia.getNomeConhecido(uuid);
 
-            ChatColor cor = corParaPosicao(posicao);
-            String nome = jogador.getName() != null ? jogador.getName() : economia.getNomeConhecido(uuid);
-
-            meta.setDisplayName(cor + "" + ChatColor.BOLD + "#" + posicao + ChatColor.RESET + " " + cor + nome);
-
-            List<String> lore = new ArrayList<>();
-            lore.add(ChatColor.GRAY + "Saldo: " + ChatColor.YELLOW + economia.formatar(saldo));
-            meta.setLore(lore);
-
+            meta.setDisplayName(color("&b" + posicao + "º &8- &a" + nome));
+            meta.setLore(List.of(
+                    "",
+                    color("&fFortuna: &a" + economia.formatar(saldo))
+            ));
             cabeca.setItemMeta(meta);
         }
 
         return cabeca;
     }
 
-    private static ChatColor corParaPosicao(int posicao) {
-        switch (posicao) {
-            case 1:
-                return ChatColor.GOLD;
-            case 2:
-                return ChatColor.WHITE;
-            case 3:
-                return ChatColor.RED;
-            default:
-                return ChatColor.YELLOW;
+    private static ItemStack criarBotao(Material material, String nome, List<String> lore) {
+        ItemStack item = new ItemStack(material);
+        ItemMeta meta = item.getItemMeta();
+        if (meta != null) {
+            meta.setDisplayName(color(nome));
+            meta.setLore(lore.stream().map(TopCoinsGUI::color).toList());
+            item.setItemMeta(meta);
         }
+        return item;
+    }
+
+    private static String color(String text) {
+        return ChatColor.translateAlternateColorCodes('&', text == null ? "" : text);
     }
 }

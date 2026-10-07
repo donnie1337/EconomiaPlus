@@ -3,13 +3,19 @@ package com.coinseconomy.plugin.gui;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 
-/**
- * Marca as instâncias de Inventory que pertencem à GUI do /topcoins, para
- * que o listener saiba quando deve bloquear cliques/arrastos.
- */
-public class TopCoinsGUIHolder implements InventoryHolder {
+/** Guarda a página atual do ranking de Coins. */
+public final class TopCoinsGUIHolder implements InventoryHolder {
 
+    private final int page;
     private Inventory inventory;
+
+    public TopCoinsGUIHolder(int page) {
+        this.page = Math.max(0, page);
+    }
+
+    public int getPage() {
+        return page;
+    }
 
     @Override
     public Inventory getInventory() {
