@@ -104,7 +104,7 @@ public final class BankGUI {
                         "&7Transfira parte da carteira",
                         "&7para sua reserva no banco.",
                         "",
-                        "&fEntrada mínima: &a" + compact(minimo) + " coins",
+                        "&fEntrada mínima: &a$" + compact(minimo) + " coins",
                         "&8O valor deixa sua carteira e vai ao banco.",
                         "",
                         "&eClique para iniciar um depósito"
@@ -119,8 +119,8 @@ public final class BankGUI {
                         "&7Traga Coins da reserva",
                         "&7de volta para sua carteira.",
                         "",
-                        "&fRetirada mínima: &a" + compact(minimo) + " coins",
-                        "&fSaques de hoje: &c" + banco.getWithdrawCount(player.getUniqueId()) + "&7/&b" + limite,
+                        "&fRetirada mínima: &a$" + compact(minimo) + " coins",
+                        "&fSaques de hoje: &c" + banco.getWithdrawCount(player.getUniqueId()) + "/" + limite,
                         "",
                         "&eClique para iniciar um saque"
                 )
