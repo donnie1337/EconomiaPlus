@@ -89,13 +89,10 @@ public final class TopCoinsGUI {
                     ? jogador.getName()
                     : economia.getNomeConhecido(uuid);
 
-            meta.setDisplayName(color("&b" + posicao + "º &8- &a" + nome));
+            meta.setDisplayName(color("&b#" + posicao + " &8• &a" + nome));
             meta.setLore(List.of(
                     "",
-                    color("&7Patrimônio contabilizado:"),
-                    color("&a" + formatCompactCoins(saldo)),
-                    "",
-                    color("&8Posição geral: &f#" + posicao)
+                    color("&fPatrimônio: &a" + formatCompactCoins(saldo))
             ));
             cabeca.setItemMeta(meta);
         }
