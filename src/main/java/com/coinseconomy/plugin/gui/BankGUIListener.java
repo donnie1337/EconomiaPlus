@@ -45,7 +45,7 @@ public final class BankGUIListener implements Listener {
             }
             case OPERATIONS -> {
                 if (slot == BankGUI.SLOT_VOLTAR) {
-                    player.openInventory(BankGUI.principal(plugin, player, economia));
+                    player.openInventory(BankGUI.principal(plugin, player, economia, banco));
                 } else if (slot == BankGUI.SLOT_DEPOSITAR) {
                     input.start(player, BankOperationInputListener.Operation.DEPOSIT);
                 } else if (slot == BankGUI.SLOT_SACAR) {
@@ -54,7 +54,7 @@ public final class BankGUIListener implements Listener {
             }
             case HISTORY -> {
                 if (slot == BankGUI.slotVoltarHistorico(event.getInventory().getSize())) {
-                    player.openInventory(BankGUI.principal(plugin, player, economia));
+                    player.openInventory(BankGUI.principal(plugin, player, economia, banco));
                 }
             }
         }
