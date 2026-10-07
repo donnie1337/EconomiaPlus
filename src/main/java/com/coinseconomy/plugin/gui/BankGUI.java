@@ -2,6 +2,7 @@ package com.coinseconomy.plugin.gui;
 
 import com.coinseconomy.plugin.CoinsEconomyPlugin;
 import com.coinseconomy.plugin.economy.EconomyManager;
+import com.coinseconomy.plugin.bank.BankManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -25,7 +26,7 @@ public final class BankGUI {
     private BankGUI() {
     }
 
-    public static Inventory principal(CoinsEconomyPlugin plugin, Player player, EconomyManager economia) {
+    public static Inventory principal(CoinsEconomyPlugin plugin, Player player, EconomyManager economia, BankManager banco) {
         BankGUIHolder holder = new BankGUIHolder(BankGUIHolder.Screen.MAIN);
         Inventory inv = Bukkit.createInventory(holder, 27, "Banco");
         holder.setInventory(inv);
@@ -42,7 +43,7 @@ public final class BankGUI {
                         "&7Resumo da sua vida financeira",
                         "",
                         "&fCarteira: &a" + economia.formatar(saldoCarteira),
-                        "&fReserva bancária: &a" + economia.formatar(0.0),
+                        "&fReserva bancária: &a" + economia.formatar(banco.getBalance(player.getUniqueId())),
                         "",
                         "&fProjeção diária: &b+" + formatPercent(diaria) + "%",
                         "&fProjeção mensal: &b+" + formatPercent(mensal) + "%",
@@ -82,7 +83,7 @@ public final class BankGUI {
         return inv;
     }
 
-    public static Inventory operacoes(CoinsEconomyPlugin plugin) {
+    public static Inventory operacoes(CoinsEconomyPlugin plugin, Player player, BankManager banco) {
         BankGUIHolder holder = new BankGUIHolder(BankGUIHolder.Screen.OPERATIONS);
         Inventory inv = Bukkit.createInventory(holder, 36, "Banco > Operações");
         holder.setInventory(inv);
@@ -114,7 +115,7 @@ public final class BankGUI {
                         "&7de volta para sua carteira.",
                         "",
                         "&fRetirada mínima: &a" + compact(minimo) + " coins",
-                        "&fSaques de hoje: &c0&7/&b" + limite,
+                        "&fSaques de hoje: &c" + banco.getWithdrawCount(player.getUniqueId()) + "&7/&b" + limite,
                         "",
                         "&eClique para iniciar um saque"
                 )

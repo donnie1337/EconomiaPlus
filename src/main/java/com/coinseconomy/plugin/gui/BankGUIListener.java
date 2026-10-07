@@ -2,6 +2,8 @@ package com.coinseconomy.plugin.gui;
 
 import com.coinseconomy.plugin.CoinsEconomyPlugin;
 import com.coinseconomy.plugin.economy.EconomyManager;
+import com.coinseconomy.plugin.bank.BankManager;
+import com.coinseconomy.plugin.bank.BankOperationInputListener;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -13,10 +15,15 @@ public final class BankGUIListener implements Listener {
 
     private final CoinsEconomyPlugin plugin;
     private final EconomyManager economia;
+    private final BankManager banco;
+    private final BankOperationInputListener input;
 
-    public BankGUIListener(CoinsEconomyPlugin plugin, EconomyManager economia) {
+    public BankGUIListener(CoinsEconomyPlugin plugin, EconomyManager economia, BankManager banco,
+                           BankOperationInputListener input) {
         this.plugin = plugin;
         this.economia = economia;
+        this.banco = banco;
+        this.input = input;
     }
 
     @EventHandler
@@ -31,7 +38,7 @@ public final class BankGUIListener implements Listener {
         switch (holder.getScreen()) {
             case MAIN -> {
                 if (slot == BankGUI.SLOT_OPERACOES) {
-                    player.openInventory(BankGUI.operacoes(plugin));
+                    player.openInventory(BankGUI.operacoes(plugin, player, banco));
                 } else if (slot == BankGUI.SLOT_HISTORICO) {
                     player.openInventory(BankGUI.historico());
                 }
@@ -40,9 +47,9 @@ public final class BankGUIListener implements Listener {
                 if (slot == BankGUI.SLOT_VOLTAR) {
                     player.openInventory(BankGUI.principal(plugin, player, economia));
                 } else if (slot == BankGUI.SLOT_DEPOSITAR) {
-                    player.sendMessage(color("&a[Banco] &fO módulo de depósito será conectado ao saldo bancário persistente."));
+                    input.start(player, BankOperationInputListener.Operation.DEPOSIT);
                 } else if (slot == BankGUI.SLOT_SACAR) {
-                    player.sendMessage(color("&a[Banco] &fO módulo de saque será conectado ao saldo bancário persistente."));
+                    input.start(player, BankOperationInputListener.Operation.WITHDRAW);
                 }
             }
             case HISTORY -> {

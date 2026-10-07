@@ -28,3 +28,4 @@ banco:
   operacoes:
     minimo: 1000.0
     limite-saques-diarios: 10
+    tempo-limite-segundos: 30

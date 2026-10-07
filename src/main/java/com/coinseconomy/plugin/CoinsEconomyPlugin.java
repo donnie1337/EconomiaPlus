@@ -6,6 +6,8 @@ import com.coinseconomy.plugin.commands.CoinsCommand;
 import com.coinseconomy.plugin.commands.PagarCommand;
 import com.coinseconomy.plugin.commands.TopCoinsCommand;
 import com.coinseconomy.plugin.economy.EconomyManager;
+import com.coinseconomy.plugin.bank.BankManager;
+import com.coinseconomy.plugin.bank.BankOperationInputListener;
 import com.coinseconomy.plugin.api.EconomyApi;
 import org.bukkit.plugin.ServicePriority;
 import com.coinseconomy.plugin.gui.TopCoinsGUIListener;
@@ -25,6 +27,8 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
     private static CoinsEconomyPlugin instance;
 
     private EconomyManager economyManager;
+    private BankManager bankManager;
+    private BankOperationInputListener bankOperationInput;
 
     @Override
     public void onEnable() {
@@ -35,6 +39,9 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
 
         this.economyManager = new EconomyManager(this);
         this.economyManager.load();
+        this.bankManager = new BankManager(this);
+        this.bankManager.load();
+        this.bankOperationInput = new BankOperationInputListener(this, economyManager, bankManager);
 
         registrarApi();
         registrarComandos();
@@ -48,6 +55,9 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
     public void onDisable() {
         if (economyManager != null) {
             economyManager.save();
+        }
+        if (bankManager != null) {
+            bankManager.save();
         }
         Bukkit.getServicesManager().unregisterAll(this);
         getLogger().info("EconomiaPlus foi desativado. Dados salvos em disco.");
@@ -111,14 +121,15 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
         TopCoinsCommand topCoinsCommand = new TopCoinsCommand(this, economyManager);
         getCommand("topcoins").setExecutor(topCoinsCommand);
 
-        BankCommand bankCommand = new BankCommand(this, economyManager);
+        BankCommand bankCommand = new BankCommand(this, economyManager, bankManager);
         getCommand("banco").setExecutor(bankCommand);
     }
 
     private void registrarEventos() {
         Bukkit.getPluginManager().registerEvents(new TopCoinsGUIListener(economyManager), this);
         Bukkit.getPluginManager().registerEvents(new CoinsWalletGUIListener(this, economyManager), this);
-        Bukkit.getPluginManager().registerEvents(new BankGUIListener(this, economyManager), this);
+        Bukkit.getPluginManager().registerEvents(new BankGUIListener(this, economyManager, bankManager, bankOperationInput), this);
+        Bukkit.getPluginManager().registerEvents(bankOperationInput, this);
         Bukkit.getPluginManager().registerEvents(new JoinListener(economyManager), this);
     }
 
@@ -126,7 +137,10 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
         long intervalo = getConfig().getLong("salvamento-automatico-ticks", 6000L);
         Bukkit.getScheduler().runTaskTimerAsynchronously(
                 this,
-                economyManager::save,
+                () -> {
+                    economyManager.save();
+                    if (bankManager != null) bankManager.save();
+                },
                 intervalo,
                 intervalo
         );
@@ -138,6 +152,10 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
 
     public EconomyManager getEconomyManager() {
         return economyManager;
+    }
+
+    public BankManager getBankManager() {
+        return bankManager;
     }
 
     public boolean isMagnata(java.util.UUID playerId) {

@@ -2,6 +2,7 @@ package com.coinseconomy.plugin.commands;
 
 import com.coinseconomy.plugin.CoinsEconomyPlugin;
 import com.coinseconomy.plugin.economy.EconomyManager;
+import com.coinseconomy.plugin.bank.BankManager;
 import com.coinseconomy.plugin.gui.BankGUI;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -13,10 +14,12 @@ public final class BankCommand implements CommandExecutor {
 
     private final CoinsEconomyPlugin plugin;
     private final EconomyManager economia;
+    private final BankManager banco;
 
-    public BankCommand(CoinsEconomyPlugin plugin, EconomyManager economia) {
+    public BankCommand(CoinsEconomyPlugin plugin, EconomyManager economia, BankManager banco) {
         this.plugin = plugin;
         this.economia = economia;
+        this.banco = banco;
     }
 
     @Override
@@ -27,7 +30,7 @@ public final class BankCommand implements CommandExecutor {
         }
 
         economia.criarConta(player);
-        player.openInventory(BankGUI.principal(plugin, player, economia));
+        player.openInventory(BankGUI.principal(plugin, player, economia, banco));
         return true;
     }
 }
