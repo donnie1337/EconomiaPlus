@@ -19,6 +19,8 @@ import java.util.stream.Collectors;
  * /coins            -> mostra o próprio saldo
  * /coins <jogador>  -> mostra o saldo de outro jogador
  * /coins top        -> atalho para /topcoins
+ * /coins pagar <jogador> <quantidade> -> transfere coins
+ * /coins pay   <jogador> <quantidade> -> alias de /coins pagar
  * /coins give <jogador> <quantidade>  (admin) -> adiciona coins
  * /coins set  <jogador> <quantidade>  (admin) -> define o saldo
  */
@@ -46,6 +48,9 @@ public class CoinsCommand implements CommandExecutor, TabCompleter {
                 return alterarSaldoAdmin(sender, args, TipoAlteracao.ADICIONAR);
             case "set":
                 return alterarSaldoAdmin(sender, args, TipoAlteracao.DEFINIR);
+            case "pagar":
+            case "pay":
+                return pagar(sender, args);
             case "top":
                 Bukkit.dispatchCommand(sender, "topcoins");
                 return true;
@@ -82,6 +87,68 @@ public class CoinsCommand implements CommandExecutor, TabCompleter {
 
         sender.sendMessage(ChatColor.GOLD + alvo.getName() + ChatColor.GRAY + " possui " +
                 ChatColor.YELLOW + economia.formatar(saldo) + ChatColor.GRAY + ".");
+        return true;
+    }
+
+    private boolean pagar(CommandSender sender, String[] args) {
+        if (!(sender instanceof Player pagador)) {
+            sender.sendMessage(ChatColor.RED + "Apenas jogadores podem usar este comando.");
+            return true;
+        }
+
+        if (!pagador.hasPermission("coinseconomy.pagar")) {
+            pagador.sendMessage(ChatColor.RED + "Você não tem permissão para usar este comando.");
+            return true;
+        }
+
+        if (args.length < 3) {
+            pagador.sendMessage(ChatColor.RED + "Uso correto: /coins pagar <jogador> <quantidade>");
+            return true;
+        }
+
+        if (args[1].equalsIgnoreCase(pagador.getName())) {
+            pagador.sendMessage(ChatColor.RED + "Você não pode pagar a si mesmo.");
+            return true;
+        }
+
+        OfflinePlayer alvo = Bukkit.getOfflinePlayer(args[1]);
+        if (!alvo.hasPlayedBefore() && !alvo.isOnline()) {
+            pagador.sendMessage(ChatColor.RED + "Esse jogador nunca entrou no servidor.");
+            return true;
+        }
+
+        double quantidade;
+        try {
+            quantidade = Double.parseDouble(args[2].replace(",", "."));
+        } catch (NumberFormatException e) {
+            pagador.sendMessage(ChatColor.RED + "Quantidade inválida.");
+            return true;
+        }
+
+        if (quantidade <= 0) {
+            pagador.sendMessage(ChatColor.RED + "A quantidade deve ser maior que zero.");
+            return true;
+        }
+
+        economia.criarConta(pagador);
+        economia.criarConta(alvo);
+
+        if (!economia.tem(pagador.getUniqueId(), quantidade)) {
+            pagador.sendMessage(ChatColor.RED + "Você não possui coins suficientes para essa transação.");
+            return true;
+        }
+
+        economia.sacar(pagador, quantidade);
+        economia.depositar(alvo, quantidade);
+
+        pagador.sendMessage(ChatColor.GREEN + "Você pagou " + economia.formatar(quantidade)
+                + " para " + alvo.getName() + ".");
+
+        if (alvo.isOnline()) {
+            ((Player) alvo).sendMessage(ChatColor.GREEN + pagador.getName() + " te pagou "
+                    + economia.formatar(quantidade) + "!");
+        }
+
         return true;
     }
 
@@ -144,12 +211,17 @@ public class CoinsCommand implements CommandExecutor, TabCompleter {
                 sugestoes.add("give");
                 sugestoes.add("set");
             }
+            sugestoes.add("pagar");
+            sugestoes.add("pay");
             sugestoes.add("top");
             sugestoes.addAll(nomesOnline());
             return filtrar(sugestoes, args[0]);
         }
 
-        if (args.length == 2 && (args[0].equalsIgnoreCase("give") || args[0].equalsIgnoreCase("set"))) {
+        if (args.length == 2 && (args[0].equalsIgnoreCase("give")
+                || args[0].equalsIgnoreCase("set")
+                || args[0].equalsIgnoreCase("pagar")
+                || args[0].equalsIgnoreCase("pay"))) {
             return filtrar(nomesOnline(), args[1]);
         }
 
