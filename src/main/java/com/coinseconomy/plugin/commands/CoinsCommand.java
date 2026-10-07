@@ -96,7 +96,7 @@ public class CoinsCommand implements CommandExecutor, TabCompleter {
     }
 
     private boolean mostrarAjuda(CommandSender sender) {
-        sender.sendMessage(color("&6[Coins] &fComandos disponíveis para economia:"));
+        sender.sendMessage(color("&a[Coins] &fComandos disponíveis para economia:"));
         sender.sendMessage(color("&8» &f/coins &8- &bMostra seu saldo."));
         sender.sendMessage(color("&8» &f/coins <jogador> &8- &bMostra o saldo de outro jogador."));
         sender.sendMessage(color("&8» &f/coins pagar <jogador> <quantidade> &8- &bEnvia coins para outro jogador."));
