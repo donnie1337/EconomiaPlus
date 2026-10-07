@@ -30,8 +30,13 @@ public final class CoinsWalletGUIListener implements Listener {
             if (slot < 0 || slot >= event.getInventory().getSize()) return;
 
             switch (slot) {
-                case CoinsWalletGUI.SLOT_INFORMACOES ->
-                        player.sendMessage(color("&a[Coins] &fO controle de recebimento será conectado ao ledger de transações."));
+                case CoinsWalletGUI.SLOT_INFORMACOES -> {
+                    boolean enabled = plugin.getWalletSettingsManager().toggleReceiving(player.getUniqueId());
+                    player.sendMessage(color(enabled
+                            ? "&a&lᴄᴏɪɴs &8• &fRecebimento de Coins de outros jogadores &aativado&f."
+                            : "&c&lᴄᴏɪɴs &8• &fRecebimento de Coins de outros jogadores &cdesativado&f."));
+                    player.openInventory(CoinsWalletGUI.construir(player, economia));
+                }
                 case CoinsWalletGUI.SLOT_TRANSACOES ->
                         player.openInventory(CoinsTransactionsGUI.construir(player, plugin.getWalletTransactionManager()));
                 case CoinsWalletGUI.SLOT_TOP ->

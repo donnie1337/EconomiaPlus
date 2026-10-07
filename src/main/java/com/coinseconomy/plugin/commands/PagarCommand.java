@@ -75,6 +75,11 @@ public class PagarCommand implements CommandExecutor, TabCompleter {
         economia.criarConta(pagador);
         economia.criarConta(alvo);
 
+        if (!plugin.getWalletSettingsManager().canReceive(alvo.getUniqueId())) {
+            pagador.sendMessage(ChatColor.RED + "Esse jogador está com o recebimento de Coins desativado.");
+            return true;
+        }
+
         if (!economia.tem(pagador.getUniqueId(), quantidade)) {
             pagador.sendMessage(ChatColor.RED + "Você não possui coins suficientes para essa transação.");
             return true;

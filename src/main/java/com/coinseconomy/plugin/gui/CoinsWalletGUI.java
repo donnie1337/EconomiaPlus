@@ -39,6 +39,9 @@ public final class CoinsWalletGUI {
         double saldo = economia.getSaldo(player.getUniqueId());
         BankManager banco = CoinsEconomyPlugin.getInstance().getBankManager();
         double reservaBancaria = banco == null ? 0.0D : banco.getBalance(player.getUniqueId());
+        boolean recebimentosAtivados = CoinsEconomyPlugin.getInstance()
+                .getWalletSettingsManager()
+                .canReceive(player.getUniqueId());
 
         inventory.setItem(SLOT_INFORMACOES, item(
                 Material.NETHER_BRICKS,
@@ -50,10 +53,9 @@ public final class CoinsWalletGUI {
                         "",
                         "&fReserva bancária: &a" + formatCompactCoins(reservaBancaria),
                         "",
-                        "&7Pagamentos recebidos: &aAtivados",
-                        "&8O histórico será contabilizado em breve.",
+                        "&7Pagamentos recebidos: " + (recebimentosAtivados ? "&aAtivados" : "&cDesativados"),
                         "",
-                        "&eClique para gerenciar recebimentos"
+                        "&eClique para " + (recebimentosAtivados ? "desativar" : "ativar") + " recebimentos"
                 )
         ));
 
