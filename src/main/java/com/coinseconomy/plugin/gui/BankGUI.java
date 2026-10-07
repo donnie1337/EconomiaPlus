@@ -90,7 +90,7 @@ public final class BankGUI {
 
     public static Inventory operacoes(CoinsEconomyPlugin plugin, Player player, BankManager banco) {
         BankGUIHolder holder = new BankGUIHolder(BankGUIHolder.Screen.OPERATIONS);
-        Inventory inv = Bukkit.createInventory(holder, 36, "Banco > Operações");
+        Inventory inv = Bukkit.createInventory(holder, 36, "Banco • Operações");
         holder.setInventory(inv);
 
         double minimo = plugin.getConfig().getDouble("banco.operacoes.minimo", 1000.0);
@@ -150,7 +150,7 @@ public final class BankGUI {
         int tamanho = tamanhoHistorico(quantidadePagina);
 
         BankGUIHolder holder = new BankGUIHolder(BankGUIHolder.Screen.HISTORY, paginaValida);
-        Inventory inv = Bukkit.createInventory(holder, tamanho, "Banco > Histórico");
+        Inventory inv = Bukkit.createInventory(holder, tamanho, "Banco • Histórico");
         holder.setInventory(inv);
 
         if (quantidadePagina == 0) {

@@ -38,7 +38,7 @@ public final class CoinsTransactionsGUI {
         int tamanho = calcularTamanho(quantidadePagina);
 
         CoinsTransactionsGUIHolder holder = new CoinsTransactionsGUIHolder(paginaValida);
-        Inventory inventory = Bukkit.createInventory(holder, tamanho, "Coins > Transações");
+        Inventory inventory = Bukkit.createInventory(holder, tamanho, "Coins • Transações");
         holder.setInventory(inventory);
 
         if (quantidadePagina == 0) {

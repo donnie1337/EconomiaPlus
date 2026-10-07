@@ -38,7 +38,7 @@ public final class TopCoinsGUI {
         int paginaValida = Math.max(0, Math.min(pagina, totalPaginas - 1));
 
         TopCoinsGUIHolder holder = new TopCoinsGUIHolder(paginaValida);
-        Inventory inventario = Bukkit.createInventory(holder, TAMANHO, "Coins > Top jogadores");
+        Inventory inventario = Bukkit.createInventory(holder, TAMANHO, "Coins • Top Jogadores");
         holder.setInventory(inventario);
 
         int inicio = paginaValida * POR_PAGINA;
