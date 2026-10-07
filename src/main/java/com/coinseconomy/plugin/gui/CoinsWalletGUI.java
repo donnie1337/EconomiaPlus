@@ -152,7 +152,10 @@ public final class CoinsWalletGUI {
         }
 
         double compact = value / divisor;
-        return String.format(java.util.Locale.of("pt", "BR"), "%.2f%s Coins", compact, suffix);
+        String number = String.format(java.util.Locale.of("pt", "BR"), "%.2f", compact)
+                .replaceAll("0+$", "")
+                .replaceAll(",$", "");
+        return number + suffix + " Coins";
     }
 
     private static ItemStack item(Material material, String name, List<String> lore) {

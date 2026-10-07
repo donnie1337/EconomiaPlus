@@ -127,7 +127,10 @@ public final class TopCoinsGUI {
         }
 
         double compact = value / divisor;
-        return String.format(java.util.Locale.of("pt", "BR"), "%.2f%s Coins", compact, suffix);
+        String number = String.format(java.util.Locale.of("pt", "BR"), "%.2f", compact)
+                .replaceAll("0+$", "")
+                .replaceAll(",$", "");
+        return number + suffix + " Coins";
     }
 
     private static ItemStack criarBotao(Material material, String nome, List<String> lore) {
