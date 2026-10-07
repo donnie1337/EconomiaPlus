@@ -18,6 +18,8 @@ import java.util.stream.Collectors;
 /**
  * /coins            -> mostra o próprio saldo
  * /coins <jogador>  -> mostra o saldo de outro jogador
+ * /coins ajuda      -> mostra todos os comandos de Coins
+ * /coins help       -> alias de /coins ajuda
  * /coins top        -> atalho para /topcoins
  * /coins pagar <jogador> <quantidade> -> transfere coins
  * /coins pay   <jogador> <quantidade> -> alias de /coins pagar
@@ -51,6 +53,9 @@ public class CoinsCommand implements CommandExecutor, TabCompleter {
             case "pagar":
             case "pay":
                 return pagar(sender, args);
+            case "ajuda":
+            case "help":
+                return mostrarAjuda(sender);
             case "top":
                 Bukkit.dispatchCommand(sender, "topcoins");
                 return true;
@@ -87,6 +92,24 @@ public class CoinsCommand implements CommandExecutor, TabCompleter {
 
         sender.sendMessage(ChatColor.GOLD + alvo.getName() + ChatColor.GRAY + " possui " +
                 ChatColor.YELLOW + economia.formatar(saldo) + ChatColor.GRAY + ".");
+        return true;
+    }
+
+    private boolean mostrarAjuda(CommandSender sender) {
+        sender.sendMessage(ChatColor.GOLD + "===== EconomiaPlus - Coins =====");
+        sender.sendMessage(ChatColor.YELLOW + "/coins" + ChatColor.GRAY + " - Mostra seu saldo.");
+        sender.sendMessage(ChatColor.YELLOW + "/coins <jogador>" + ChatColor.GRAY + " - Mostra o saldo de outro jogador.");
+        sender.sendMessage(ChatColor.YELLOW + "/coins pagar <jogador> <quantidade>" + ChatColor.GRAY + " - Envia coins para outro jogador.");
+        sender.sendMessage(ChatColor.YELLOW + "/coins pay <jogador> <quantidade>" + ChatColor.GRAY + " - Alias de /coins pagar.");
+        sender.sendMessage(ChatColor.YELLOW + "/pagar <jogador> <quantidade>" + ChatColor.GRAY + " - Forma direta de pagar.");
+        sender.sendMessage(ChatColor.YELLOW + "/coins top" + ChatColor.GRAY + " - Abre o ranking de coins.");
+        sender.sendMessage(ChatColor.YELLOW + "/topcoins" + ChatColor.GRAY + " - Abre o ranking de coins.");
+
+        if (sender.hasPermission("coinseconomy.admin")) {
+            sender.sendMessage(ChatColor.RED + "/coins give <jogador> <quantidade>" + ChatColor.GRAY + " - Adiciona coins.");
+            sender.sendMessage(ChatColor.RED + "/coins set <jogador> <quantidade>" + ChatColor.GRAY + " - Define o saldo.");
+        }
+
         return true;
     }
 
@@ -211,6 +234,8 @@ public class CoinsCommand implements CommandExecutor, TabCompleter {
                 sugestoes.add("give");
                 sugestoes.add("set");
             }
+            sugestoes.add("ajuda");
+            sugestoes.add("help");
             sugestoes.add("pagar");
             sugestoes.add("pay");
             sugestoes.add("top");
