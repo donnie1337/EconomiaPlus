@@ -19,10 +19,10 @@ import java.util.UUID;
 public final class CoinsWalletGUI {
 
     public static final int TAMANHO = 27;
-    public static final int SLOT_INFORMACOES = 4;
-    public static final int SLOT_TRANSACOES = 11;
-    public static final int SLOT_TOP = 15;
-    public static final int SLOT_MAGNATA = 23;
+    public static final int SLOT_INFORMACOES = 10;
+    public static final int SLOT_TRANSACOES = 12;
+    public static final int SLOT_TOP = 14;
+    public static final int SLOT_MAGNATA = 16;
 
     private CoinsWalletGUI() {
     }
