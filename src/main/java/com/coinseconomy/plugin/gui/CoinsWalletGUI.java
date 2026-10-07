@@ -111,13 +111,40 @@ public final class CoinsWalletGUI {
                     color("&7O jogador no topo da economia."),
                     "",
                     color("&fMagnata atual: &a" + name),
-                    color("&fPatrimônio: &a" + economia.formatar(first.getValue())),
+                    color("&fPatrimônio: &a" + formatCompactCoins(first.getValue())),
                     "",
                     color("&8Quem assumir o 1º lugar recebe a tag [$].")
             ));
             stack.setItemMeta(meta);
         }
         return stack;
+    }
+
+    private static String formatCompactCoins(double value) {
+        double abs = Math.abs(value);
+        String suffix = "";
+        double divisor = 1.0D;
+
+        if (abs >= 1_000_000_000_000.0D) {
+            suffix = "T";
+            divisor = 1_000_000_000_000.0D;
+        } else if (abs >= 1_000_000_000.0D) {
+            suffix = "B";
+            divisor = 1_000_000_000.0D;
+        } else if (abs >= 1_000_000.0D) {
+            suffix = "M";
+            divisor = 1_000_000.0D;
+        } else if (abs >= 1_000.0D) {
+            suffix = "K";
+            divisor = 1_000.0D;
+        }
+
+        if (suffix.isEmpty()) {
+            return String.format(java.util.Locale.of("pt", "BR"), "%.2f Coins", value);
+        }
+
+        double compact = value / divisor;
+        return String.format(java.util.Locale.of("pt", "BR"), "%.2f%s Coins", compact, suffix);
     }
 
     private static ItemStack item(Material material, String name, List<String> lore) {
