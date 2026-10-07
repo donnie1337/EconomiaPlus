@@ -46,9 +46,9 @@ public final class CoinsWalletGUI {
                 List.of(
                         "",
                         "&7Sua carteira está com",
-                        "&a" + economia.formatar(saldo),
+                        "&a" + formatCompactCoins(saldo),
                         "",
-                        "&fReserva bancária: &a" + economia.formatar(reservaBancaria),
+                        "&fReserva bancária: &a" + formatCompactCoins(reservaBancaria),
                         "",
                         "&7Pagamentos recebidos: &aAtivados",
                         "&8O histórico será contabilizado em breve.",

@@ -42,8 +42,8 @@ public final class BankGUI {
                         "",
                         "&7Resumo da sua vida financeira",
                         "",
-                        "&fCarteira: &a" + economia.formatar(saldoCarteira),
-                        "&fReserva bancária: &a" + economia.formatar(banco.getBalance(player.getUniqueId())),
+                        "&fCarteira: &a" + formatCompactCoins(saldoCarteira),
+                        "&fReserva bancária: &a" + formatCompactCoins(banco.getBalance(player.getUniqueId())),
                         "",
                         "&fProjeção diária: &b+" + formatPercent(diaria) + "%",
                         "&fProjeção mensal: &b+" + formatPercent(mensal) + "%",
@@ -231,6 +231,33 @@ public final class BankGUI {
             item.setItemMeta(meta);
         }
         return item;
+    }
+
+    private static String formatCompactCoins(double value) {
+        double abs = Math.abs(value);
+        String suffix = "";
+        double divisor = 1.0D;
+
+        if (abs >= 1_000_000_000_000.0D) {
+            suffix = "T";
+            divisor = 1_000_000_000_000.0D;
+        } else if (abs >= 1_000_000_000.0D) {
+            suffix = "B";
+            divisor = 1_000_000_000.0D;
+        } else if (abs >= 1_000_000.0D) {
+            suffix = "M";
+            divisor = 1_000_000.0D;
+        } else if (abs >= 1_000.0D) {
+            suffix = "K";
+            divisor = 1_000.0D;
+        }
+
+        double shown = value / divisor;
+        String number = String.format(java.util.Locale.of("pt", "BR"), "%.2f", shown)
+                .replaceAll("0+$", "")
+                .replaceAll(",$", "");
+
+        return number + suffix + " Coins";
     }
 
     private static String formatPercent(double value) {
