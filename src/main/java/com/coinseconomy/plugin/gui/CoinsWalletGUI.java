@@ -4,97 +4,107 @@ import com.coinseconomy.plugin.economy.EconomyManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.SkullMeta;
 
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
-/** Menu principal de carteira aberto por /coins. */
+/** Hub visual principal aberto por /coins, baseado no layout de 27 slots. */
 public final class CoinsWalletGUI {
 
     public static final int TAMANHO = 27;
-    public static final int SLOT_SALDO = 11;
-    public static final int SLOT_PAGAR = 13;
-    public static final int SLOT_RANKING = 15;
-    public static final int SLOT_AJUDA = 22;
-    public static final int SLOT_FECHAR = 26;
+    public static final int SLOT_INFORMACOES = 4;
+    public static final int SLOT_TRANSACOES = 11;
+    public static final int SLOT_TOP = 15;
+    public static final int SLOT_MAGNATA = 23;
 
     private CoinsWalletGUI() {
     }
 
     public static Inventory construir(Player player, EconomyManager economia) {
         economia.criarConta(player);
-        double saldo = economia.getSaldo(player.getUniqueId());
 
         CoinsWalletGUIHolder holder = new CoinsWalletGUIHolder();
-        Inventory inventory = Bukkit.createInventory(
-                holder,
-                TAMANHO,
-                color("&0&lCoins &8• &fMinha carteira")
-        );
+        Inventory inventory = Bukkit.createInventory(holder, TAMANHO, "Coins");
         holder.setInventory(inventory);
 
-        ItemStack filler = item(Material.BLACK_STAINED_GLASS_PANE, " ", List.of());
-        for (int slot = 0; slot < TAMANHO; slot++) {
-            inventory.setItem(slot, filler);
-        }
+        double saldo = economia.getSaldo(player.getUniqueId());
 
-        inventory.setItem(SLOT_SALDO, item(
-                Material.EMERALD,
-                "&a&lMeu saldo",
+        inventory.setItem(SLOT_INFORMACOES, item(
+                Material.NETHER_BRICKS,
+                "&b&lSUAS INFORMAÇÕES",
                 List.of(
                         "",
-                        "&7Você possui:",
-                        "&f" + economia.formatar(saldo),
+                        "&fSaldo atual: &a" + economia.formatar(saldo),
+                        "&fTransações: &b0",
+                        "&fRecebimento: &aON",
                         "",
-                        "&8Seu saldo atual de Coins."
+                        "&aClique para alternar o status"
                 )
         ));
 
-        inventory.setItem(SLOT_PAGAR, item(
+        inventory.setItem(SLOT_TRANSACOES, item(
                 Material.PAPER,
-                "&a&lPagar jogador",
+                "&b&lTRANSAÇÕES",
                 List.of(
                         "",
-                        "&7Envie Coins para outro jogador.",
+                        "&fHistórico de movimentações",
+                        "&frealizadas no servidor",
                         "",
-                        "&eClique para ver como pagar."
+                        "&aClique para visualizar"
                 )
         ));
 
-        inventory.setItem(SLOT_RANKING, item(
-                Material.GOLD_INGOT,
-                "&6&lRanking de Coins",
-                List.of(
-                        "",
-                        "&7Veja os jogadores com",
-                        "&7mais Coins do servidor.",
-                        "",
-                        "&eClique para abrir."
-                )
-        ));
-
-        inventory.setItem(SLOT_AJUDA, item(
+        inventory.setItem(SLOT_TOP, item(
                 Material.BOOK,
-                "&b&lAjuda",
+                "&b&lTOP JOGADORES",
                 List.of(
                         "",
-                        "&7Veja todos os comandos",
-                        "&7públicos da economia.",
+                        "&fRanking dos jogadores",
+                        "&fmais ricos do servidor",
                         "",
-                        "&eClique para visualizar."
+                        "&aClique para visualizar"
                 )
         ));
 
-        inventory.setItem(SLOT_FECHAR, item(
-                Material.BARRIER,
-                "&c&lFechar",
-                List.of("", "&7Clique para fechar o menu.")
-        ));
+        inventory.setItem(SLOT_MAGNATA, magnata(economia));
 
         return inventory;
+    }
+
+    private static ItemStack magnata(EconomyManager economia) {
+        List<Map.Entry<UUID, Double>> top = economia.getTop(1);
+        if (top.isEmpty()) {
+            return item(
+                    Material.EMERALD_BLOCK,
+                    "&b&lMAGNATA",
+                    List.of("", "&7Nenhum jogador no ranking ainda.")
+            );
+        }
+
+        Map.Entry<UUID, Double> first = top.get(0);
+        OfflinePlayer player = Bukkit.getOfflinePlayer(first.getKey());
+        String name = player.getName() != null ? player.getName() : economia.getNomeConhecido(first.getKey());
+
+        ItemStack stack = new ItemStack(Material.EMERALD_BLOCK);
+        ItemMeta meta = stack.getItemMeta();
+        if (meta != null) {
+            meta.setDisplayName(color("&b&lMAGNATA"));
+            meta.setLore(List.of(
+                    "",
+                    color("&fJogador: &a" + name),
+                    "",
+                    color("&fFortuna: &a" + economia.formatar(first.getValue()))
+            ));
+            stack.setItemMeta(meta);
+        }
+        return stack;
     }
 
     private static ItemStack item(Material material, String name, List<String> lore) {
@@ -102,9 +112,7 @@ public final class CoinsWalletGUI {
         ItemMeta meta = item.getItemMeta();
         if (meta != null) {
             meta.setDisplayName(color(name));
-            if (!lore.isEmpty()) {
-                meta.setLore(lore.stream().map(CoinsWalletGUI::color).toList());
-            }
+            meta.setLore(lore.stream().map(CoinsWalletGUI::color).toList());
             item.setItemMeta(meta);
         }
         return item;

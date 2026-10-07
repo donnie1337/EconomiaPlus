@@ -18,3 +18,13 @@ cobranca-permite-saldo-negativo: false
 # Intervalo (em ticks, 20 ticks = 1 segundo) entre os salvamentos
 # automáticos dos dados em disco. Padrão: 6000 ticks = 5 minutos.
 salvamento-automatico-ticks: 6000
+
+
+# Banco - valores iniciais da interface.
+# O rendimento será conectado à Selic real na etapa do backend bancário.
+banco:
+  rendimento-diario-percentual: 0.035
+  rendimento-mensal-percentual: 1.05
+  operacoes:
+    minimo: 1000.0
+    limite-saques-diarios: 10

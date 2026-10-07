@@ -1,5 +1,6 @@
 package com.coinseconomy.plugin;
 
+import com.coinseconomy.plugin.commands.BankCommand;
 import com.coinseconomy.plugin.commands.CobrarCommand;
 import com.coinseconomy.plugin.commands.CoinsCommand;
 import com.coinseconomy.plugin.commands.PagarCommand;
@@ -8,6 +9,7 @@ import com.coinseconomy.plugin.economy.EconomyManager;
 import com.coinseconomy.plugin.api.EconomyApi;
 import org.bukkit.plugin.ServicePriority;
 import com.coinseconomy.plugin.gui.TopCoinsGUIListener;
+import com.coinseconomy.plugin.gui.BankGUIListener;
 import com.coinseconomy.plugin.gui.CoinsWalletGUIListener;
 import com.coinseconomy.plugin.listeners.JoinListener;
 import org.bukkit.Bukkit;
@@ -108,11 +110,15 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
 
         TopCoinsCommand topCoinsCommand = new TopCoinsCommand(this, economyManager);
         getCommand("topcoins").setExecutor(topCoinsCommand);
+
+        BankCommand bankCommand = new BankCommand(this, economyManager);
+        getCommand("banco").setExecutor(bankCommand);
     }
 
     private void registrarEventos() {
         Bukkit.getPluginManager().registerEvents(new TopCoinsGUIListener(), this);
         Bukkit.getPluginManager().registerEvents(new CoinsWalletGUIListener(this, economyManager), this);
+        Bukkit.getPluginManager().registerEvents(new BankGUIListener(this, economyManager), this);
         Bukkit.getPluginManager().registerEvents(new JoinListener(economyManager), this);
     }
 

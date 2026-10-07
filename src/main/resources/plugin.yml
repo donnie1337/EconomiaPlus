@@ -29,6 +29,11 @@ commands:
     usage: "/<command>"
     permission: coinseconomy.top
     permission-message: "§cVocê não tem permissão para usar este comando."
+  banco:
+    description: Abre o banco de Coins.
+    usage: "/<command>"
+    permission: coinseconomy.banco
+    permission-message: "§cVocê não tem permissão para usar este comando."
 
 permissions:
   coinseconomy.*:
@@ -39,6 +44,7 @@ permissions:
       coinseconomy.pagar: true
       coinseconomy.cobrar: true
       coinseconomy.top: true
+      coinseconomy.banco: true
       coinseconomy.admin: true
   coinseconomy.coins:
     description: Permite ver o próprio saldo e o saldo de outros jogadores.
@@ -51,6 +57,9 @@ permissions:
     default: op
   coinseconomy.top:
     description: Permite ver o ranking dos 10 jogadores com mais coins.
+    default: true
+  coinseconomy.banco:
+    description: Permite abrir o menu /banco.
     default: true
   coinseconomy.admin:
     description: Permite usar "/coins give" e "/coins set" para gerenciar o saldo de qualquer jogador.
