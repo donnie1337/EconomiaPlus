@@ -1,5 +1,7 @@
 package com.coinseconomy.plugin.gui;
 
+import com.coinseconomy.plugin.CoinsEconomyPlugin;
+import com.coinseconomy.plugin.bank.BankManager;
 import com.coinseconomy.plugin.economy.EconomyManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -35,6 +37,8 @@ public final class CoinsWalletGUI {
         holder.setInventory(inventory);
 
         double saldo = economia.getSaldo(player.getUniqueId());
+        BankManager banco = CoinsEconomyPlugin.getInstance().getBankManager();
+        double reservaBancaria = banco == null ? 0.0D : banco.getBalance(player.getUniqueId());
 
         inventory.setItem(SLOT_INFORMACOES, item(
                 Material.NETHER_BRICKS,
@@ -43,6 +47,8 @@ public final class CoinsWalletGUI {
                         "",
                         "&7Sua carteira está com",
                         "&a" + economia.formatar(saldo),
+                        "",
+                        "&fReserva bancária: &a" + economia.formatar(reservaBancaria),
                         "",
                         "&7Pagamentos recebidos: &aAtivados",
                         "&8O histórico será contabilizado em breve.",
