@@ -8,6 +8,10 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
@@ -21,6 +25,7 @@ public final class BankManager {
     private final Map<UUID, Double> balances = new ConcurrentHashMap<>();
     private final Map<UUID, Integer> withdrawCounts = new ConcurrentHashMap<>();
     private final Map<UUID, LocalDate> withdrawDates = new ConcurrentHashMap<>();
+    private final Map<UUID, List<BankTransaction>> history = new ConcurrentHashMap<>();
 
     public BankManager(CoinsEconomyPlugin plugin) {
         this.plugin = plugin;
@@ -47,6 +52,27 @@ public final class BankManager {
                     } catch (RuntimeException ignored) {
                     }
                 }
+
+                List<?> savedHistory = data.getList("jogadores." + raw + ".historico", List.of());
+                List<BankTransaction> parsedHistory = new ArrayList<>();
+                for (Object value : savedHistory) {
+                    if (!(value instanceof Map<?, ?> map)) continue;
+                    try {
+                        BankTransaction.Type type = BankTransaction.Type.valueOf(String.valueOf(map.get("tipo")));
+                        double amount = map.get("valor") instanceof Number number
+                                ? number.doubleValue()
+                                : Double.parseDouble(String.valueOf(map.get("valor")));
+                        long timestamp = map.get("data") instanceof Number number
+                                ? number.longValue()
+                                : Long.parseLong(String.valueOf(map.get("data")));
+                        if (Double.isFinite(amount) && amount > 0.0D) {
+                            parsedHistory.add(new BankTransaction(type, amount, timestamp));
+                        }
+                    } catch (RuntimeException ignored) {
+                    }
+                }
+                parsedHistory.sort(Comparator.comparingLong(BankTransaction::timestamp).reversed());
+                history.put(uuid, parsedHistory);
             } catch (IllegalArgumentException ignored) {
                 plugin.getLogger().warning("UUID inválido em bank.yml: " + raw);
             }
@@ -63,6 +89,16 @@ public final class BankManager {
             data.set(path + ".saques-dia", getWithdrawCount(uuid));
             LocalDate date = withdrawDates.get(uuid);
             data.set(path + ".data-saques", date == null ? null : date.toString());
+
+            List<Map<String, Object>> savedHistory = new ArrayList<>();
+            for (BankTransaction transaction : history.getOrDefault(uuid, List.of())) {
+                Map<String, Object> entry = new LinkedHashMap<>();
+                entry.put("tipo", transaction.type().name());
+                entry.put("valor", transaction.amount());
+                entry.put("data", transaction.timestamp());
+                savedHistory.add(entry);
+            }
+            data.set(path + ".historico", savedHistory);
         }
 
         try {
@@ -81,6 +117,7 @@ public final class BankManager {
     public synchronized void deposit(UUID uuid, double amount) {
         if (uuid == null || !Double.isFinite(amount) || amount <= 0.0D) return;
         balances.merge(uuid, amount, Double::sum);
+        addHistory(uuid, new BankTransaction(BankTransaction.Type.DEPOSIT, amount, System.currentTimeMillis()));
         saveLater();
     }
 
@@ -91,8 +128,27 @@ public final class BankManager {
 
         balances.put(uuid, Math.max(0.0D, current - amount));
         incrementWithdraw(uuid);
+        addHistory(uuid, new BankTransaction(BankTransaction.Type.WITHDRAW, amount, System.currentTimeMillis()));
         saveLater();
         return true;
+    }
+
+    public List<BankTransaction> getHistory(UUID uuid) {
+        List<BankTransaction> list = history.get(uuid);
+        if (list == null || list.isEmpty()) return List.of();
+        synchronized (list) {
+            return new ArrayList<>(list);
+        }
+    }
+
+    private void addHistory(UUID uuid, BankTransaction transaction) {
+        List<BankTransaction> list = history.computeIfAbsent(uuid, ignored -> java.util.Collections.synchronizedList(new ArrayList<>()));
+        synchronized (list) {
+            list.add(0, transaction);
+            if (list.size() > 500) {
+                list.subList(500, list.size()).clear();
+            }
+        }
     }
 
     public int getWithdrawCount(UUID uuid) {

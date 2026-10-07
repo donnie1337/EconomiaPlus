@@ -40,7 +40,7 @@ public final class BankGUIListener implements Listener {
                 if (slot == BankGUI.SLOT_OPERACOES) {
                     player.openInventory(BankGUI.operacoes(plugin, player, banco));
                 } else if (slot == BankGUI.SLOT_HISTORICO) {
-                    player.openInventory(BankGUI.historico());
+                    player.openInventory(BankGUI.historico(player, banco));
                 }
             }
             case OPERATIONS -> {
@@ -53,8 +53,13 @@ public final class BankGUIListener implements Listener {
                 }
             }
             case HISTORY -> {
-                if (slot == BankGUI.slotVoltarHistorico(event.getInventory().getSize())) {
+                int size = event.getInventory().getSize();
+                if (slot == BankGUI.slotVoltarHistorico(size)) {
                     player.openInventory(BankGUI.principal(plugin, player, economia, banco));
+                } else if (slot == BankGUI.slotAnteriorHistorico(size) && holder.getPage() > 0) {
+                    player.openInventory(BankGUI.historico(player, banco, holder.getPage() - 1));
+                } else if (slot == BankGUI.slotProximaHistorico(size)) {
+                    player.openInventory(BankGUI.historico(player, banco, holder.getPage() + 1));
                 }
             }
         }

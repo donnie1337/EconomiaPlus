@@ -3,6 +3,7 @@ package com.coinseconomy.plugin.gui;
 import com.coinseconomy.plugin.CoinsEconomyPlugin;
 import com.coinseconomy.plugin.economy.EconomyManager;
 import com.coinseconomy.plugin.bank.BankManager;
+import com.coinseconomy.plugin.bank.BankTransaction;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -11,6 +12,10 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 /** Telas visuais do /banco inspiradas no layout enviado pelo servidor. */
@@ -130,21 +135,21 @@ public final class BankGUI {
         return inv;
     }
 
-    public static Inventory historico() {
-        return historico(List.of(), 0);
+    public static Inventory historico(Player player, BankManager banco) {
+        return historico(player, banco, 0);
     }
 
-    public static Inventory historico(List<ItemStack> movimentacoes, int pagina) {
-        List<ItemStack> registros = movimentacoes == null ? List.of() : movimentacoes;
+    public static Inventory historico(Player player, BankManager banco, int pagina) {
+        List<BankTransaction> movimentacoes = banco.getHistory(player.getUniqueId());
         final int maxPorPagina = 21;
-        int totalPaginas = Math.max(1, (int) Math.ceil(registros.size() / (double) maxPorPagina));
+        int totalPaginas = Math.max(1, (int) Math.ceil(movimentacoes.size() / (double) maxPorPagina));
         int paginaValida = Math.max(0, Math.min(pagina, totalPaginas - 1));
 
         int inicio = paginaValida * maxPorPagina;
-        int quantidadePagina = Math.min(maxPorPagina, Math.max(0, registros.size() - inicio));
+        int quantidadePagina = Math.min(maxPorPagina, Math.max(0, movimentacoes.size() - inicio));
         int tamanho = tamanhoHistorico(quantidadePagina);
 
-        BankGUIHolder holder = new BankGUIHolder(BankGUIHolder.Screen.HISTORY);
+        BankGUIHolder holder = new BankGUIHolder(BankGUIHolder.Screen.HISTORY, paginaValida);
         Inventory inv = Bukkit.createInventory(holder, tamanho, "Banco > Histórico");
         holder.setInventory(inv);
 
@@ -163,7 +168,7 @@ public final class BankGUI {
         } else {
             int[] slots = slotsHistorico(tamanho);
             for (int i = 0; i < quantidadePagina; i++) {
-                inv.setItem(slots[i], registros.get(inicio + i));
+                inv.setItem(slots[i], transactionItem(movimentacoes.get(inicio + i)));
             }
         }
 
@@ -193,6 +198,14 @@ public final class BankGUI {
         return inv;
     }
 
+    public static int slotAnteriorHistorico(int tamanhoInventario) {
+        return tamanhoInventario - 6;
+    }
+
+    public static int slotProximaHistorico(int tamanhoInventario) {
+        return tamanhoInventario - 4;
+    }
+
     public static int slotVoltarHistorico(int tamanhoInventario) {
         return tamanhoInventario - 5;
     }
@@ -220,6 +233,27 @@ public final class BankGUI {
             }
         }
         return slots;
+    }
+
+    private static ItemStack transactionItem(BankTransaction transaction) {
+        boolean deposit = transaction.type() == BankTransaction.Type.DEPOSIT;
+        Material material = deposit ? Material.EMERALD : Material.REDSTONE;
+        String prefix = deposit ? "&a+" : "&c-";
+        String description = deposit ? "&fQuantia depositada: &a" : "&fQuantia sacada: &c";
+
+        String date = DateTimeFormatter.ofPattern("dd/MM/yyyy - HH:mm")
+                .withZone(ZoneId.systemDefault())
+                .format(Instant.ofEpochMilli(transaction.timestamp()));
+
+        return item(
+                material,
+                prefix + " " + formatCompactCoins(transaction.amount()),
+                List.of(
+                        "",
+                        "&fData: &7" + date,
+                        description + formatCompactCoins(transaction.amount())
+                )
+        );
     }
 
     private static ItemStack item(Material material, String name, List<String> lore) {
