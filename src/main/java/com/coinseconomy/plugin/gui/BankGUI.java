@@ -36,7 +36,7 @@ public final class BankGUI {
 
         inv.setItem(SLOT_INFO, item(
                 Material.NETHER_BRICKS,
-                "&b&lSUAS INFORMAÇÕES",
+                "&bSUAS INFORMAÇÕES",
                 List.of(
                         "",
                         "&fEconomia: &aCoins",
@@ -51,7 +51,7 @@ public final class BankGUI {
 
         inv.setItem(SLOT_OPERACOES, item(
                 Material.CRAFTING_TABLE,
-                "&b&lOPERAÇÕES",
+                "&bOPERAÇÕES",
                 List.of(
                         "",
                         "&fRealize depósitos, saques",
@@ -63,7 +63,7 @@ public final class BankGUI {
 
         inv.setItem(SLOT_HISTORICO, item(
                 Material.PAPER,
-                "&b&lHISTÓRICO",
+                "&bHISTÓRICO",
                 List.of(
                         "",
                         "&fHistórico de movimentações",
