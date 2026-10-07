@@ -35,6 +35,7 @@ public class EconomyManager implements EconomyApi {
     private final ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
 
     private double saldoInicial;
+    private volatile UUID magnataId;
 
     public EconomyManager(CoinsEconomyPlugin plugin) {
         this.plugin = plugin;
@@ -83,6 +84,8 @@ public class EconomyManager implements EconomyApi {
         } finally {
             lock.writeLock().unlock();
         }
+
+        atualizarMagnata();
     }
 
     /**
@@ -110,13 +113,14 @@ public class EconomyManager implements EconomyApi {
         }
     }
 
-    private void garantirConta(UUID uuid, String nomeAtual) {
-        saldos.putIfAbsent(uuid, saldoInicial);
+    private boolean garantirConta(UUID uuid, String nomeAtual) {
+        boolean criada = saldos.putIfAbsent(uuid, saldoInicial) == null;
         if (nomeAtual != null && !nomeAtual.isEmpty()) {
             nomesConhecidos.put(uuid, nomeAtual);
         } else {
             nomesConhecidos.putIfAbsent(uuid, "Desconhecido");
         }
+        return criada;
     }
 
     public boolean temConta(UUID uuid) {
@@ -124,7 +128,9 @@ public class EconomyManager implements EconomyApi {
     }
 
     public void criarConta(OfflinePlayer jogador) {
-        garantirConta(jogador.getUniqueId(), jogador.getName());
+        if (garantirConta(jogador.getUniqueId(), jogador.getName()) && saldoInicial > 0.0D) {
+            atualizarMagnata();
+        }
     }
 
     public double getSaldo(UUID uuid) {
@@ -139,6 +145,7 @@ public class EconomyManager implements EconomyApi {
         UUID uuid = jogador.getUniqueId();
         garantirConta(uuid, jogador.getName());
         saldos.merge(uuid, quantidade, Double::sum);
+        atualizarMagnata();
     }
 
     /**
@@ -156,6 +163,7 @@ public class EconomyManager implements EconomyApi {
         }
 
         saldos.put(uuid, atual - quantidade);
+        atualizarMagnata();
         return true;
     }
 
@@ -163,6 +171,7 @@ public class EconomyManager implements EconomyApi {
         UUID uuid = jogador.getUniqueId();
         garantirConta(uuid, jogador.getName());
         saldos.put(uuid, quantidade);
+        atualizarMagnata();
     }
 
     public String getNomeConhecido(UUID uuid) {
@@ -173,13 +182,63 @@ public class EconomyManager implements EconomyApi {
      * Retorna os N jogadores com mais coins, do maior para o menor saldo.
      */
     public List<Map.Entry<UUID, Double>> getTop(int quantidade) {
-        List<Map.Entry<UUID, Double>> lista = new ArrayList<>(saldos.entrySet());
-        lista.sort((a, b) -> Double.compare(b.getValue(), a.getValue()));
+        if (quantidade <= 0) return List.of();
+
+        List<Map.Entry<UUID, Double>> lista = new ArrayList<>();
+        for (Map.Entry<UUID, Double> entrada : saldos.entrySet()) {
+            if (entrada.getValue() != null && entrada.getValue() > 0.0D) {
+                lista.add(Map.entry(entrada.getKey(), entrada.getValue()));
+            }
+        }
+
+        lista.sort((a, b) -> {
+            int saldo = Double.compare(b.getValue(), a.getValue());
+            if (saldo != 0) return saldo;
+
+            String nomeA = nomesConhecidos.getOrDefault(a.getKey(), "");
+            String nomeB = nomesConhecidos.getOrDefault(b.getKey(), "");
+            int nome = nomeA.compareToIgnoreCase(nomeB);
+            if (nome != 0) return nome;
+            return a.getKey().compareTo(b.getKey());
+        });
 
         if (lista.size() > quantidade) {
             return new ArrayList<>(lista.subList(0, quantidade));
         }
         return lista;
+    }
+
+    public UUID getMagnataId() {
+        return magnataId;
+    }
+
+    public boolean isMagnata(UUID uuid) {
+        return uuid != null && uuid.equals(magnataId);
+    }
+
+    private void atualizarMagnata() {
+        UUID melhor = null;
+        double maiorSaldo = 0.0D;
+        String melhorNome = "";
+
+        for (Map.Entry<UUID, Double> entrada : saldos.entrySet()) {
+            double saldo = entrada.getValue() == null ? 0.0D : entrada.getValue();
+            if (saldo <= 0.0D) continue;
+
+            String nome = nomesConhecidos.getOrDefault(entrada.getKey(), "");
+            if (melhor == null
+                    || saldo > maiorSaldo
+                    || (Double.compare(saldo, maiorSaldo) == 0 && nome.compareToIgnoreCase(melhorNome) < 0)
+                    || (Double.compare(saldo, maiorSaldo) == 0
+                        && nome.equalsIgnoreCase(melhorNome)
+                        && entrada.getKey().compareTo(melhor) < 0)) {
+                melhor = entrada.getKey();
+                maiorSaldo = saldo;
+                melhorNome = nome;
+            }
+        }
+
+        magnataId = melhor;
     }
 
     /**

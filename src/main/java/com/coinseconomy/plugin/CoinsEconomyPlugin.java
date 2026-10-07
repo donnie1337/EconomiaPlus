@@ -139,4 +139,16 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
     public EconomyManager getEconomyManager() {
         return economyManager;
     }
+
+    public boolean isMagnata(java.util.UUID playerId) {
+        return economyManager != null && economyManager.isMagnata(playerId);
+    }
+
+    public java.util.UUID getMagnataId() {
+        return economyManager == null ? null : economyManager.getMagnataId();
+    }
+
+    public String getMagnataTag(java.util.UUID playerId) {
+        return isMagnata(playerId) ? "§a$" : "";
+    }
 }
