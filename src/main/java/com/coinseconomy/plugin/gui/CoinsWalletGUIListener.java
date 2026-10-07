@@ -33,7 +33,7 @@ public final class CoinsWalletGUIListener implements Listener {
                 case CoinsWalletGUI.SLOT_INFORMACOES ->
                         player.sendMessage(color("&a[Coins] &fO controle de recebimento será conectado ao ledger de transações."));
                 case CoinsWalletGUI.SLOT_TRANSACOES ->
-                        player.openInventory(CoinsTransactionsGUI.construir());
+                        player.openInventory(CoinsTransactionsGUI.construir(player, plugin.getWalletTransactionManager()));
                 case CoinsWalletGUI.SLOT_TOP ->
                         player.openInventory(TopCoinsGUI.construir(economia));
                 case CoinsWalletGUI.SLOT_MAGNATA -> {
@@ -45,10 +45,21 @@ public final class CoinsWalletGUIListener implements Listener {
             return;
         }
 
-        if (event.getInventory().getHolder() instanceof CoinsTransactionsGUIHolder) {
+        if (event.getInventory().getHolder() instanceof CoinsTransactionsGUIHolder holder) {
             event.setCancelled(true);
-            if (event.getRawSlot() == CoinsTransactionsGUI.slotVoltar(event.getInventory().getSize())) {
+            int size = event.getInventory().getSize();
+            int slot = event.getRawSlot();
+
+            if (slot == CoinsTransactionsGUI.slotVoltar(size)) {
                 player.openInventory(CoinsWalletGUI.construir(player, economia));
+            } else if (slot == CoinsTransactionsGUI.slotAnterior(size) && holder.getPage() > 0) {
+                player.openInventory(CoinsTransactionsGUI.construir(
+                        player, plugin.getWalletTransactionManager(), holder.getPage() - 1
+                ));
+            } else if (slot == CoinsTransactionsGUI.slotProxima(size)) {
+                player.openInventory(CoinsTransactionsGUI.construir(
+                        player, plugin.getWalletTransactionManager(), holder.getPage() + 1
+                ));
             }
         }
     }

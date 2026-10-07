@@ -2,6 +2,7 @@ package com.coinseconomy.plugin.commands;
 
 import com.coinseconomy.plugin.CoinsEconomyPlugin;
 import com.coinseconomy.plugin.economy.EconomyManager;
+import com.coinseconomy.plugin.transactions.WalletTransaction;
 import com.coinseconomy.plugin.gui.CoinsWalletGUI;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -151,6 +152,18 @@ public class CoinsCommand implements CommandExecutor, TabCompleter {
 
         economia.sacar(pagador, quantidade);
         economia.depositar(alvo, quantidade);
+        plugin.getWalletTransactionManager().record(
+                pagador.getUniqueId(),
+                WalletTransaction.Type.PAYMENT_SENT,
+                quantidade,
+                alvo.getName()
+        );
+        plugin.getWalletTransactionManager().record(
+                alvo.getUniqueId(),
+                WalletTransaction.Type.PAYMENT_RECEIVED,
+                quantidade,
+                pagador.getName()
+        );
 
         pagador.sendMessage(ChatColor.GREEN + "Você pagou " + economia.formatar(quantidade)
                 + " para " + alvo.getName() + ".");
@@ -196,10 +209,33 @@ public class CoinsCommand implements CommandExecutor, TabCompleter {
             return true;
         }
 
+        double saldoAnterior = economia.getSaldo(alvo.getUniqueId());
         if (tipo == TipoAlteracao.ADICIONAR) {
             economia.depositar(alvo, quantidade);
+            plugin.getWalletTransactionManager().record(
+                    alvo.getUniqueId(),
+                    WalletTransaction.Type.ADMIN_ADD,
+                    quantidade,
+                    sender.getName()
+            );
         } else {
             economia.definirSaldo(alvo, quantidade);
+            double diferenca = quantidade - saldoAnterior;
+            if (diferenca > 0.0D) {
+                plugin.getWalletTransactionManager().record(
+                        alvo.getUniqueId(),
+                        WalletTransaction.Type.ADMIN_ADD,
+                        diferenca,
+                        sender.getName()
+                );
+            } else if (diferenca < 0.0D) {
+                plugin.getWalletTransactionManager().record(
+                        alvo.getUniqueId(),
+                        WalletTransaction.Type.ADMIN_REMOVE,
+                        Math.abs(diferenca),
+                        sender.getName()
+                );
+            }
         }
 
         double novoSaldo = economia.getSaldo(alvo.getUniqueId());

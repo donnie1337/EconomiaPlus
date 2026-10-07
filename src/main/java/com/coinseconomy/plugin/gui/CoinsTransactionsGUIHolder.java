@@ -4,7 +4,27 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 
 public final class CoinsTransactionsGUIHolder implements InventoryHolder {
+    private final int page;
     private Inventory inventory;
-    @Override public Inventory getInventory() { return inventory; }
-    public void setInventory(Inventory inventory) { this.inventory = inventory; }
+
+    public CoinsTransactionsGUIHolder() {
+        this(0);
+    }
+
+    public CoinsTransactionsGUIHolder(int page) {
+        this.page = Math.max(0, page);
+    }
+
+    public int getPage() {
+        return page;
+    }
+
+    @Override
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
 }

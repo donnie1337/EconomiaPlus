@@ -8,6 +8,7 @@ import com.coinseconomy.plugin.commands.TopCoinsCommand;
 import com.coinseconomy.plugin.economy.EconomyManager;
 import com.coinseconomy.plugin.bank.BankManager;
 import com.coinseconomy.plugin.bank.BankOperationInputListener;
+import com.coinseconomy.plugin.transactions.WalletTransactionManager;
 import com.coinseconomy.plugin.api.EconomyApi;
 import org.bukkit.plugin.ServicePriority;
 import com.coinseconomy.plugin.gui.TopCoinsGUIListener;
@@ -29,6 +30,7 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
     private EconomyManager economyManager;
     private BankManager bankManager;
     private BankOperationInputListener bankOperationInput;
+    private WalletTransactionManager walletTransactionManager;
 
     @Override
     public void onEnable() {
@@ -41,6 +43,8 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
         this.economyManager.load();
         this.bankManager = new BankManager(this);
         this.bankManager.load();
+        this.walletTransactionManager = new WalletTransactionManager(this);
+        this.walletTransactionManager.load();
         this.bankOperationInput = new BankOperationInputListener(this, economyManager, bankManager);
 
         registrarApi();
@@ -58,6 +62,9 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
         }
         if (bankManager != null) {
             bankManager.save();
+        }
+        if (walletTransactionManager != null) {
+            walletTransactionManager.save();
         }
         Bukkit.getServicesManager().unregisterAll(this);
         getLogger().info("EconomiaPlus foi desativado. Dados salvos em disco.");
@@ -140,6 +147,7 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
                 () -> {
                     economyManager.save();
                     if (bankManager != null) bankManager.save();
+                    if (walletTransactionManager != null) walletTransactionManager.save();
                 },
                 intervalo,
                 intervalo
@@ -156,6 +164,10 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
 
     public BankManager getBankManager() {
         return bankManager;
+    }
+
+    public WalletTransactionManager getWalletTransactionManager() {
+        return walletTransactionManager;
     }
 
     public boolean isMagnata(java.util.UUID playerId) {

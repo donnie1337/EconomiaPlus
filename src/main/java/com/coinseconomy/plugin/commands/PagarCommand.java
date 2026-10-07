@@ -2,6 +2,7 @@ package com.coinseconomy.plugin.commands;
 
 import com.coinseconomy.plugin.CoinsEconomyPlugin;
 import com.coinseconomy.plugin.economy.EconomyManager;
+import com.coinseconomy.plugin.transactions.WalletTransaction;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
@@ -81,6 +82,18 @@ public class PagarCommand implements CommandExecutor, TabCompleter {
 
         economia.sacar(pagador, quantidade);
         economia.depositar(alvo, quantidade);
+        plugin.getWalletTransactionManager().record(
+                pagador.getUniqueId(),
+                WalletTransaction.Type.PAYMENT_SENT,
+                quantidade,
+                alvo.getName()
+        );
+        plugin.getWalletTransactionManager().record(
+                alvo.getUniqueId(),
+                WalletTransaction.Type.PAYMENT_RECEIVED,
+                quantidade,
+                pagador.getName()
+        );
 
         pagador.sendMessage(ChatColor.GREEN + "Você pagou " + economia.formatar(quantidade) +
                 " para " + alvo.getName() + ".");

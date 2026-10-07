@@ -2,6 +2,7 @@ package com.coinseconomy.plugin.commands;
 
 import com.coinseconomy.plugin.CoinsEconomyPlugin;
 import com.coinseconomy.plugin.economy.EconomyManager;
+import com.coinseconomy.plugin.transactions.WalletTransaction;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
@@ -77,6 +78,13 @@ public class CobrarCommand implements CommandExecutor, TabCompleter {
         } else {
             economia.sacar(alvo, quantidade);
         }
+
+        plugin.getWalletTransactionManager().record(
+                alvo.getUniqueId(),
+                WalletTransaction.Type.ADMIN_REMOVE,
+                quantidade,
+                sender.getName()
+        );
 
         sender.sendMessage(ChatColor.GREEN + "Você cobrou " + economia.formatar(quantidade) +
                 " de " + alvo.getName() + ".");

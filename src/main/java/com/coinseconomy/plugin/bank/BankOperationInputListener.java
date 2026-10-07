@@ -2,6 +2,7 @@ package com.coinseconomy.plugin.bank;
 
 import com.coinseconomy.plugin.CoinsEconomyPlugin;
 import com.coinseconomy.plugin.economy.EconomyManager;
+import com.coinseconomy.plugin.transactions.WalletTransaction;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -127,6 +128,12 @@ public final class BankOperationInputListener implements Listener {
             }
 
             bank.deposit(player.getUniqueId(), amount);
+            plugin.getWalletTransactionManager().record(
+                    player.getUniqueId(),
+                    WalletTransaction.Type.BANK_DEPOSIT,
+                    amount,
+                    "Banco"
+            );
             finish(player.getUniqueId());
             player.sendMessage(color("&a&lʙᴀɴᴄᴏ &8• &fVocê depositou &a" + compact(amount) + " Coins &fcom sucesso."));
             return;
@@ -144,6 +151,12 @@ public final class BankOperationInputListener implements Listener {
         }
 
         economy.depositar(player, amount);
+        plugin.getWalletTransactionManager().record(
+                player.getUniqueId(),
+                WalletTransaction.Type.BANK_WITHDRAW,
+                amount,
+                "Banco"
+        );
         finish(player.getUniqueId());
         player.sendMessage(color("&a&lʙᴀɴᴄᴏ &8• &fVocê sacou &a" + compact(amount) + " Coins &fcom sucesso."));
     }
