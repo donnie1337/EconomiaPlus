@@ -50,10 +50,10 @@ public final class BankGUI {
                         "&fCarteira: &a" + formatCompactCoins(saldoCarteira),
                         "&fReserva bancária: &a" + formatCompactCoins(banco.getBalance(player.getUniqueId())),
                         "",
-                        "&fProjeção diária: &b+" + formatPercent(diaria) + "%",
-                        "&fProjeção mensal: &b+" + formatPercent(mensal) + "%",
+                        "&fRendimento diário: &b+" + formatPercent(diaria) + "%",
+                        "&fRendimento mensal: &b+" + formatPercent(mensal) + "%",
                         "",
-                        "&8Taxas exibidas são a referência atual do banco."
+                        "&8O rendimento incide sobre a reserva bancária."
                 )
         ));
 
@@ -236,10 +236,28 @@ public final class BankGUI {
     }
 
     private static ItemStack transactionItem(BankTransaction transaction) {
-        boolean deposit = transaction.type() == BankTransaction.Type.DEPOSIT;
-        Material material = deposit ? Material.EMERALD : Material.REDSTONE;
-        String prefix = deposit ? "&a+" : "&c-";
-        String description = deposit ? "&fQuantia depositada: &a" : "&fQuantia sacada: &c";
+        Material material;
+        String prefix;
+        String description;
+
+        switch (transaction.type()) {
+            case DEPOSIT -> {
+                material = Material.EMERALD;
+                prefix = "&a+";
+                description = "&fQuantia depositada: &a";
+            }
+            case WITHDRAW -> {
+                material = Material.REDSTONE;
+                prefix = "&c-";
+                description = "&fQuantia sacada: &c";
+            }
+            case INTEREST -> {
+                material = Material.GOLD_INGOT;
+                prefix = "&e+";
+                description = "&fRendimento bancário: &e";
+            }
+            default -> throw new IllegalStateException("Tipo de movimentação bancária desconhecido.");
+        }
 
         String date = DateTimeFormatter.ofPattern("dd/MM/yyyy - HH:mm")
                 .withZone(ZoneId.systemDefault())

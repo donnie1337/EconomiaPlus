@@ -26,6 +26,9 @@ public final class BankManager {
     private final Map<UUID, Integer> withdrawCounts = new ConcurrentHashMap<>();
     private final Map<UUID, LocalDate> withdrawDates = new ConcurrentHashMap<>();
     private final Map<UUID, List<BankTransaction>> history = new ConcurrentHashMap<>();
+    private final Map<UUID, Long> lastInterestAt = new ConcurrentHashMap<>();
+
+    private static final double MILLIS_PER_DAY = 86_400_000.0D;
 
     public BankManager(CoinsEconomyPlugin plugin) {
         this.plugin = plugin;
@@ -44,6 +47,11 @@ public final class BankManager {
                 UUID uuid = UUID.fromString(raw);
                 balances.put(uuid, Math.max(0.0D, data.getDouble("jogadores." + raw + ".saldo", 0.0D)));
                 withdrawCounts.put(uuid, Math.max(0, data.getInt("jogadores." + raw + ".saques-dia", 0)));
+
+                long now = System.currentTimeMillis();
+                long savedInterestAt = data.getLong("jogadores." + raw + ".ultimo-rendimento", now);
+                if (savedInterestAt <= 0L || savedInterestAt > now) savedInterestAt = now;
+                lastInterestAt.put(uuid, savedInterestAt);
 
                 String date = data.getString("jogadores." + raw + ".data-saques", "");
                 if (date != null && !date.isBlank()) {
@@ -89,6 +97,7 @@ public final class BankManager {
             data.set(path + ".saques-dia", getWithdrawCount(uuid));
             LocalDate date = withdrawDates.get(uuid);
             data.set(path + ".data-saques", date == null ? null : date.toString());
+            data.set(path + ".ultimo-rendimento", lastInterestAt.getOrDefault(uuid, System.currentTimeMillis()));
 
             List<Map<String, Object>> savedHistory = new ArrayList<>();
             for (BankTransaction transaction : history.getOrDefault(uuid, List.of())) {
@@ -110,30 +119,78 @@ public final class BankManager {
         }
     }
 
-    public double getBalance(UUID uuid) {
+    public synchronized double getBalance(UUID uuid) {
+        if (uuid == null) return 0.0D;
+        applyInterest(uuid, System.currentTimeMillis(), false);
         return balances.getOrDefault(uuid, 0.0D);
     }
 
     public synchronized void deposit(UUID uuid, double amount) {
         if (uuid == null || !Double.isFinite(amount) || amount <= 0.0D) return;
+
+        long now = System.currentTimeMillis();
+        applyInterest(uuid, now, true);
         balances.merge(uuid, amount, Double::sum);
-        addHistory(uuid, new BankTransaction(BankTransaction.Type.DEPOSIT, amount, System.currentTimeMillis()));
+        lastInterestAt.put(uuid, now);
+        addHistory(uuid, new BankTransaction(BankTransaction.Type.DEPOSIT, amount, now));
         saveLater();
     }
 
     public synchronized boolean withdraw(UUID uuid, double amount) {
         if (uuid == null || !Double.isFinite(amount) || amount <= 0.0D) return false;
-        double current = getBalance(uuid);
+
+        long now = System.currentTimeMillis();
+        applyInterest(uuid, now, true);
+        double current = balances.getOrDefault(uuid, 0.0D);
         if (current + 0.0000001D < amount) return false;
 
         balances.put(uuid, Math.max(0.0D, current - amount));
+        lastInterestAt.put(uuid, now);
         incrementWithdraw(uuid);
-        addHistory(uuid, new BankTransaction(BankTransaction.Type.WITHDRAW, amount, System.currentTimeMillis()));
+        addHistory(uuid, new BankTransaction(BankTransaction.Type.WITHDRAW, amount, now));
         saveLater();
         return true;
     }
 
-    public List<BankTransaction> getHistory(UUID uuid) {
+    private double applyInterest(UUID uuid, long now, boolean force) {
+        if (uuid == null) return 0.0D;
+
+        long last = lastInterestAt.getOrDefault(uuid, now);
+        if (last > now) last = now;
+
+        long elapsed = now - last;
+        long minimumIntervalMillis = Math.max(
+                1L,
+                plugin.getConfig().getLong("banco.rendimento-intervalo-minutos", 60L)
+        ) * 60_000L;
+
+        if (elapsed <= 0L || (!force && elapsed < minimumIntervalMillis)) {
+            lastInterestAt.putIfAbsent(uuid, now);
+            return 0.0D;
+        }
+
+        double balance = balances.getOrDefault(uuid, 0.0D);
+        lastInterestAt.put(uuid, now);
+        if (balance <= 0.0D) return 0.0D;
+
+        double dailyPercent = plugin.getConfig().getDouble("banco.rendimento-diario-percentual", 0.035D);
+        double dailyRate = dailyPercent / 100.0D;
+        if (!Double.isFinite(dailyRate) || dailyRate <= 0.0D) return 0.0D;
+
+        double elapsedDays = elapsed / MILLIS_PER_DAY;
+        double factor = Math.pow(1.0D + dailyRate, elapsedDays);
+        double interest = balance * (factor - 1.0D);
+
+        if (!Double.isFinite(interest) || interest <= 0.0000001D) return 0.0D;
+
+        balances.put(uuid, balance + interest);
+        addHistory(uuid, new BankTransaction(BankTransaction.Type.INTEREST, interest, now));
+        saveLater();
+        return interest;
+    }
+
+    public synchronized List<BankTransaction> getHistory(UUID uuid) {
+        applyInterest(uuid, System.currentTimeMillis(), false);
         List<BankTransaction> list = history.get(uuid);
         if (list == null || list.isEmpty()) return List.of();
         synchronized (list) {
