@@ -95,6 +95,8 @@ public final class BankGUI {
 
         double minimo = plugin.getConfig().getDouble("banco.operacoes.minimo", 1000.0);
         int limite = plugin.getConfig().getInt("banco.operacoes.limite-saques-diarios", 10);
+        int saquesHoje = banco.getWithdrawCount(player.getUniqueId());
+        String corSaques = saquesHoje >= 9 ? "&c" : (saquesHoje >= 6 ? "&6" : "&a");
 
         inv.setItem(SLOT_DEPOSITAR, item(
                 Material.ENDER_CHEST,
@@ -120,7 +122,7 @@ public final class BankGUI {
                         "&7de volta para sua carteira.",
                         "",
                         "&fRetirada mínima: &a$" + compact(minimo) + " coins",
-                        "&fSaques de hoje: &c" + banco.getWithdrawCount(player.getUniqueId()) + "/" + limite,
+                        "&fSaques de hoje: " + corSaques + saquesHoje + "/" + limite,
                         "",
                         "&eClique para iniciar um saque"
                 )
