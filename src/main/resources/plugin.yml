@@ -1,4 +1,4 @@
-name: CoinsEconomy
+name: EconomiaPlus
 version: '${project.version}'
 main: com.coinseconomy.plugin.CoinsEconomyPlugin
 api-version: '26.3'
@@ -32,7 +32,7 @@ commands:
 
 permissions:
   coinseconomy.*:
-    description: Concede acesso a todos os comandos do CoinsEconomy.
+    description: Concede acesso a todos os comandos do EconomiaPlus.
     default: op
     children:
       coinseconomy.coins: true

@@ -27,6 +27,7 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
     public void onEnable() {
         instance = this;
 
+        migrarPastaLegada();
         saveDefaultConfig();
 
         this.economyManager = new EconomyManager(this);
@@ -37,7 +38,7 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
         registrarEventos();
         agendarSalvamentoAutomatico();
 
-        getLogger().info("CoinsEconomy foi ativado com sucesso!");
+        getLogger().info("EconomiaPlus foi ativado com sucesso!");
     }
 
     @Override
@@ -46,7 +47,39 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
             economyManager.save();
         }
         Bukkit.getServicesManager().unregisterAll(this);
-        getLogger().info("CoinsEconomy foi desativado. Dados salvos em disco.");
+        getLogger().info("EconomiaPlus foi desativado. Dados salvos em disco.");
+    }
+
+    private void migrarPastaLegada() {
+        java.io.File novaPasta = getDataFolder();
+        java.io.File pastaPlugins = novaPasta.getParentFile();
+        if (pastaPlugins == null) return;
+
+        java.io.File pastaAntiga = new java.io.File(pastaPlugins, "CoinsEconomy");
+        if (!pastaAntiga.isDirectory()) return;
+
+        if (!novaPasta.exists() && !novaPasta.mkdirs()) {
+            getLogger().warning("Não foi possível criar a pasta EconomiaPlus para migrar os dados antigos.");
+            return;
+        }
+
+        migrarArquivoLegado(pastaAntiga, novaPasta, "config.yml");
+        migrarArquivoLegado(pastaAntiga, novaPasta, "data.yml");
+    }
+
+    private void migrarArquivoLegado(java.io.File origemPasta, java.io.File destinoPasta, String nome) {
+        java.io.File origem = new java.io.File(origemPasta, nome);
+        java.io.File destino = new java.io.File(destinoPasta, nome);
+        if (!origem.isFile() || destino.exists()) return;
+
+        try {
+            java.nio.file.Files.copy(origem.toPath(), destino.toPath(),
+                    java.nio.file.StandardCopyOption.COPY_ATTRIBUTES);
+            getLogger().info("Arquivo legado migrado de CoinsEconomy para EconomiaPlus: " + nome);
+        } catch (java.io.IOException exception) {
+            getLogger().log(java.util.logging.Level.SEVERE,
+                    "Não foi possível migrar " + nome + " de CoinsEconomy para EconomiaPlus.", exception);
+        }
     }
 
     private void registrarApi() {

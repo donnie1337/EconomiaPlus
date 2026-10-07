@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.coinseconomy</groupId>
-    <artifactId>CoinsEconomy</artifactId>
+    <artifactId>EconomiaPlus</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>CoinsEconomy</name>
+    <name>EconomiaPlus</name>
     <description>Plugin de economia independente com API própria, para Paper 26.3</description>
 
     <properties>
