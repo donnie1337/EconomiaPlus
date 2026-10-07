@@ -93,7 +93,7 @@ public final class TopCoinsGUI {
             meta.setLore(List.of(
                     "",
                     color("&7Patrimônio contabilizado:"),
-                    color("&a" + economia.formatar(saldo)),
+                    color("&a" + formatCompactCoins(saldo)),
                     "",
                     color("&8Posição geral: &f#" + posicao)
             ));
@@ -101,6 +101,33 @@ public final class TopCoinsGUI {
         }
 
         return cabeca;
+    }
+
+    private static String formatCompactCoins(double value) {
+        double abs = Math.abs(value);
+        String suffix = "";
+        double divisor = 1.0D;
+
+        if (abs >= 1_000_000_000_000.0D) {
+            suffix = "T";
+            divisor = 1_000_000_000_000.0D;
+        } else if (abs >= 1_000_000_000.0D) {
+            suffix = "B";
+            divisor = 1_000_000_000.0D;
+        } else if (abs >= 1_000_000.0D) {
+            suffix = "M";
+            divisor = 1_000_000.0D;
+        } else if (abs >= 1_000.0D) {
+            suffix = "K";
+            divisor = 1_000.0D;
+        }
+
+        if (suffix.isEmpty()) {
+            return String.format(java.util.Locale.of("pt", "BR"), "%.2f Coins", value);
+        }
+
+        double compact = value / divisor;
+        return String.format(java.util.Locale.of("pt", "BR"), "%.2f%s Coins", compact, suffix);
     }
 
     private static ItemStack criarBotao(Material material, String nome, List<String> lore) {
