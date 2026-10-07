@@ -38,7 +38,7 @@ public final class CoinsWalletGUI {
 
         inventory.setItem(SLOT_INFORMACOES, item(
                 Material.NETHER_BRICKS,
-                "&b&lSUAS INFORMAÇÕES",
+                "&bSUAS INFORMAÇÕES",
                 List.of(
                         "",
                         "&fSaldo atual: &a" + economia.formatar(saldo),
@@ -51,7 +51,7 @@ public final class CoinsWalletGUI {
 
         inventory.setItem(SLOT_TRANSACOES, item(
                 Material.PAPER,
-                "&b&lTRANSAÇÕES",
+                "&bTRANSAÇÕES",
                 List.of(
                         "",
                         "&fHistórico de movimentações",
@@ -63,7 +63,7 @@ public final class CoinsWalletGUI {
 
         inventory.setItem(SLOT_TOP, item(
                 Material.BOOK,
-                "&b&lTOP JOGADORES",
+                "&bTOP JOGADORES",
                 List.of(
                         "",
                         "&fRanking dos jogadores",
@@ -83,7 +83,7 @@ public final class CoinsWalletGUI {
         if (top.isEmpty()) {
             return item(
                     Material.EMERALD_BLOCK,
-                    "&b&lMAGNATA",
+                    "&bMAGNATA",
                     List.of("", "&7Nenhum jogador no ranking ainda.")
             );
         }
