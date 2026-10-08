@@ -204,6 +204,19 @@ categorias:
       CHARCOAL: { nome: "Carvão Vegetal", compra: 0.0, venda: 18.0 }
       AMETHYST_BLOCK: { nome: "Bloco de Ametista", compra: 0.0, venda: 300.0 }
       BUDDING_AMETHYST: { nome: "Ametista Brotante", compra: 0.0, venda: 1000.0 }
+      DIAMOND_BLOCK: { nome: "Bloco de Diamante", compra: 0.0, venda: 6300.0 }
+      GOLD_BLOCK: { nome: "Bloco de Ouro", compra: 0.0, venda: 1440.0 }
+      IRON_BLOCK: { nome: "Bloco de Ferro", compra: 0.0, venda: 810.0 }
+      EMERALD_BLOCK: { nome: "Bloco de Esmeralda", compra: 0.0, venda: 2700.0 }
+      COPPER_BLOCK: { nome: "Bloco de Cobre", compra: 0.0, venda: 252.0 }
+      COAL_BLOCK: { nome: "Bloco de Carvão", compra: 0.0, venda: 162.0 }
+      LAPIS_BLOCK: { nome: "Bloco de Lápis-Lazúli", compra: 0.0, venda: 270.0 }
+      REDSTONE_BLOCK: { nome: "Bloco de Redstone", compra: 0.0, venda: 270.0 }
+      NETHERITE_BLOCK: { nome: "Bloco de Netherita", compra: 0.0, venda: 450000.0 }
+      RAW_IRON_BLOCK: { nome: "Bloco de Ferro Bruto", compra: 0.0, venda: 675.0 }
+      RAW_GOLD_BLOCK: { nome: "Bloco de Ouro Bruto", compra: 0.0, venda: 1260.0 }
+      RAW_COPPER_BLOCK: { nome: "Bloco de Cobre Bruto", compra: 0.0, venda: 198.0 }
+      QUARTZ_BLOCK: { nome: "Bloco de Quartzo", compra: 0.0, venda: 140.0 }
 
   blocos:
     nome: "Blocos"
