@@ -130,7 +130,7 @@ public final class ShopGUI {
         SkullMeta meta = (SkullMeta) head.getItemMeta();
         if (meta != null) {
             meta.setOwningPlayer(player);
-            meta.setDisplayName(color("&bSEU PERFIL"));
+            meta.setDisplayName(color("&b" + player.getName()));
             meta.setLore(List.of(
                     "",
                     color("&fInformações da sua conta:"),
