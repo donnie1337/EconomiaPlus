@@ -167,11 +167,11 @@ public final class ShopGUI {
         lore.add("&7Opções disponíveis:");
         if (shopItem.canBuy()) {
             lore.add("&a• &fClique esquerdo: &aComprar 1x");
-            lore.add("&a• &fShift + esquerdo: &aComprar 64x");
+            lore.add("&a• &fShift + esquerdo: &aComprar até 64x");
         }
         if (shopItem.canSell()) {
             lore.add("&c• &fClique direito: &cVender 1x");
-            lore.add("&c• &fShift + direito: &cVender 64x");
+            lore.add("&c• &fShift + direito: &cVender até 64x");
         }
 
         return item(shopItem.material(), "&b" + shopItem.name(), lore);
