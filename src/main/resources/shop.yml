@@ -154,7 +154,7 @@ categorias:
       ROTTEN_FLESH: { nome: "Carne Podre", compra: 48.0, venda: 5.6 }
       GUNPOWDER: { nome: "Pólvora", compra: 240.0, venda: 32.0 }
       ARROW: { nome: "Flecha", compra: 84.0, venda: 8.0 }
-      BOW: { nome: "Arco", compra: 420.0, venda: 30.0 }
+      BOW: { nome: "Arco", compra: 650.0, venda: 15.0 }
       BONE: { nome: "Osso", compra: 108.0, venda: 14.4 }
       SLIME_BALL: { nome: "Bola de Slime", compra: 420.0, venda: 56.0 }
       BLAZE_ROD: { nome: "Vara de Blaze", compra: 1020.0, venda: 136.0 }
