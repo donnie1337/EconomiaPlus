@@ -602,6 +602,12 @@ categorias:
       BLACK_BED: { nome: "Cama Preta", compra: 260.0, venda: 40.0 }
       BLACK_BANNER: { nome: "Estandarte Preta", compra: 180.0, venda: 28.0 }
 
+      TERRACOTTA: { nome: "Terracota", compra: 75.0, venda: 12.0 }
+      GLASS: { nome: "Vidro", compra: 55.0, venda: 8.0 }
+      GLASS_PANE: { nome: "Painel de Vidro", compra: 25.0, venda: 4.0 }
+      TINTED_GLASS: { nome: "Vidro Escurecido", compra: 180.0, venda: 28.0 }
+      CANDLE: { nome: "Vela", compra: 80.0, venda: 12.0 }
+      BONE_BLOCK: { nome: "Bloco de Ossos", compra: 700.0, venda: 100.0 }
   decoracoes:
     nome: "Decorações"
     icone: ITEM_FRAME
