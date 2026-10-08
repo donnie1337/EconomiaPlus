@@ -135,9 +135,6 @@ public final class ShopGUI {
                     "",
                     color("&fInformações da sua conta:"),
                     "",
-                    color("&f• Desconto na loja: &a-" + percent(shop.getDiscountPercent()) + "%"),
-                    color("&f• Bônus de venda: &a+" + percent(shop.getSellBonusPercent()) + "%"),
-                    "",
                     color("&f• Saldo atual: &a" + compact(economy.getSaldo(player.getUniqueId()))),
                     "",
                     color("&8Compras e vendas usam sua carteira de Coins.")
@@ -166,12 +163,10 @@ public final class ShopGUI {
         lore.add("");
         lore.add("&7Opções disponíveis:");
         if (shopItem.canBuy()) {
-            lore.add("&a• &fClique esquerdo: &aComprar 1x");
-            lore.add("&a• &fShift + esquerdo: &aComprar até 64x");
+            lore.add("&a• &fClique esquerdo: &aComprar");
         }
         if (shopItem.canSell()) {
-            lore.add("&c• &fClique direito: &cVender 1x");
-            lore.add("&c• &fShift + direito: &cVender até 64x");
+            lore.add("&c• &fClique direito: &cVender");
         }
 
         return item(shopItem.material(), "&b" + shopItem.name(), lore);
