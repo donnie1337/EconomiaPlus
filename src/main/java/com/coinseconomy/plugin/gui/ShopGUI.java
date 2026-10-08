@@ -20,7 +20,7 @@ import java.util.Locale;
 public final class ShopGUI {
 
     public static final int MAIN_SIZE = 36;
-    public static final int CATEGORY_SIZE = 45;
+    public static final int CATEGORY_SIZE = 54;
     public static final int ITEMS_PER_PAGE = 21;
 
     private static final int[] CATEGORY_SLOTS = {10, 11, 12, 13, 14, 15, 19, 20, 21, 22};
@@ -31,9 +31,9 @@ public final class ShopGUI {
     };
 
     public static final int SLOT_PROFILE = 4;
-    public static final int SLOT_PREVIOUS = 38;
-    public static final int SLOT_BACK = 40;
-    public static final int SLOT_NEXT = 42;
+    public static final int SLOT_PREVIOUS = 47;
+    public static final int SLOT_BACK = 49;
+    public static final int SLOT_NEXT = 51;
 
     private ShopGUI() {
     }
@@ -165,8 +165,14 @@ public final class ShopGUI {
 
         lore.add("");
         lore.add("&7Opções disponíveis:");
-        if (shopItem.canBuy()) lore.add("&a• &fClique esquerdo: &aComprar");
-        if (shopItem.canSell()) lore.add("&c• &fClique direito: &cVender");
+        if (shopItem.canBuy()) {
+            lore.add("&a• &fClique esquerdo: &aComprar 1x");
+            lore.add("&a• &fShift + esquerdo: &aComprar 64x");
+        }
+        if (shopItem.canSell()) {
+            lore.add("&c• &fClique direito: &cVender 1x");
+            lore.add("&c• &fShift + direito: &cVender 64x");
+        }
 
         return item(shopItem.material(), "&b" + shopItem.name(), lore);
     }
