@@ -4,6 +4,7 @@ import com.coinseconomy.plugin.CoinsEconomyPlugin;
 import com.coinseconomy.plugin.economy.EconomyManager;
 import com.coinseconomy.plugin.transactions.WalletTransaction;
 import com.coinseconomy.plugin.gui.CoinsWalletGUI;
+import com.coinseconomy.plugin.payment.PaymentInputListener;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
@@ -32,10 +33,12 @@ public class CoinsCommand implements CommandExecutor, TabCompleter {
 
     private final CoinsEconomyPlugin plugin;
     private final EconomyManager economia;
+    private final PaymentInputListener paymentInput;
 
-    public CoinsCommand(CoinsEconomyPlugin plugin, EconomyManager economia) {
+    public CoinsCommand(CoinsEconomyPlugin plugin, EconomyManager economia, PaymentInputListener paymentInput) {
         this.plugin = plugin;
         this.economia = economia;
+        this.paymentInput = paymentInput;
     }
 
     @Override
@@ -113,8 +116,8 @@ public class CoinsCommand implements CommandExecutor, TabCompleter {
             return true;
         }
 
-        if (args.length < 3) {
-            pagador.sendMessage(ChatColor.RED + "Uso correto: /coins pagar <jogador> <quantidade>");
+        if (args.length < 2) {
+            pagador.sendMessage(ChatColor.RED + "Uso correto: /coins pagar <jogador> [quantidade]");
             return true;
         }
 
@@ -126,6 +129,13 @@ public class CoinsCommand implements CommandExecutor, TabCompleter {
         OfflinePlayer alvo = Bukkit.getOfflinePlayer(args[1]);
         if (!alvo.hasPlayedBefore() && !alvo.isOnline()) {
             pagador.sendMessage(ChatColor.RED + "Esse jogador nunca entrou no servidor.");
+            return true;
+        }
+
+        if (args.length < 3) {
+            economia.criarConta(pagador);
+            economia.criarConta(alvo);
+            paymentInput.start(pagador, alvo);
             return true;
         }
 

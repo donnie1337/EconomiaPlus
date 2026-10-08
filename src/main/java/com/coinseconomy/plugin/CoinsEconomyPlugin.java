@@ -9,6 +9,7 @@ import com.coinseconomy.plugin.commands.ShopCommand;
 import com.coinseconomy.plugin.economy.EconomyManager;
 import com.coinseconomy.plugin.bank.BankManager;
 import com.coinseconomy.plugin.bank.BankOperationInputListener;
+import com.coinseconomy.plugin.payment.PaymentInputListener;
 import com.coinseconomy.plugin.transactions.WalletTransactionManager;
 import com.coinseconomy.plugin.wallet.WalletSettingsManager;
 import com.coinseconomy.plugin.shop.ShopManager;
@@ -34,6 +35,7 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
     private EconomyManager economyManager;
     private BankManager bankManager;
     private BankOperationInputListener bankOperationInput;
+    private PaymentInputListener paymentInput;
     private WalletTransactionManager walletTransactionManager;
     private WalletSettingsManager walletSettingsManager;
     private ShopManager shopManager;
@@ -56,6 +58,7 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
         this.shopManager = new ShopManager(this);
         this.shopManager.load();
         this.bankOperationInput = new BankOperationInputListener(this, economyManager, bankManager);
+        this.paymentInput = new PaymentInputListener(this, economyManager);
 
         registrarApi();
         registrarComandos();
@@ -126,11 +129,11 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
     }
 
     private void registrarComandos() {
-        CoinsCommand coinsCommand = new CoinsCommand(this, economyManager);
+        CoinsCommand coinsCommand = new CoinsCommand(this, economyManager, paymentInput);
         getCommand("coins").setExecutor(coinsCommand);
         getCommand("coins").setTabCompleter(coinsCommand);
 
-        PagarCommand pagarCommand = new PagarCommand(this, economyManager);
+        PagarCommand pagarCommand = new PagarCommand(this, economyManager, paymentInput);
         getCommand("pagar").setExecutor(pagarCommand);
         getCommand("pagar").setTabCompleter(pagarCommand);
 
@@ -153,9 +156,10 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
                 return true;
             }
 
-            if (!bankOperationInput.cancelFromCommand(player)) {
-                player.sendMessage("§c§lʙᴀɴᴄᴏ §8• §fVocê não possui nenhuma operação bancária pendente.");
-            }
+            if (bankOperationInput.cancelFromCommand(player)) return true;
+            if (paymentInput.cancelFromCommand(player)) return true;
+
+            player.sendMessage("§c§lᴄᴏɪɴs §8• §fVocê não possui nenhuma operação pendente.");
             return true;
         });
     }
@@ -166,6 +170,7 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new ShopGUIListener(this, economyManager, shopManager), this);
         Bukkit.getPluginManager().registerEvents(new BankGUIListener(this, economyManager, bankManager, bankOperationInput), this);
         Bukkit.getPluginManager().registerEvents(bankOperationInput, this);
+        Bukkit.getPluginManager().registerEvents(paymentInput, this);
         Bukkit.getPluginManager().registerEvents(new JoinListener(economyManager), this);
     }
 
