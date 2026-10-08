@@ -97,6 +97,16 @@ categorias:
       MANGROVE_BOAT: { nome: "Barco de Mangue", compra: 210.0, venda: 36.0 }
       CHERRY_BOAT: { nome: "Barco de Cerejeira", compra: 220.0, venda: 38.0 }
       BAMBOO_RAFT: { nome: "Jangada de Bambu", compra: 220.0, venda: 38.0 }
+      MANGROVE_PROPAGULE: { nome: "Propágulo de Mangue", compra: 110.0, venda: 16.0 }
+      CHERRY_SAPLING: { nome: "Muda de Cerejeira", compra: 120.0, venda: 18.0 }
+      OAK_LEAVES: { nome: "Folhas de Carvalho", compra: 45.0, venda: 6.0 }
+      SPRUCE_LEAVES: { nome: "Folhas de Pinheiro", compra: 45.0, venda: 6.0 }
+      BIRCH_LEAVES: { nome: "Folhas de Bétula", compra: 45.0, venda: 6.0 }
+      JUNGLE_LEAVES: { nome: "Folhas da Selva", compra: 50.0, venda: 7.0 }
+      ACACIA_LEAVES: { nome: "Folhas de Acácia", compra: 45.0, venda: 6.0 }
+      DARK_OAK_LEAVES: { nome: "Folhas de Carvalho Escuro", compra: 50.0, venda: 7.0 }
+      MANGROVE_LEAVES: { nome: "Folhas de Mangue", compra: 55.0, venda: 8.0 }
+      CHERRY_LEAVES: { nome: "Folhas de Cerejeira", compra: 60.0, venda: 9.0 }
 
   comidas:
     nome: "Comidas"
@@ -383,6 +393,23 @@ categorias:
       WARPED_TRAPDOOR: { nome: "Alçapão de Distorcida", compra: 85.0, venda: 14.0 }
       WARPED_BUTTON: { nome: "Botão de Distorcida", compra: 25.0, venda: 3.0 }
       WARPED_PRESSURE_PLATE: { nome: "Placa de Pressão de Distorcida", compra: 40.0, venda: 6.0 }
+      CLAY: { nome: "Argila", compra: 70.0, venda: 11.0 }
+      MUD: { nome: "Lama", compra: 55.0, venda: 9.0 }
+      PACKED_MUD: { nome: "Lama Compactada", compra: 70.0, venda: 11.0 }
+      DRIPSTONE_BLOCK: { nome: "Bloco de Espeleotema", compra: 85.0, venda: 14.0 }
+      POINTED_DRIPSTONE: { nome: "Espeleotema Pontiagudo", compra: 65.0, venda: 10.0 }
+      SNOW_BLOCK: { nome: "Bloco de Neve", compra: 55.0, venda: 8.0 }
+      SOUL_SOIL: { nome: "Solo das Almas", compra: 80.0, venda: 13.0 }
+      CRYING_OBSIDIAN: { nome: "Obsidiana Chorona", compra: 900.0, venda: 140.0 }
+      MAGMA_BLOCK: { nome: "Bloco de Magma", compra: 180.0, venda: 28.0 }
+      PURPUR_BLOCK: { nome: "Bloco de Púrpura", compra: 180.0, venda: 30.0 }
+      PURPUR_PILLAR: { nome: "Pilar de Púrpura", compra: 200.0, venda: 32.0 }
+      PURPUR_SLAB: { nome: "Laje de Púrpura", compra: 95.0, venda: 15.0 }
+      PURPUR_STAIRS: { nome: "Escadas de Púrpura", compra: 190.0, venda: 30.0 }
+      BONE_BLOCK: { nome: "Bloco de Ossos", compra: 700.0, venda: 100.0 }
+      HAY_BLOCK: { nome: "Fardo de Feno", compra: 600.0, venda: 90.0 }
+      HONEYCOMB_BLOCK: { nome: "Bloco de Favo de Mel", compra: 800.0, venda: 120.0 }
+      HONEY_BLOCK: { nome: "Bloco de Mel", compra: 850.0, venda: 130.0 }
 
   coloridos:
     nome: "Blocos Coloridos"
@@ -552,6 +579,38 @@ categorias:
       RED_CANDLE: { nome: "Vela Vermelho", compra: 95.0, venda: 14.0 }
       BLACK_DYE: { nome: "Corante Preto", compra: 55.0, venda: 8.0 }
       BLACK_CANDLE: { nome: "Vela Preto", compra: 95.0, venda: 14.0 }
+      WHITE_BED: { nome: "Cama Branca", compra: 260.0, venda: 40.0 }
+      WHITE_BANNER: { nome: "Estandarte Branca", compra: 180.0, venda: 28.0 }
+      ORANGE_BED: { nome: "Cama Laranja", compra: 260.0, venda: 40.0 }
+      ORANGE_BANNER: { nome: "Estandarte Laranja", compra: 180.0, venda: 28.0 }
+      MAGENTA_BED: { nome: "Cama Magenta", compra: 260.0, venda: 40.0 }
+      MAGENTA_BANNER: { nome: "Estandarte Magenta", compra: 180.0, venda: 28.0 }
+      LIGHT_BLUE_BED: { nome: "Cama Azul-Clara", compra: 260.0, venda: 40.0 }
+      LIGHT_BLUE_BANNER: { nome: "Estandarte Azul-Clara", compra: 180.0, venda: 28.0 }
+      YELLOW_BED: { nome: "Cama Amarela", compra: 260.0, venda: 40.0 }
+      YELLOW_BANNER: { nome: "Estandarte Amarela", compra: 180.0, venda: 28.0 }
+      LIME_BED: { nome: "Cama Verde-Limão", compra: 260.0, venda: 40.0 }
+      LIME_BANNER: { nome: "Estandarte Verde-Limão", compra: 180.0, venda: 28.0 }
+      PINK_BED: { nome: "Cama Rosa", compra: 260.0, venda: 40.0 }
+      PINK_BANNER: { nome: "Estandarte Rosa", compra: 180.0, venda: 28.0 }
+      GRAY_BED: { nome: "Cama Cinza", compra: 260.0, venda: 40.0 }
+      GRAY_BANNER: { nome: "Estandarte Cinza", compra: 180.0, venda: 28.0 }
+      LIGHT_GRAY_BED: { nome: "Cama Cinza-Clara", compra: 260.0, venda: 40.0 }
+      LIGHT_GRAY_BANNER: { nome: "Estandarte Cinza-Clara", compra: 180.0, venda: 28.0 }
+      CYAN_BED: { nome: "Cama Ciano", compra: 260.0, venda: 40.0 }
+      CYAN_BANNER: { nome: "Estandarte Ciano", compra: 180.0, venda: 28.0 }
+      PURPLE_BED: { nome: "Cama Roxa", compra: 260.0, venda: 40.0 }
+      PURPLE_BANNER: { nome: "Estandarte Roxa", compra: 180.0, venda: 28.0 }
+      BLUE_BED: { nome: "Cama Azul", compra: 260.0, venda: 40.0 }
+      BLUE_BANNER: { nome: "Estandarte Azul", compra: 180.0, venda: 28.0 }
+      BROWN_BED: { nome: "Cama Marrom", compra: 260.0, venda: 40.0 }
+      BROWN_BANNER: { nome: "Estandarte Marrom", compra: 180.0, venda: 28.0 }
+      GREEN_BED: { nome: "Cama Verde", compra: 260.0, venda: 40.0 }
+      GREEN_BANNER: { nome: "Estandarte Verde", compra: 180.0, venda: 28.0 }
+      RED_BED: { nome: "Cama Vermelha", compra: 260.0, venda: 40.0 }
+      RED_BANNER: { nome: "Estandarte Vermelha", compra: 180.0, venda: 28.0 }
+      BLACK_BED: { nome: "Cama Preta", compra: 260.0, venda: 40.0 }
+      BLACK_BANNER: { nome: "Estandarte Preta", compra: 180.0, venda: 28.0 }
 
   decoracoes:
     nome: "Decorações"
@@ -603,6 +662,31 @@ categorias:
       PEONY: { nome: "Peônia", compra: 130.0, venda: 20.0 }
       TORCHFLOWER: { nome: "Flor-Tocha", compra: 180.0, venda: 28.0 }
       PITCHER_PLANT: { nome: "Planta-Jarro", compra: 180.0, venda: 28.0 }
+      OAK_SIGN: { nome: "Placa de Carvalho", compra: 55.0, venda: 8.0 }
+      OAK_HANGING_SIGN: { nome: "Placa Suspensa de Carvalho", compra: 95.0, venda: 14.0 }
+      SPRUCE_SIGN: { nome: "Placa de Pinheiro", compra: 55.0, venda: 8.0 }
+      SPRUCE_HANGING_SIGN: { nome: "Placa Suspensa de Pinheiro", compra: 95.0, venda: 14.0 }
+      BIRCH_SIGN: { nome: "Placa de Bétula", compra: 55.0, venda: 8.0 }
+      BIRCH_HANGING_SIGN: { nome: "Placa Suspensa de Bétula", compra: 95.0, venda: 14.0 }
+      JUNGLE_SIGN: { nome: "Placa de Selva", compra: 55.0, venda: 8.0 }
+      JUNGLE_HANGING_SIGN: { nome: "Placa Suspensa de Selva", compra: 95.0, venda: 14.0 }
+      ACACIA_SIGN: { nome: "Placa de Acácia", compra: 55.0, venda: 8.0 }
+      ACACIA_HANGING_SIGN: { nome: "Placa Suspensa de Acácia", compra: 95.0, venda: 14.0 }
+      DARK_OAK_SIGN: { nome: "Placa de Carvalho Escuro", compra: 55.0, venda: 8.0 }
+      DARK_OAK_HANGING_SIGN: { nome: "Placa Suspensa de Carvalho Escuro", compra: 95.0, venda: 14.0 }
+      MANGROVE_SIGN: { nome: "Placa de Mangue", compra: 55.0, venda: 8.0 }
+      MANGROVE_HANGING_SIGN: { nome: "Placa Suspensa de Mangue", compra: 95.0, venda: 14.0 }
+      CHERRY_SIGN: { nome: "Placa de Cerejeira", compra: 55.0, venda: 8.0 }
+      CHERRY_HANGING_SIGN: { nome: "Placa Suspensa de Cerejeira", compra: 95.0, venda: 14.0 }
+      BAMBOO_SIGN: { nome: "Placa de Bambu", compra: 55.0, venda: 8.0 }
+      BAMBOO_HANGING_SIGN: { nome: "Placa Suspensa de Bambu", compra: 95.0, venda: 14.0 }
+      CRIMSON_SIGN: { nome: "Placa de Carmesim", compra: 55.0, venda: 8.0 }
+      CRIMSON_HANGING_SIGN: { nome: "Placa Suspensa de Carmesim", compra: 95.0, venda: 14.0 }
+      WARPED_SIGN: { nome: "Placa de Distorcida", compra: 55.0, venda: 8.0 }
+      WARPED_HANGING_SIGN: { nome: "Placa Suspensa de Distorcida", compra: 95.0, venda: 14.0 }
+      COBWEB: { nome: "Teia de Aranha", compra: 200.0, venda: 30.0 }
+      SCULK: { nome: "Sculk", compra: 220.0, venda: 35.0 }
+      SCULK_VEIN: { nome: "Veia de Sculk", compra: 180.0, venda: 28.0 }
 
   redstone:
     nome: "Redstone"
@@ -636,6 +720,12 @@ categorias:
       LIGHTNING_ROD: { nome: "Para-Raios", compra: 280.0, venda: 45.0 }
       SCULK_SENSOR: { nome: "Sensor de Sculk", compra: 1800.0, venda: 280.0 }
       CALIBRATED_SCULK_SENSOR: { nome: "Sensor de Sculk Calibrado", compra: 2500.0, venda: 380.0 }
+      TNT: { nome: "TNT", compra: 900.0, venda: 120.0 }
+      REDSTONE_TORCH: { nome: "Tocha de Redstone", compra: 80.0, venda: 12.0 }
+      HEAVY_WEIGHTED_PRESSURE_PLATE: { nome: "Placa de Pressão Pesada", compra: 650.0, venda: 95.0 }
+      LIGHT_WEIGHTED_PRESSURE_PLATE: { nome: "Placa de Pressão Leve", compra: 950.0, venda: 140.0 }
+      IRON_TRAPDOOR: { nome: "Alçapão de Ferro", compra: 900.0, venda: 130.0 }
+      IRON_DOOR: { nome: "Porta de Ferro", compra: 950.0, venda: 140.0 }
 
   outros:
     nome: "Outros"
@@ -664,3 +754,12 @@ categorias:
       SHEARS: { nome: "Tesoura", compra: 450.0, venda: 70.0 }
       FLINT_AND_STEEL: { nome: "Pederneira", compra: 650.0, venda: 100.0 }
       BRUSH: { nome: "Pincel", compra: 500.0, venda: 80.0 }
+      FISHING_ROD: { nome: "Vara de Pesca", compra: 500.0, venda: 75.0 }
+      BOW: { nome: "Arco", compra: 650.0, venda: 95.0 }
+      CROSSBOW: { nome: "Besta", compra: 1100.0, venda: 160.0 }
+      SHIELD: { nome: "Escudo", compra: 900.0, venda: 130.0 }
+      RECOVERY_COMPASS: { nome: "Bússola de Recuperação", compra: 6000.0, venda: 850.0 }
+      ECHO_SHARD: { nome: "Fragmento de Eco", compra: 1800.0, venda: 260.0 }
+      GOAT_HORN: { nome: "Chifre de Cabra", compra: 2200.0, venda: 320.0 }
+      CARROT_ON_A_STICK: { nome: "Cenoura no Graveto", compra: 550.0, venda: 80.0 }
+      WARPED_FUNGUS_ON_A_STICK: { nome: "Fungo Distorcido no Graveto", compra: 650.0, venda: 95.0 }
