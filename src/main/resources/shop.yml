@@ -134,6 +134,7 @@ categorias:
       PUMPKIN_PIE: { nome: "Torta de Abóbora", compra: 140.0, venda: 25.0 }
       GOLDEN_CARROT: { nome: "Cenoura Dourada", compra: 650.0, venda: 110.0 }
       HONEY_BOTTLE: { nome: "Frasco de Mel", compra: 180.0, venda: 30.0 }
+      GOLDEN_APPLE: { nome: "Maçã Dourada", compra: 4500.0, venda: 650.0 }
       MUSHROOM_STEW: { nome: "Ensopado de Cogumelos", compra: 180.0, venda: 30.0 }
       RABBIT_STEW: { nome: "Ensopado de Coelho", compra: 240.0, venda: 40.0 }
       BEETROOT_SOUP: { nome: "Sopa de Beterraba", compra: 170.0, venda: 28.0 }
