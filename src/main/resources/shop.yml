@@ -731,12 +731,9 @@ categorias:
       EXPERIENCE_BOTTLE: { nome: "Frasco de Experiência", compra: 900.0, venda: 120.0 }
       PAPER: { nome: "Papel", compra: 45.0, venda: 7.0 }
       MAP: { nome: "Mapa Vazio", compra: 320.0, venda: 50.0 }
-      CLOCK: { nome: "Relógio", compra: 850.0, venda: 140.0 }
       COMPASS: { nome: "Bússola", compra: 650.0, venda: 110.0 }
       SPYGLASS: { nome: "Luneta", compra: 700.0, venda: 120.0 }
       WRITABLE_BOOK: { nome: "Livro e Pena", compra: 300.0, venda: 45.0 }
-      FIRE_CHARGE: { nome: "Bola de Fogo", compra: 180.0, venda: 28.0 }
-      SNOWBALL: { nome: "Bola de Neve", compra: 25.0, venda: 3.0 }
       GLASS_BOTTLE: { nome: "Frasco de Vidro", compra: 45.0, venda: 7.0 }
       BOWL: { nome: "Tigela", compra: 35.0, venda: 5.0 }
       SHEARS: { nome: "Tesoura", compra: 450.0, venda: 70.0 }
