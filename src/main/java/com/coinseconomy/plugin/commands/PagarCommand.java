@@ -2,6 +2,7 @@ package com.coinseconomy.plugin.commands;
 
 import com.coinseconomy.plugin.CoinsEconomyPlugin;
 import com.coinseconomy.plugin.economy.EconomyManager;
+import com.coinseconomy.plugin.economy.MoneyParser;
 import com.coinseconomy.plugin.transactions.WalletTransaction;
 import com.coinseconomy.plugin.payment.PaymentInputListener;
 import org.bukkit.Bukkit;
@@ -71,13 +72,13 @@ public class PagarCommand implements CommandExecutor, TabCompleter {
 
         double quantidade;
         try {
-            quantidade = Double.parseDouble(args[1].replace(",", "."));
+            quantidade = MoneyParser.parse(args[1]);
         } catch (NumberFormatException e) {
             pagador.sendMessage(ChatColor.RED + "Quantidade inválida.");
             return true;
         }
 
-        if (quantidade <= 0) {
+        if (!Double.isFinite(quantidade) || quantidade <= 0) {
             pagador.sendMessage(ChatColor.RED + "A quantidade deve ser maior que zero.");
             return true;
         }
@@ -95,8 +96,10 @@ public class PagarCommand implements CommandExecutor, TabCompleter {
             return true;
         }
 
-        economia.sacar(pagador, quantidade);
-        economia.depositar(alvo, quantidade);
+        if (!economia.transferir(pagador, alvo, quantidade)) {
+            pagador.sendMessage(ChatColor.RED + "Você não possui coins suficientes para essa transação.");
+            return true;
+        }
         plugin.getWalletTransactionManager().record(
                 pagador.getUniqueId(),
                 WalletTransaction.Type.PAYMENT_SENT,
