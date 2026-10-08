@@ -28,7 +28,7 @@ public final class ShopGUI {
 
     // Mantém a organização visual do menu principal:
     // categorias em duas linhas centrais e perfil centralizado na última linha.
-    private static final int[] CATEGORY_SLOTS = {10, 11, 12, 13, 14, 15, 19, 20, 21, 22};
+    private static final int[] CATEGORY_SLOTS = {11, 12, 13, 14, 15, 20, 21, 22, 23, 24};
     private static final int[] ITEM_SLOTS = {
             10, 11, 12, 13, 14, 15, 16,
             19, 20, 21, 22, 23, 24, 25,
