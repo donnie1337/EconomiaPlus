@@ -133,7 +133,7 @@ public final class ShopGUI {
             meta.setDisplayName(color("&b" + player.getName()));
             meta.setLore(List.of(
                     "",
-                    color("&fInformações da sua conta:"),
+                    color("&7Informações da sua conta"),
                     "",
                     color("&f• Saldo atual: &a" + compact(economy.getSaldo(player.getUniqueId()))),
                     "",
