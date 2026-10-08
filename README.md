@@ -1,78 +1,173 @@
 # EconomiaPlus
 
-Plugin de economia para **Paper 26.3**, com sistema próprio de **Coins**, carteira por jogador, banco, ranking e uma loja configurável pelo servidor.
+EconomiaPlus é um plugin de economia para **Paper 26.3**, desenvolvido para centralizar a moeda **Coins** do servidor em um único sistema.
 
-O projeto é independente e utiliza uma API própria de economia.
+O plugin possui carteira por jogador, transferências, histórico de movimentações, ranking econômico, título de Magnata, banco com rendimento, loja configurável e uma API própria para integração com outros plugins.
 
 ## Requisitos
 
-| Item | Versão |
+| Item | Requisito |
 |---|---|
-| Minecraft | **26.3** |
-| Servidor | **Paper 26.3** |
-| Java | **25 ou superior** |
+| Servidor | Paper 26.3 |
+| Java | 25 ou superior |
 | Build | Maven |
 
-## Como compilar
+O plugin não depende de Vault.
 
-```bash
-mvn clean package
-```
+## Funcionalidades
 
-O arquivo final será gerado em:
+### Carteira de Coins
+
+Cada jogador possui uma conta identificada por UUID.
+
+O comando `/coins` abre uma GUI com:
+
+- saldo atual da carteira;
+- saldo guardado no banco;
+- status de recebimento de pagamentos;
+- acesso ao histórico de transações;
+- acesso ao ranking;
+- informações do Magnata atual.
+
+Ao clicar em **Suas Informações**, o jogador pode ativar ou desativar o recebimento de Coins de outros jogadores.
+
+Quando o recebimento está desativado, comandos como `/pagar` e `/coins pagar` não conseguem enviar Coins para aquele jogador.
+
+### Transferências entre jogadores
+
+Os jogadores podem transferir Coins usando:
 
 ```text
-target/EconomiaPlus-1.0.0.jar
+/pagar <jogador> <quantidade>
+/coins pagar <jogador> <quantidade>
+/coins pay <jogador> <quantidade>
 ```
 
-## Comandos
+O sistema:
 
-| Comando | Descrição | Permissão | Padrão |
-|---|---|---|---|
-| `/coins` | Mostra seu saldo de Coins | `coinseconomy.coins` | todos |
-| `/coins <jogador>` | Mostra o saldo de outro jogador | `coinseconomy.coins` | todos |
-| `/coins top` | Atalho para o ranking de Coins | `coinseconomy.top` | todos |
-| `/coins give <jogador> <quantidade>` | Adiciona Coins a um jogador | `coinseconomy.admin` | op |
-| `/coins set <jogador> <quantidade>` | Define o saldo de um jogador | `coinseconomy.admin` | op |
-| `/pagar <jogador> <quantidade>` | Transfere Coins entre jogadores | `coinseconomy.pagar` | todos |
-| `/cobrar <jogador> <quantidade>` | Remove Coins de um jogador | `coinseconomy.cobrar` | op |
-| `/topcoins` | Abre o ranking dos jogadores com mais Coins | `coinseconomy.top` | todos |
-| `/banco` | Abre o Banco de Coins | `coinseconomy.banco` | todos |
-| `/loja` ou `/shop` | Abre a Loja de Coins | `coinseconomy.loja` | todos |
+- impede pagamento para si mesmo;
+- valida se o jogador alvo já entrou no servidor;
+- valida o valor informado;
+- verifica saldo suficiente;
+- respeita a preferência de recebimento do destinatário;
+- registra a movimentação no histórico de quem enviou e de quem recebeu.
 
-## Carteira e transações
+### Histórico de transações
 
-Cada jogador possui sua própria carteira de Coins.
+A carteira possui um extrato paginado com até **21 registros por página**.
 
-As operações importantes são registradas no histórico de transações, incluindo transferências e operações realizadas pela Loja de Coins.
+Atualmente são registrados:
 
-O sistema usa UUID para identificar os jogadores, evitando perda de saldo em trocas de nome.
+- Coins enviados;
+- Coins recebidos;
+- depósitos no banco;
+- saques do banco;
+- adições administrativas;
+- remoções administrativas;
+- compras na loja;
+- vendas para a loja.
 
-## Banco de Coins
+O histórico é persistido em disco.
 
-O comando `/banco` abre a interface bancária do EconomiaPlus.
+### Ranking de Coins
 
-O banco possui interface própria e exibe informações financeiras do jogador, operações disponíveis e histórico relacionado à economia.
+O comando `/topcoins` abre uma GUI paginada com os jogadores mais ricos do servidor.
 
-## Ranking
+Aliases:
 
-O `/topcoins` exibe os jogadores com maior quantidade de Coins.
+```text
+/coinstop
+/baltop
+```
 
-Os valores utilizam formatação compacta, por exemplo:
+O ranking:
 
-- `100K Coins`
-- `10M Coins`
-- `1B Coins`
+- considera apenas contas com saldo acima de zero;
+- ordena do maior para o menor saldo;
+- exibe a posição, cabeça do jogador, nome e patrimônio;
+- possui paginação;
+- também pode ser acessado pela GUI de `/coins`.
+
+Quando executado pelo console, o Top 10 é exibido em texto.
+
+### Magnata
+
+O jogador que ocupa o primeiro lugar da economia é considerado o **Magnata**.
+
+O EconomiaPlus mantém essa informação atualizada sempre que um saldo é alterado.
+
+A API interna do plugin disponibiliza:
+
+- verificação de quem é o Magnata;
+- UUID do Magnata atual;
+- tag visual `$`;
+- tag de chat `[$]`.
+
+A GUI de `/coins` também mostra o jogador que ocupa a posição de Magnata e seu patrimônio.
+
+## Banco
+
+O comando:
+
+```text
+/banco
+```
+
+abre o sistema bancário do EconomiaPlus.
+
+A reserva bancária é separada do saldo normal da carteira.
+
+### Operações bancárias
+
+O jogador pode:
+
+- depositar Coins da carteira no banco;
+- sacar Coins do banco para a carteira;
+- consultar o saldo guardado;
+- consultar rendimento diário e mensal;
+- visualizar o histórico bancário.
+
+Por padrão:
+
+```yaml
+banco:
+  rendimento-diario-percentual: 0.035
+  rendimento-mensal-percentual: 1.05
+  rendimento-intervalo-minutos: 60
+  operacoes:
+    minimo: 1000.0
+    limite-saques-diarios: 10
+    tempo-limite-segundos: 30
+```
+
+O banco possui:
+
+- valor mínimo configurável para operações;
+- limite diário configurável de saques;
+- contador diário de saques;
+- rendimento composto proporcional ao tempo decorrido;
+- registro de depósitos, saques e rendimentos;
+- histórico bancário paginado.
 
 ## Loja de Coins
 
-O comando `/loja` abre uma GUI com categorias de itens.
+O comando:
 
-A loja possui preços separados para **compra** e **venda**. Quando uma operação não está disponível para determinado item, ela simplesmente não aparece na descrição do item.
+```text
+/loja
+```
 
-### Categorias
+ou:
 
-A loja atualmente possui categorias como:
+```text
+/shop
+```
+
+abre a Loja de Coins.
+
+A loja é totalmente baseada em GUI e possui categorias configuradas em `shop.yml`.
+
+### Categorias atuais
 
 - Plantações
 - Utilitários
@@ -85,126 +180,210 @@ A loja atualmente possui categorias como:
 - Redstone
 - Outros
 
-### Regras de venda
+### Compra e venda
 
-Para controlar a geração de Coins e manter a economia mais difícil, o jogador só pode vender itens das seguintes categorias:
+Cada item pode possuir um preço de compra e um preço de venda independentes.
+
+Valores menores ou iguais a zero desativam a respectiva operação.
+
+Na interface:
+
+- operações indisponíveis não são exibidas;
+- clique esquerdo compra;
+- clique direito vende;
+- Shift + clique executa operações em quantidade, respeitando saldo, estoque do jogador e espaço no inventário.
+
+Os preços finais de compra são arredondados para Coins inteiros.
+
+### Regras econômicas atuais
+
+Atualmente, somente estas categorias permitem vender itens para o servidor:
 
 - **Plantações**
 - **Drops de Mobs**
 - **Minérios**
 
-As outras categorias são destinadas apenas à compra.
+As demais categorias são somente para compra.
 
-Os preços de venda dessas três categorias são propositalmente baixos para dificultar a geração rápida de dinheiro e reduzir inflação.
+A categoria **Minérios** é somente para venda: os jogadores não podem comprar minérios do servidor.
 
-### Minérios
+A loja também registra compras e vendas no histórico da carteira.
 
-A categoria de Minérios funciona como **somente venda**.
+### Configuração
 
-O jogador não pode comprar minérios na loja, mas pode vender minérios, barras, recursos e blocos de armazenamento, incluindo exemplos como:
-
-- Diamante e Bloco de Diamante
-- Ouro e Bloco de Ouro
-- Ferro e Bloco de Ferro
-- Esmeralda e Bloco de Esmeralda
-- Cobre
-- Carvão
-- Lápis-Lazúli
-- Redstone
-- Netherita
-- Recursos brutos
-
-### Blocos Coloridos
-
-A categoria de Blocos Coloridos mantém os itens agrupados por família, facilitando a navegação:
-
-- Concretos
-- Pós de concreto
-- Lãs
-- Terracotas
-- Terracotas esmaltadas
-- Vidros
-- Painéis de vidro
-- Carpetes
-- Corantes
-- Velas
-- Camas
-- Estandartes
-- Caixas de Shulker
-
-As **16 Caixas de Shulker coloridas** custam **250.000 Coins** cada e não podem ser vendidas para a loja.
-
-## Configuração da loja
-
-Os itens e preços ficam em:
+A loja é configurada em:
 
 ```text
-src/main/resources/shop.yml
+plugins/EconomiaPlus/shop.yml
 ```
 
-Valores de compra ou venda menores ou iguais a zero desativam aquela operação.
+Na primeira execução, o arquivo padrão é copiado dos recursos do plugin.
 
-Isso permite alterar preços e disponibilidade sem modificar a lógica principal da GUI.
+Também existem opções de:
 
-## Armazenamento
+- desconto percentual em compras;
+- bônus percentual em vendas.
 
-Os dados da economia são armazenados pelo plugin e associados ao UUID de cada jogador.
+## Comandos
 
-O sistema foi desenvolvido para manter as operações de economia centralizadas no EconomiaPlus.
+| Comando | Função |
+|---|---|
+| `/coins` | Abre a carteira de Coins |
+| `/coins <jogador>` | Consulta o saldo de outro jogador |
+| `/coins ajuda` | Exibe a ajuda do sistema de Coins |
+| `/coins top` | Abre o ranking |
+| `/coins pagar <jogador> <quantidade>` | Envia Coins |
+| `/coins pay <jogador> <quantidade>` | Alias de pagamento |
+| `/coins give <jogador> <quantidade>` | Adiciona Coins administrativamente |
+| `/coins add <jogador> <quantidade>` | Alias administrativo de adição |
+| `/coins set <jogador> <quantidade>` | Define o saldo de um jogador |
+| `/pagar <jogador> <quantidade>` | Transfere Coins |
+| `/cobrar <jogador> <quantidade>` | Remove Coins de um jogador |
+| `/topcoins` | Abre o ranking econômico |
+| `/banco` | Abre o banco |
+| `/loja` | Abre a Loja de Coins |
+| `/shop` | Alias de `/loja` |
 
-## Segurança econômica
+## Administração
 
-A loja foi configurada para funcionar principalmente como um **Coin sink**:
-
-- preços de compra são significativamente maiores que os preços de venda;
-- somente Plantações, Drops de Mobs e Minérios geram Coins através de venda;
-- itens de construção, decoração, utilitários e itens coloridos não podem ser vendidos de volta;
-- operações inválidas ou indisponíveis são bloqueadas;
-- as transações da loja são registradas no histórico.
-
-Essas regras ajudam a evitar geração excessiva de Coins e tornam a progressão econômica mais lenta.
-
-## Planejado: comércio entre jogadores
-
-Está planejado um sistema de comércio através de `/pw` ou `/comercio`.
-
-A ideia é permitir que jogadores criem lojas físicas utilizando **baús e placas**, porém somente dentro do próprio terreno.
-
-Exemplo visual de uma placa:
+### Adicionar Coins
 
 ```text
-Barra de Ferro
-x16
-C $100K | V $10K
-xCebola
+/coins give <jogador> <quantidade>
+/coins add <jogador> <quantidade>
 ```
 
-Onde:
-
-- `C` representa o preço para comprar da loja;
-- `V` representa o preço para vender para a loja;
-- o baú controla o estoque;
-- Coins são transferidos diretamente entre os jogadores;
-- o sistema deverá validar estoque, espaço no inventário e saldo;
-- a loja só poderá ser criada dentro de um terreno pertencente ao dono;
-- compras e vendas poderão gerar mensagens de confirmação e histórico de transações.
-
-Exemplo de mensagem:
+### Definir saldo
 
 ```text
-SUCESSO • Você vendeu x1 Chave Básica por $70K para xCebola!
+/coins set <jogador> <quantidade>
 ```
+
+### Cobrar Coins
+
+```text
+/cobrar <jogador> <quantidade>
+```
+
+O comportamento de cobrança pode ser configurado para permitir ou impedir saldo negativo:
+
+```yaml
+cobranca-permite-saldo-negativo: false
+```
+
+As alterações administrativas relevantes são registradas no histórico da carteira.
 
 ## Permissões
 
-`coinseconomy.*` concede todas as permissões administrativas e de uso do plugin.
+| Permissão | Função | Padrão |
+|---|---|---|
+| `coinseconomy.coins` | Usar o sistema de Coins | todos |
+| `coinseconomy.pagar` | Transferir Coins | todos |
+| `coinseconomy.cobrar` | Remover Coins de jogadores | op |
+| `coinseconomy.top` | Abrir o ranking | todos |
+| `coinseconomy.banco` | Abrir o banco | todos |
+| `coinseconomy.loja` | Abrir a loja | todos |
+| `coinseconomy.admin` | Usar `/coins give`, `add` e `set` | op |
+| `coinseconomy.*` | Todas as permissões | op |
 
-Permissões disponíveis:
+## API própria
 
-- `coinseconomy.coins`
-- `coinseconomy.pagar`
-- `coinseconomy.cobrar`
-- `coinseconomy.top`
-- `coinseconomy.banco`
-- `coinseconomy.loja`
-- `coinseconomy.admin`
+O EconomiaPlus registra `EconomyApi` no `ServicesManager` do Bukkit com prioridade alta.
+
+Outros plugins podem obter a API desta forma:
+
+```java
+EconomyApi economia = Bukkit.getServicesManager().load(EconomyApi.class);
+```
+
+A API expõe operações para:
+
+- verificar existência de conta;
+- criar conta;
+- consultar saldo;
+- verificar saldo suficiente;
+- depositar;
+- sacar;
+- definir saldo;
+- consultar nome conhecido;
+- obter ranking;
+- formatar valores monetários.
+
+## Persistência de dados
+
+O plugin utiliza arquivos YAML na pasta:
+
+```text
+plugins/EconomiaPlus/
+```
+
+Arquivos principais:
+
+| Arquivo | Conteúdo |
+|---|---|
+| `data.yml` | Saldos e nomes conhecidos |
+| `bank.yml` | Reserva bancária, saques, rendimentos e histórico |
+| `wallet-transactions.yml` | Histórico da carteira |
+| `wallet-settings.yml` | Preferência de recebimento de pagamentos |
+| `shop.yml` | Itens, categorias e preços da loja |
+| `config.yml` | Configurações gerais e do banco |
+
+Os dados são salvos automaticamente em intervalo configurável e também durante o desligamento do plugin.
+
+O padrão é:
+
+```yaml
+salvamento-automatico-ticks: 6000
+```
+
+equivalente a aproximadamente **5 minutos**.
+
+## Migração de versões antigas
+
+Ao iniciar, o EconomiaPlus procura a antiga pasta:
+
+```text
+plugins/CoinsEconomy/
+```
+
+Caso existam dados antigos e ainda não exista o arquivo equivalente no EconomiaPlus, o plugin migra:
+
+- `config.yml`;
+- `data.yml`.
+
+## Configuração padrão
+
+```yaml
+saldo-inicial: 0.0
+
+moeda:
+  singular: 'coin'
+  plural: 'coins'
+
+cobranca-permite-saldo-negativo: false
+
+salvamento-automatico-ticks: 6000
+
+banco:
+  rendimento-diario-percentual: 0.035
+  rendimento-mensal-percentual: 1.05
+  rendimento-intervalo-minutos: 60
+  operacoes:
+    minimo: 1000.0
+    limite-saques-diarios: 10
+    tempo-limite-segundos: 30
+```
+
+## Build
+
+Clone o projeto e execute:
+
+```bash
+mvn clean package
+```
+
+O arquivo final será gerado em:
+
+```text
+target/EconomiaPlus-1.0.0.jar
+```
