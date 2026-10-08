@@ -17,6 +17,8 @@ public final class ShopManager {
     private final CoinsEconomyPlugin plugin;
     private final File file;
     private final Map<String, ShopCategory> categories = new LinkedHashMap<>();
+    private double discountPercent;
+    private double sellBonusPercent;
 
     public ShopManager(CoinsEconomyPlugin plugin) {
         this.plugin = plugin;
@@ -30,6 +32,8 @@ public final class ShopManager {
 
         FileConfiguration config = YamlConfiguration.loadConfiguration(file);
         categories.clear();
+        discountPercent = Math.max(0.0D, config.getDouble("perfil.desconto-percentual", 0.0D));
+        sellBonusPercent = Math.max(0.0D, config.getDouble("perfil.bonus-venda-percentual", 0.0D));
 
         ConfigurationSection section = config.getConfigurationSection("categorias");
         if (section == null) return;
@@ -77,13 +81,11 @@ public final class ShopManager {
     }
 
     public double getDiscountPercent() {
-        FileConfiguration config = YamlConfiguration.loadConfiguration(file);
-        return Math.max(0.0D, config.getDouble("perfil.desconto-percentual", 0.0D));
+        return discountPercent;
     }
 
     public double getSellBonusPercent() {
-        FileConfiguration config = YamlConfiguration.loadConfiguration(file);
-        return Math.max(0.0D, config.getDouble("perfil.bonus-venda-percentual", 0.0D));
+        return sellBonusPercent;
     }
 
     public double finalBuyPrice(ShopItem item) {
