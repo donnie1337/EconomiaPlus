@@ -2,6 +2,7 @@ package com.coinseconomy.plugin.payment;
 
 import com.coinseconomy.plugin.CoinsEconomyPlugin;
 import com.coinseconomy.plugin.economy.EconomyManager;
+import com.coinseconomy.plugin.economy.MoneyParser;
 import com.coinseconomy.plugin.transactions.WalletTransaction;
 import net.kyori.adventure.audience.Audience;
 import net.kyori.adventure.text.Component;
@@ -153,8 +154,10 @@ public final class PaymentInputListener implements Listener {
             return;
         }
 
-        economy.sacar(player, amount);
-        economy.depositar(target, amount);
+        if (!economy.transferir(player, target, amount)) {
+            player.sendMessage(color("&c&lᴄᴏɪɴs &8• &fVocê não possui Coins suficientes para esse pagamento."));
+            return;
+        }
 
         plugin.getWalletTransactionManager().record(
                 player.getUniqueId(),
@@ -181,38 +184,7 @@ public final class PaymentInputListener implements Listener {
     }
 
     private double parseAmount(String raw) {
-        if (raw == null) return Double.NaN;
-
-        String value = raw.trim().toUpperCase(Locale.ROOT).replace(" ", "");
-        if (value.isEmpty()) return Double.NaN;
-
-        double multiplier = 1.0D;
-        char last = value.charAt(value.length() - 1);
-        switch (last) {
-            case 'K' -> { multiplier = 1_000.0D; value = value.substring(0, value.length() - 1); }
-            case 'M' -> { multiplier = 1_000_000.0D; value = value.substring(0, value.length() - 1); }
-            case 'B' -> { multiplier = 1_000_000_000.0D; value = value.substring(0, value.length() - 1); }
-            case 'T' -> { multiplier = 1_000_000_000_000.0D; value = value.substring(0, value.length() - 1); }
-            default -> { }
-        }
-
-        if (value.isEmpty()) return Double.NaN;
-
-        String normalized;
-        if (value.contains(",")) {
-            normalized = value.replace(".", "").replace(',', '.');
-        } else if (value.matches("\\d{1,3}(\\.\\d{3})+")) {
-            normalized = value.replace(".", "");
-        } else {
-            normalized = value;
-        }
-
-        try {
-            double parsed = Double.parseDouble(normalized) * multiplier;
-            return Double.isFinite(parsed) ? parsed : Double.NaN;
-        } catch (NumberFormatException ignored) {
-            return Double.NaN;
-        }
+        return MoneyParser.parse(raw);
     }
 
     private String compact(double value) {
