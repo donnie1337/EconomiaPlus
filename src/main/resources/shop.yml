@@ -83,8 +83,6 @@ categorias:
       FLETCHING_TABLE: { nome: "Mesa de Flechas", compra: 280.0, venda: 45.0 }
       LOOM: { nome: "Tear", compra: 250.0, venda: 40.0 }
       CAULDRON: { nome: "Caldeirão", compra: 600.0, venda: 95.0 }
-      ENDER_CHEST: { nome: "Baú do End", compra: 5000.0, venda: 700.0 }
-      SHULKER_BOX: { nome: "Caixa de Shulker", compra: 8500.0, venda: 1200.0 }
       MINECART: { nome: "Carrinho de Mina", compra: 650.0, venda: 100.0 }
       CHEST_MINECART: { nome: "Carrinho com Baú", compra: 900.0, venda: 140.0 }
       HOPPER_MINECART: { nome: "Carrinho com Funil", compra: 1500.0, venda: 230.0 }
@@ -140,7 +138,6 @@ categorias:
       RABBIT_STEW: { nome: "Ensopado de Coelho", compra: 240.0, venda: 40.0 }
       BEETROOT_SOUP: { nome: "Sopa de Beterraba", compra: 170.0, venda: 28.0 }
       DRIED_KELP_BLOCK: { nome: "Bloco de Alga Seca", compra: 500.0, venda: 80.0 }
-      GOLDEN_APPLE: { nome: "Maçã Dourada", compra: 4500.0, venda: 650.0 }
 
   drops:
     nome: "Drops de Mobs"
@@ -158,28 +155,20 @@ categorias:
       LEATHER: { nome: "Couro", compra: 130.0, venda: 25.0 }
       SPIDER_EYE: { nome: "Olho de Aranha", compra: 120.0, venda: 22.0 }
       STRING: { nome: "Linha", compra: 80.0, venda: 15.0 }
-      RABBIT_FOOT: { nome: "Pé de Coelho", compra: 900.0, venda: 180.0 }
       ROTTEN_FLESH: { nome: "Carne Podre", compra: 40.0, venda: 7.0 }
       GUNPOWDER: { nome: "Pólvora", compra: 200.0, venda: 40.0 }
       ARROW: { nome: "Flecha", compra: 70.0, venda: 10.0 }
       BONE: { nome: "Osso", compra: 90.0, venda: 18.0 }
       SLIME_BALL: { nome: "Bola de Slime", compra: 350.0, venda: 70.0 }
-      TADPOLE_SPAWN_EGG: { nome: "Ovo Gerador de Girino", compra: 750000.0, venda: 1000.0 }
       BLAZE_ROD: { nome: "Vara de Blaze", compra: 850.0, venda: 170.0 }
       ENDER_PEARL: { nome: "Pérola do End", compra: 700.0, venda: 140.0 }
-      GHAST_TEAR: { nome: "Lágrima de Ghast", compra: 1800.0, venda: 360.0 }
       MAGMA_CREAM: { nome: "Creme de Magma", compra: 500.0, venda: 100.0 }
       PRISMARINE_SHARD: { nome: "Fragmento de Prismarinho", compra: 220.0, venda: 45.0 }
       INK_SAC: { nome: "Bolsa de Tinta", compra: 90.0, venda: 18.0 }
       GLOW_INK_SAC: { nome: "Bolsa de Tinta Brilhante", compra: 160.0, venda: 32.0 }
       SCUTE: { nome: "Escama de Tartaruga", compra: 950.0, venda: 180.0 }
       ARMADILLO_SCUTE: { nome: "Escama de Tatu", compra: 650.0, venda: 120.0 }
-      SHULKER_SHELL: { nome: "Casco de Shulker", compra: 4500.0, venda: 700.0 }
-      NAUTILUS_SHELL: { nome: "Concha de Náutilo", compra: 3000.0, venda: 500.0 }
-      HEART_OF_THE_SEA: { nome: "Coração do Mar", compra: 12000.0, venda: 1800.0 }
-      BREEZE_ROD: { nome: "Vara de Brisa", compra: 1800.0, venda: 320.0 }
       WIND_CHARGE: { nome: "Carga de Vento", compra: 450.0, venda: 80.0 }
-      OMINOUS_BOTTLE: { nome: "Frasco Ominoso", compra: 2500.0, venda: 350.0 }
 
   minerios:
     nome: "Minérios"
@@ -718,8 +707,6 @@ categorias:
       DETECTOR_RAIL: { nome: "Trilho Detector", compra: 220.0, venda: 36.0 }
       ACTIVATOR_RAIL: { nome: "Trilho Ativador", compra: 220.0, venda: 36.0 }
       LIGHTNING_ROD: { nome: "Para-Raios", compra: 280.0, venda: 45.0 }
-      SCULK_SENSOR: { nome: "Sensor de Sculk", compra: 1800.0, venda: 280.0 }
-      CALIBRATED_SCULK_SENSOR: { nome: "Sensor de Sculk Calibrado", compra: 2500.0, venda: 380.0 }
       TNT: { nome: "TNT", compra: 900.0, venda: 120.0 }
       REDSTONE_TORCH: { nome: "Tocha de Redstone", compra: 80.0, venda: 12.0 }
       HEAVY_WEIGHTED_PRESSURE_PLATE: { nome: "Placa de Pressão Pesada", compra: 650.0, venda: 95.0 }
@@ -758,8 +745,5 @@ categorias:
       BOW: { nome: "Arco", compra: 650.0, venda: 95.0 }
       CROSSBOW: { nome: "Besta", compra: 1100.0, venda: 160.0 }
       SHIELD: { nome: "Escudo", compra: 900.0, venda: 130.0 }
-      RECOVERY_COMPASS: { nome: "Bússola de Recuperação", compra: 6000.0, venda: 850.0 }
-      ECHO_SHARD: { nome: "Fragmento de Eco", compra: 1800.0, venda: 260.0 }
-      GOAT_HORN: { nome: "Chifre de Cabra", compra: 2200.0, venda: 320.0 }
       CARROT_ON_A_STICK: { nome: "Cenoura no Graveto", compra: 550.0, venda: 80.0 }
       WARPED_FUNGUS_ON_A_STICK: { nome: "Fungo Distorcido no Graveto", compra: 650.0, venda: 95.0 }
