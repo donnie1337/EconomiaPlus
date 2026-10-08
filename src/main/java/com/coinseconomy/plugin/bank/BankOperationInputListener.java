@@ -3,6 +3,10 @@ package com.coinseconomy.plugin.bank;
 import com.coinseconomy.plugin.CoinsEconomyPlugin;
 import com.coinseconomy.plugin.economy.EconomyManager;
 import com.coinseconomy.plugin.transactions.WalletTransaction;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.event.ClickEvent;
+import net.kyori.adventure.text.event.HoverEvent;
+import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -51,14 +55,28 @@ public final class BankOperationInputListener implements Listener {
         pending.put(player.getUniqueId(), new PendingOperation(operation, timeout));
 
         player.closeInventory();
+        player.sendMessage(Component.empty());
+
         if (operation == Operation.DEPOSIT) {
-            player.sendMessage(color("&fDigite a quantia que você quer &adepositar &fno banco."));
-            player.sendMessage(color("&eExemplo de uso: &71000, 10K, 10.000 ou TUDO"));
+            player.sendMessage(color("&fDigite o valor que deseja &adepositar &fno banco."));
         } else {
-            player.sendMessage(color("&fDigite a quantia que você quer &csacar &fdo banco."));
-            player.sendMessage(color("&eExemplo de uso: &71000, 10K, 10.000 ou TUDO"));
+            player.sendMessage(color("&fDigite o valor que deseja &csacar &fdo banco."));
         }
-        player.sendMessage(color("&7Para cancelar, digite &fcancelar&7."));
+
+        player.sendMessage(color("&7Exemplos: &f1000&7, &f10K&7, &f10.000 &7ou &fTUDO&7."));
+        player.sendMessage(
+                Component.text("Para cancelar, clique ", NamedTextColor.GRAY)
+                        .append(Component.text("AQUI", NamedTextColor.RED)
+                                .decorate(net.kyori.adventure.text.format.TextDecoration.BOLD)
+                                .clickEvent(ClickEvent.runCommand("/cancelar"))
+                                .hoverEvent(HoverEvent.showText(
+                                        Component.text("Cancelar operação bancária", NamedTextColor.RED)
+                                )))
+                        .append(Component.text(" ou digite ", NamedTextColor.GRAY))
+                        .append(Component.text("cancelar", NamedTextColor.WHITE))
+                        .append(Component.text(".", NamedTextColor.GRAY))
+        );
+        player.sendMessage(Component.empty());
     }
 
     public boolean isPending(UUID uuid) {
@@ -77,9 +95,17 @@ public final class BankOperationInputListener implements Listener {
 
     @EventHandler(priority = EventPriority.LOWEST)
     public void onCommand(PlayerCommandPreprocessEvent event) {
-        if (!pending.containsKey(event.getPlayer().getUniqueId())) return;
+        UUID uuid = event.getPlayer().getUniqueId();
+        if (!pending.containsKey(uuid)) return;
 
         event.setCancelled(true);
+
+        if (event.getMessage().trim().equalsIgnoreCase("/" + CANCEL_WORD)) {
+            cancelPending(uuid, true);
+            event.getPlayer().sendMessage(color("&c&lʙᴀɴᴄᴏ &8• &fOperação bancária cancelada."));
+            return;
+        }
+
         sendInvalid(event.getPlayer());
     }
 
