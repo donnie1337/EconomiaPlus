@@ -47,7 +47,7 @@ public class PagarCommand implements CommandExecutor, TabCompleter {
         }
 
         if (args.length < 1) {
-            pagador.sendMessage(ChatColor.RED + "Uso correto: /pagar <jogador> [quantidade]");
+            pagador.sendMessage(color("&b&lCOINS &8• &fUse: &e/pagar <jogador>"));
             return true;
         }
 
@@ -119,6 +119,10 @@ public class PagarCommand implements CommandExecutor, TabCompleter {
         }
 
         return true;
+    }
+
+    private String color(String text) {
+        return ChatColor.translateAlternateColorCodes('&', text == null ? "" : text);
     }
 
     @Override
