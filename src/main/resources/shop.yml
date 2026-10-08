@@ -172,38 +172,38 @@ categorias:
       - "Minérios preciosos e"
       - "materiais de mineração"
     itens:
-      NETHERITE_INGOT: { nome: "Barra de Netherita", compra: 250000.0, venda: 50000.0 }
-      NETHERITE_SCRAP: { nome: "Fragmento de Netherita", compra: 70000.0, venda: 14000.0 }
-      EMERALD: { nome: "Esmeralda", compra: 1500.0, venda: 300.0 }
-      DIAMOND: { nome: "Diamante", compra: 3500.0, venda: 700.0 }
-      AMETHYST_SHARD: { nome: "Fragmento de Ametista", compra: 450.0, venda: 90.0 }
-      QUARTZ: { nome: "Quartzo", compra: 180.0, venda: 35.0 }
-      GOLD_INGOT: { nome: "Barra de Ouro", compra: 800.0, venda: 160.0 }
-      LAPIS_LAZULI: { nome: "Lápis-Lazúli", compra: 160.0, venda: 30.0 }
-      RAW_COPPER: { nome: "Cobre Bruto", compra: 120.0, venda: 22.0 }
-      COPPER_INGOT: { nome: "Barra de Cobre", compra: 150.0, venda: 28.0 }
-      IRON_INGOT: { nome: "Barra de Ferro", compra: 450.0, venda: 90.0 }
-      COAL: { nome: "Carvão", compra: 100.0, venda: 18.0 }
-      GOLD_ORE: { nome: "Minério de Ouro", compra: 900.0, venda: 180.0 }
-      DEEPSLATE_GOLD_ORE: { nome: "Minério de Ouro de Ardósia", compra: 950.0, venda: 190.0 }
-      LAPIS_ORE: { nome: "Minério de Lápis-Lazúli", compra: 550.0, venda: 110.0 }
-      DEEPSLATE_LAPIS_ORE: { nome: "Minério de Lápis de Ardósia", compra: 600.0, venda: 120.0 }
-      COPPER_ORE: { nome: "Minério de Cobre", compra: 300.0, venda: 60.0 }
-      DEEPSLATE_COPPER_ORE: { nome: "Minério de Cobre de Ardósia", compra: 350.0, venda: 70.0 }
-      IRON_ORE: { nome: "Minério de Ferro", compra: 550.0, venda: 110.0 }
-      DEEPSLATE_IRON_ORE: { nome: "Minério de Ferro de Ardósia", compra: 600.0, venda: 120.0 }
-      REDSTONE_ORE: { nome: "Minério de Redstone", compra: 420.0, venda: 85.0 }
-      DEEPSLATE_REDSTONE_ORE: { nome: "Minério de Redstone de Ardósia", compra: 470.0, venda: 95.0 }
-      DIAMOND_ORE: { nome: "Minério de Diamante", compra: 4200.0, venda: 850.0 }
-      DEEPSLATE_DIAMOND_ORE: { nome: "Minério de Diamante de Ardósia", compra: 4500.0, venda: 900.0 }
-      EMERALD_ORE: { nome: "Minério de Esmeralda", compra: 2300.0, venda: 460.0 }
-      DEEPSLATE_EMERALD_ORE: { nome: "Minério de Esmeralda de Ardósia", compra: 2500.0, venda: 500.0 }
-      RAW_IRON: { nome: "Ferro Bruto", compra: 380.0, venda: 75.0 }
-      RAW_GOLD: { nome: "Ouro Bruto", compra: 700.0, venda: 140.0 }
-      FLINT: { nome: "Sílex", compra: 90.0, venda: 15.0 }
-      CHARCOAL: { nome: "Carvão Vegetal", compra: 110.0, venda: 18.0 }
-      AMETHYST_BLOCK: { nome: "Bloco de Ametista", compra: 1900.0, venda: 300.0 }
-      BUDDING_AMETHYST: { nome: "Ametista Brotante", compra: 8000.0, venda: 1000.0 }
+      NETHERITE_INGOT: { nome: "Barra de Netherita", compra: 0.0, venda: 50000.0 }
+      NETHERITE_SCRAP: { nome: "Fragmento de Netherita", compra: 0.0, venda: 14000.0 }
+      EMERALD: { nome: "Esmeralda", compra: 0.0, venda: 300.0 }
+      DIAMOND: { nome: "Diamante", compra: 0.0, venda: 700.0 }
+      AMETHYST_SHARD: { nome: "Fragmento de Ametista", compra: 0.0, venda: 90.0 }
+      QUARTZ: { nome: "Quartzo", compra: 0.0, venda: 35.0 }
+      GOLD_INGOT: { nome: "Barra de Ouro", compra: 0.0, venda: 160.0 }
+      LAPIS_LAZULI: { nome: "Lápis-Lazúli", compra: 0.0, venda: 30.0 }
+      RAW_COPPER: { nome: "Cobre Bruto", compra: 0.0, venda: 22.0 }
+      COPPER_INGOT: { nome: "Barra de Cobre", compra: 0.0, venda: 28.0 }
+      IRON_INGOT: { nome: "Barra de Ferro", compra: 0.0, venda: 90.0 }
+      COAL: { nome: "Carvão", compra: 0.0, venda: 18.0 }
+      GOLD_ORE: { nome: "Minério de Ouro", compra: 0.0, venda: 180.0 }
+      DEEPSLATE_GOLD_ORE: { nome: "Minério de Ouro de Ardósia", compra: 0.0, venda: 190.0 }
+      LAPIS_ORE: { nome: "Minério de Lápis-Lazúli", compra: 0.0, venda: 110.0 }
+      DEEPSLATE_LAPIS_ORE: { nome: "Minério de Lápis de Ardósia", compra: 0.0, venda: 120.0 }
+      COPPER_ORE: { nome: "Minério de Cobre", compra: 0.0, venda: 60.0 }
+      DEEPSLATE_COPPER_ORE: { nome: "Minério de Cobre de Ardósia", compra: 0.0, venda: 70.0 }
+      IRON_ORE: { nome: "Minério de Ferro", compra: 0.0, venda: 110.0 }
+      DEEPSLATE_IRON_ORE: { nome: "Minério de Ferro de Ardósia", compra: 0.0, venda: 120.0 }
+      REDSTONE_ORE: { nome: "Minério de Redstone", compra: 0.0, venda: 85.0 }
+      DEEPSLATE_REDSTONE_ORE: { nome: "Minério de Redstone de Ardósia", compra: 0.0, venda: 95.0 }
+      DIAMOND_ORE: { nome: "Minério de Diamante", compra: 0.0, venda: 850.0 }
+      DEEPSLATE_DIAMOND_ORE: { nome: "Minério de Diamante de Ardósia", compra: 0.0, venda: 900.0 }
+      EMERALD_ORE: { nome: "Minério de Esmeralda", compra: 0.0, venda: 460.0 }
+      DEEPSLATE_EMERALD_ORE: { nome: "Minério de Esmeralda de Ardósia", compra: 0.0, venda: 500.0 }
+      RAW_IRON: { nome: "Ferro Bruto", compra: 0.0, venda: 75.0 }
+      RAW_GOLD: { nome: "Ouro Bruto", compra: 0.0, venda: 140.0 }
+      FLINT: { nome: "Sílex", compra: 0.0, venda: 15.0 }
+      CHARCOAL: { nome: "Carvão Vegetal", compra: 0.0, venda: 18.0 }
+      AMETHYST_BLOCK: { nome: "Bloco de Ametista", compra: 0.0, venda: 300.0 }
+      BUDDING_AMETHYST: { nome: "Ametista Brotante", compra: 0.0, venda: 1000.0 }
 
   blocos:
     nome: "Blocos"
