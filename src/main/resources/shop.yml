@@ -52,59 +52,59 @@ categorias:
       - "Itens úteis para ajudar"
       - "a criar suas farms"
     itens:
-      DIRT: { nome: "Terra", compra: 25.0, venda: 4.0 }
-      GRASS_BLOCK: { nome: "Bloco de Grama", compra: 45.0, venda: 7.0 }
-      SAND: { nome: "Areia", compra: 35.0, venda: 6.0 }
-      RED_SAND: { nome: "Areia Vermelha", compra: 45.0, venda: 7.0 }
-      OAK_SAPLING: { nome: "Muda de Carvalho", compra: 70.0, venda: 10.0 }
-      SPRUCE_SAPLING: { nome: "Muda de Pinheiro", compra: 70.0, venda: 10.0 }
-      BIRCH_SAPLING: { nome: "Muda de Bétula", compra: 70.0, venda: 10.0 }
-      DARK_OAK_SAPLING: { nome: "Muda de Carvalho Escuro", compra: 90.0, venda: 12.0 }
-      ACACIA_SAPLING: { nome: "Muda de Acácia", compra: 70.0, venda: 10.0 }
-      JUNGLE_SAPLING: { nome: "Muda da Selva", compra: 90.0, venda: 12.0 }
-      OAK_PLANKS: { nome: "Tábuas de Carvalho", compra: 30.0, venda: 5.0 }
-      ICE: { nome: "Gelo", compra: 120.0, venda: 20.0 }
-      PODZOL: { nome: "Podzol", compra: 90.0, venda: 15.0 }
-      END_STONE: { nome: "Pedra do End", compra: 150.0, venda: 30.0 }
-      BUCKET: { nome: "Balde", compra: 220.0, venda: 35.0 }
-      BONE_MEAL: { nome: "Farinha de Osso", compra: 85.0, venda: 14.0 }
-      TORCH: { nome: "Tocha", compra: 35.0, venda: 5.0 }
-      LADDER: { nome: "Escada", compra: 45.0, venda: 7.0 }
-      CHEST: { nome: "Baú", compra: 180.0, venda: 30.0 }
-      BARREL: { nome: "Barril", compra: 200.0, venda: 35.0 }
-      COMPOSTER: { nome: "Composteira", compra: 160.0, venda: 25.0 }
-      FURNACE: { nome: "Fornalha", compra: 220.0, venda: 35.0 }
-      CRAFTING_TABLE: { nome: "Bancada de Trabalho", compra: 120.0, venda: 20.0 }
-      BLAST_FURNACE: { nome: "Alto-Forno", compra: 700.0, venda: 110.0 }
-      SMOKER: { nome: "Defumador", compra: 450.0, venda: 70.0 }
-      STONECUTTER: { nome: "Cortador de Pedra", compra: 500.0, venda: 80.0 }
-      GRINDSTONE: { nome: "Rebolo", compra: 300.0, venda: 50.0 }
-      CARTOGRAPHY_TABLE: { nome: "Mesa de Cartografia", compra: 280.0, venda: 45.0 }
-      FLETCHING_TABLE: { nome: "Mesa de Flechas", compra: 280.0, venda: 45.0 }
-      LOOM: { nome: "Tear", compra: 250.0, venda: 40.0 }
-      CAULDRON: { nome: "Caldeirão", compra: 600.0, venda: 95.0 }
-      MINECART: { nome: "Carrinho de Mina", compra: 650.0, venda: 100.0 }
-      CHEST_MINECART: { nome: "Carrinho com Baú", compra: 900.0, venda: 140.0 }
-      HOPPER_MINECART: { nome: "Carrinho com Funil", compra: 1500.0, venda: 230.0 }
-      OAK_BOAT: { nome: "Barco de Carvalho", compra: 180.0, venda: 30.0 }
-      SPRUCE_BOAT: { nome: "Barco de Pinheiro", compra: 190.0, venda: 32.0 }
-      BIRCH_BOAT: { nome: "Barco de Bétula", compra: 190.0, venda: 32.0 }
-      JUNGLE_BOAT: { nome: "Barco da Selva", compra: 200.0, venda: 34.0 }
-      ACACIA_BOAT: { nome: "Barco de Acácia", compra: 190.0, venda: 32.0 }
-      DARK_OAK_BOAT: { nome: "Barco de Carvalho Escuro", compra: 200.0, venda: 34.0 }
-      MANGROVE_BOAT: { nome: "Barco de Mangue", compra: 210.0, venda: 36.0 }
-      CHERRY_BOAT: { nome: "Barco de Cerejeira", compra: 220.0, venda: 38.0 }
-      BAMBOO_RAFT: { nome: "Jangada de Bambu", compra: 220.0, venda: 38.0 }
-      MANGROVE_PROPAGULE: { nome: "Propágulo de Mangue", compra: 110.0, venda: 16.0 }
-      CHERRY_SAPLING: { nome: "Muda de Cerejeira", compra: 120.0, venda: 18.0 }
-      OAK_LEAVES: { nome: "Folhas de Carvalho", compra: 45.0, venda: 6.0 }
-      SPRUCE_LEAVES: { nome: "Folhas de Pinheiro", compra: 45.0, venda: 6.0 }
-      BIRCH_LEAVES: { nome: "Folhas de Bétula", compra: 45.0, venda: 6.0 }
-      JUNGLE_LEAVES: { nome: "Folhas da Selva", compra: 50.0, venda: 7.0 }
-      ACACIA_LEAVES: { nome: "Folhas de Acácia", compra: 45.0, venda: 6.0 }
-      DARK_OAK_LEAVES: { nome: "Folhas de Carvalho Escuro", compra: 50.0, venda: 7.0 }
-      MANGROVE_LEAVES: { nome: "Folhas de Mangue", compra: 55.0, venda: 8.0 }
-      CHERRY_LEAVES: { nome: "Folhas de Cerejeira", compra: 60.0, venda: 9.0 }
+      DIRT: { nome: "Terra", compra: 25.0, venda: 0.0 }
+      GRASS_BLOCK: { nome: "Bloco de Grama", compra: 45.0, venda: 0.0 }
+      SAND: { nome: "Areia", compra: 35.0, venda: 0.0 }
+      RED_SAND: { nome: "Areia Vermelha", compra: 45.0, venda: 0.0 }
+      OAK_SAPLING: { nome: "Muda de Carvalho", compra: 70.0, venda: 0.0 }
+      SPRUCE_SAPLING: { nome: "Muda de Pinheiro", compra: 70.0, venda: 0.0 }
+      BIRCH_SAPLING: { nome: "Muda de Bétula", compra: 70.0, venda: 0.0 }
+      DARK_OAK_SAPLING: { nome: "Muda de Carvalho Escuro", compra: 90.0, venda: 0.0 }
+      ACACIA_SAPLING: { nome: "Muda de Acácia", compra: 70.0, venda: 0.0 }
+      JUNGLE_SAPLING: { nome: "Muda da Selva", compra: 90.0, venda: 0.0 }
+      OAK_PLANKS: { nome: "Tábuas de Carvalho", compra: 30.0, venda: 0.0 }
+      ICE: { nome: "Gelo", compra: 120.0, venda: 0.0 }
+      PODZOL: { nome: "Podzol", compra: 90.0, venda: 0.0 }
+      END_STONE: { nome: "Pedra do End", compra: 150.0, venda: 0.0 }
+      BUCKET: { nome: "Balde", compra: 220.0, venda: 0.0 }
+      BONE_MEAL: { nome: "Farinha de Osso", compra: 85.0, venda: 0.0 }
+      TORCH: { nome: "Tocha", compra: 35.0, venda: 0.0 }
+      LADDER: { nome: "Escada", compra: 45.0, venda: 0.0 }
+      CHEST: { nome: "Baú", compra: 180.0, venda: 0.0 }
+      BARREL: { nome: "Barril", compra: 200.0, venda: 0.0 }
+      COMPOSTER: { nome: "Composteira", compra: 160.0, venda: 0.0 }
+      FURNACE: { nome: "Fornalha", compra: 220.0, venda: 0.0 }
+      CRAFTING_TABLE: { nome: "Bancada de Trabalho", compra: 120.0, venda: 0.0 }
+      BLAST_FURNACE: { nome: "Alto-Forno", compra: 700.0, venda: 0.0 }
+      SMOKER: { nome: "Defumador", compra: 450.0, venda: 0.0 }
+      STONECUTTER: { nome: "Cortador de Pedra", compra: 500.0, venda: 0.0 }
+      GRINDSTONE: { nome: "Rebolo", compra: 300.0, venda: 0.0 }
+      CARTOGRAPHY_TABLE: { nome: "Mesa de Cartografia", compra: 280.0, venda: 0.0 }
+      FLETCHING_TABLE: { nome: "Mesa de Flechas", compra: 280.0, venda: 0.0 }
+      LOOM: { nome: "Tear", compra: 250.0, venda: 0.0 }
+      CAULDRON: { nome: "Caldeirão", compra: 600.0, venda: 0.0 }
+      MINECART: { nome: "Carrinho de Mina", compra: 650.0, venda: 0.0 }
+      CHEST_MINECART: { nome: "Carrinho com Baú", compra: 900.0, venda: 0.0 }
+      HOPPER_MINECART: { nome: "Carrinho com Funil", compra: 1500.0, venda: 0.0 }
+      OAK_BOAT: { nome: "Barco de Carvalho", compra: 180.0, venda: 0.0 }
+      SPRUCE_BOAT: { nome: "Barco de Pinheiro", compra: 190.0, venda: 0.0 }
+      BIRCH_BOAT: { nome: "Barco de Bétula", compra: 190.0, venda: 0.0 }
+      JUNGLE_BOAT: { nome: "Barco da Selva", compra: 200.0, venda: 0.0 }
+      ACACIA_BOAT: { nome: "Barco de Acácia", compra: 190.0, venda: 0.0 }
+      DARK_OAK_BOAT: { nome: "Barco de Carvalho Escuro", compra: 200.0, venda: 0.0 }
+      MANGROVE_BOAT: { nome: "Barco de Mangue", compra: 210.0, venda: 0.0 }
+      CHERRY_BOAT: { nome: "Barco de Cerejeira", compra: 220.0, venda: 0.0 }
+      BAMBOO_RAFT: { nome: "Jangada de Bambu", compra: 220.0, venda: 0.0 }
+      MANGROVE_PROPAGULE: { nome: "Propágulo de Mangue", compra: 110.0, venda: 0.0 }
+      CHERRY_SAPLING: { nome: "Muda de Cerejeira", compra: 120.0, venda: 0.0 }
+      OAK_LEAVES: { nome: "Folhas de Carvalho", compra: 45.0, venda: 0.0 }
+      SPRUCE_LEAVES: { nome: "Folhas de Pinheiro", compra: 45.0, venda: 0.0 }
+      BIRCH_LEAVES: { nome: "Folhas de Bétula", compra: 45.0, venda: 0.0 }
+      JUNGLE_LEAVES: { nome: "Folhas da Selva", compra: 50.0, venda: 0.0 }
+      ACACIA_LEAVES: { nome: "Folhas de Acácia", compra: 45.0, venda: 0.0 }
+      DARK_OAK_LEAVES: { nome: "Folhas de Carvalho Escuro", compra: 50.0, venda: 0.0 }
+      MANGROVE_LEAVES: { nome: "Folhas de Mangue", compra: 55.0, venda: 0.0 }
+      CHERRY_LEAVES: { nome: "Folhas de Cerejeira", compra: 60.0, venda: 0.0 }
 
   comidas:
     nome: "Comidas"
