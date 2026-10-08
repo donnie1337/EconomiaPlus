@@ -20,14 +20,14 @@ import java.util.Locale;
 
 public final class ShopGUI {
 
-    // Layout principal intencionalmente compacto: 4 linhas, sem linha extra de navegação.
-    private static final int MAIN_ROWS = 4;
+    // Layout principal em 5 linhas para manter as categorias organizadas e o perfil centralizado no slot 40.
+    private static final int MAIN_ROWS = 5;
     public static final int MAIN_SIZE = MAIN_ROWS * 9;
     public static final int CATEGORY_SIZE = 54;
     public static final int ITEMS_PER_PAGE = 21;
 
     // Mantém a organização visual do menu principal:
-    // perfil no topo, categorias em duas linhas centrais e atalhos na última linha.
+    // categorias em duas linhas centrais e perfil centralizado na última linha.
     private static final int[] CATEGORY_SLOTS = {10, 11, 12, 13, 14, 15, 19, 20, 21, 22};
     private static final int[] ITEM_SLOTS = {
             10, 11, 12, 13, 14, 15, 16,
@@ -35,7 +35,7 @@ public final class ShopGUI {
             28, 29, 30, 31, 32, 33, 34
     };
 
-    public static final int SLOT_PROFILE = 4;
+    public static final int SLOT_PROFILE = 40;
     public static final int SLOT_PREVIOUS = 47;
     public static final int SLOT_BACK = 49;
     public static final int SLOT_NEXT = 51;

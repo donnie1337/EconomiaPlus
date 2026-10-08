@@ -33,6 +33,11 @@ categorias:
       NETHER_WART: { nome: "Fungo do Nether", compra: 180.0, venda: 40.0 }
       BROWN_MUSHROOM: { nome: "Cogumelo Marrom", compra: 100.0, venda: 20.0 }
       RED_MUSHROOM: { nome: "Cogumelo Vermelho", compra: 100.0, venda: 20.0 }
+      MELON: { nome: "Melancia", compra: 180.0, venda: 35.0 }
+      MELON_SEEDS: { nome: "Sementes de Melancia", compra: 75.0, venda: 10.0 }
+      PUMPKIN_SEEDS: { nome: "Sementes de Abóbora", compra: 75.0, venda: 10.0 }
+      KELP: { nome: "Alga", compra: 55.0, venda: 10.0 }
+      DRIED_KELP: { nome: "Alga Seca", compra: 70.0, venda: 14.0 }
 
   utilitarios:
     nome: "Utilitários"
@@ -56,6 +61,13 @@ categorias:
       ICE: { nome: "Gelo", compra: 120.0, venda: 20.0 }
       PODZOL: { nome: "Podzol", compra: 90.0, venda: 15.0 }
       END_STONE: { nome: "Pedra do End", compra: 150.0, venda: 30.0 }
+      BUCKET: { nome: "Balde", compra: 220.0, venda: 35.0 }
+      BONE_MEAL: { nome: "Farinha de Osso", compra: 85.0, venda: 14.0 }
+      TORCH: { nome: "Tocha", compra: 35.0, venda: 5.0 }
+      LADDER: { nome: "Escada", compra: 45.0, venda: 7.0 }
+      CHEST: { nome: "Baú", compra: 180.0, venda: 30.0 }
+      BARREL: { nome: "Barril", compra: 200.0, venda: 35.0 }
+      COMPOSTER: { nome: "Composteira", compra: 160.0, venda: 25.0 }
 
   comidas:
     nome: "Comidas"
@@ -77,6 +89,14 @@ categorias:
       COOKED_MUTTON: { nome: "Carneiro Assado", compra: 100.0, venda: 20.0 }
       CHICKEN: { nome: "Frango Cru", compra: 65.0, venda: 12.0 }
       COOKED_CHICKEN: { nome: "Frango Assado", compra: 95.0, venda: 18.0 }
+      COOKED_PORKCHOP: { nome: "Costeleta Assada", compra: 110.0, venda: 22.0 }
+      RABBIT: { nome: "Coelho Cru", compra: 80.0, venda: 15.0 }
+      COOKED_RABBIT: { nome: "Coelho Assado", compra: 115.0, venda: 22.0 }
+      BREAD: { nome: "Pão", compra: 95.0, venda: 18.0 }
+      COOKIE: { nome: "Biscoito", compra: 45.0, venda: 8.0 }
+      PUMPKIN_PIE: { nome: "Torta de Abóbora", compra: 140.0, venda: 25.0 }
+      GOLDEN_CARROT: { nome: "Cenoura Dourada", compra: 650.0, venda: 110.0 }
+      HONEY_BOTTLE: { nome: "Frasco de Mel", compra: 180.0, venda: 30.0 }
 
   drops:
     nome: "Drops de Mobs"
@@ -101,6 +121,13 @@ categorias:
       BONE: { nome: "Osso", compra: 90.0, venda: 18.0 }
       SLIME_BALL: { nome: "Bola de Slime", compra: 350.0, venda: 70.0 }
       TADPOLE_SPAWN_EGG: { nome: "Ovo Gerador de Girino", compra: 750000.0, venda: 1000.0 }
+      BLAZE_ROD: { nome: "Vara de Blaze", compra: 850.0, venda: 170.0 }
+      ENDER_PEARL: { nome: "Pérola do End", compra: 700.0, venda: 140.0 }
+      GHAST_TEAR: { nome: "Lágrima de Ghast", compra: 1800.0, venda: 360.0 }
+      MAGMA_CREAM: { nome: "Creme de Magma", compra: 500.0, venda: 100.0 }
+      PRISMARINE_SHARD: { nome: "Fragmento de Prismarinho", compra: 220.0, venda: 45.0 }
+      INK_SAC: { nome: "Bolsa de Tinta", compra: 90.0, venda: 18.0 }
+      GLOW_INK_SAC: { nome: "Bolsa de Tinta Brilhante", compra: 160.0, venda: 32.0 }
 
   minerios:
     nome: "Minérios"
@@ -130,6 +157,14 @@ categorias:
       DEEPSLATE_COPPER_ORE: { nome: "Minério de Cobre de Ardósia", compra: 350.0, venda: 70.0 }
       IRON_ORE: { nome: "Minério de Ferro", compra: 550.0, venda: 110.0 }
       DEEPSLATE_IRON_ORE: { nome: "Minério de Ferro de Ardósia", compra: 600.0, venda: 120.0 }
+      REDSTONE_ORE: { nome: "Minério de Redstone", compra: 420.0, venda: 85.0 }
+      DEEPSLATE_REDSTONE_ORE: { nome: "Minério de Redstone de Ardósia", compra: 470.0, venda: 95.0 }
+      DIAMOND_ORE: { nome: "Minério de Diamante", compra: 4200.0, venda: 850.0 }
+      DEEPSLATE_DIAMOND_ORE: { nome: "Minério de Diamante de Ardósia", compra: 4500.0, venda: 900.0 }
+      EMERALD_ORE: { nome: "Minério de Esmeralda", compra: 2300.0, venda: 460.0 }
+      DEEPSLATE_EMERALD_ORE: { nome: "Minério de Esmeralda de Ardósia", compra: 2500.0, venda: 500.0 }
+      RAW_IRON: { nome: "Ferro Bruto", compra: 380.0, venda: 75.0 }
+      RAW_GOLD: { nome: "Ouro Bruto", compra: 700.0, venda: 140.0 }
 
   blocos:
     nome: "Blocos"
@@ -151,6 +186,15 @@ categorias:
       NETHERRACK: { nome: "Netherrack", compra: 25.0, venda: 4.0 }
       SOUL_SAND: { nome: "Areia das Almas", compra: 90.0, venda: 15.0 }
       QUARTZ_BLOCK: { nome: "Bloco de Quartzo", compra: 850.0, venda: 150.0 }
+      STONE_BRICKS: { nome: "Tijolos de Pedra", compra: 70.0, venda: 12.0 }
+      MOSSY_COBBLESTONE: { nome: "Pedregulho Musgoso", compra: 75.0, venda: 12.0 }
+      MOSS_BLOCK: { nome: "Bloco de Musgo", compra: 90.0, venda: 15.0 }
+      CALCITE: { nome: "Calcita", compra: 65.0, venda: 10.0 }
+      TUFF: { nome: "Tufo", compra: 55.0, venda: 9.0 }
+      BLACKSTONE: { nome: "Pedra Negra", compra: 70.0, venda: 12.0 }
+      BASALT: { nome: "Basalto", compra: 65.0, venda: 10.0 }
+      SANDSTONE: { nome: "Arenito", compra: 55.0, venda: 9.0 }
+      MUD_BRICKS: { nome: "Tijolos de Lama", compra: 80.0, venda: 14.0 }
 
   coloridos:
     nome: "Blocos Coloridos"
@@ -176,6 +220,14 @@ categorias:
       GREEN_CONCRETE: { nome: "Concreto Verde", compra: 80.0, venda: 12.0 }
       RED_CONCRETE: { nome: "Concreto Vermelho", compra: 80.0, venda: 12.0 }
       BLACK_CONCRETE: { nome: "Concreto Preto", compra: 80.0, venda: 12.0 }
+      WHITE_WOOL: { nome: "Lã Branca", compra: 70.0, venda: 10.0 }
+      RED_WOOL: { nome: "Lã Vermelha", compra: 70.0, venda: 10.0 }
+      BLUE_WOOL: { nome: "Lã Azul", compra: 70.0, venda: 10.0 }
+      GREEN_WOOL: { nome: "Lã Verde", compra: 70.0, venda: 10.0 }
+      BLACK_WOOL: { nome: "Lã Preta", compra: 70.0, venda: 10.0 }
+      WHITE_TERRACOTTA: { nome: "Terracota Branca", compra: 90.0, venda: 14.0 }
+      RED_TERRACOTTA: { nome: "Terracota Vermelha", compra: 90.0, venda: 14.0 }
+      BLUE_TERRACOTTA: { nome: "Terracota Azul", compra: 90.0, venda: 14.0 }
 
   decoracoes:
     nome: "Decorações"
@@ -193,6 +245,13 @@ categorias:
       FLOWER_POT: { nome: "Vaso de Flores", compra: 120.0, venda: 20.0 }
       BOOKSHELF: { nome: "Estante de Livros", compra: 420.0, venda: 75.0 }
       ARMOR_STAND: { nome: "Suporte de Armadura", compra: 350.0, venda: 60.0 }
+      CANDLE: { nome: "Vela", compra: 80.0, venda: 12.0 }
+      CHAIN: { nome: "Corrente", compra: 220.0, venda: 35.0 }
+      BELL: { nome: "Sino", compra: 2500.0, venda: 400.0 }
+      FLOWERING_AZALEA: { nome: "Azaleia Florida", compra: 180.0, venda: 30.0 }
+      SEA_LANTERN: { nome: "Lanterna do Mar", compra: 650.0, venda: 110.0 }
+      END_ROD: { nome: "Bastão do End", compra: 420.0, venda: 70.0 }
+      GLOWSTONE: { nome: "Pedra Luminosa", compra: 350.0, venda: 60.0 }
 
   redstone:
     nome: "Redstone"
@@ -212,6 +271,13 @@ categorias:
       DISPENSER: { nome: "Ejetor", compra: 450.0, venda: 80.0 }
       DROPPER: { nome: "Liberador", compra: 400.0, venda: 70.0 }
       REDSTONE_LAMP: { nome: "Lâmpada de Redstone", compra: 500.0, venda: 90.0 }
+      LEVER: { nome: "Alavanca", compra: 60.0, venda: 10.0 }
+      STONE_BUTTON: { nome: "Botão de Pedra", compra: 35.0, venda: 5.0 }
+      STONE_PRESSURE_PLATE: { nome: "Placa de Pressão de Pedra", compra: 70.0, venda: 12.0 }
+      TARGET: { nome: "Alvo", compra: 380.0, venda: 65.0 }
+      DAYLIGHT_DETECTOR: { nome: "Sensor de Luz Solar", compra: 450.0, venda: 75.0 }
+      NOTE_BLOCK: { nome: "Bloco Musical", compra: 300.0, venda: 50.0 }
+      TRIPWIRE_HOOK: { nome: "Gancho de Armadilha", compra: 120.0, venda: 20.0 }
 
   outros:
     nome: "Outros"
@@ -227,3 +293,10 @@ categorias:
       SADDLE: { nome: "Sela", compra: 2200.0, venda: 350.0 }
       LEAD: { nome: "Laço", compra: 450.0, venda: 75.0 }
       EXPERIENCE_BOTTLE: { nome: "Frasco de Experiência", compra: 900.0, venda: 120.0 }
+      PAPER: { nome: "Papel", compra: 45.0, venda: 7.0 }
+      MAP: { nome: "Mapa Vazio", compra: 320.0, venda: 50.0 }
+      CLOCK: { nome: "Relógio", compra: 850.0, venda: 140.0 }
+      COMPASS: { nome: "Bússola", compra: 650.0, venda: 110.0 }
+      SPYGLASS: { nome: "Luneta", compra: 700.0, venda: 120.0 }
+      ELYTRA: { nome: "Élitros", compra: 250000.0, venda: 25000.0 }
+      TOTEM_OF_UNDYING: { nome: "Totem da Imortalidade", compra: 85000.0, venda: 8500.0 }
