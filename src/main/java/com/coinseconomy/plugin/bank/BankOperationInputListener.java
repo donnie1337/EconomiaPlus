@@ -5,6 +5,7 @@ import com.coinseconomy.plugin.economy.EconomyManager;
 import com.coinseconomy.plugin.transactions.WalletTransaction;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.event.ClickEvent;
+import net.kyori.adventure.audience.Audience;
 import net.kyori.adventure.text.event.HoverEvent;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Bukkit;
@@ -68,7 +69,11 @@ public final class BankOperationInputListener implements Listener {
                 Component.text("Para cancelar, clique ", NamedTextColor.GRAY)
                         .append(Component.text("AQUI", NamedTextColor.RED)
                                 .decorate(net.kyori.adventure.text.format.TextDecoration.BOLD)
-                                .clickEvent(ClickEvent.runCommand("/cancelar"))
+                                .clickEvent(ClickEvent.callback((Audience audience) -> {
+                                    if (audience instanceof Player clickedPlayer) {
+                                        cancelFromCommand(clickedPlayer);
+                                    }
+                                }))
                                 .hoverEvent(HoverEvent.showText(
                                         Component.text("Cancelar operação bancária", NamedTextColor.RED)
                                 )))
