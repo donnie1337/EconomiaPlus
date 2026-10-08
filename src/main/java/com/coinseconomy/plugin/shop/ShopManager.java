@@ -90,7 +90,7 @@ public final class ShopManager {
 
     public double finalBuyPrice(ShopItem item) {
         double factor = Math.max(0.0D, 1.0D - (getDiscountPercent() / 100.0D));
-        return item.buyPrice() * factor;
+        return Math.ceil(item.buyPrice() * factor);
     }
 
     public double finalSellPrice(ShopItem item) {
