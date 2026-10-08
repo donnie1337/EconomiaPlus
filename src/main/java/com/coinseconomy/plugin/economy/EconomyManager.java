@@ -36,6 +36,7 @@ public class EconomyManager implements EconomyApi {
 
     private double saldoInicial;
     private volatile UUID magnataId;
+    private volatile boolean magnataDirty = true;
 
     public EconomyManager(CoinsEconomyPlugin plugin) {
         this.plugin = plugin;
@@ -85,7 +86,7 @@ public class EconomyManager implements EconomyApi {
             lock.writeLock().unlock();
         }
 
-        atualizarMagnata();
+        magnataDirty = true;
     }
 
     /**
@@ -129,7 +130,7 @@ public class EconomyManager implements EconomyApi {
 
     public void criarConta(OfflinePlayer jogador) {
         if (garantirConta(jogador.getUniqueId(), jogador.getName()) && saldoInicial > 0.0D) {
-            atualizarMagnata();
+            magnataDirty = true;
         }
     }
 
@@ -149,7 +150,7 @@ public class EconomyManager implements EconomyApi {
         double novoSaldo = normalize(getSaldo(uuid) + quantidade);
         if (!Double.isFinite(novoSaldo)) return;
         saldos.put(uuid, novoSaldo);
-        atualizarMagnata();
+        magnataDirty = true;
     }
 
     /**
@@ -167,7 +168,7 @@ public class EconomyManager implements EconomyApi {
         if (atual + 0.0000001D < valor) return false;
 
         saldos.put(uuid, normalize(atual - valor));
-        atualizarMagnata();
+        magnataDirty = true;
         return true;
     }
 
@@ -187,7 +188,7 @@ public class EconomyManager implements EconomyApi {
 
         saldos.put(origem.getUniqueId(), normalize(saldoOrigem - valor));
         saldos.put(destino.getUniqueId(), saldoDestino);
-        atualizarMagnata();
+        magnataDirty = true;
         return true;
     }
 
@@ -196,7 +197,7 @@ public class EconomyManager implements EconomyApi {
         UUID uuid = jogador.getUniqueId();
         garantirConta(uuid, jogador.getName());
         saldos.put(uuid, normalize(quantidade));
-        atualizarMagnata();
+        magnataDirty = true;
     }
 
     public String getNomeConhecido(UUID uuid) {
@@ -234,10 +235,12 @@ public class EconomyManager implements EconomyApi {
     }
 
     public UUID getMagnataId() {
+        if (magnataDirty) atualizarMagnata();
         return magnataId;
     }
 
     public boolean isMagnata(UUID uuid) {
+        if (magnataDirty) atualizarMagnata();
         return uuid != null && uuid.equals(magnataId);
     }
 
@@ -264,6 +267,7 @@ public class EconomyManager implements EconomyApi {
         }
 
         magnataId = melhor;
+        magnataDirty = false;
     }
 
     private static double normalize(double value) {
