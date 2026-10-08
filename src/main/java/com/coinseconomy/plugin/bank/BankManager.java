@@ -233,6 +233,6 @@ public final class BankManager {
     }
 
     private void saveLater() {
-        plugin.getServer().getScheduler().runTaskAsynchronously(plugin, this::save);
+        // Persistência agrupada pelo salvamento automático global do plugin.
     }
 }
