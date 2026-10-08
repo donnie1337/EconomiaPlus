@@ -73,7 +73,7 @@ public class EconomyManager implements EconomyApi {
                 for (String uuidTexto : secaoJogadores.getKeys(false)) {
                     try {
                         UUID uuid = UUID.fromString(uuidTexto);
-                        double saldo = data.getDouble("jogadores." + uuidTexto + ".saldo", saldoInicial);
+                        double saldo = normalize(data.getDouble("jogadores." + uuidTexto + ".saldo", saldoInicial));
                         String nome = data.getString("jogadores." + uuidTexto + ".nome", "Desconhecido");
                         saldos.put(uuid, saldo);
                         nomesConhecidos.put(uuid, Objects.requireNonNullElse(nome, "Desconhecido"));
@@ -135,7 +135,7 @@ public class EconomyManager implements EconomyApi {
     }
 
     public double getSaldo(UUID uuid) {
-        return saldos.getOrDefault(uuid, saldoInicial);
+        return normalize(saldos.getOrDefault(uuid, saldoInicial));
     }
 
     public synchronized boolean tem(UUID uuid, double quantidade) {
