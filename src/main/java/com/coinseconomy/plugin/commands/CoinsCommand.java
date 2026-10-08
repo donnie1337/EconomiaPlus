@@ -118,7 +118,7 @@ public class CoinsCommand implements CommandExecutor, TabCompleter {
 
         if (args.length < 2) {
             String subcomando = args.length > 0 ? args[0].toLowerCase() : "pagar";
-            pagador.sendMessage(color("&b&lCOINS &8• &fUse: &e/coins " + subcomando + " <jogador>"));
+            pagador.sendMessage(color("&b&lᴄᴏɪɴs &8• &fUse: &e/coins " + subcomando + " <jogador>"));
             return true;
         }
 

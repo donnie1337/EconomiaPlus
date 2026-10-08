@@ -52,7 +52,7 @@ public final class PaymentInputListener implements Listener {
         pending.put(player.getUniqueId(), new PendingPayment(target, timeout));
 
         player.sendMessage(Component.empty());
-        player.sendMessage(color("&b&lCOINS &8• &fPagamento"));
+        player.sendMessage(color("&b&lᴄᴏɪɴs &8• &fPagamento"));
         player.sendMessage(Component.empty());
         player.sendMessage(color("&fDigite no chat o valor que deseja &apagar &fpara &a" + target.getName() + "&f."));
         player.sendMessage(color("&7Exemplos: &f1.000&7, &f10K&7, &f10.000 &7ou &fTUDO&7."));
