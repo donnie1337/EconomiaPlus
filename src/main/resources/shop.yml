@@ -143,28 +143,28 @@ categorias:
       - "Itens dropados por"
       - "criaturas do servidor"
     itens:
-      HONEYCOMB: { nome: "Favo de Mel", compra: 180.0, venda: 35.0 }
-      PHANTOM_MEMBRANE: { nome: "Membrana de Phantom", compra: 650.0, venda: 130.0 }
-      PRISMARINE_CRYSTALS: { nome: "Cristais de Prismarinho", compra: 250.0, venda: 50.0 }
-      EGG: { nome: "Ovo", compra: 45.0, venda: 8.0 }
-      FEATHER: { nome: "Pena", compra: 55.0, venda: 10.0 }
-      LEATHER: { nome: "Couro", compra: 130.0, venda: 25.0 }
-      SPIDER_EYE: { nome: "Olho de Aranha", compra: 120.0, venda: 22.0 }
-      STRING: { nome: "Linha", compra: 80.0, venda: 15.0 }
-      ROTTEN_FLESH: { nome: "Carne Podre", compra: 40.0, venda: 7.0 }
-      GUNPOWDER: { nome: "Pólvora", compra: 200.0, venda: 40.0 }
-      ARROW: { nome: "Flecha", compra: 70.0, venda: 10.0 }
-      BONE: { nome: "Osso", compra: 90.0, venda: 18.0 }
-      SLIME_BALL: { nome: "Bola de Slime", compra: 350.0, venda: 70.0 }
-      BLAZE_ROD: { nome: "Vara de Blaze", compra: 850.0, venda: 170.0 }
-      ENDER_PEARL: { nome: "Pérola do End", compra: 700.0, venda: 140.0 }
-      MAGMA_CREAM: { nome: "Creme de Magma", compra: 500.0, venda: 100.0 }
-      PRISMARINE_SHARD: { nome: "Fragmento de Prismarinho", compra: 220.0, venda: 45.0 }
-      INK_SAC: { nome: "Bolsa de Tinta", compra: 90.0, venda: 18.0 }
-      GLOW_INK_SAC: { nome: "Bolsa de Tinta Brilhante", compra: 160.0, venda: 32.0 }
-      SCUTE: { nome: "Escama de Tartaruga", compra: 950.0, venda: 180.0 }
-      ARMADILLO_SCUTE: { nome: "Escama de Tatu", compra: 650.0, venda: 120.0 }
-      WIND_CHARGE: { nome: "Carga de Vento", compra: 450.0, venda: 80.0 }
+      HONEYCOMB: { nome: "Favo de Mel", compra: 180.0, venda: 0.0 }
+      PHANTOM_MEMBRANE: { nome: "Membrana de Phantom", compra: 780.0, venda: 104.0 }
+      PRISMARINE_CRYSTALS: { nome: "Cristais de Prismarinho", compra: 0.0, venda: 50.0 }
+      EGG: { nome: "Ovo", compra: 54.0, venda: 6.4 }
+      FEATHER: { nome: "Pena", compra: 66.0, venda: 8.0 }
+      LEATHER: { nome: "Couro", compra: 156.0, venda: 20.0 }
+      SPIDER_EYE: { nome: "Olho de Aranha", compra: 144.0, venda: 17.6 }
+      STRING: { nome: "Linha", compra: 96.0, venda: 12.0 }
+      ROTTEN_FLESH: { nome: "Carne Podre", compra: 48.0, venda: 5.6 }
+      GUNPOWDER: { nome: "Pólvora", compra: 240.0, venda: 32.0 }
+      ARROW: { nome: "Flecha", compra: 84.0, venda: 8.0 }
+      BONE: { nome: "Osso", compra: 108.0, venda: 14.4 }
+      SLIME_BALL: { nome: "Bola de Slime", compra: 420.0, venda: 56.0 }
+      BLAZE_ROD: { nome: "Vara de Blaze", compra: 1020.0, venda: 136.0 }
+      ENDER_PEARL: { nome: "Pérola do End", compra: 840.0, venda: 112.0 }
+      MAGMA_CREAM: { nome: "Creme de Magma", compra: 600.0, venda: 80.0 }
+      PRISMARINE_SHARD: { nome: "Fragmento de Prismarinho", compra: 0.0, venda: 45.0 }
+      INK_SAC: { nome: "Bolsa de Tinta", compra: 108.0, venda: 14.4 }
+      GLOW_INK_SAC: { nome: "Bolsa de Tinta Brilhante", compra: 192.0, venda: 25.6 }
+      SCUTE: { nome: "Escama de Tartaruga", compra: 1140.0, venda: 144.0 }
+      ARMADILLO_SCUTE: { nome: "Escama de Tatu", compra: 780.0, venda: 96.0 }
+      WIND_CHARGE: { nome: "Carga de Vento", compra: 540.0, venda: 64.0 }
 
   minerios:
     nome: "Minérios"
