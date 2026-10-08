@@ -14,27 +14,27 @@ categorias:
       - "Compre e venda itens"
       - "relacionados a farming"
     itens:
-      WHEAT: { nome: "Trigo", compra: 80.0, venda: 18.0 }
-      POTATO: { nome: "Batata", compra: 60.0, venda: 15.0 }
-      POISONOUS_POTATO: { nome: "Batata Venenosa", compra: 140.0, venda: 25.0 }
-      CARROT: { nome: "Cenoura", compra: 60.0, venda: 15.0 }
-      COCOA_BEANS: { nome: "Cacau", compra: 90.0, venda: 20.0 }
-      BEETROOT: { nome: "Beterraba", compra: 60.0, venda: 15.0 }
-      SUGAR_CANE: { nome: "Cana-de-Açúcar", compra: 85.0, venda: 20.0 }
-      MELON_SLICE: { nome: "Fatia de Melancia", compra: 40.0, venda: 8.0 }
-      APPLE: { nome: "Maçã", compra: 120.0, venda: 25.0 }
-      SWEET_BERRIES: { nome: "Bagas Doces", compra: 75.0, venda: 15.0 }
-      GLOW_BERRIES: { nome: "Bagas Luminosas", compra: 100.0, venda: 20.0 }
-      BEETROOT_SEEDS: { nome: "Sementes de Beterraba", compra: 70.0, venda: 10.0 }
-      PUMPKIN: { nome: "Abóbora", compra: 130.0, venda: 30.0 }
-      CACTUS: { nome: "Cacto", compra: 120.0, venda: 25.0 }
-      BAMBOO: { nome: "Bambu", compra: 65.0, venda: 12.0 }
-      NETHER_WART: { nome: "Fungo do Nether", compra: 180.0, venda: 40.0 }
-      BROWN_MUSHROOM: { nome: "Cogumelo Marrom", compra: 100.0, venda: 20.0 }
-      RED_MUSHROOM: { nome: "Cogumelo Vermelho", compra: 100.0, venda: 20.0 }
-      MELON: { nome: "Melancia", compra: 180.0, venda: 35.0 }
-      MELON_SEEDS: { nome: "Sementes de Melancia", compra: 75.0, venda: 10.0 }
-      PUMPKIN_SEEDS: { nome: "Sementes de Abóbora", compra: 75.0, venda: 10.0 }
+      WHEAT: { nome: "Trigo", compra: 104.0, venda: 12.6 }
+      POTATO: { nome: "Batata", compra: 78.0, venda: 10.5 }
+      POISONOUS_POTATO: { nome: "Batata Venenosa", compra: 182.0, venda: 17.5 }
+      CARROT: { nome: "Cenoura", compra: 78.0, venda: 10.5 }
+      COCOA_BEANS: { nome: "Cacau", compra: 117.0, venda: 14.0 }
+      BEETROOT: { nome: "Beterraba", compra: 78.0, venda: 10.5 }
+      SUGAR_CANE: { nome: "Cana-de-Açúcar", compra: 110.5, venda: 14.0 }
+      MELON_SLICE: { nome: "Fatia de Melancia", compra: 52.0, venda: 5.6 }
+      APPLE: { nome: "Maçã", compra: 156.0, venda: 17.5 }
+      SWEET_BERRIES: { nome: "Bagas Doces", compra: 97.5, venda: 10.5 }
+      GLOW_BERRIES: { nome: "Bagas Luminosas", compra: 130.0, venda: 14.0 }
+      BEETROOT_SEEDS: { nome: "Sementes de Beterraba", compra: 91.0, venda: 7.0 }
+      PUMPKIN: { nome: "Abóbora", compra: 169.0, venda: 21.0 }
+      CACTUS: { nome: "Cacto", compra: 156.0, venda: 17.5 }
+      BAMBOO: { nome: "Bambu", compra: 84.5, venda: 8.4 }
+      NETHER_WART: { nome: "Fungo do Nether", compra: 234.0, venda: 28.0 }
+      BROWN_MUSHROOM: { nome: "Cogumelo Marrom", compra: 130.0, venda: 14.0 }
+      RED_MUSHROOM: { nome: "Cogumelo Vermelho", compra: 130.0, venda: 14.0 }
+      MELON: { nome: "Melancia", compra: 234.0, venda: 24.5 }
+      MELON_SEEDS: { nome: "Sementes de Melancia", compra: 97.5, venda: 7.0 }
+      PUMPKIN_SEEDS: { nome: "Sementes de Abóbora", compra: 97.5, venda: 7.0 }
 
   utilitarios:
     nome: "Utilitários"
