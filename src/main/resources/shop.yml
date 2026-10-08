@@ -463,6 +463,7 @@ categorias:
       GREEN_WOOL: { nome: "Lã Verde", compra: 70.0, venda: 10.0 }
       RED_WOOL: { nome: "Lã Vermelho", compra: 70.0, venda: 10.0 }
       BLACK_WOOL: { nome: "Lã Preto", compra: 70.0, venda: 10.0 }
+      TERRACOTTA: { nome: "Terracota", compra: 75.0, venda: 12.0 }
       WHITE_TERRACOTTA: { nome: "Terracota Branco", compra: 90.0, venda: 14.0 }
       ORANGE_TERRACOTTA: { nome: "Terracota Laranja", compra: 90.0, venda: 14.0 }
       MAGENTA_TERRACOTTA: { nome: "Terracota Magenta", compra: 90.0, venda: 14.0 }
@@ -495,6 +496,8 @@ categorias:
       GREEN_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Verde", compra: 110.0, venda: 18.0 }
       RED_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Vermelho", compra: 110.0, venda: 18.0 }
       BLACK_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Preto", compra: 110.0, venda: 18.0 }
+      GLASS: { nome: "Vidro", compra: 55.0, venda: 8.0 }
+      TINTED_GLASS: { nome: "Vidro Escurecido", compra: 180.0, venda: 28.0 }
       WHITE_STAINED_GLASS: { nome: "Vidro Tingido Branco", compra: 90.0, venda: 14.0 }
       ORANGE_STAINED_GLASS: { nome: "Vidro Tingido Laranja", compra: 90.0, venda: 14.0 }
       MAGENTA_STAINED_GLASS: { nome: "Vidro Tingido Magenta", compra: 90.0, venda: 14.0 }
@@ -511,6 +514,7 @@ categorias:
       GREEN_STAINED_GLASS: { nome: "Vidro Tingido Verde", compra: 90.0, venda: 14.0 }
       RED_STAINED_GLASS: { nome: "Vidro Tingido Vermelho", compra: 90.0, venda: 14.0 }
       BLACK_STAINED_GLASS: { nome: "Vidro Tingido Preto", compra: 90.0, venda: 14.0 }
+      GLASS_PANE: { nome: "Painel de Vidro", compra: 25.0, venda: 4.0 }
       WHITE_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Branco", compra: 35.0, venda: 5.0 }
       ORANGE_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Laranja", compra: 35.0, venda: 5.0 }
       MAGENTA_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Magenta", compra: 35.0, venda: 5.0 }
@@ -544,76 +548,88 @@ categorias:
       RED_CARPET: { nome: "Carpete Vermelho", compra: 30.0, venda: 4.0 }
       BLACK_CARPET: { nome: "Carpete Preto", compra: 30.0, venda: 4.0 }
       WHITE_DYE: { nome: "Corante Branco", compra: 55.0, venda: 8.0 }
-      WHITE_CANDLE: { nome: "Vela Branco", compra: 95.0, venda: 14.0 }
       ORANGE_DYE: { nome: "Corante Laranja", compra: 55.0, venda: 8.0 }
-      ORANGE_CANDLE: { nome: "Vela Laranja", compra: 95.0, venda: 14.0 }
       MAGENTA_DYE: { nome: "Corante Magenta", compra: 55.0, venda: 8.0 }
-      MAGENTA_CANDLE: { nome: "Vela Magenta", compra: 95.0, venda: 14.0 }
       LIGHT_BLUE_DYE: { nome: "Corante Azul-Claro", compra: 55.0, venda: 8.0 }
-      LIGHT_BLUE_CANDLE: { nome: "Vela Azul-Claro", compra: 95.0, venda: 14.0 }
       YELLOW_DYE: { nome: "Corante Amarelo", compra: 55.0, venda: 8.0 }
-      YELLOW_CANDLE: { nome: "Vela Amarelo", compra: 95.0, venda: 14.0 }
       LIME_DYE: { nome: "Corante Verde-Limão", compra: 55.0, venda: 8.0 }
-      LIME_CANDLE: { nome: "Vela Verde-Limão", compra: 95.0, venda: 14.0 }
       PINK_DYE: { nome: "Corante Rosa", compra: 55.0, venda: 8.0 }
-      PINK_CANDLE: { nome: "Vela Rosa", compra: 95.0, venda: 14.0 }
       GRAY_DYE: { nome: "Corante Cinza", compra: 55.0, venda: 8.0 }
-      GRAY_CANDLE: { nome: "Vela Cinza", compra: 95.0, venda: 14.0 }
       LIGHT_GRAY_DYE: { nome: "Corante Cinza-Claro", compra: 55.0, venda: 8.0 }
-      LIGHT_GRAY_CANDLE: { nome: "Vela Cinza-Claro", compra: 95.0, venda: 14.0 }
       CYAN_DYE: { nome: "Corante Ciano", compra: 55.0, venda: 8.0 }
-      CYAN_CANDLE: { nome: "Vela Ciano", compra: 95.0, venda: 14.0 }
       PURPLE_DYE: { nome: "Corante Roxo", compra: 55.0, venda: 8.0 }
-      PURPLE_CANDLE: { nome: "Vela Roxo", compra: 95.0, venda: 14.0 }
       BLUE_DYE: { nome: "Corante Azul", compra: 55.0, venda: 8.0 }
-      BLUE_CANDLE: { nome: "Vela Azul", compra: 95.0, venda: 14.0 }
       BROWN_DYE: { nome: "Corante Marrom", compra: 55.0, venda: 8.0 }
-      BROWN_CANDLE: { nome: "Vela Marrom", compra: 95.0, venda: 14.0 }
       GREEN_DYE: { nome: "Corante Verde", compra: 55.0, venda: 8.0 }
-      GREEN_CANDLE: { nome: "Vela Verde", compra: 95.0, venda: 14.0 }
       RED_DYE: { nome: "Corante Vermelho", compra: 55.0, venda: 8.0 }
-      RED_CANDLE: { nome: "Vela Vermelho", compra: 95.0, venda: 14.0 }
       BLACK_DYE: { nome: "Corante Preto", compra: 55.0, venda: 8.0 }
+      CANDLE: { nome: "Vela", compra: 80.0, venda: 12.0 }
+      WHITE_CANDLE: { nome: "Vela Branco", compra: 95.0, venda: 14.0 }
+      ORANGE_CANDLE: { nome: "Vela Laranja", compra: 95.0, venda: 14.0 }
+      MAGENTA_CANDLE: { nome: "Vela Magenta", compra: 95.0, venda: 14.0 }
+      LIGHT_BLUE_CANDLE: { nome: "Vela Azul-Claro", compra: 95.0, venda: 14.0 }
+      YELLOW_CANDLE: { nome: "Vela Amarelo", compra: 95.0, venda: 14.0 }
+      LIME_CANDLE: { nome: "Vela Verde-Limão", compra: 95.0, venda: 14.0 }
+      PINK_CANDLE: { nome: "Vela Rosa", compra: 95.0, venda: 14.0 }
+      GRAY_CANDLE: { nome: "Vela Cinza", compra: 95.0, venda: 14.0 }
+      LIGHT_GRAY_CANDLE: { nome: "Vela Cinza-Claro", compra: 95.0, venda: 14.0 }
+      CYAN_CANDLE: { nome: "Vela Ciano", compra: 95.0, venda: 14.0 }
+      PURPLE_CANDLE: { nome: "Vela Roxo", compra: 95.0, venda: 14.0 }
+      BLUE_CANDLE: { nome: "Vela Azul", compra: 95.0, venda: 14.0 }
+      BROWN_CANDLE: { nome: "Vela Marrom", compra: 95.0, venda: 14.0 }
+      GREEN_CANDLE: { nome: "Vela Verde", compra: 95.0, venda: 14.0 }
+      RED_CANDLE: { nome: "Vela Vermelho", compra: 95.0, venda: 14.0 }
       BLACK_CANDLE: { nome: "Vela Preto", compra: 95.0, venda: 14.0 }
       WHITE_BED: { nome: "Cama Branca", compra: 260.0, venda: 40.0 }
-      WHITE_BANNER: { nome: "Estandarte Branca", compra: 180.0, venda: 28.0 }
       ORANGE_BED: { nome: "Cama Laranja", compra: 260.0, venda: 40.0 }
-      ORANGE_BANNER: { nome: "Estandarte Laranja", compra: 180.0, venda: 28.0 }
       MAGENTA_BED: { nome: "Cama Magenta", compra: 260.0, venda: 40.0 }
-      MAGENTA_BANNER: { nome: "Estandarte Magenta", compra: 180.0, venda: 28.0 }
       LIGHT_BLUE_BED: { nome: "Cama Azul-Clara", compra: 260.0, venda: 40.0 }
-      LIGHT_BLUE_BANNER: { nome: "Estandarte Azul-Clara", compra: 180.0, venda: 28.0 }
       YELLOW_BED: { nome: "Cama Amarela", compra: 260.0, venda: 40.0 }
-      YELLOW_BANNER: { nome: "Estandarte Amarela", compra: 180.0, venda: 28.0 }
       LIME_BED: { nome: "Cama Verde-Limão", compra: 260.0, venda: 40.0 }
-      LIME_BANNER: { nome: "Estandarte Verde-Limão", compra: 180.0, venda: 28.0 }
       PINK_BED: { nome: "Cama Rosa", compra: 260.0, venda: 40.0 }
-      PINK_BANNER: { nome: "Estandarte Rosa", compra: 180.0, venda: 28.0 }
       GRAY_BED: { nome: "Cama Cinza", compra: 260.0, venda: 40.0 }
-      GRAY_BANNER: { nome: "Estandarte Cinza", compra: 180.0, venda: 28.0 }
       LIGHT_GRAY_BED: { nome: "Cama Cinza-Clara", compra: 260.0, venda: 40.0 }
-      LIGHT_GRAY_BANNER: { nome: "Estandarte Cinza-Clara", compra: 180.0, venda: 28.0 }
       CYAN_BED: { nome: "Cama Ciano", compra: 260.0, venda: 40.0 }
-      CYAN_BANNER: { nome: "Estandarte Ciano", compra: 180.0, venda: 28.0 }
       PURPLE_BED: { nome: "Cama Roxa", compra: 260.0, venda: 40.0 }
-      PURPLE_BANNER: { nome: "Estandarte Roxa", compra: 180.0, venda: 28.0 }
       BLUE_BED: { nome: "Cama Azul", compra: 260.0, venda: 40.0 }
-      BLUE_BANNER: { nome: "Estandarte Azul", compra: 180.0, venda: 28.0 }
       BROWN_BED: { nome: "Cama Marrom", compra: 260.0, venda: 40.0 }
-      BROWN_BANNER: { nome: "Estandarte Marrom", compra: 180.0, venda: 28.0 }
       GREEN_BED: { nome: "Cama Verde", compra: 260.0, venda: 40.0 }
-      GREEN_BANNER: { nome: "Estandarte Verde", compra: 180.0, venda: 28.0 }
       RED_BED: { nome: "Cama Vermelha", compra: 260.0, venda: 40.0 }
-      RED_BANNER: { nome: "Estandarte Vermelha", compra: 180.0, venda: 28.0 }
       BLACK_BED: { nome: "Cama Preta", compra: 260.0, venda: 40.0 }
+      WHITE_BANNER: { nome: "Estandarte Branca", compra: 180.0, venda: 28.0 }
+      ORANGE_BANNER: { nome: "Estandarte Laranja", compra: 180.0, venda: 28.0 }
+      MAGENTA_BANNER: { nome: "Estandarte Magenta", compra: 180.0, venda: 28.0 }
+      LIGHT_BLUE_BANNER: { nome: "Estandarte Azul-Clara", compra: 180.0, venda: 28.0 }
+      YELLOW_BANNER: { nome: "Estandarte Amarela", compra: 180.0, venda: 28.0 }
+      LIME_BANNER: { nome: "Estandarte Verde-Limão", compra: 180.0, venda: 28.0 }
+      PINK_BANNER: { nome: "Estandarte Rosa", compra: 180.0, venda: 28.0 }
+      GRAY_BANNER: { nome: "Estandarte Cinza", compra: 180.0, venda: 28.0 }
+      LIGHT_GRAY_BANNER: { nome: "Estandarte Cinza-Clara", compra: 180.0, venda: 28.0 }
+      CYAN_BANNER: { nome: "Estandarte Ciano", compra: 180.0, venda: 28.0 }
+      PURPLE_BANNER: { nome: "Estandarte Roxa", compra: 180.0, venda: 28.0 }
+      BLUE_BANNER: { nome: "Estandarte Azul", compra: 180.0, venda: 28.0 }
+      BROWN_BANNER: { nome: "Estandarte Marrom", compra: 180.0, venda: 28.0 }
+      GREEN_BANNER: { nome: "Estandarte Verde", compra: 180.0, venda: 28.0 }
+      RED_BANNER: { nome: "Estandarte Vermelha", compra: 180.0, venda: 28.0 }
       BLACK_BANNER: { nome: "Estandarte Preta", compra: 180.0, venda: 28.0 }
-
-      TERRACOTTA: { nome: "Terracota", compra: 75.0, venda: 12.0 }
-      GLASS: { nome: "Vidro", compra: 55.0, venda: 8.0 }
-      GLASS_PANE: { nome: "Painel de Vidro", compra: 25.0, venda: 4.0 }
-      TINTED_GLASS: { nome: "Vidro Escurecido", compra: 180.0, venda: 28.0 }
-      CANDLE: { nome: "Vela", compra: 80.0, venda: 12.0 }
+      WHITE_SHULKER_BOX: { nome: "Caixa de Shulker Branca", compra: 250000.0, venda: 0.0 }
+      ORANGE_SHULKER_BOX: { nome: "Caixa de Shulker Laranja", compra: 250000.0, venda: 0.0 }
+      MAGENTA_SHULKER_BOX: { nome: "Caixa de Shulker Magenta", compra: 250000.0, venda: 0.0 }
+      LIGHT_BLUE_SHULKER_BOX: { nome: "Caixa de Shulker Azul-Clara", compra: 250000.0, venda: 0.0 }
+      YELLOW_SHULKER_BOX: { nome: "Caixa de Shulker Amarela", compra: 250000.0, venda: 0.0 }
+      LIME_SHULKER_BOX: { nome: "Caixa de Shulker Verde-Limão", compra: 250000.0, venda: 0.0 }
+      PINK_SHULKER_BOX: { nome: "Caixa de Shulker Rosa", compra: 250000.0, venda: 0.0 }
+      GRAY_SHULKER_BOX: { nome: "Caixa de Shulker Cinza", compra: 250000.0, venda: 0.0 }
+      LIGHT_GRAY_SHULKER_BOX: { nome: "Caixa de Shulker Cinza-Clara", compra: 250000.0, venda: 0.0 }
+      CYAN_SHULKER_BOX: { nome: "Caixa de Shulker Ciano", compra: 250000.0, venda: 0.0 }
+      PURPLE_SHULKER_BOX: { nome: "Caixa de Shulker Roxa", compra: 250000.0, venda: 0.0 }
+      BLUE_SHULKER_BOX: { nome: "Caixa de Shulker Azul", compra: 250000.0, venda: 0.0 }
+      BROWN_SHULKER_BOX: { nome: "Caixa de Shulker Marrom", compra: 250000.0, venda: 0.0 }
+      GREEN_SHULKER_BOX: { nome: "Caixa de Shulker Verde", compra: 250000.0, venda: 0.0 }
+      RED_SHULKER_BOX: { nome: "Caixa de Shulker Vermelha", compra: 250000.0, venda: 0.0 }
+      BLACK_SHULKER_BOX: { nome: "Caixa de Shulker Preta", compra: 250000.0, venda: 0.0 }
       BONE_BLOCK: { nome: "Bloco de Ossos", compra: 700.0, venda: 100.0 }
+
   decoracoes:
     nome: "Decorações"
     icone: ITEM_FRAME
