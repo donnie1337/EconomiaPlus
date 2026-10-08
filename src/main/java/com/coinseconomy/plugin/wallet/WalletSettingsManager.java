@@ -59,7 +59,6 @@ public final class WalletSettingsManager {
     public boolean toggleReceiving(UUID uuid) {
         boolean enabled = !canReceive(uuid);
         receivingEnabled.put(uuid, enabled);
-        plugin.getServer().getScheduler().runTaskAsynchronously(plugin, this::save);
         return enabled;
     }
 }
