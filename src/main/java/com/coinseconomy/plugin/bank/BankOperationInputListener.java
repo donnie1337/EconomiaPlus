@@ -59,14 +59,19 @@ public final class BankOperationInputListener implements Listener {
         player.sendMessage(Component.empty());
 
         if (operation == Operation.DEPOSIT) {
-            player.sendMessage(color("&fDigite o valor que deseja &adepositar &fno banco."));
+            player.sendMessage(color("&b&lBANCO &8• &fDepósito"));
+            player.sendMessage(Component.empty());
+            player.sendMessage(color("&fDigite no chat o valor que deseja &adepositar&f."));
         } else {
-            player.sendMessage(color("&fDigite o valor que deseja &csacar &fdo banco."));
+            player.sendMessage(color("&b&lBANCO &8• &fSaque"));
+            player.sendMessage(Component.empty());
+            player.sendMessage(color("&fDigite no chat o valor que deseja &csacar&f."));
         }
 
-        player.sendMessage(color("&7Exemplos: &f1000&7, &f10K&7, &f10.000 &7ou &fTUDO&7."));
+        player.sendMessage(color("&7Exemplos: &f1.000&7, &f10K&7, &f10.000 &7ou &fTUDO&7."));
+        player.sendMessage(Component.empty());
         player.sendMessage(
-                Component.text("Para cancelar, clique ", NamedTextColor.GRAY)
+                Component.text("Clique ", NamedTextColor.GRAY)
                         .append(Component.text("AQUI", NamedTextColor.RED)
                                 .decorate(net.kyori.adventure.text.format.TextDecoration.BOLD)
                                 .clickEvent(ClickEvent.callback((Audience audience) -> {
@@ -77,8 +82,9 @@ public final class BankOperationInputListener implements Listener {
                                 .hoverEvent(HoverEvent.showText(
                                         Component.text("Cancelar operação bancária", NamedTextColor.RED)
                                 )))
-                        .append(Component.text(" ou digite ", NamedTextColor.GRAY))
-                        .append(Component.text("cancelar", NamedTextColor.WHITE))
+                        .append(Component.text(" para cancelar a operação, ou digite ", NamedTextColor.GRAY))
+                        .append(Component.text("cancelar", NamedTextColor.WHITE)
+                                .decorate(net.kyori.adventure.text.format.TextDecoration.UNDERLINED))
                         .append(Component.text(".", NamedTextColor.GRAY))
         );
         player.sendMessage(Component.empty());
