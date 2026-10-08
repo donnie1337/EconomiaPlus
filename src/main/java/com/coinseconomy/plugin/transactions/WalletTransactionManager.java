@@ -119,7 +119,6 @@ public final class WalletTransactionManager {
             }
         }
 
-        plugin.getServer().getScheduler().runTaskAsynchronously(plugin, this::save);
     }
 
     public List<WalletTransaction> getHistory(UUID uuid) {
