@@ -14,7 +14,6 @@ categorias:
       - "Compre e venda itens"
       - "relacionados a farming"
     itens:
-      WHEAT_SEEDS: { nome: "Sementes de Trigo", compra: 390.0, venda: 6.5 }
       WHEAT: { nome: "Trigo", compra: 80.0, venda: 18.0 }
       POTATO: { nome: "Batata", compra: 60.0, venda: 15.0 }
       POISONOUS_POTATO: { nome: "Batata Venenosa", compra: 140.0, venda: 25.0 }
@@ -36,13 +35,6 @@ categorias:
       MELON: { nome: "Melancia", compra: 180.0, venda: 35.0 }
       MELON_SEEDS: { nome: "Sementes de Melancia", compra: 75.0, venda: 10.0 }
       PUMPKIN_SEEDS: { nome: "Sementes de Abóbora", compra: 75.0, venda: 10.0 }
-      KELP: { nome: "Alga", compra: 55.0, venda: 10.0 }
-      DRIED_KELP: { nome: "Alga Seca", compra: 70.0, venda: 14.0 }
-      CHORUS_FRUIT: { nome: "Fruta do Coro", compra: 180.0, venda: 35.0 }
-      TORCHFLOWER_SEEDS: { nome: "Sementes de Flor-Tocha", compra: 220.0, venda: 35.0 }
-      PITCHER_POD: { nome: "Vagem de Planta-Jarro", compra: 220.0, venda: 35.0 }
-      SEA_PICKLE: { nome: "Pepino-do-Mar", compra: 120.0, venda: 20.0 }
-      SEAGRASS: { nome: "Erva Marinha", compra: 70.0, venda: 10.0 }
 
   utilitarios:
     nome: "Utilitários"
