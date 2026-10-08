@@ -114,26 +114,26 @@ categorias:
       - "Alimentos para restaurar sua"
       - "fome durante sua jornada"
     itens:
-      COD: { nome: "Bacalhau Cru", compra: 55.0, venda: 10.0 }
-      COOKED_COD: { nome: "Bacalhau Assado", compra: 80.0, venda: 15.0 }
-      SALMON: { nome: "Salmão Cru", compra: 70.0, venda: 12.0 }
-      COOKED_SALMON: { nome: "Salmão Assado", compra: 95.0, venda: 18.0 }
-      BEEF: { nome: "Carne Crua", compra: 75.0, venda: 15.0 }
-      COOKED_BEEF: { nome: "Bife", compra: 110.0, venda: 22.0 }
-      PORKCHOP: { nome: "Costeleta Crua", compra: 75.0, venda: 15.0 }
-      BAKED_POTATO: { nome: "Batata Assada", compra: 75.0, venda: 14.0 }
-      MUTTON: { nome: "Carneiro Cru", compra: 70.0, venda: 14.0 }
-      COOKED_MUTTON: { nome: "Carneiro Assado", compra: 100.0, venda: 20.0 }
-      CHICKEN: { nome: "Frango Cru", compra: 65.0, venda: 12.0 }
-      COOKED_CHICKEN: { nome: "Frango Assado", compra: 95.0, venda: 18.0 }
-      COOKED_PORKCHOP: { nome: "Costeleta Assada", compra: 110.0, venda: 22.0 }
-      RABBIT: { nome: "Coelho Cru", compra: 80.0, venda: 15.0 }
-      COOKED_RABBIT: { nome: "Coelho Assado", compra: 115.0, venda: 22.0 }
-      BREAD: { nome: "Pão", compra: 95.0, venda: 18.0 }
-      COOKIE: { nome: "Biscoito", compra: 45.0, venda: 8.0 }
-      PUMPKIN_PIE: { nome: "Torta de Abóbora", compra: 140.0, venda: 25.0 }
-      GOLDEN_CARROT: { nome: "Cenoura Dourada", compra: 650.0, venda: 110.0 }
-      MUSHROOM_STEW: { nome: "Ensopado de Cogumelos", compra: 180.0, venda: 30.0 }
+      COD: { nome: "Bacalhau Cru", compra: 55.0, venda: 0.0 }
+      COOKED_COD: { nome: "Bacalhau Assado", compra: 80.0, venda: 0.0 }
+      SALMON: { nome: "Salmão Cru", compra: 70.0, venda: 0.0 }
+      COOKED_SALMON: { nome: "Salmão Assado", compra: 95.0, venda: 0.0 }
+      BEEF: { nome: "Carne Crua", compra: 75.0, venda: 0.0 }
+      COOKED_BEEF: { nome: "Bife", compra: 110.0, venda: 0.0 }
+      PORKCHOP: { nome: "Costeleta Crua", compra: 75.0, venda: 0.0 }
+      BAKED_POTATO: { nome: "Batata Assada", compra: 75.0, venda: 0.0 }
+      MUTTON: { nome: "Carneiro Cru", compra: 70.0, venda: 0.0 }
+      COOKED_MUTTON: { nome: "Carneiro Assado", compra: 100.0, venda: 0.0 }
+      CHICKEN: { nome: "Frango Cru", compra: 65.0, venda: 0.0 }
+      COOKED_CHICKEN: { nome: "Frango Assado", compra: 95.0, venda: 0.0 }
+      COOKED_PORKCHOP: { nome: "Costeleta Assada", compra: 110.0, venda: 0.0 }
+      RABBIT: { nome: "Coelho Cru", compra: 80.0, venda: 0.0 }
+      COOKED_RABBIT: { nome: "Coelho Assado", compra: 115.0, venda: 0.0 }
+      BREAD: { nome: "Pão", compra: 95.0, venda: 0.0 }
+      COOKIE: { nome: "Biscoito", compra: 45.0, venda: 0.0 }
+      PUMPKIN_PIE: { nome: "Torta de Abóbora", compra: 140.0, venda: 0.0 }
+      GOLDEN_CARROT: { nome: "Cenoura Dourada", compra: 650.0, venda: 0.0 }
+      MUSHROOM_STEW: { nome: "Ensopado de Cogumelos", compra: 180.0, venda: 0.0 }
 
   drops:
     nome: "Drops de Mobs"
@@ -226,186 +226,186 @@ categorias:
       - "Blocos básicos para"
       - "construção e estruturas"
     itens:
-      STONE: { nome: "Pedra", compra: 35.0, venda: 5.0 }
-      COBBLESTONE: { nome: "Pedregulho", compra: 25.0, venda: 4.0 }
-      BRICKS: { nome: "Tijolos", compra: 90.0, venda: 15.0 }
-      DEEPSLATE: { nome: "Ardósia", compra: 45.0, venda: 7.0 }
-      ANDESITE: { nome: "Andesito", compra: 45.0, venda: 7.0 }
-      DIORITE: { nome: "Diorito", compra: 45.0, venda: 7.0 }
-      GRANITE: { nome: "Granito", compra: 45.0, venda: 7.0 }
-      GLASS: { nome: "Vidro", compra: 55.0, venda: 8.0 }
-      OBSIDIAN: { nome: "Obsidiana", compra: 500.0, venda: 90.0 }
-      NETHERRACK: { nome: "Netherrack", compra: 25.0, venda: 4.0 }
-      SOUL_SAND: { nome: "Areia das Almas", compra: 90.0, venda: 15.0 }
-      QUARTZ_BLOCK: { nome: "Bloco de Quartzo", compra: 850.0, venda: 150.0 }
-      STONE_BRICKS: { nome: "Tijolos de Pedra", compra: 70.0, venda: 12.0 }
-      MOSSY_COBBLESTONE: { nome: "Pedregulho Musgoso", compra: 75.0, venda: 12.0 }
-      MOSS_BLOCK: { nome: "Bloco de Musgo", compra: 90.0, venda: 15.0 }
-      CALCITE: { nome: "Calcita", compra: 65.0, venda: 10.0 }
-      TUFF: { nome: "Tufo", compra: 55.0, venda: 9.0 }
-      BLACKSTONE: { nome: "Pedra Negra", compra: 70.0, venda: 12.0 }
-      BASALT: { nome: "Basalto", compra: 65.0, venda: 10.0 }
-      SANDSTONE: { nome: "Arenito", compra: 55.0, venda: 9.0 }
-      MUD_BRICKS: { nome: "Tijolos de Lama", compra: 80.0, venda: 14.0 }
-      OAK_PLANKS: { nome: "Tábuas de Carvalho", compra: 30.0, venda: 5.0 }
-      SPRUCE_PLANKS: { nome: "Tábuas de Pinheiro", compra: 35.0, venda: 6.0 }
-      BIRCH_PLANKS: { nome: "Tábuas de Bétula", compra: 35.0, venda: 6.0 }
-      JUNGLE_PLANKS: { nome: "Tábuas da Selva", compra: 40.0, venda: 7.0 }
-      ACACIA_PLANKS: { nome: "Tábuas de Acácia", compra: 35.0, venda: 6.0 }
-      DARK_OAK_PLANKS: { nome: "Tábuas de Carvalho Escuro", compra: 40.0, venda: 7.0 }
-      MANGROVE_PLANKS: { nome: "Tábuas de Mangue", compra: 45.0, venda: 8.0 }
-      CHERRY_PLANKS: { nome: "Tábuas de Cerejeira", compra: 50.0, venda: 9.0 }
-      BAMBOO_PLANKS: { nome: "Tábuas de Bambu", compra: 45.0, venda: 8.0 }
-      CRIMSON_PLANKS: { nome: "Tábuas Carmesim", compra: 55.0, venda: 10.0 }
-      WARPED_PLANKS: { nome: "Tábuas Distorcidas", compra: 55.0, venda: 10.0 }
-      OAK_LOG: { nome: "Tronco de Carvalho", compra: 90.0, venda: 15.0 }
-      SPRUCE_LOG: { nome: "Tronco de Pinheiro", compra: 95.0, venda: 16.0 }
-      BIRCH_LOG: { nome: "Tronco de Bétula", compra: 95.0, venda: 16.0 }
-      JUNGLE_LOG: { nome: "Tronco da Selva", compra: 110.0, venda: 18.0 }
-      ACACIA_LOG: { nome: "Tronco de Acácia", compra: 100.0, venda: 17.0 }
-      DARK_OAK_LOG: { nome: "Tronco de Carvalho Escuro", compra: 110.0, venda: 18.0 }
-      MANGROVE_LOG: { nome: "Tronco de Mangue", compra: 120.0, venda: 20.0 }
-      CHERRY_LOG: { nome: "Tronco de Cerejeira", compra: 130.0, venda: 22.0 }
-      PRISMARINE: { nome: "Prismarinho", compra: 180.0, venda: 30.0 }
-      PRISMARINE_BRICKS: { nome: "Tijolos de Prismarinho", compra: 230.0, venda: 40.0 }
-      DARK_PRISMARINE: { nome: "Prismarinho Escuro", compra: 260.0, venda: 45.0 }
-      END_STONE_BRICKS: { nome: "Tijolos de Pedra do End", compra: 220.0, venda: 38.0 }
-      RED_SANDSTONE: { nome: "Arenito Vermelho", compra: 65.0, venda: 10.0 }
-      SMOOTH_STONE: { nome: "Pedra Lisa", compra: 55.0, venda: 9.0 }
-      POLISHED_ANDESITE: { nome: "Andesito Polido", compra: 60.0, venda: 10.0 }
-      POLISHED_DIORITE: { nome: "Diorito Polido", compra: 60.0, venda: 10.0 }
-      POLISHED_GRANITE: { nome: "Granito Polido", compra: 60.0, venda: 10.0 }
-      COBBLED_DEEPSLATE: { nome: "Ardósia Pedregosa", compra: 50.0, venda: 8.0 }
-      POLISHED_DEEPSLATE: { nome: "Ardósia Polida", compra: 65.0, venda: 11.0 }
-      DEEPSLATE_BRICKS: { nome: "Tijolos de Ardósia", compra: 75.0, venda: 13.0 }
-      DEEPSLATE_TILES: { nome: "Ladrilhos de Ardósia", compra: 80.0, venda: 14.0 }
-      STONE_SLAB: { nome: "Laje de Pedra", compra: 25.0, venda: 4.0 }
-      STONE_STAIRS: { nome: "Escadas de Pedra", compra: 55.0, venda: 9.0 }
-      COBBLESTONE_SLAB: { nome: "Laje de Pedregulho", compra: 20.0, venda: 3.0 }
-      COBBLESTONE_STAIRS: { nome: "Escadas de Pedregulho", compra: 45.0, venda: 7.0 }
-      STONE_BRICK_SLAB: { nome: "Laje de Tijolos de Pedra", compra: 35.0, venda: 6.0 }
-      STONE_BRICK_STAIRS: { nome: "Escadas de Tijolos de Pedra", compra: 75.0, venda: 12.0 }
-      BRICK_SLAB: { nome: "Laje de Tijolos", compra: 45.0, venda: 7.0 }
-      BRICK_STAIRS: { nome: "Escadas de Tijolos", compra: 95.0, venda: 15.0 }
-      SANDSTONE_SLAB: { nome: "Laje de Arenito", compra: 30.0, venda: 5.0 }
-      SANDSTONE_STAIRS: { nome: "Escadas de Arenito", compra: 60.0, venda: 10.0 }
-      RED_SANDSTONE_SLAB: { nome: "Laje de Arenito Vermelho", compra: 35.0, venda: 6.0 }
-      RED_SANDSTONE_STAIRS: { nome: "Escadas de Arenito Vermelho", compra: 70.0, venda: 11.0 }
-      QUARTZ_SLAB: { nome: "Laje de Quartzo", compra: 430.0, venda: 75.0 }
-      QUARTZ_STAIRS: { nome: "Escadas de Quartzo", compra: 900.0, venda: 160.0 }
-      PRISMARINE_SLAB: { nome: "Laje de Prismarinho", compra: 95.0, venda: 16.0 }
-      PRISMARINE_STAIRS: { nome: "Escadas de Prismarinho", compra: 190.0, venda: 32.0 }
-      BLACKSTONE_SLAB: { nome: "Laje de Pedra Negra", compra: 35.0, venda: 6.0 }
-      BLACKSTONE_STAIRS: { nome: "Escadas de Pedra Negra", compra: 75.0, venda: 12.0 }
-      NETHER_BRICKS: { nome: "Tijolos do Nether", compra: 85.0, venda: 14.0 }
-      RED_NETHER_BRICKS: { nome: "Tijolos Vermelhos do Nether", compra: 110.0, venda: 18.0 }
-      NETHER_BRICK_SLAB: { nome: "Laje de Tijolos do Nether", compra: 45.0, venda: 7.0 }
-      NETHER_BRICK_STAIRS: { nome: "Escadas de Tijolos do Nether", compra: 90.0, venda: 15.0 }
-      OAK_STAIRS: { nome: "Escadas de Carvalho", compra: 55.0, venda: 9.0 }
-      OAK_SLAB: { nome: "Laje de Carvalho", compra: 28.0, venda: 4.0 }
-      OAK_FENCE: { nome: "Cerca de Carvalho", compra: 60.0, venda: 10.0 }
-      OAK_FENCE_GATE: { nome: "Portão de Carvalho", compra: 75.0, venda: 12.0 }
-      OAK_DOOR: { nome: "Porta de Carvalho", compra: 90.0, venda: 15.0 }
-      OAK_TRAPDOOR: { nome: "Alçapão de Carvalho", compra: 85.0, venda: 14.0 }
-      OAK_BUTTON: { nome: "Botão de Carvalho", compra: 25.0, venda: 3.0 }
-      OAK_PRESSURE_PLATE: { nome: "Placa de Pressão de Carvalho", compra: 40.0, venda: 6.0 }
-      SPRUCE_STAIRS: { nome: "Escadas de Pinheiro", compra: 55.0, venda: 9.0 }
-      SPRUCE_SLAB: { nome: "Laje de Pinheiro", compra: 28.0, venda: 4.0 }
-      SPRUCE_FENCE: { nome: "Cerca de Pinheiro", compra: 60.0, venda: 10.0 }
-      SPRUCE_FENCE_GATE: { nome: "Portão de Pinheiro", compra: 75.0, venda: 12.0 }
-      SPRUCE_DOOR: { nome: "Porta de Pinheiro", compra: 90.0, venda: 15.0 }
-      SPRUCE_TRAPDOOR: { nome: "Alçapão de Pinheiro", compra: 85.0, venda: 14.0 }
-      SPRUCE_BUTTON: { nome: "Botão de Pinheiro", compra: 25.0, venda: 3.0 }
-      SPRUCE_PRESSURE_PLATE: { nome: "Placa de Pressão de Pinheiro", compra: 40.0, venda: 6.0 }
-      BIRCH_STAIRS: { nome: "Escadas de Bétula", compra: 55.0, venda: 9.0 }
-      BIRCH_SLAB: { nome: "Laje de Bétula", compra: 28.0, venda: 4.0 }
-      BIRCH_FENCE: { nome: "Cerca de Bétula", compra: 60.0, venda: 10.0 }
-      BIRCH_FENCE_GATE: { nome: "Portão de Bétula", compra: 75.0, venda: 12.0 }
-      BIRCH_DOOR: { nome: "Porta de Bétula", compra: 90.0, venda: 15.0 }
-      BIRCH_TRAPDOOR: { nome: "Alçapão de Bétula", compra: 85.0, venda: 14.0 }
-      BIRCH_BUTTON: { nome: "Botão de Bétula", compra: 25.0, venda: 3.0 }
-      BIRCH_PRESSURE_PLATE: { nome: "Placa de Pressão de Bétula", compra: 40.0, venda: 6.0 }
-      JUNGLE_STAIRS: { nome: "Escadas de Selva", compra: 55.0, venda: 9.0 }
-      JUNGLE_SLAB: { nome: "Laje de Selva", compra: 28.0, venda: 4.0 }
-      JUNGLE_FENCE: { nome: "Cerca de Selva", compra: 60.0, venda: 10.0 }
-      JUNGLE_FENCE_GATE: { nome: "Portão de Selva", compra: 75.0, venda: 12.0 }
-      JUNGLE_DOOR: { nome: "Porta de Selva", compra: 90.0, venda: 15.0 }
-      JUNGLE_TRAPDOOR: { nome: "Alçapão de Selva", compra: 85.0, venda: 14.0 }
-      JUNGLE_BUTTON: { nome: "Botão de Selva", compra: 25.0, venda: 3.0 }
-      JUNGLE_PRESSURE_PLATE: { nome: "Placa de Pressão de Selva", compra: 40.0, venda: 6.0 }
-      ACACIA_STAIRS: { nome: "Escadas de Acácia", compra: 55.0, venda: 9.0 }
-      ACACIA_SLAB: { nome: "Laje de Acácia", compra: 28.0, venda: 4.0 }
-      ACACIA_FENCE: { nome: "Cerca de Acácia", compra: 60.0, venda: 10.0 }
-      ACACIA_FENCE_GATE: { nome: "Portão de Acácia", compra: 75.0, venda: 12.0 }
-      ACACIA_DOOR: { nome: "Porta de Acácia", compra: 90.0, venda: 15.0 }
-      ACACIA_TRAPDOOR: { nome: "Alçapão de Acácia", compra: 85.0, venda: 14.0 }
-      ACACIA_BUTTON: { nome: "Botão de Acácia", compra: 25.0, venda: 3.0 }
-      ACACIA_PRESSURE_PLATE: { nome: "Placa de Pressão de Acácia", compra: 40.0, venda: 6.0 }
-      DARK_OAK_STAIRS: { nome: "Escadas de Carvalho Escuro", compra: 55.0, venda: 9.0 }
-      DARK_OAK_SLAB: { nome: "Laje de Carvalho Escuro", compra: 28.0, venda: 4.0 }
-      DARK_OAK_FENCE: { nome: "Cerca de Carvalho Escuro", compra: 60.0, venda: 10.0 }
-      DARK_OAK_FENCE_GATE: { nome: "Portão de Carvalho Escuro", compra: 75.0, venda: 12.0 }
-      DARK_OAK_DOOR: { nome: "Porta de Carvalho Escuro", compra: 90.0, venda: 15.0 }
-      DARK_OAK_TRAPDOOR: { nome: "Alçapão de Carvalho Escuro", compra: 85.0, venda: 14.0 }
-      DARK_OAK_BUTTON: { nome: "Botão de Carvalho Escuro", compra: 25.0, venda: 3.0 }
-      DARK_OAK_PRESSURE_PLATE: { nome: "Placa de Pressão de Carvalho Escuro", compra: 40.0, venda: 6.0 }
-      MANGROVE_STAIRS: { nome: "Escadas de Mangue", compra: 55.0, venda: 9.0 }
-      MANGROVE_SLAB: { nome: "Laje de Mangue", compra: 28.0, venda: 4.0 }
-      MANGROVE_FENCE: { nome: "Cerca de Mangue", compra: 60.0, venda: 10.0 }
-      MANGROVE_FENCE_GATE: { nome: "Portão de Mangue", compra: 75.0, venda: 12.0 }
-      MANGROVE_DOOR: { nome: "Porta de Mangue", compra: 90.0, venda: 15.0 }
-      MANGROVE_TRAPDOOR: { nome: "Alçapão de Mangue", compra: 85.0, venda: 14.0 }
-      MANGROVE_BUTTON: { nome: "Botão de Mangue", compra: 25.0, venda: 3.0 }
-      MANGROVE_PRESSURE_PLATE: { nome: "Placa de Pressão de Mangue", compra: 40.0, venda: 6.0 }
-      CHERRY_STAIRS: { nome: "Escadas de Cerejeira", compra: 55.0, venda: 9.0 }
-      CHERRY_SLAB: { nome: "Laje de Cerejeira", compra: 28.0, venda: 4.0 }
-      CHERRY_FENCE: { nome: "Cerca de Cerejeira", compra: 60.0, venda: 10.0 }
-      CHERRY_FENCE_GATE: { nome: "Portão de Cerejeira", compra: 75.0, venda: 12.0 }
-      CHERRY_DOOR: { nome: "Porta de Cerejeira", compra: 90.0, venda: 15.0 }
-      CHERRY_TRAPDOOR: { nome: "Alçapão de Cerejeira", compra: 85.0, venda: 14.0 }
-      CHERRY_BUTTON: { nome: "Botão de Cerejeira", compra: 25.0, venda: 3.0 }
-      CHERRY_PRESSURE_PLATE: { nome: "Placa de Pressão de Cerejeira", compra: 40.0, venda: 6.0 }
-      BAMBOO_STAIRS: { nome: "Escadas de Bambu", compra: 55.0, venda: 9.0 }
-      BAMBOO_SLAB: { nome: "Laje de Bambu", compra: 28.0, venda: 4.0 }
-      BAMBOO_FENCE: { nome: "Cerca de Bambu", compra: 60.0, venda: 10.0 }
-      BAMBOO_FENCE_GATE: { nome: "Portão de Bambu", compra: 75.0, venda: 12.0 }
-      BAMBOO_DOOR: { nome: "Porta de Bambu", compra: 90.0, venda: 15.0 }
-      BAMBOO_TRAPDOOR: { nome: "Alçapão de Bambu", compra: 85.0, venda: 14.0 }
-      BAMBOO_BUTTON: { nome: "Botão de Bambu", compra: 25.0, venda: 3.0 }
-      BAMBOO_PRESSURE_PLATE: { nome: "Placa de Pressão de Bambu", compra: 40.0, venda: 6.0 }
-      CRIMSON_STAIRS: { nome: "Escadas de Carmesim", compra: 55.0, venda: 9.0 }
-      CRIMSON_SLAB: { nome: "Laje de Carmesim", compra: 28.0, venda: 4.0 }
-      CRIMSON_FENCE: { nome: "Cerca de Carmesim", compra: 60.0, venda: 10.0 }
-      CRIMSON_FENCE_GATE: { nome: "Portão de Carmesim", compra: 75.0, venda: 12.0 }
-      CRIMSON_DOOR: { nome: "Porta de Carmesim", compra: 90.0, venda: 15.0 }
-      CRIMSON_TRAPDOOR: { nome: "Alçapão de Carmesim", compra: 85.0, venda: 14.0 }
-      CRIMSON_BUTTON: { nome: "Botão de Carmesim", compra: 25.0, venda: 3.0 }
-      CRIMSON_PRESSURE_PLATE: { nome: "Placa de Pressão de Carmesim", compra: 40.0, venda: 6.0 }
-      WARPED_STAIRS: { nome: "Escadas de Distorcida", compra: 55.0, venda: 9.0 }
-      WARPED_SLAB: { nome: "Laje de Distorcida", compra: 28.0, venda: 4.0 }
-      WARPED_FENCE: { nome: "Cerca de Distorcida", compra: 60.0, venda: 10.0 }
-      WARPED_FENCE_GATE: { nome: "Portão de Distorcida", compra: 75.0, venda: 12.0 }
-      WARPED_DOOR: { nome: "Porta de Distorcida", compra: 90.0, venda: 15.0 }
-      WARPED_TRAPDOOR: { nome: "Alçapão de Distorcida", compra: 85.0, venda: 14.0 }
-      WARPED_BUTTON: { nome: "Botão de Distorcida", compra: 25.0, venda: 3.0 }
-      WARPED_PRESSURE_PLATE: { nome: "Placa de Pressão de Distorcida", compra: 40.0, venda: 6.0 }
-      CLAY: { nome: "Argila", compra: 70.0, venda: 11.0 }
-      MUD: { nome: "Lama", compra: 55.0, venda: 9.0 }
-      PACKED_MUD: { nome: "Lama Compactada", compra: 70.0, venda: 11.0 }
-      DRIPSTONE_BLOCK: { nome: "Bloco de Espeleotema", compra: 85.0, venda: 14.0 }
-      POINTED_DRIPSTONE: { nome: "Espeleotema Pontiagudo", compra: 65.0, venda: 10.0 }
-      SNOW_BLOCK: { nome: "Bloco de Neve", compra: 55.0, venda: 8.0 }
-      SOUL_SOIL: { nome: "Solo das Almas", compra: 80.0, venda: 13.0 }
-      CRYING_OBSIDIAN: { nome: "Obsidiana Chorona", compra: 900.0, venda: 140.0 }
-      MAGMA_BLOCK: { nome: "Bloco de Magma", compra: 180.0, venda: 28.0 }
-      PURPUR_BLOCK: { nome: "Bloco de Púrpura", compra: 180.0, venda: 30.0 }
-      PURPUR_PILLAR: { nome: "Pilar de Púrpura", compra: 200.0, venda: 32.0 }
-      PURPUR_SLAB: { nome: "Laje de Púrpura", compra: 95.0, venda: 15.0 }
-      PURPUR_STAIRS: { nome: "Escadas de Púrpura", compra: 190.0, venda: 30.0 }
-      BONE_BLOCK: { nome: "Bloco de Ossos", compra: 700.0, venda: 100.0 }
-      HAY_BLOCK: { nome: "Fardo de Feno", compra: 600.0, venda: 90.0 }
-      HONEYCOMB_BLOCK: { nome: "Bloco de Favo de Mel", compra: 800.0, venda: 120.0 }
-      HONEY_BLOCK: { nome: "Bloco de Mel", compra: 850.0, venda: 130.0 }
+      STONE: { nome: "Pedra", compra: 35.0, venda: 0.0 }
+      COBBLESTONE: { nome: "Pedregulho", compra: 25.0, venda: 0.0 }
+      BRICKS: { nome: "Tijolos", compra: 90.0, venda: 0.0 }
+      DEEPSLATE: { nome: "Ardósia", compra: 45.0, venda: 0.0 }
+      ANDESITE: { nome: "Andesito", compra: 45.0, venda: 0.0 }
+      DIORITE: { nome: "Diorito", compra: 45.0, venda: 0.0 }
+      GRANITE: { nome: "Granito", compra: 45.0, venda: 0.0 }
+      GLASS: { nome: "Vidro", compra: 55.0, venda: 0.0 }
+      OBSIDIAN: { nome: "Obsidiana", compra: 500.0, venda: 0.0 }
+      NETHERRACK: { nome: "Netherrack", compra: 25.0, venda: 0.0 }
+      SOUL_SAND: { nome: "Areia das Almas", compra: 90.0, venda: 0.0 }
+      QUARTZ_BLOCK: { nome: "Bloco de Quartzo", compra: 850.0, venda: 0.0 }
+      STONE_BRICKS: { nome: "Tijolos de Pedra", compra: 70.0, venda: 0.0 }
+      MOSSY_COBBLESTONE: { nome: "Pedregulho Musgoso", compra: 75.0, venda: 0.0 }
+      MOSS_BLOCK: { nome: "Bloco de Musgo", compra: 90.0, venda: 0.0 }
+      CALCITE: { nome: "Calcita", compra: 65.0, venda: 0.0 }
+      TUFF: { nome: "Tufo", compra: 55.0, venda: 0.0 }
+      BLACKSTONE: { nome: "Pedra Negra", compra: 70.0, venda: 0.0 }
+      BASALT: { nome: "Basalto", compra: 65.0, venda: 0.0 }
+      SANDSTONE: { nome: "Arenito", compra: 55.0, venda: 0.0 }
+      MUD_BRICKS: { nome: "Tijolos de Lama", compra: 80.0, venda: 0.0 }
+      OAK_PLANKS: { nome: "Tábuas de Carvalho", compra: 30.0, venda: 0.0 }
+      SPRUCE_PLANKS: { nome: "Tábuas de Pinheiro", compra: 35.0, venda: 0.0 }
+      BIRCH_PLANKS: { nome: "Tábuas de Bétula", compra: 35.0, venda: 0.0 }
+      JUNGLE_PLANKS: { nome: "Tábuas da Selva", compra: 40.0, venda: 0.0 }
+      ACACIA_PLANKS: { nome: "Tábuas de Acácia", compra: 35.0, venda: 0.0 }
+      DARK_OAK_PLANKS: { nome: "Tábuas de Carvalho Escuro", compra: 40.0, venda: 0.0 }
+      MANGROVE_PLANKS: { nome: "Tábuas de Mangue", compra: 45.0, venda: 0.0 }
+      CHERRY_PLANKS: { nome: "Tábuas de Cerejeira", compra: 50.0, venda: 0.0 }
+      BAMBOO_PLANKS: { nome: "Tábuas de Bambu", compra: 45.0, venda: 0.0 }
+      CRIMSON_PLANKS: { nome: "Tábuas Carmesim", compra: 55.0, venda: 0.0 }
+      WARPED_PLANKS: { nome: "Tábuas Distorcidas", compra: 55.0, venda: 0.0 }
+      OAK_LOG: { nome: "Tronco de Carvalho", compra: 90.0, venda: 0.0 }
+      SPRUCE_LOG: { nome: "Tronco de Pinheiro", compra: 95.0, venda: 0.0 }
+      BIRCH_LOG: { nome: "Tronco de Bétula", compra: 95.0, venda: 0.0 }
+      JUNGLE_LOG: { nome: "Tronco da Selva", compra: 110.0, venda: 0.0 }
+      ACACIA_LOG: { nome: "Tronco de Acácia", compra: 100.0, venda: 0.0 }
+      DARK_OAK_LOG: { nome: "Tronco de Carvalho Escuro", compra: 110.0, venda: 0.0 }
+      MANGROVE_LOG: { nome: "Tronco de Mangue", compra: 120.0, venda: 0.0 }
+      CHERRY_LOG: { nome: "Tronco de Cerejeira", compra: 130.0, venda: 0.0 }
+      PRISMARINE: { nome: "Prismarinho", compra: 180.0, venda: 0.0 }
+      PRISMARINE_BRICKS: { nome: "Tijolos de Prismarinho", compra: 230.0, venda: 0.0 }
+      DARK_PRISMARINE: { nome: "Prismarinho Escuro", compra: 260.0, venda: 0.0 }
+      END_STONE_BRICKS: { nome: "Tijolos de Pedra do End", compra: 220.0, venda: 0.0 }
+      RED_SANDSTONE: { nome: "Arenito Vermelho", compra: 65.0, venda: 0.0 }
+      SMOOTH_STONE: { nome: "Pedra Lisa", compra: 55.0, venda: 0.0 }
+      POLISHED_ANDESITE: { nome: "Andesito Polido", compra: 60.0, venda: 0.0 }
+      POLISHED_DIORITE: { nome: "Diorito Polido", compra: 60.0, venda: 0.0 }
+      POLISHED_GRANITE: { nome: "Granito Polido", compra: 60.0, venda: 0.0 }
+      COBBLED_DEEPSLATE: { nome: "Ardósia Pedregosa", compra: 50.0, venda: 0.0 }
+      POLISHED_DEEPSLATE: { nome: "Ardósia Polida", compra: 65.0, venda: 0.0 }
+      DEEPSLATE_BRICKS: { nome: "Tijolos de Ardósia", compra: 75.0, venda: 0.0 }
+      DEEPSLATE_TILES: { nome: "Ladrilhos de Ardósia", compra: 80.0, venda: 0.0 }
+      STONE_SLAB: { nome: "Laje de Pedra", compra: 25.0, venda: 0.0 }
+      STONE_STAIRS: { nome: "Escadas de Pedra", compra: 55.0, venda: 0.0 }
+      COBBLESTONE_SLAB: { nome: "Laje de Pedregulho", compra: 20.0, venda: 0.0 }
+      COBBLESTONE_STAIRS: { nome: "Escadas de Pedregulho", compra: 45.0, venda: 0.0 }
+      STONE_BRICK_SLAB: { nome: "Laje de Tijolos de Pedra", compra: 35.0, venda: 0.0 }
+      STONE_BRICK_STAIRS: { nome: "Escadas de Tijolos de Pedra", compra: 75.0, venda: 0.0 }
+      BRICK_SLAB: { nome: "Laje de Tijolos", compra: 45.0, venda: 0.0 }
+      BRICK_STAIRS: { nome: "Escadas de Tijolos", compra: 95.0, venda: 0.0 }
+      SANDSTONE_SLAB: { nome: "Laje de Arenito", compra: 30.0, venda: 0.0 }
+      SANDSTONE_STAIRS: { nome: "Escadas de Arenito", compra: 60.0, venda: 0.0 }
+      RED_SANDSTONE_SLAB: { nome: "Laje de Arenito Vermelho", compra: 35.0, venda: 0.0 }
+      RED_SANDSTONE_STAIRS: { nome: "Escadas de Arenito Vermelho", compra: 70.0, venda: 0.0 }
+      QUARTZ_SLAB: { nome: "Laje de Quartzo", compra: 430.0, venda: 0.0 }
+      QUARTZ_STAIRS: { nome: "Escadas de Quartzo", compra: 900.0, venda: 0.0 }
+      PRISMARINE_SLAB: { nome: "Laje de Prismarinho", compra: 95.0, venda: 0.0 }
+      PRISMARINE_STAIRS: { nome: "Escadas de Prismarinho", compra: 190.0, venda: 0.0 }
+      BLACKSTONE_SLAB: { nome: "Laje de Pedra Negra", compra: 35.0, venda: 0.0 }
+      BLACKSTONE_STAIRS: { nome: "Escadas de Pedra Negra", compra: 75.0, venda: 0.0 }
+      NETHER_BRICKS: { nome: "Tijolos do Nether", compra: 85.0, venda: 0.0 }
+      RED_NETHER_BRICKS: { nome: "Tijolos Vermelhos do Nether", compra: 110.0, venda: 0.0 }
+      NETHER_BRICK_SLAB: { nome: "Laje de Tijolos do Nether", compra: 45.0, venda: 0.0 }
+      NETHER_BRICK_STAIRS: { nome: "Escadas de Tijolos do Nether", compra: 90.0, venda: 0.0 }
+      OAK_STAIRS: { nome: "Escadas de Carvalho", compra: 55.0, venda: 0.0 }
+      OAK_SLAB: { nome: "Laje de Carvalho", compra: 28.0, venda: 0.0 }
+      OAK_FENCE: { nome: "Cerca de Carvalho", compra: 60.0, venda: 0.0 }
+      OAK_FENCE_GATE: { nome: "Portão de Carvalho", compra: 75.0, venda: 0.0 }
+      OAK_DOOR: { nome: "Porta de Carvalho", compra: 90.0, venda: 0.0 }
+      OAK_TRAPDOOR: { nome: "Alçapão de Carvalho", compra: 85.0, venda: 0.0 }
+      OAK_BUTTON: { nome: "Botão de Carvalho", compra: 25.0, venda: 0.0 }
+      OAK_PRESSURE_PLATE: { nome: "Placa de Pressão de Carvalho", compra: 40.0, venda: 0.0 }
+      SPRUCE_STAIRS: { nome: "Escadas de Pinheiro", compra: 55.0, venda: 0.0 }
+      SPRUCE_SLAB: { nome: "Laje de Pinheiro", compra: 28.0, venda: 0.0 }
+      SPRUCE_FENCE: { nome: "Cerca de Pinheiro", compra: 60.0, venda: 0.0 }
+      SPRUCE_FENCE_GATE: { nome: "Portão de Pinheiro", compra: 75.0, venda: 0.0 }
+      SPRUCE_DOOR: { nome: "Porta de Pinheiro", compra: 90.0, venda: 0.0 }
+      SPRUCE_TRAPDOOR: { nome: "Alçapão de Pinheiro", compra: 85.0, venda: 0.0 }
+      SPRUCE_BUTTON: { nome: "Botão de Pinheiro", compra: 25.0, venda: 0.0 }
+      SPRUCE_PRESSURE_PLATE: { nome: "Placa de Pressão de Pinheiro", compra: 40.0, venda: 0.0 }
+      BIRCH_STAIRS: { nome: "Escadas de Bétula", compra: 55.0, venda: 0.0 }
+      BIRCH_SLAB: { nome: "Laje de Bétula", compra: 28.0, venda: 0.0 }
+      BIRCH_FENCE: { nome: "Cerca de Bétula", compra: 60.0, venda: 0.0 }
+      BIRCH_FENCE_GATE: { nome: "Portão de Bétula", compra: 75.0, venda: 0.0 }
+      BIRCH_DOOR: { nome: "Porta de Bétula", compra: 90.0, venda: 0.0 }
+      BIRCH_TRAPDOOR: { nome: "Alçapão de Bétula", compra: 85.0, venda: 0.0 }
+      BIRCH_BUTTON: { nome: "Botão de Bétula", compra: 25.0, venda: 0.0 }
+      BIRCH_PRESSURE_PLATE: { nome: "Placa de Pressão de Bétula", compra: 40.0, venda: 0.0 }
+      JUNGLE_STAIRS: { nome: "Escadas de Selva", compra: 55.0, venda: 0.0 }
+      JUNGLE_SLAB: { nome: "Laje de Selva", compra: 28.0, venda: 0.0 }
+      JUNGLE_FENCE: { nome: "Cerca de Selva", compra: 60.0, venda: 0.0 }
+      JUNGLE_FENCE_GATE: { nome: "Portão de Selva", compra: 75.0, venda: 0.0 }
+      JUNGLE_DOOR: { nome: "Porta de Selva", compra: 90.0, venda: 0.0 }
+      JUNGLE_TRAPDOOR: { nome: "Alçapão de Selva", compra: 85.0, venda: 0.0 }
+      JUNGLE_BUTTON: { nome: "Botão de Selva", compra: 25.0, venda: 0.0 }
+      JUNGLE_PRESSURE_PLATE: { nome: "Placa de Pressão de Selva", compra: 40.0, venda: 0.0 }
+      ACACIA_STAIRS: { nome: "Escadas de Acácia", compra: 55.0, venda: 0.0 }
+      ACACIA_SLAB: { nome: "Laje de Acácia", compra: 28.0, venda: 0.0 }
+      ACACIA_FENCE: { nome: "Cerca de Acácia", compra: 60.0, venda: 0.0 }
+      ACACIA_FENCE_GATE: { nome: "Portão de Acácia", compra: 75.0, venda: 0.0 }
+      ACACIA_DOOR: { nome: "Porta de Acácia", compra: 90.0, venda: 0.0 }
+      ACACIA_TRAPDOOR: { nome: "Alçapão de Acácia", compra: 85.0, venda: 0.0 }
+      ACACIA_BUTTON: { nome: "Botão de Acácia", compra: 25.0, venda: 0.0 }
+      ACACIA_PRESSURE_PLATE: { nome: "Placa de Pressão de Acácia", compra: 40.0, venda: 0.0 }
+      DARK_OAK_STAIRS: { nome: "Escadas de Carvalho Escuro", compra: 55.0, venda: 0.0 }
+      DARK_OAK_SLAB: { nome: "Laje de Carvalho Escuro", compra: 28.0, venda: 0.0 }
+      DARK_OAK_FENCE: { nome: "Cerca de Carvalho Escuro", compra: 60.0, venda: 0.0 }
+      DARK_OAK_FENCE_GATE: { nome: "Portão de Carvalho Escuro", compra: 75.0, venda: 0.0 }
+      DARK_OAK_DOOR: { nome: "Porta de Carvalho Escuro", compra: 90.0, venda: 0.0 }
+      DARK_OAK_TRAPDOOR: { nome: "Alçapão de Carvalho Escuro", compra: 85.0, venda: 0.0 }
+      DARK_OAK_BUTTON: { nome: "Botão de Carvalho Escuro", compra: 25.0, venda: 0.0 }
+      DARK_OAK_PRESSURE_PLATE: { nome: "Placa de Pressão de Carvalho Escuro", compra: 40.0, venda: 0.0 }
+      MANGROVE_STAIRS: { nome: "Escadas de Mangue", compra: 55.0, venda: 0.0 }
+      MANGROVE_SLAB: { nome: "Laje de Mangue", compra: 28.0, venda: 0.0 }
+      MANGROVE_FENCE: { nome: "Cerca de Mangue", compra: 60.0, venda: 0.0 }
+      MANGROVE_FENCE_GATE: { nome: "Portão de Mangue", compra: 75.0, venda: 0.0 }
+      MANGROVE_DOOR: { nome: "Porta de Mangue", compra: 90.0, venda: 0.0 }
+      MANGROVE_TRAPDOOR: { nome: "Alçapão de Mangue", compra: 85.0, venda: 0.0 }
+      MANGROVE_BUTTON: { nome: "Botão de Mangue", compra: 25.0, venda: 0.0 }
+      MANGROVE_PRESSURE_PLATE: { nome: "Placa de Pressão de Mangue", compra: 40.0, venda: 0.0 }
+      CHERRY_STAIRS: { nome: "Escadas de Cerejeira", compra: 55.0, venda: 0.0 }
+      CHERRY_SLAB: { nome: "Laje de Cerejeira", compra: 28.0, venda: 0.0 }
+      CHERRY_FENCE: { nome: "Cerca de Cerejeira", compra: 60.0, venda: 0.0 }
+      CHERRY_FENCE_GATE: { nome: "Portão de Cerejeira", compra: 75.0, venda: 0.0 }
+      CHERRY_DOOR: { nome: "Porta de Cerejeira", compra: 90.0, venda: 0.0 }
+      CHERRY_TRAPDOOR: { nome: "Alçapão de Cerejeira", compra: 85.0, venda: 0.0 }
+      CHERRY_BUTTON: { nome: "Botão de Cerejeira", compra: 25.0, venda: 0.0 }
+      CHERRY_PRESSURE_PLATE: { nome: "Placa de Pressão de Cerejeira", compra: 40.0, venda: 0.0 }
+      BAMBOO_STAIRS: { nome: "Escadas de Bambu", compra: 55.0, venda: 0.0 }
+      BAMBOO_SLAB: { nome: "Laje de Bambu", compra: 28.0, venda: 0.0 }
+      BAMBOO_FENCE: { nome: "Cerca de Bambu", compra: 60.0, venda: 0.0 }
+      BAMBOO_FENCE_GATE: { nome: "Portão de Bambu", compra: 75.0, venda: 0.0 }
+      BAMBOO_DOOR: { nome: "Porta de Bambu", compra: 90.0, venda: 0.0 }
+      BAMBOO_TRAPDOOR: { nome: "Alçapão de Bambu", compra: 85.0, venda: 0.0 }
+      BAMBOO_BUTTON: { nome: "Botão de Bambu", compra: 25.0, venda: 0.0 }
+      BAMBOO_PRESSURE_PLATE: { nome: "Placa de Pressão de Bambu", compra: 40.0, venda: 0.0 }
+      CRIMSON_STAIRS: { nome: "Escadas de Carmesim", compra: 55.0, venda: 0.0 }
+      CRIMSON_SLAB: { nome: "Laje de Carmesim", compra: 28.0, venda: 0.0 }
+      CRIMSON_FENCE: { nome: "Cerca de Carmesim", compra: 60.0, venda: 0.0 }
+      CRIMSON_FENCE_GATE: { nome: "Portão de Carmesim", compra: 75.0, venda: 0.0 }
+      CRIMSON_DOOR: { nome: "Porta de Carmesim", compra: 90.0, venda: 0.0 }
+      CRIMSON_TRAPDOOR: { nome: "Alçapão de Carmesim", compra: 85.0, venda: 0.0 }
+      CRIMSON_BUTTON: { nome: "Botão de Carmesim", compra: 25.0, venda: 0.0 }
+      CRIMSON_PRESSURE_PLATE: { nome: "Placa de Pressão de Carmesim", compra: 40.0, venda: 0.0 }
+      WARPED_STAIRS: { nome: "Escadas de Distorcida", compra: 55.0, venda: 0.0 }
+      WARPED_SLAB: { nome: "Laje de Distorcida", compra: 28.0, venda: 0.0 }
+      WARPED_FENCE: { nome: "Cerca de Distorcida", compra: 60.0, venda: 0.0 }
+      WARPED_FENCE_GATE: { nome: "Portão de Distorcida", compra: 75.0, venda: 0.0 }
+      WARPED_DOOR: { nome: "Porta de Distorcida", compra: 90.0, venda: 0.0 }
+      WARPED_TRAPDOOR: { nome: "Alçapão de Distorcida", compra: 85.0, venda: 0.0 }
+      WARPED_BUTTON: { nome: "Botão de Distorcida", compra: 25.0, venda: 0.0 }
+      WARPED_PRESSURE_PLATE: { nome: "Placa de Pressão de Distorcida", compra: 40.0, venda: 0.0 }
+      CLAY: { nome: "Argila", compra: 70.0, venda: 0.0 }
+      MUD: { nome: "Lama", compra: 55.0, venda: 0.0 }
+      PACKED_MUD: { nome: "Lama Compactada", compra: 70.0, venda: 0.0 }
+      DRIPSTONE_BLOCK: { nome: "Bloco de Espeleotema", compra: 85.0, venda: 0.0 }
+      POINTED_DRIPSTONE: { nome: "Espeleotema Pontiagudo", compra: 65.0, venda: 0.0 }
+      SNOW_BLOCK: { nome: "Bloco de Neve", compra: 55.0, venda: 0.0 }
+      SOUL_SOIL: { nome: "Solo das Almas", compra: 80.0, venda: 0.0 }
+      CRYING_OBSIDIAN: { nome: "Obsidiana Chorona", compra: 900.0, venda: 0.0 }
+      MAGMA_BLOCK: { nome: "Bloco de Magma", compra: 180.0, venda: 0.0 }
+      PURPUR_BLOCK: { nome: "Bloco de Púrpura", compra: 180.0, venda: 0.0 }
+      PURPUR_PILLAR: { nome: "Pilar de Púrpura", compra: 200.0, venda: 0.0 }
+      PURPUR_SLAB: { nome: "Laje de Púrpura", compra: 95.0, venda: 0.0 }
+      PURPUR_STAIRS: { nome: "Escadas de Púrpura", compra: 190.0, venda: 0.0 }
+      BONE_BLOCK: { nome: "Bloco de Ossos", compra: 700.0, venda: 0.0 }
+      HAY_BLOCK: { nome: "Fardo de Feno", compra: 600.0, venda: 0.0 }
+      HONEYCOMB_BLOCK: { nome: "Bloco de Favo de Mel", compra: 800.0, venda: 0.0 }
+      HONEY_BLOCK: { nome: "Bloco de Mel", compra: 850.0, venda: 0.0 }
 
   coloridos:
     nome: "Blocos Coloridos"
@@ -415,203 +415,203 @@ categorias:
       - "Blocos coloridos e"
       - "materiais para decoração"
     itens:
-      WHITE_CONCRETE: { nome: "Concreto Branco", compra: 80.0, venda: 12.0 }
-      ORANGE_CONCRETE: { nome: "Concreto Laranja", compra: 80.0, venda: 12.0 }
-      MAGENTA_CONCRETE: { nome: "Concreto Magenta", compra: 80.0, venda: 12.0 }
-      LIGHT_BLUE_CONCRETE: { nome: "Concreto Azul-Claro", compra: 80.0, venda: 12.0 }
-      YELLOW_CONCRETE: { nome: "Concreto Amarelo", compra: 80.0, venda: 12.0 }
-      LIME_CONCRETE: { nome: "Concreto Verde-Limão", compra: 80.0, venda: 12.0 }
-      PINK_CONCRETE: { nome: "Concreto Rosa", compra: 80.0, venda: 12.0 }
-      GRAY_CONCRETE: { nome: "Concreto Cinza", compra: 80.0, venda: 12.0 }
-      LIGHT_GRAY_CONCRETE: { nome: "Concreto Cinza-Claro", compra: 80.0, venda: 12.0 }
-      CYAN_CONCRETE: { nome: "Concreto Ciano", compra: 80.0, venda: 12.0 }
-      PURPLE_CONCRETE: { nome: "Concreto Roxo", compra: 80.0, venda: 12.0 }
-      BLUE_CONCRETE: { nome: "Concreto Azul", compra: 80.0, venda: 12.0 }
-      BROWN_CONCRETE: { nome: "Concreto Marrom", compra: 80.0, venda: 12.0 }
-      GREEN_CONCRETE: { nome: "Concreto Verde", compra: 80.0, venda: 12.0 }
-      RED_CONCRETE: { nome: "Concreto Vermelho", compra: 80.0, venda: 12.0 }
-      BLACK_CONCRETE: { nome: "Concreto Preto", compra: 80.0, venda: 12.0 }
-      WHITE_CONCRETE_POWDER: { nome: "Pó de Concreto Branco", compra: 65.0, venda: 10.0 }
-      ORANGE_CONCRETE_POWDER: { nome: "Pó de Concreto Laranja", compra: 65.0, venda: 10.0 }
-      MAGENTA_CONCRETE_POWDER: { nome: "Pó de Concreto Magenta", compra: 65.0, venda: 10.0 }
-      LIGHT_BLUE_CONCRETE_POWDER: { nome: "Pó de Concreto Azul-Claro", compra: 65.0, venda: 10.0 }
-      YELLOW_CONCRETE_POWDER: { nome: "Pó de Concreto Amarelo", compra: 65.0, venda: 10.0 }
-      LIME_CONCRETE_POWDER: { nome: "Pó de Concreto Verde-Limão", compra: 65.0, venda: 10.0 }
-      PINK_CONCRETE_POWDER: { nome: "Pó de Concreto Rosa", compra: 65.0, venda: 10.0 }
-      GRAY_CONCRETE_POWDER: { nome: "Pó de Concreto Cinza", compra: 65.0, venda: 10.0 }
-      LIGHT_GRAY_CONCRETE_POWDER: { nome: "Pó de Concreto Cinza-Claro", compra: 65.0, venda: 10.0 }
-      CYAN_CONCRETE_POWDER: { nome: "Pó de Concreto Ciano", compra: 65.0, venda: 10.0 }
-      PURPLE_CONCRETE_POWDER: { nome: "Pó de Concreto Roxo", compra: 65.0, venda: 10.0 }
-      BLUE_CONCRETE_POWDER: { nome: "Pó de Concreto Azul", compra: 65.0, venda: 10.0 }
-      BROWN_CONCRETE_POWDER: { nome: "Pó de Concreto Marrom", compra: 65.0, venda: 10.0 }
-      GREEN_CONCRETE_POWDER: { nome: "Pó de Concreto Verde", compra: 65.0, venda: 10.0 }
-      RED_CONCRETE_POWDER: { nome: "Pó de Concreto Vermelho", compra: 65.0, venda: 10.0 }
-      BLACK_CONCRETE_POWDER: { nome: "Pó de Concreto Preto", compra: 65.0, venda: 10.0 }
-      WHITE_WOOL: { nome: "Lã Branco", compra: 70.0, venda: 10.0 }
-      ORANGE_WOOL: { nome: "Lã Laranja", compra: 70.0, venda: 10.0 }
-      MAGENTA_WOOL: { nome: "Lã Magenta", compra: 70.0, venda: 10.0 }
-      LIGHT_BLUE_WOOL: { nome: "Lã Azul-Claro", compra: 70.0, venda: 10.0 }
-      YELLOW_WOOL: { nome: "Lã Amarelo", compra: 70.0, venda: 10.0 }
-      LIME_WOOL: { nome: "Lã Verde-Limão", compra: 70.0, venda: 10.0 }
-      PINK_WOOL: { nome: "Lã Rosa", compra: 70.0, venda: 10.0 }
-      GRAY_WOOL: { nome: "Lã Cinza", compra: 70.0, venda: 10.0 }
-      LIGHT_GRAY_WOOL: { nome: "Lã Cinza-Claro", compra: 70.0, venda: 10.0 }
-      CYAN_WOOL: { nome: "Lã Ciano", compra: 70.0, venda: 10.0 }
-      PURPLE_WOOL: { nome: "Lã Roxo", compra: 70.0, venda: 10.0 }
-      BLUE_WOOL: { nome: "Lã Azul", compra: 70.0, venda: 10.0 }
-      BROWN_WOOL: { nome: "Lã Marrom", compra: 70.0, venda: 10.0 }
-      GREEN_WOOL: { nome: "Lã Verde", compra: 70.0, venda: 10.0 }
-      RED_WOOL: { nome: "Lã Vermelho", compra: 70.0, venda: 10.0 }
-      BLACK_WOOL: { nome: "Lã Preto", compra: 70.0, venda: 10.0 }
-      TERRACOTTA: { nome: "Terracota", compra: 75.0, venda: 12.0 }
-      WHITE_TERRACOTTA: { nome: "Terracota Branco", compra: 90.0, venda: 14.0 }
-      ORANGE_TERRACOTTA: { nome: "Terracota Laranja", compra: 90.0, venda: 14.0 }
-      MAGENTA_TERRACOTTA: { nome: "Terracota Magenta", compra: 90.0, venda: 14.0 }
-      LIGHT_BLUE_TERRACOTTA: { nome: "Terracota Azul-Claro", compra: 90.0, venda: 14.0 }
-      YELLOW_TERRACOTTA: { nome: "Terracota Amarelo", compra: 90.0, venda: 14.0 }
-      LIME_TERRACOTTA: { nome: "Terracota Verde-Limão", compra: 90.0, venda: 14.0 }
-      PINK_TERRACOTTA: { nome: "Terracota Rosa", compra: 90.0, venda: 14.0 }
-      GRAY_TERRACOTTA: { nome: "Terracota Cinza", compra: 90.0, venda: 14.0 }
-      LIGHT_GRAY_TERRACOTTA: { nome: "Terracota Cinza-Claro", compra: 90.0, venda: 14.0 }
-      CYAN_TERRACOTTA: { nome: "Terracota Ciano", compra: 90.0, venda: 14.0 }
-      PURPLE_TERRACOTTA: { nome: "Terracota Roxo", compra: 90.0, venda: 14.0 }
-      BLUE_TERRACOTTA: { nome: "Terracota Azul", compra: 90.0, venda: 14.0 }
-      BROWN_TERRACOTTA: { nome: "Terracota Marrom", compra: 90.0, venda: 14.0 }
-      GREEN_TERRACOTTA: { nome: "Terracota Verde", compra: 90.0, venda: 14.0 }
-      RED_TERRACOTTA: { nome: "Terracota Vermelho", compra: 90.0, venda: 14.0 }
-      BLACK_TERRACOTTA: { nome: "Terracota Preto", compra: 90.0, venda: 14.0 }
-      WHITE_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Branco", compra: 110.0, venda: 18.0 }
-      ORANGE_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Laranja", compra: 110.0, venda: 18.0 }
-      MAGENTA_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Magenta", compra: 110.0, venda: 18.0 }
-      LIGHT_BLUE_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Azul-Claro", compra: 110.0, venda: 18.0 }
-      YELLOW_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Amarelo", compra: 110.0, venda: 18.0 }
-      LIME_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Verde-Limão", compra: 110.0, venda: 18.0 }
-      PINK_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Rosa", compra: 110.0, venda: 18.0 }
-      GRAY_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Cinza", compra: 110.0, venda: 18.0 }
-      LIGHT_GRAY_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Cinza-Claro", compra: 110.0, venda: 18.0 }
-      CYAN_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Ciano", compra: 110.0, venda: 18.0 }
-      PURPLE_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Roxo", compra: 110.0, venda: 18.0 }
-      BLUE_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Azul", compra: 110.0, venda: 18.0 }
-      BROWN_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Marrom", compra: 110.0, venda: 18.0 }
-      GREEN_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Verde", compra: 110.0, venda: 18.0 }
-      RED_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Vermelho", compra: 110.0, venda: 18.0 }
-      BLACK_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Preto", compra: 110.0, venda: 18.0 }
-      GLASS: { nome: "Vidro", compra: 55.0, venda: 8.0 }
-      TINTED_GLASS: { nome: "Vidro Escurecido", compra: 180.0, venda: 28.0 }
-      WHITE_STAINED_GLASS: { nome: "Vidro Tingido Branco", compra: 90.0, venda: 14.0 }
-      ORANGE_STAINED_GLASS: { nome: "Vidro Tingido Laranja", compra: 90.0, venda: 14.0 }
-      MAGENTA_STAINED_GLASS: { nome: "Vidro Tingido Magenta", compra: 90.0, venda: 14.0 }
-      LIGHT_BLUE_STAINED_GLASS: { nome: "Vidro Tingido Azul-Claro", compra: 90.0, venda: 14.0 }
-      YELLOW_STAINED_GLASS: { nome: "Vidro Tingido Amarelo", compra: 90.0, venda: 14.0 }
-      LIME_STAINED_GLASS: { nome: "Vidro Tingido Verde-Limão", compra: 90.0, venda: 14.0 }
-      PINK_STAINED_GLASS: { nome: "Vidro Tingido Rosa", compra: 90.0, venda: 14.0 }
-      GRAY_STAINED_GLASS: { nome: "Vidro Tingido Cinza", compra: 90.0, venda: 14.0 }
-      LIGHT_GRAY_STAINED_GLASS: { nome: "Vidro Tingido Cinza-Claro", compra: 90.0, venda: 14.0 }
-      CYAN_STAINED_GLASS: { nome: "Vidro Tingido Ciano", compra: 90.0, venda: 14.0 }
-      PURPLE_STAINED_GLASS: { nome: "Vidro Tingido Roxo", compra: 90.0, venda: 14.0 }
-      BLUE_STAINED_GLASS: { nome: "Vidro Tingido Azul", compra: 90.0, venda: 14.0 }
-      BROWN_STAINED_GLASS: { nome: "Vidro Tingido Marrom", compra: 90.0, venda: 14.0 }
-      GREEN_STAINED_GLASS: { nome: "Vidro Tingido Verde", compra: 90.0, venda: 14.0 }
-      RED_STAINED_GLASS: { nome: "Vidro Tingido Vermelho", compra: 90.0, venda: 14.0 }
-      BLACK_STAINED_GLASS: { nome: "Vidro Tingido Preto", compra: 90.0, venda: 14.0 }
-      GLASS_PANE: { nome: "Painel de Vidro", compra: 25.0, venda: 4.0 }
-      WHITE_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Branco", compra: 35.0, venda: 5.0 }
-      ORANGE_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Laranja", compra: 35.0, venda: 5.0 }
-      MAGENTA_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Magenta", compra: 35.0, venda: 5.0 }
-      LIGHT_BLUE_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Azul-Claro", compra: 35.0, venda: 5.0 }
-      YELLOW_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Amarelo", compra: 35.0, venda: 5.0 }
-      LIME_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Verde-Limão", compra: 35.0, venda: 5.0 }
-      PINK_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Rosa", compra: 35.0, venda: 5.0 }
-      GRAY_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Cinza", compra: 35.0, venda: 5.0 }
-      LIGHT_GRAY_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Cinza-Claro", compra: 35.0, venda: 5.0 }
-      CYAN_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Ciano", compra: 35.0, venda: 5.0 }
-      PURPLE_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Roxo", compra: 35.0, venda: 5.0 }
-      BLUE_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Azul", compra: 35.0, venda: 5.0 }
-      BROWN_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Marrom", compra: 35.0, venda: 5.0 }
-      GREEN_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Verde", compra: 35.0, venda: 5.0 }
-      RED_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Vermelho", compra: 35.0, venda: 5.0 }
-      BLACK_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Preto", compra: 35.0, venda: 5.0 }
-      WHITE_CARPET: { nome: "Carpete Branco", compra: 30.0, venda: 4.0 }
-      ORANGE_CARPET: { nome: "Carpete Laranja", compra: 30.0, venda: 4.0 }
-      MAGENTA_CARPET: { nome: "Carpete Magenta", compra: 30.0, venda: 4.0 }
-      LIGHT_BLUE_CARPET: { nome: "Carpete Azul-Claro", compra: 30.0, venda: 4.0 }
-      YELLOW_CARPET: { nome: "Carpete Amarelo", compra: 30.0, venda: 4.0 }
-      LIME_CARPET: { nome: "Carpete Verde-Limão", compra: 30.0, venda: 4.0 }
-      PINK_CARPET: { nome: "Carpete Rosa", compra: 30.0, venda: 4.0 }
-      GRAY_CARPET: { nome: "Carpete Cinza", compra: 30.0, venda: 4.0 }
-      LIGHT_GRAY_CARPET: { nome: "Carpete Cinza-Claro", compra: 30.0, venda: 4.0 }
-      CYAN_CARPET: { nome: "Carpete Ciano", compra: 30.0, venda: 4.0 }
-      PURPLE_CARPET: { nome: "Carpete Roxo", compra: 30.0, venda: 4.0 }
-      BLUE_CARPET: { nome: "Carpete Azul", compra: 30.0, venda: 4.0 }
-      BROWN_CARPET: { nome: "Carpete Marrom", compra: 30.0, venda: 4.0 }
-      GREEN_CARPET: { nome: "Carpete Verde", compra: 30.0, venda: 4.0 }
-      RED_CARPET: { nome: "Carpete Vermelho", compra: 30.0, venda: 4.0 }
-      BLACK_CARPET: { nome: "Carpete Preto", compra: 30.0, venda: 4.0 }
-      WHITE_DYE: { nome: "Corante Branco", compra: 55.0, venda: 8.0 }
-      ORANGE_DYE: { nome: "Corante Laranja", compra: 55.0, venda: 8.0 }
-      MAGENTA_DYE: { nome: "Corante Magenta", compra: 55.0, venda: 8.0 }
-      LIGHT_BLUE_DYE: { nome: "Corante Azul-Claro", compra: 55.0, venda: 8.0 }
-      YELLOW_DYE: { nome: "Corante Amarelo", compra: 55.0, venda: 8.0 }
-      LIME_DYE: { nome: "Corante Verde-Limão", compra: 55.0, venda: 8.0 }
-      PINK_DYE: { nome: "Corante Rosa", compra: 55.0, venda: 8.0 }
-      GRAY_DYE: { nome: "Corante Cinza", compra: 55.0, venda: 8.0 }
-      LIGHT_GRAY_DYE: { nome: "Corante Cinza-Claro", compra: 55.0, venda: 8.0 }
-      CYAN_DYE: { nome: "Corante Ciano", compra: 55.0, venda: 8.0 }
-      PURPLE_DYE: { nome: "Corante Roxo", compra: 55.0, venda: 8.0 }
-      BLUE_DYE: { nome: "Corante Azul", compra: 55.0, venda: 8.0 }
-      BROWN_DYE: { nome: "Corante Marrom", compra: 55.0, venda: 8.0 }
-      GREEN_DYE: { nome: "Corante Verde", compra: 55.0, venda: 8.0 }
-      RED_DYE: { nome: "Corante Vermelho", compra: 55.0, venda: 8.0 }
-      BLACK_DYE: { nome: "Corante Preto", compra: 55.0, venda: 8.0 }
-      CANDLE: { nome: "Vela", compra: 80.0, venda: 12.0 }
-      WHITE_CANDLE: { nome: "Vela Branco", compra: 95.0, venda: 14.0 }
-      ORANGE_CANDLE: { nome: "Vela Laranja", compra: 95.0, venda: 14.0 }
-      MAGENTA_CANDLE: { nome: "Vela Magenta", compra: 95.0, venda: 14.0 }
-      LIGHT_BLUE_CANDLE: { nome: "Vela Azul-Claro", compra: 95.0, venda: 14.0 }
-      YELLOW_CANDLE: { nome: "Vela Amarelo", compra: 95.0, venda: 14.0 }
-      LIME_CANDLE: { nome: "Vela Verde-Limão", compra: 95.0, venda: 14.0 }
-      PINK_CANDLE: { nome: "Vela Rosa", compra: 95.0, venda: 14.0 }
-      GRAY_CANDLE: { nome: "Vela Cinza", compra: 95.0, venda: 14.0 }
-      LIGHT_GRAY_CANDLE: { nome: "Vela Cinza-Claro", compra: 95.0, venda: 14.0 }
-      CYAN_CANDLE: { nome: "Vela Ciano", compra: 95.0, venda: 14.0 }
-      PURPLE_CANDLE: { nome: "Vela Roxo", compra: 95.0, venda: 14.0 }
-      BLUE_CANDLE: { nome: "Vela Azul", compra: 95.0, venda: 14.0 }
-      BROWN_CANDLE: { nome: "Vela Marrom", compra: 95.0, venda: 14.0 }
-      GREEN_CANDLE: { nome: "Vela Verde", compra: 95.0, venda: 14.0 }
-      RED_CANDLE: { nome: "Vela Vermelho", compra: 95.0, venda: 14.0 }
-      BLACK_CANDLE: { nome: "Vela Preto", compra: 95.0, venda: 14.0 }
-      WHITE_BED: { nome: "Cama Branca", compra: 260.0, venda: 40.0 }
-      ORANGE_BED: { nome: "Cama Laranja", compra: 260.0, venda: 40.0 }
-      MAGENTA_BED: { nome: "Cama Magenta", compra: 260.0, venda: 40.0 }
-      LIGHT_BLUE_BED: { nome: "Cama Azul-Clara", compra: 260.0, venda: 40.0 }
-      YELLOW_BED: { nome: "Cama Amarela", compra: 260.0, venda: 40.0 }
-      LIME_BED: { nome: "Cama Verde-Limão", compra: 260.0, venda: 40.0 }
-      PINK_BED: { nome: "Cama Rosa", compra: 260.0, venda: 40.0 }
-      GRAY_BED: { nome: "Cama Cinza", compra: 260.0, venda: 40.0 }
-      LIGHT_GRAY_BED: { nome: "Cama Cinza-Clara", compra: 260.0, venda: 40.0 }
-      CYAN_BED: { nome: "Cama Ciano", compra: 260.0, venda: 40.0 }
-      PURPLE_BED: { nome: "Cama Roxa", compra: 260.0, venda: 40.0 }
-      BLUE_BED: { nome: "Cama Azul", compra: 260.0, venda: 40.0 }
-      BROWN_BED: { nome: "Cama Marrom", compra: 260.0, venda: 40.0 }
-      GREEN_BED: { nome: "Cama Verde", compra: 260.0, venda: 40.0 }
-      RED_BED: { nome: "Cama Vermelha", compra: 260.0, venda: 40.0 }
-      BLACK_BED: { nome: "Cama Preta", compra: 260.0, venda: 40.0 }
-      WHITE_BANNER: { nome: "Estandarte Branca", compra: 180.0, venda: 28.0 }
-      ORANGE_BANNER: { nome: "Estandarte Laranja", compra: 180.0, venda: 28.0 }
-      MAGENTA_BANNER: { nome: "Estandarte Magenta", compra: 180.0, venda: 28.0 }
-      LIGHT_BLUE_BANNER: { nome: "Estandarte Azul-Clara", compra: 180.0, venda: 28.0 }
-      YELLOW_BANNER: { nome: "Estandarte Amarela", compra: 180.0, venda: 28.0 }
-      LIME_BANNER: { nome: "Estandarte Verde-Limão", compra: 180.0, venda: 28.0 }
-      PINK_BANNER: { nome: "Estandarte Rosa", compra: 180.0, venda: 28.0 }
-      GRAY_BANNER: { nome: "Estandarte Cinza", compra: 180.0, venda: 28.0 }
-      LIGHT_GRAY_BANNER: { nome: "Estandarte Cinza-Clara", compra: 180.0, venda: 28.0 }
-      CYAN_BANNER: { nome: "Estandarte Ciano", compra: 180.0, venda: 28.0 }
-      PURPLE_BANNER: { nome: "Estandarte Roxa", compra: 180.0, venda: 28.0 }
-      BLUE_BANNER: { nome: "Estandarte Azul", compra: 180.0, venda: 28.0 }
-      BROWN_BANNER: { nome: "Estandarte Marrom", compra: 180.0, venda: 28.0 }
-      GREEN_BANNER: { nome: "Estandarte Verde", compra: 180.0, venda: 28.0 }
-      RED_BANNER: { nome: "Estandarte Vermelha", compra: 180.0, venda: 28.0 }
-      BLACK_BANNER: { nome: "Estandarte Preta", compra: 180.0, venda: 28.0 }
+      WHITE_CONCRETE: { nome: "Concreto Branco", compra: 80.0, venda: 0.0 }
+      ORANGE_CONCRETE: { nome: "Concreto Laranja", compra: 80.0, venda: 0.0 }
+      MAGENTA_CONCRETE: { nome: "Concreto Magenta", compra: 80.0, venda: 0.0 }
+      LIGHT_BLUE_CONCRETE: { nome: "Concreto Azul-Claro", compra: 80.0, venda: 0.0 }
+      YELLOW_CONCRETE: { nome: "Concreto Amarelo", compra: 80.0, venda: 0.0 }
+      LIME_CONCRETE: { nome: "Concreto Verde-Limão", compra: 80.0, venda: 0.0 }
+      PINK_CONCRETE: { nome: "Concreto Rosa", compra: 80.0, venda: 0.0 }
+      GRAY_CONCRETE: { nome: "Concreto Cinza", compra: 80.0, venda: 0.0 }
+      LIGHT_GRAY_CONCRETE: { nome: "Concreto Cinza-Claro", compra: 80.0, venda: 0.0 }
+      CYAN_CONCRETE: { nome: "Concreto Ciano", compra: 80.0, venda: 0.0 }
+      PURPLE_CONCRETE: { nome: "Concreto Roxo", compra: 80.0, venda: 0.0 }
+      BLUE_CONCRETE: { nome: "Concreto Azul", compra: 80.0, venda: 0.0 }
+      BROWN_CONCRETE: { nome: "Concreto Marrom", compra: 80.0, venda: 0.0 }
+      GREEN_CONCRETE: { nome: "Concreto Verde", compra: 80.0, venda: 0.0 }
+      RED_CONCRETE: { nome: "Concreto Vermelho", compra: 80.0, venda: 0.0 }
+      BLACK_CONCRETE: { nome: "Concreto Preto", compra: 80.0, venda: 0.0 }
+      WHITE_CONCRETE_POWDER: { nome: "Pó de Concreto Branco", compra: 65.0, venda: 0.0 }
+      ORANGE_CONCRETE_POWDER: { nome: "Pó de Concreto Laranja", compra: 65.0, venda: 0.0 }
+      MAGENTA_CONCRETE_POWDER: { nome: "Pó de Concreto Magenta", compra: 65.0, venda: 0.0 }
+      LIGHT_BLUE_CONCRETE_POWDER: { nome: "Pó de Concreto Azul-Claro", compra: 65.0, venda: 0.0 }
+      YELLOW_CONCRETE_POWDER: { nome: "Pó de Concreto Amarelo", compra: 65.0, venda: 0.0 }
+      LIME_CONCRETE_POWDER: { nome: "Pó de Concreto Verde-Limão", compra: 65.0, venda: 0.0 }
+      PINK_CONCRETE_POWDER: { nome: "Pó de Concreto Rosa", compra: 65.0, venda: 0.0 }
+      GRAY_CONCRETE_POWDER: { nome: "Pó de Concreto Cinza", compra: 65.0, venda: 0.0 }
+      LIGHT_GRAY_CONCRETE_POWDER: { nome: "Pó de Concreto Cinza-Claro", compra: 65.0, venda: 0.0 }
+      CYAN_CONCRETE_POWDER: { nome: "Pó de Concreto Ciano", compra: 65.0, venda: 0.0 }
+      PURPLE_CONCRETE_POWDER: { nome: "Pó de Concreto Roxo", compra: 65.0, venda: 0.0 }
+      BLUE_CONCRETE_POWDER: { nome: "Pó de Concreto Azul", compra: 65.0, venda: 0.0 }
+      BROWN_CONCRETE_POWDER: { nome: "Pó de Concreto Marrom", compra: 65.0, venda: 0.0 }
+      GREEN_CONCRETE_POWDER: { nome: "Pó de Concreto Verde", compra: 65.0, venda: 0.0 }
+      RED_CONCRETE_POWDER: { nome: "Pó de Concreto Vermelho", compra: 65.0, venda: 0.0 }
+      BLACK_CONCRETE_POWDER: { nome: "Pó de Concreto Preto", compra: 65.0, venda: 0.0 }
+      WHITE_WOOL: { nome: "Lã Branco", compra: 70.0, venda: 0.0 }
+      ORANGE_WOOL: { nome: "Lã Laranja", compra: 70.0, venda: 0.0 }
+      MAGENTA_WOOL: { nome: "Lã Magenta", compra: 70.0, venda: 0.0 }
+      LIGHT_BLUE_WOOL: { nome: "Lã Azul-Claro", compra: 70.0, venda: 0.0 }
+      YELLOW_WOOL: { nome: "Lã Amarelo", compra: 70.0, venda: 0.0 }
+      LIME_WOOL: { nome: "Lã Verde-Limão", compra: 70.0, venda: 0.0 }
+      PINK_WOOL: { nome: "Lã Rosa", compra: 70.0, venda: 0.0 }
+      GRAY_WOOL: { nome: "Lã Cinza", compra: 70.0, venda: 0.0 }
+      LIGHT_GRAY_WOOL: { nome: "Lã Cinza-Claro", compra: 70.0, venda: 0.0 }
+      CYAN_WOOL: { nome: "Lã Ciano", compra: 70.0, venda: 0.0 }
+      PURPLE_WOOL: { nome: "Lã Roxo", compra: 70.0, venda: 0.0 }
+      BLUE_WOOL: { nome: "Lã Azul", compra: 70.0, venda: 0.0 }
+      BROWN_WOOL: { nome: "Lã Marrom", compra: 70.0, venda: 0.0 }
+      GREEN_WOOL: { nome: "Lã Verde", compra: 70.0, venda: 0.0 }
+      RED_WOOL: { nome: "Lã Vermelho", compra: 70.0, venda: 0.0 }
+      BLACK_WOOL: { nome: "Lã Preto", compra: 70.0, venda: 0.0 }
+      TERRACOTTA: { nome: "Terracota", compra: 75.0, venda: 0.0 }
+      WHITE_TERRACOTTA: { nome: "Terracota Branco", compra: 90.0, venda: 0.0 }
+      ORANGE_TERRACOTTA: { nome: "Terracota Laranja", compra: 90.0, venda: 0.0 }
+      MAGENTA_TERRACOTTA: { nome: "Terracota Magenta", compra: 90.0, venda: 0.0 }
+      LIGHT_BLUE_TERRACOTTA: { nome: "Terracota Azul-Claro", compra: 90.0, venda: 0.0 }
+      YELLOW_TERRACOTTA: { nome: "Terracota Amarelo", compra: 90.0, venda: 0.0 }
+      LIME_TERRACOTTA: { nome: "Terracota Verde-Limão", compra: 90.0, venda: 0.0 }
+      PINK_TERRACOTTA: { nome: "Terracota Rosa", compra: 90.0, venda: 0.0 }
+      GRAY_TERRACOTTA: { nome: "Terracota Cinza", compra: 90.0, venda: 0.0 }
+      LIGHT_GRAY_TERRACOTTA: { nome: "Terracota Cinza-Claro", compra: 90.0, venda: 0.0 }
+      CYAN_TERRACOTTA: { nome: "Terracota Ciano", compra: 90.0, venda: 0.0 }
+      PURPLE_TERRACOTTA: { nome: "Terracota Roxo", compra: 90.0, venda: 0.0 }
+      BLUE_TERRACOTTA: { nome: "Terracota Azul", compra: 90.0, venda: 0.0 }
+      BROWN_TERRACOTTA: { nome: "Terracota Marrom", compra: 90.0, venda: 0.0 }
+      GREEN_TERRACOTTA: { nome: "Terracota Verde", compra: 90.0, venda: 0.0 }
+      RED_TERRACOTTA: { nome: "Terracota Vermelho", compra: 90.0, venda: 0.0 }
+      BLACK_TERRACOTTA: { nome: "Terracota Preto", compra: 90.0, venda: 0.0 }
+      WHITE_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Branco", compra: 110.0, venda: 0.0 }
+      ORANGE_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Laranja", compra: 110.0, venda: 0.0 }
+      MAGENTA_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Magenta", compra: 110.0, venda: 0.0 }
+      LIGHT_BLUE_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Azul-Claro", compra: 110.0, venda: 0.0 }
+      YELLOW_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Amarelo", compra: 110.0, venda: 0.0 }
+      LIME_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Verde-Limão", compra: 110.0, venda: 0.0 }
+      PINK_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Rosa", compra: 110.0, venda: 0.0 }
+      GRAY_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Cinza", compra: 110.0, venda: 0.0 }
+      LIGHT_GRAY_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Cinza-Claro", compra: 110.0, venda: 0.0 }
+      CYAN_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Ciano", compra: 110.0, venda: 0.0 }
+      PURPLE_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Roxo", compra: 110.0, venda: 0.0 }
+      BLUE_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Azul", compra: 110.0, venda: 0.0 }
+      BROWN_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Marrom", compra: 110.0, venda: 0.0 }
+      GREEN_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Verde", compra: 110.0, venda: 0.0 }
+      RED_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Vermelho", compra: 110.0, venda: 0.0 }
+      BLACK_GLAZED_TERRACOTTA: { nome: "Terracota Esmaltada Preto", compra: 110.0, venda: 0.0 }
+      GLASS: { nome: "Vidro", compra: 55.0, venda: 0.0 }
+      TINTED_GLASS: { nome: "Vidro Escurecido", compra: 180.0, venda: 0.0 }
+      WHITE_STAINED_GLASS: { nome: "Vidro Tingido Branco", compra: 90.0, venda: 0.0 }
+      ORANGE_STAINED_GLASS: { nome: "Vidro Tingido Laranja", compra: 90.0, venda: 0.0 }
+      MAGENTA_STAINED_GLASS: { nome: "Vidro Tingido Magenta", compra: 90.0, venda: 0.0 }
+      LIGHT_BLUE_STAINED_GLASS: { nome: "Vidro Tingido Azul-Claro", compra: 90.0, venda: 0.0 }
+      YELLOW_STAINED_GLASS: { nome: "Vidro Tingido Amarelo", compra: 90.0, venda: 0.0 }
+      LIME_STAINED_GLASS: { nome: "Vidro Tingido Verde-Limão", compra: 90.0, venda: 0.0 }
+      PINK_STAINED_GLASS: { nome: "Vidro Tingido Rosa", compra: 90.0, venda: 0.0 }
+      GRAY_STAINED_GLASS: { nome: "Vidro Tingido Cinza", compra: 90.0, venda: 0.0 }
+      LIGHT_GRAY_STAINED_GLASS: { nome: "Vidro Tingido Cinza-Claro", compra: 90.0, venda: 0.0 }
+      CYAN_STAINED_GLASS: { nome: "Vidro Tingido Ciano", compra: 90.0, venda: 0.0 }
+      PURPLE_STAINED_GLASS: { nome: "Vidro Tingido Roxo", compra: 90.0, venda: 0.0 }
+      BLUE_STAINED_GLASS: { nome: "Vidro Tingido Azul", compra: 90.0, venda: 0.0 }
+      BROWN_STAINED_GLASS: { nome: "Vidro Tingido Marrom", compra: 90.0, venda: 0.0 }
+      GREEN_STAINED_GLASS: { nome: "Vidro Tingido Verde", compra: 90.0, venda: 0.0 }
+      RED_STAINED_GLASS: { nome: "Vidro Tingido Vermelho", compra: 90.0, venda: 0.0 }
+      BLACK_STAINED_GLASS: { nome: "Vidro Tingido Preto", compra: 90.0, venda: 0.0 }
+      GLASS_PANE: { nome: "Painel de Vidro", compra: 25.0, venda: 0.0 }
+      WHITE_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Branco", compra: 35.0, venda: 0.0 }
+      ORANGE_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Laranja", compra: 35.0, venda: 0.0 }
+      MAGENTA_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Magenta", compra: 35.0, venda: 0.0 }
+      LIGHT_BLUE_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Azul-Claro", compra: 35.0, venda: 0.0 }
+      YELLOW_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Amarelo", compra: 35.0, venda: 0.0 }
+      LIME_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Verde-Limão", compra: 35.0, venda: 0.0 }
+      PINK_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Rosa", compra: 35.0, venda: 0.0 }
+      GRAY_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Cinza", compra: 35.0, venda: 0.0 }
+      LIGHT_GRAY_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Cinza-Claro", compra: 35.0, venda: 0.0 }
+      CYAN_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Ciano", compra: 35.0, venda: 0.0 }
+      PURPLE_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Roxo", compra: 35.0, venda: 0.0 }
+      BLUE_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Azul", compra: 35.0, venda: 0.0 }
+      BROWN_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Marrom", compra: 35.0, venda: 0.0 }
+      GREEN_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Verde", compra: 35.0, venda: 0.0 }
+      RED_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Vermelho", compra: 35.0, venda: 0.0 }
+      BLACK_STAINED_GLASS_PANE: { nome: "Painel de Vidro Tingido Preto", compra: 35.0, venda: 0.0 }
+      WHITE_CARPET: { nome: "Carpete Branco", compra: 30.0, venda: 0.0 }
+      ORANGE_CARPET: { nome: "Carpete Laranja", compra: 30.0, venda: 0.0 }
+      MAGENTA_CARPET: { nome: "Carpete Magenta", compra: 30.0, venda: 0.0 }
+      LIGHT_BLUE_CARPET: { nome: "Carpete Azul-Claro", compra: 30.0, venda: 0.0 }
+      YELLOW_CARPET: { nome: "Carpete Amarelo", compra: 30.0, venda: 0.0 }
+      LIME_CARPET: { nome: "Carpete Verde-Limão", compra: 30.0, venda: 0.0 }
+      PINK_CARPET: { nome: "Carpete Rosa", compra: 30.0, venda: 0.0 }
+      GRAY_CARPET: { nome: "Carpete Cinza", compra: 30.0, venda: 0.0 }
+      LIGHT_GRAY_CARPET: { nome: "Carpete Cinza-Claro", compra: 30.0, venda: 0.0 }
+      CYAN_CARPET: { nome: "Carpete Ciano", compra: 30.0, venda: 0.0 }
+      PURPLE_CARPET: { nome: "Carpete Roxo", compra: 30.0, venda: 0.0 }
+      BLUE_CARPET: { nome: "Carpete Azul", compra: 30.0, venda: 0.0 }
+      BROWN_CARPET: { nome: "Carpete Marrom", compra: 30.0, venda: 0.0 }
+      GREEN_CARPET: { nome: "Carpete Verde", compra: 30.0, venda: 0.0 }
+      RED_CARPET: { nome: "Carpete Vermelho", compra: 30.0, venda: 0.0 }
+      BLACK_CARPET: { nome: "Carpete Preto", compra: 30.0, venda: 0.0 }
+      WHITE_DYE: { nome: "Corante Branco", compra: 55.0, venda: 0.0 }
+      ORANGE_DYE: { nome: "Corante Laranja", compra: 55.0, venda: 0.0 }
+      MAGENTA_DYE: { nome: "Corante Magenta", compra: 55.0, venda: 0.0 }
+      LIGHT_BLUE_DYE: { nome: "Corante Azul-Claro", compra: 55.0, venda: 0.0 }
+      YELLOW_DYE: { nome: "Corante Amarelo", compra: 55.0, venda: 0.0 }
+      LIME_DYE: { nome: "Corante Verde-Limão", compra: 55.0, venda: 0.0 }
+      PINK_DYE: { nome: "Corante Rosa", compra: 55.0, venda: 0.0 }
+      GRAY_DYE: { nome: "Corante Cinza", compra: 55.0, venda: 0.0 }
+      LIGHT_GRAY_DYE: { nome: "Corante Cinza-Claro", compra: 55.0, venda: 0.0 }
+      CYAN_DYE: { nome: "Corante Ciano", compra: 55.0, venda: 0.0 }
+      PURPLE_DYE: { nome: "Corante Roxo", compra: 55.0, venda: 0.0 }
+      BLUE_DYE: { nome: "Corante Azul", compra: 55.0, venda: 0.0 }
+      BROWN_DYE: { nome: "Corante Marrom", compra: 55.0, venda: 0.0 }
+      GREEN_DYE: { nome: "Corante Verde", compra: 55.0, venda: 0.0 }
+      RED_DYE: { nome: "Corante Vermelho", compra: 55.0, venda: 0.0 }
+      BLACK_DYE: { nome: "Corante Preto", compra: 55.0, venda: 0.0 }
+      CANDLE: { nome: "Vela", compra: 80.0, venda: 0.0 }
+      WHITE_CANDLE: { nome: "Vela Branco", compra: 95.0, venda: 0.0 }
+      ORANGE_CANDLE: { nome: "Vela Laranja", compra: 95.0, venda: 0.0 }
+      MAGENTA_CANDLE: { nome: "Vela Magenta", compra: 95.0, venda: 0.0 }
+      LIGHT_BLUE_CANDLE: { nome: "Vela Azul-Claro", compra: 95.0, venda: 0.0 }
+      YELLOW_CANDLE: { nome: "Vela Amarelo", compra: 95.0, venda: 0.0 }
+      LIME_CANDLE: { nome: "Vela Verde-Limão", compra: 95.0, venda: 0.0 }
+      PINK_CANDLE: { nome: "Vela Rosa", compra: 95.0, venda: 0.0 }
+      GRAY_CANDLE: { nome: "Vela Cinza", compra: 95.0, venda: 0.0 }
+      LIGHT_GRAY_CANDLE: { nome: "Vela Cinza-Claro", compra: 95.0, venda: 0.0 }
+      CYAN_CANDLE: { nome: "Vela Ciano", compra: 95.0, venda: 0.0 }
+      PURPLE_CANDLE: { nome: "Vela Roxo", compra: 95.0, venda: 0.0 }
+      BLUE_CANDLE: { nome: "Vela Azul", compra: 95.0, venda: 0.0 }
+      BROWN_CANDLE: { nome: "Vela Marrom", compra: 95.0, venda: 0.0 }
+      GREEN_CANDLE: { nome: "Vela Verde", compra: 95.0, venda: 0.0 }
+      RED_CANDLE: { nome: "Vela Vermelho", compra: 95.0, venda: 0.0 }
+      BLACK_CANDLE: { nome: "Vela Preto", compra: 95.0, venda: 0.0 }
+      WHITE_BED: { nome: "Cama Branca", compra: 260.0, venda: 0.0 }
+      ORANGE_BED: { nome: "Cama Laranja", compra: 260.0, venda: 0.0 }
+      MAGENTA_BED: { nome: "Cama Magenta", compra: 260.0, venda: 0.0 }
+      LIGHT_BLUE_BED: { nome: "Cama Azul-Clara", compra: 260.0, venda: 0.0 }
+      YELLOW_BED: { nome: "Cama Amarela", compra: 260.0, venda: 0.0 }
+      LIME_BED: { nome: "Cama Verde-Limão", compra: 260.0, venda: 0.0 }
+      PINK_BED: { nome: "Cama Rosa", compra: 260.0, venda: 0.0 }
+      GRAY_BED: { nome: "Cama Cinza", compra: 260.0, venda: 0.0 }
+      LIGHT_GRAY_BED: { nome: "Cama Cinza-Clara", compra: 260.0, venda: 0.0 }
+      CYAN_BED: { nome: "Cama Ciano", compra: 260.0, venda: 0.0 }
+      PURPLE_BED: { nome: "Cama Roxa", compra: 260.0, venda: 0.0 }
+      BLUE_BED: { nome: "Cama Azul", compra: 260.0, venda: 0.0 }
+      BROWN_BED: { nome: "Cama Marrom", compra: 260.0, venda: 0.0 }
+      GREEN_BED: { nome: "Cama Verde", compra: 260.0, venda: 0.0 }
+      RED_BED: { nome: "Cama Vermelha", compra: 260.0, venda: 0.0 }
+      BLACK_BED: { nome: "Cama Preta", compra: 260.0, venda: 0.0 }
+      WHITE_BANNER: { nome: "Estandarte Branca", compra: 180.0, venda: 0.0 }
+      ORANGE_BANNER: { nome: "Estandarte Laranja", compra: 180.0, venda: 0.0 }
+      MAGENTA_BANNER: { nome: "Estandarte Magenta", compra: 180.0, venda: 0.0 }
+      LIGHT_BLUE_BANNER: { nome: "Estandarte Azul-Clara", compra: 180.0, venda: 0.0 }
+      YELLOW_BANNER: { nome: "Estandarte Amarela", compra: 180.0, venda: 0.0 }
+      LIME_BANNER: { nome: "Estandarte Verde-Limão", compra: 180.0, venda: 0.0 }
+      PINK_BANNER: { nome: "Estandarte Rosa", compra: 180.0, venda: 0.0 }
+      GRAY_BANNER: { nome: "Estandarte Cinza", compra: 180.0, venda: 0.0 }
+      LIGHT_GRAY_BANNER: { nome: "Estandarte Cinza-Clara", compra: 180.0, venda: 0.0 }
+      CYAN_BANNER: { nome: "Estandarte Ciano", compra: 180.0, venda: 0.0 }
+      PURPLE_BANNER: { nome: "Estandarte Roxa", compra: 180.0, venda: 0.0 }
+      BLUE_BANNER: { nome: "Estandarte Azul", compra: 180.0, venda: 0.0 }
+      BROWN_BANNER: { nome: "Estandarte Marrom", compra: 180.0, venda: 0.0 }
+      GREEN_BANNER: { nome: "Estandarte Verde", compra: 180.0, venda: 0.0 }
+      RED_BANNER: { nome: "Estandarte Vermelha", compra: 180.0, venda: 0.0 }
+      BLACK_BANNER: { nome: "Estandarte Preta", compra: 180.0, venda: 0.0 }
       WHITE_SHULKER_BOX: { nome: "Caixa de Shulker Branca", compra: 250000.0, venda: 0.0 }
       ORANGE_SHULKER_BOX: { nome: "Caixa de Shulker Laranja", compra: 250000.0, venda: 0.0 }
       MAGENTA_SHULKER_BOX: { nome: "Caixa de Shulker Magenta", compra: 250000.0, venda: 0.0 }
@@ -628,7 +628,7 @@ categorias:
       GREEN_SHULKER_BOX: { nome: "Caixa de Shulker Verde", compra: 250000.0, venda: 0.0 }
       RED_SHULKER_BOX: { nome: "Caixa de Shulker Vermelha", compra: 250000.0, venda: 0.0 }
       BLACK_SHULKER_BOX: { nome: "Caixa de Shulker Preta", compra: 250000.0, venda: 0.0 }
-      BONE_BLOCK: { nome: "Bloco de Ossos", compra: 700.0, venda: 100.0 }
+      BONE_BLOCK: { nome: "Bloco de Ossos", compra: 700.0, venda: 0.0 }
 
   decoracoes:
     nome: "Decorações"
@@ -638,73 +638,73 @@ categorias:
       - "Itens decorativos para"
       - "embelezar suas construções"
     itens:
-      ITEM_FRAME: { nome: "Moldura", compra: 180.0, venda: 25.0 }
-      GLOW_ITEM_FRAME: { nome: "Moldura Brilhante", compra: 350.0, venda: 60.0 }
-      PAINTING: { nome: "Quadro", compra: 220.0, venda: 35.0 }
-      LANTERN: { nome: "Lanterna", compra: 250.0, venda: 45.0 }
-      SOUL_LANTERN: { nome: "Lanterna das Almas", compra: 300.0, venda: 50.0 }
-      FLOWER_POT: { nome: "Vaso de Flores", compra: 120.0, venda: 20.0 }
-      BOOKSHELF: { nome: "Estante de Livros", compra: 420.0, venda: 75.0 }
-      ARMOR_STAND: { nome: "Suporte de Armadura", compra: 350.0, venda: 60.0 }
-      CANDLE: { nome: "Vela", compra: 80.0, venda: 12.0 }
-      CHAIN: { nome: "Corrente", compra: 220.0, venda: 35.0 }
-      BELL: { nome: "Sino", compra: 2500.0, venda: 400.0 }
-      FLOWERING_AZALEA: { nome: "Azaleia Florida", compra: 180.0, venda: 30.0 }
-      SEA_LANTERN: { nome: "Lanterna do Mar", compra: 650.0, venda: 110.0 }
-      END_ROD: { nome: "Bastão do End", compra: 420.0, venda: 70.0 }
-      GLOWSTONE: { nome: "Pedra Luminosa", compra: 350.0, venda: 60.0 }
-      AZALEA: { nome: "Azaleia", compra: 150.0, venda: 25.0 }
-      MOSS_CARPET: { nome: "Carpete de Musgo", compra: 55.0, venda: 8.0 }
-      HANGING_ROOTS: { nome: "Raízes Suspensas", compra: 90.0, venda: 14.0 }
-      SMALL_DRIPLEAF: { nome: "Folha-Pingo Pequena", compra: 120.0, venda: 20.0 }
-      BIG_DRIPLEAF: { nome: "Folha-Pingo Grande", compra: 150.0, venda: 25.0 }
-      LILY_PAD: { nome: "Vitória-Régia", compra: 100.0, venda: 16.0 }
-      VINE: { nome: "Trepadeira", compra: 85.0, venda: 14.0 }
-      GLOW_LICHEN: { nome: "Líquen Luminoso", compra: 120.0, venda: 20.0 }
-      SPORE_BLOSSOM: { nome: "Flor de Esporos", compra: 220.0, venda: 35.0 }
-      DANDELION: { nome: "Dente-de-Leão", compra: 70.0, venda: 10.0 }
-      POPPY: { nome: "Papoula", compra: 70.0, venda: 10.0 }
-      BLUE_ORCHID: { nome: "Orquídea Azul", compra: 90.0, venda: 14.0 }
-      ALLIUM: { nome: "Alho-Silvestre", compra: 90.0, venda: 14.0 }
-      AZURE_BLUET: { nome: "Houstonia", compra: 80.0, venda: 12.0 }
-      RED_TULIP: { nome: "Tulipa Vermelha", compra: 90.0, venda: 14.0 }
-      ORANGE_TULIP: { nome: "Tulipa Laranja", compra: 90.0, venda: 14.0 }
-      WHITE_TULIP: { nome: "Tulipa Branca", compra: 90.0, venda: 14.0 }
-      PINK_TULIP: { nome: "Tulipa Rosa", compra: 90.0, venda: 14.0 }
-      OXEYE_DAISY: { nome: "Margarida", compra: 80.0, venda: 12.0 }
-      CORNFLOWER: { nome: "Centáurea", compra: 90.0, venda: 14.0 }
-      LILY_OF_THE_VALLEY: { nome: "Lírio-do-Vale", compra: 110.0, venda: 18.0 }
-      SUNFLOWER: { nome: "Girassol", compra: 130.0, venda: 20.0 }
-      LILAC: { nome: "Lilás", compra: 130.0, venda: 20.0 }
-      ROSE_BUSH: { nome: "Roseira", compra: 130.0, venda: 20.0 }
-      PEONY: { nome: "Peônia", compra: 130.0, venda: 20.0 }
-      TORCHFLOWER: { nome: "Flor-Tocha", compra: 180.0, venda: 28.0 }
-      PITCHER_PLANT: { nome: "Planta-Jarro", compra: 180.0, venda: 28.0 }
-      OAK_SIGN: { nome: "Placa de Carvalho", compra: 55.0, venda: 8.0 }
-      OAK_HANGING_SIGN: { nome: "Placa Suspensa de Carvalho", compra: 95.0, venda: 14.0 }
-      SPRUCE_SIGN: { nome: "Placa de Pinheiro", compra: 55.0, venda: 8.0 }
-      SPRUCE_HANGING_SIGN: { nome: "Placa Suspensa de Pinheiro", compra: 95.0, venda: 14.0 }
-      BIRCH_SIGN: { nome: "Placa de Bétula", compra: 55.0, venda: 8.0 }
-      BIRCH_HANGING_SIGN: { nome: "Placa Suspensa de Bétula", compra: 95.0, venda: 14.0 }
-      JUNGLE_SIGN: { nome: "Placa de Selva", compra: 55.0, venda: 8.0 }
-      JUNGLE_HANGING_SIGN: { nome: "Placa Suspensa de Selva", compra: 95.0, venda: 14.0 }
-      ACACIA_SIGN: { nome: "Placa de Acácia", compra: 55.0, venda: 8.0 }
-      ACACIA_HANGING_SIGN: { nome: "Placa Suspensa de Acácia", compra: 95.0, venda: 14.0 }
-      DARK_OAK_SIGN: { nome: "Placa de Carvalho Escuro", compra: 55.0, venda: 8.0 }
-      DARK_OAK_HANGING_SIGN: { nome: "Placa Suspensa de Carvalho Escuro", compra: 95.0, venda: 14.0 }
-      MANGROVE_SIGN: { nome: "Placa de Mangue", compra: 55.0, venda: 8.0 }
-      MANGROVE_HANGING_SIGN: { nome: "Placa Suspensa de Mangue", compra: 95.0, venda: 14.0 }
-      CHERRY_SIGN: { nome: "Placa de Cerejeira", compra: 55.0, venda: 8.0 }
-      CHERRY_HANGING_SIGN: { nome: "Placa Suspensa de Cerejeira", compra: 95.0, venda: 14.0 }
-      BAMBOO_SIGN: { nome: "Placa de Bambu", compra: 55.0, venda: 8.0 }
-      BAMBOO_HANGING_SIGN: { nome: "Placa Suspensa de Bambu", compra: 95.0, venda: 14.0 }
-      CRIMSON_SIGN: { nome: "Placa de Carmesim", compra: 55.0, venda: 8.0 }
-      CRIMSON_HANGING_SIGN: { nome: "Placa Suspensa de Carmesim", compra: 95.0, venda: 14.0 }
-      WARPED_SIGN: { nome: "Placa de Distorcida", compra: 55.0, venda: 8.0 }
-      WARPED_HANGING_SIGN: { nome: "Placa Suspensa de Distorcida", compra: 95.0, venda: 14.0 }
-      COBWEB: { nome: "Teia de Aranha", compra: 200.0, venda: 30.0 }
-      SCULK: { nome: "Sculk", compra: 220.0, venda: 35.0 }
-      SCULK_VEIN: { nome: "Veia de Sculk", compra: 180.0, venda: 28.0 }
+      ITEM_FRAME: { nome: "Moldura", compra: 180.0, venda: 0.0 }
+      GLOW_ITEM_FRAME: { nome: "Moldura Brilhante", compra: 350.0, venda: 0.0 }
+      PAINTING: { nome: "Quadro", compra: 220.0, venda: 0.0 }
+      LANTERN: { nome: "Lanterna", compra: 250.0, venda: 0.0 }
+      SOUL_LANTERN: { nome: "Lanterna das Almas", compra: 300.0, venda: 0.0 }
+      FLOWER_POT: { nome: "Vaso de Flores", compra: 120.0, venda: 0.0 }
+      BOOKSHELF: { nome: "Estante de Livros", compra: 420.0, venda: 0.0 }
+      ARMOR_STAND: { nome: "Suporte de Armadura", compra: 350.0, venda: 0.0 }
+      CANDLE: { nome: "Vela", compra: 80.0, venda: 0.0 }
+      CHAIN: { nome: "Corrente", compra: 220.0, venda: 0.0 }
+      BELL: { nome: "Sino", compra: 2500.0, venda: 0.0 }
+      FLOWERING_AZALEA: { nome: "Azaleia Florida", compra: 180.0, venda: 0.0 }
+      SEA_LANTERN: { nome: "Lanterna do Mar", compra: 650.0, venda: 0.0 }
+      END_ROD: { nome: "Bastão do End", compra: 420.0, venda: 0.0 }
+      GLOWSTONE: { nome: "Pedra Luminosa", compra: 350.0, venda: 0.0 }
+      AZALEA: { nome: "Azaleia", compra: 150.0, venda: 0.0 }
+      MOSS_CARPET: { nome: "Carpete de Musgo", compra: 55.0, venda: 0.0 }
+      HANGING_ROOTS: { nome: "Raízes Suspensas", compra: 90.0, venda: 0.0 }
+      SMALL_DRIPLEAF: { nome: "Folha-Pingo Pequena", compra: 120.0, venda: 0.0 }
+      BIG_DRIPLEAF: { nome: "Folha-Pingo Grande", compra: 150.0, venda: 0.0 }
+      LILY_PAD: { nome: "Vitória-Régia", compra: 100.0, venda: 0.0 }
+      VINE: { nome: "Trepadeira", compra: 85.0, venda: 0.0 }
+      GLOW_LICHEN: { nome: "Líquen Luminoso", compra: 120.0, venda: 0.0 }
+      SPORE_BLOSSOM: { nome: "Flor de Esporos", compra: 220.0, venda: 0.0 }
+      DANDELION: { nome: "Dente-de-Leão", compra: 70.0, venda: 0.0 }
+      POPPY: { nome: "Papoula", compra: 70.0, venda: 0.0 }
+      BLUE_ORCHID: { nome: "Orquídea Azul", compra: 90.0, venda: 0.0 }
+      ALLIUM: { nome: "Alho-Silvestre", compra: 90.0, venda: 0.0 }
+      AZURE_BLUET: { nome: "Houstonia", compra: 80.0, venda: 0.0 }
+      RED_TULIP: { nome: "Tulipa Vermelha", compra: 90.0, venda: 0.0 }
+      ORANGE_TULIP: { nome: "Tulipa Laranja", compra: 90.0, venda: 0.0 }
+      WHITE_TULIP: { nome: "Tulipa Branca", compra: 90.0, venda: 0.0 }
+      PINK_TULIP: { nome: "Tulipa Rosa", compra: 90.0, venda: 0.0 }
+      OXEYE_DAISY: { nome: "Margarida", compra: 80.0, venda: 0.0 }
+      CORNFLOWER: { nome: "Centáurea", compra: 90.0, venda: 0.0 }
+      LILY_OF_THE_VALLEY: { nome: "Lírio-do-Vale", compra: 110.0, venda: 0.0 }
+      SUNFLOWER: { nome: "Girassol", compra: 130.0, venda: 0.0 }
+      LILAC: { nome: "Lilás", compra: 130.0, venda: 0.0 }
+      ROSE_BUSH: { nome: "Roseira", compra: 130.0, venda: 0.0 }
+      PEONY: { nome: "Peônia", compra: 130.0, venda: 0.0 }
+      TORCHFLOWER: { nome: "Flor-Tocha", compra: 180.0, venda: 0.0 }
+      PITCHER_PLANT: { nome: "Planta-Jarro", compra: 180.0, venda: 0.0 }
+      OAK_SIGN: { nome: "Placa de Carvalho", compra: 55.0, venda: 0.0 }
+      OAK_HANGING_SIGN: { nome: "Placa Suspensa de Carvalho", compra: 95.0, venda: 0.0 }
+      SPRUCE_SIGN: { nome: "Placa de Pinheiro", compra: 55.0, venda: 0.0 }
+      SPRUCE_HANGING_SIGN: { nome: "Placa Suspensa de Pinheiro", compra: 95.0, venda: 0.0 }
+      BIRCH_SIGN: { nome: "Placa de Bétula", compra: 55.0, venda: 0.0 }
+      BIRCH_HANGING_SIGN: { nome: "Placa Suspensa de Bétula", compra: 95.0, venda: 0.0 }
+      JUNGLE_SIGN: { nome: "Placa de Selva", compra: 55.0, venda: 0.0 }
+      JUNGLE_HANGING_SIGN: { nome: "Placa Suspensa de Selva", compra: 95.0, venda: 0.0 }
+      ACACIA_SIGN: { nome: "Placa de Acácia", compra: 55.0, venda: 0.0 }
+      ACACIA_HANGING_SIGN: { nome: "Placa Suspensa de Acácia", compra: 95.0, venda: 0.0 }
+      DARK_OAK_SIGN: { nome: "Placa de Carvalho Escuro", compra: 55.0, venda: 0.0 }
+      DARK_OAK_HANGING_SIGN: { nome: "Placa Suspensa de Carvalho Escuro", compra: 95.0, venda: 0.0 }
+      MANGROVE_SIGN: { nome: "Placa de Mangue", compra: 55.0, venda: 0.0 }
+      MANGROVE_HANGING_SIGN: { nome: "Placa Suspensa de Mangue", compra: 95.0, venda: 0.0 }
+      CHERRY_SIGN: { nome: "Placa de Cerejeira", compra: 55.0, venda: 0.0 }
+      CHERRY_HANGING_SIGN: { nome: "Placa Suspensa de Cerejeira", compra: 95.0, venda: 0.0 }
+      BAMBOO_SIGN: { nome: "Placa de Bambu", compra: 55.0, venda: 0.0 }
+      BAMBOO_HANGING_SIGN: { nome: "Placa Suspensa de Bambu", compra: 95.0, venda: 0.0 }
+      CRIMSON_SIGN: { nome: "Placa de Carmesim", compra: 55.0, venda: 0.0 }
+      CRIMSON_HANGING_SIGN: { nome: "Placa Suspensa de Carmesim", compra: 95.0, venda: 0.0 }
+      WARPED_SIGN: { nome: "Placa de Distorcida", compra: 55.0, venda: 0.0 }
+      WARPED_HANGING_SIGN: { nome: "Placa Suspensa de Distorcida", compra: 95.0, venda: 0.0 }
+      COBWEB: { nome: "Teia de Aranha", compra: 200.0, venda: 0.0 }
+      SCULK: { nome: "Sculk", compra: 220.0, venda: 0.0 }
+      SCULK_VEIN: { nome: "Veia de Sculk", compra: 180.0, venda: 0.0 }
 
   redstone:
     nome: "Redstone"
@@ -714,34 +714,34 @@ categorias:
       - "Componentes e circuitos"
       - "de redstone para automação"
     itens:
-      REDSTONE: { nome: "Redstone", compra: 120.0, venda: 22.0 }
-      REPEATER: { nome: "Repetidor", compra: 280.0, venda: 50.0 }
-      COMPARATOR: { nome: "Comparador", compra: 350.0, venda: 65.0 }
-      PISTON: { nome: "Pistão", compra: 400.0, venda: 70.0 }
-      STICKY_PISTON: { nome: "Pistão Grudento", compra: 650.0, venda: 120.0 }
-      OBSERVER: { nome: "Observador", compra: 450.0, venda: 80.0 }
-      HOPPER: { nome: "Funil", compra: 900.0, venda: 160.0 }
-      DISPENSER: { nome: "Ejetor", compra: 450.0, venda: 80.0 }
-      DROPPER: { nome: "Liberador", compra: 400.0, venda: 70.0 }
-      REDSTONE_LAMP: { nome: "Lâmpada de Redstone", compra: 500.0, venda: 90.0 }
-      LEVER: { nome: "Alavanca", compra: 60.0, venda: 10.0 }
-      STONE_BUTTON: { nome: "Botão de Pedra", compra: 35.0, venda: 5.0 }
-      STONE_PRESSURE_PLATE: { nome: "Placa de Pressão de Pedra", compra: 70.0, venda: 12.0 }
-      TARGET: { nome: "Alvo", compra: 380.0, venda: 65.0 }
-      DAYLIGHT_DETECTOR: { nome: "Sensor de Luz Solar", compra: 450.0, venda: 75.0 }
-      NOTE_BLOCK: { nome: "Bloco Musical", compra: 300.0, venda: 50.0 }
-      TRIPWIRE_HOOK: { nome: "Gancho de Armadilha", compra: 120.0, venda: 20.0 }
-      RAIL: { nome: "Trilho", compra: 90.0, venda: 14.0 }
-      POWERED_RAIL: { nome: "Trilho Elétrico", compra: 260.0, venda: 42.0 }
-      DETECTOR_RAIL: { nome: "Trilho Detector", compra: 220.0, venda: 36.0 }
-      ACTIVATOR_RAIL: { nome: "Trilho Ativador", compra: 220.0, venda: 36.0 }
-      LIGHTNING_ROD: { nome: "Para-Raios", compra: 280.0, venda: 45.0 }
-      TNT: { nome: "TNT", compra: 900.0, venda: 120.0 }
-      REDSTONE_TORCH: { nome: "Tocha de Redstone", compra: 80.0, venda: 12.0 }
-      HEAVY_WEIGHTED_PRESSURE_PLATE: { nome: "Placa de Pressão Pesada", compra: 650.0, venda: 95.0 }
-      LIGHT_WEIGHTED_PRESSURE_PLATE: { nome: "Placa de Pressão Leve", compra: 950.0, venda: 140.0 }
-      IRON_TRAPDOOR: { nome: "Alçapão de Ferro", compra: 900.0, venda: 130.0 }
-      IRON_DOOR: { nome: "Porta de Ferro", compra: 950.0, venda: 140.0 }
+      REDSTONE: { nome: "Redstone", compra: 120.0, venda: 0.0 }
+      REPEATER: { nome: "Repetidor", compra: 280.0, venda: 0.0 }
+      COMPARATOR: { nome: "Comparador", compra: 350.0, venda: 0.0 }
+      PISTON: { nome: "Pistão", compra: 400.0, venda: 0.0 }
+      STICKY_PISTON: { nome: "Pistão Grudento", compra: 650.0, venda: 0.0 }
+      OBSERVER: { nome: "Observador", compra: 450.0, venda: 0.0 }
+      HOPPER: { nome: "Funil", compra: 900.0, venda: 0.0 }
+      DISPENSER: { nome: "Ejetor", compra: 450.0, venda: 0.0 }
+      DROPPER: { nome: "Liberador", compra: 400.0, venda: 0.0 }
+      REDSTONE_LAMP: { nome: "Lâmpada de Redstone", compra: 500.0, venda: 0.0 }
+      LEVER: { nome: "Alavanca", compra: 60.0, venda: 0.0 }
+      STONE_BUTTON: { nome: "Botão de Pedra", compra: 35.0, venda: 0.0 }
+      STONE_PRESSURE_PLATE: { nome: "Placa de Pressão de Pedra", compra: 70.0, venda: 0.0 }
+      TARGET: { nome: "Alvo", compra: 380.0, venda: 0.0 }
+      DAYLIGHT_DETECTOR: { nome: "Sensor de Luz Solar", compra: 450.0, venda: 0.0 }
+      NOTE_BLOCK: { nome: "Bloco Musical", compra: 300.0, venda: 0.0 }
+      TRIPWIRE_HOOK: { nome: "Gancho de Armadilha", compra: 120.0, venda: 0.0 }
+      RAIL: { nome: "Trilho", compra: 90.0, venda: 0.0 }
+      POWERED_RAIL: { nome: "Trilho Elétrico", compra: 260.0, venda: 0.0 }
+      DETECTOR_RAIL: { nome: "Trilho Detector", compra: 220.0, venda: 0.0 }
+      ACTIVATOR_RAIL: { nome: "Trilho Ativador", compra: 220.0, venda: 0.0 }
+      LIGHTNING_ROD: { nome: "Para-Raios", compra: 280.0, venda: 0.0 }
+      TNT: { nome: "TNT", compra: 900.0, venda: 0.0 }
+      REDSTONE_TORCH: { nome: "Tocha de Redstone", compra: 80.0, venda: 0.0 }
+      HEAVY_WEIGHTED_PRESSURE_PLATE: { nome: "Placa de Pressão Pesada", compra: 650.0, venda: 0.0 }
+      LIGHT_WEIGHTED_PRESSURE_PLATE: { nome: "Placa de Pressão Leve", compra: 950.0, venda: 0.0 }
+      IRON_TRAPDOOR: { nome: "Alçapão de Ferro", compra: 900.0, venda: 0.0 }
+      IRON_DOOR: { nome: "Porta de Ferro", compra: 950.0, venda: 0.0 }
 
   outros:
     nome: "Outros"
@@ -751,25 +751,25 @@ categorias:
       - "Itens diversos que não"
       - "se encaixam em outras categorias"
     itens:
-      FIREWORK_ROCKET: { nome: "Foguete", compra: 220.0, venda: 35.0 }
-      BOOK: { nome: "Livro", compra: 160.0, venda: 25.0 }
-      NAME_TAG: { nome: "Etiqueta", compra: 1500.0, venda: 250.0 }
-      SADDLE: { nome: "Sela", compra: 2200.0, venda: 350.0 }
-      LEAD: { nome: "Laço", compra: 450.0, venda: 75.0 }
-      EXPERIENCE_BOTTLE: { nome: "Frasco de Experiência", compra: 900.0, venda: 120.0 }
-      PAPER: { nome: "Papel", compra: 45.0, venda: 7.0 }
-      MAP: { nome: "Mapa Vazio", compra: 320.0, venda: 50.0 }
-      COMPASS: { nome: "Bússola", compra: 650.0, venda: 110.0 }
-      SPYGLASS: { nome: "Luneta", compra: 700.0, venda: 120.0 }
-      WRITABLE_BOOK: { nome: "Livro e Pena", compra: 300.0, venda: 45.0 }
-      GLASS_BOTTLE: { nome: "Frasco de Vidro", compra: 45.0, venda: 7.0 }
-      BOWL: { nome: "Tigela", compra: 35.0, venda: 5.0 }
-      SHEARS: { nome: "Tesoura", compra: 450.0, venda: 70.0 }
-      FLINT_AND_STEEL: { nome: "Pederneira", compra: 650.0, venda: 100.0 }
-      BRUSH: { nome: "Pincel", compra: 500.0, venda: 80.0 }
-      FISHING_ROD: { nome: "Vara de Pesca", compra: 500.0, venda: 75.0 }
-      BOW: { nome: "Arco", compra: 650.0, venda: 95.0 }
-      CROSSBOW: { nome: "Besta", compra: 1100.0, venda: 160.0 }
-      SHIELD: { nome: "Escudo", compra: 900.0, venda: 130.0 }
-      CARROT_ON_A_STICK: { nome: "Cenoura no Graveto", compra: 550.0, venda: 80.0 }
-      WARPED_FUNGUS_ON_A_STICK: { nome: "Fungo Distorcido no Graveto", compra: 650.0, venda: 95.0 }
+      FIREWORK_ROCKET: { nome: "Foguete", compra: 220.0, venda: 0.0 }
+      BOOK: { nome: "Livro", compra: 160.0, venda: 0.0 }
+      NAME_TAG: { nome: "Etiqueta", compra: 1500.0, venda: 0.0 }
+      SADDLE: { nome: "Sela", compra: 2200.0, venda: 0.0 }
+      LEAD: { nome: "Laço", compra: 450.0, venda: 0.0 }
+      EXPERIENCE_BOTTLE: { nome: "Frasco de Experiência", compra: 900.0, venda: 0.0 }
+      PAPER: { nome: "Papel", compra: 45.0, venda: 0.0 }
+      MAP: { nome: "Mapa Vazio", compra: 320.0, venda: 0.0 }
+      COMPASS: { nome: "Bússola", compra: 650.0, venda: 0.0 }
+      SPYGLASS: { nome: "Luneta", compra: 700.0, venda: 0.0 }
+      WRITABLE_BOOK: { nome: "Livro e Pena", compra: 300.0, venda: 0.0 }
+      GLASS_BOTTLE: { nome: "Frasco de Vidro", compra: 45.0, venda: 0.0 }
+      BOWL: { nome: "Tigela", compra: 35.0, venda: 0.0 }
+      SHEARS: { nome: "Tesoura", compra: 450.0, venda: 0.0 }
+      FLINT_AND_STEEL: { nome: "Pederneira", compra: 650.0, venda: 0.0 }
+      BRUSH: { nome: "Pincel", compra: 500.0, venda: 0.0 }
+      FISHING_ROD: { nome: "Vara de Pesca", compra: 500.0, venda: 0.0 }
+      BOW: { nome: "Arco", compra: 650.0, venda: 0.0 }
+      CROSSBOW: { nome: "Besta", compra: 1100.0, venda: 0.0 }
+      SHIELD: { nome: "Escudo", compra: 900.0, venda: 0.0 }
+      CARROT_ON_A_STICK: { nome: "Cenoura no Graveto", compra: 550.0, venda: 0.0 }
+      WARPED_FUNGUS_ON_A_STICK: { nome: "Fungo Distorcido no Graveto", compra: 650.0, venda: 0.0 }
