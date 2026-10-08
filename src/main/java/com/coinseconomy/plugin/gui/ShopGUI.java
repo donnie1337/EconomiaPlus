@@ -161,8 +161,6 @@ public final class ShopGUI {
 
         if (shopItem.canSell()) {
             lore.add("&fPreço de venda: &c$" + compactNumber(shop.finalSellPrice(shopItem)));
-        } else {
-            lore.add("&fPreço de venda: &8Indisponível");
         }
 
         lore.add("");
