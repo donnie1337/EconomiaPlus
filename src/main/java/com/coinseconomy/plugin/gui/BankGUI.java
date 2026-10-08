@@ -38,7 +38,7 @@ public final class BankGUI {
 
         double saldoCarteira = economia.getSaldo(player.getUniqueId());
         double diaria = plugin.getConfig().getDouble("banco.rendimento-diario-percentual", 0.035);
-        double mensal = plugin.getConfig().getDouble("banco.rendimento-mensal-percentual", 1.05);
+        double mensal = (Math.pow(1.0D + (diaria / 100.0D), 30.0D) - 1.0D) * 100.0D;
 
         inv.setItem(SLOT_INFO, item(
                 Material.NETHER_BRICKS,
