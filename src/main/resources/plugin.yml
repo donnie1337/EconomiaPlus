@@ -9,6 +9,7 @@ description: >
 
 commands:
   coins:
+    aliases: [coin, money]
     description: Mostra seu saldo de coins ou o de outro jogador.
     usage: "/<command> [jogador|give|set|top]"
     permission: coinseconomy.coins
