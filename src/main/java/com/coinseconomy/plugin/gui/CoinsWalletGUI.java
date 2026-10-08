@@ -53,7 +53,7 @@ public final class CoinsWalletGUI {
                         "",
                         "&fReserva bancária: &a" + formatCompactCoins(reservaBancaria),
                         "",
-                        "&7Pagamentos recebidos: " + (recebimentosAtivados ? "&aAtivados" : "&cDesativados"),
+                        "&7Receber pagamentos: " + (recebimentosAtivados ? "&aSim" : "&cNão"),
                         "",
                         "&eClique para " + (recebimentosAtivados ? "desativar" : "ativar") + " recebimentos"
                 )
