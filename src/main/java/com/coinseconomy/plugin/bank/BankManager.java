@@ -45,7 +45,7 @@ public final class BankManager {
         for (String raw : players.getKeys(false)) {
             try {
                 UUID uuid = UUID.fromString(raw);
-                balances.put(uuid, Math.max(0.0D, data.getDouble("jogadores." + raw + ".saldo", 0.0D)));
+                balances.put(uuid, normalize(Math.max(0.0D, data.getDouble("jogadores." + raw + ".saldo", 0.0D))));
                 withdrawCounts.put(uuid, Math.max(0, data.getInt("jogadores." + raw + ".saques-dia", 0)));
 
                 long now = System.currentTimeMillis();
@@ -122,7 +122,7 @@ public final class BankManager {
     public synchronized double getBalance(UUID uuid) {
         if (uuid == null) return 0.0D;
         applyInterest(uuid, System.currentTimeMillis(), false);
-        return balances.getOrDefault(uuid, 0.0D);
+        return normalize(balances.getOrDefault(uuid, 0.0D));
     }
 
     public synchronized void deposit(UUID uuid, double amount) {
@@ -130,7 +130,7 @@ public final class BankManager {
 
         long now = System.currentTimeMillis();
         applyInterest(uuid, now, true);
-        balances.merge(uuid, amount, Double::sum);
+        balances.put(uuid, normalize(balances.getOrDefault(uuid, 0.0D) + amount));
         lastInterestAt.put(uuid, now);
         addHistory(uuid, new BankTransaction(BankTransaction.Type.DEPOSIT, amount, now));
         saveLater();
@@ -144,7 +144,7 @@ public final class BankManager {
         double current = balances.getOrDefault(uuid, 0.0D);
         if (current + 0.0000001D < amount) return false;
 
-        balances.put(uuid, Math.max(0.0D, current - amount));
+        balances.put(uuid, normalize(Math.max(0.0D, current - amount)));
         lastInterestAt.put(uuid, now);
         incrementWithdraw(uuid);
         addHistory(uuid, new BankTransaction(BankTransaction.Type.WITHDRAW, amount, now));
@@ -183,7 +183,7 @@ public final class BankManager {
 
         if (!Double.isFinite(interest) || interest <= 0.0000001D) return 0.0D;
 
-        balances.put(uuid, balance + interest);
+        balances.put(uuid, normalize(balance + interest));
         addHistory(uuid, new BankTransaction(BankTransaction.Type.INTEREST, interest, now));
         saveLater();
         return interest;
@@ -230,6 +230,11 @@ public final class BankManager {
             withdrawCounts.put(uuid, 0);
             withdrawDates.put(uuid, today);
         }
+    }
+
+    private static double normalize(double value) {
+        if (!Double.isFinite(value)) return 0.0D;
+        return Math.round(value * 100.0D) / 100.0D;
     }
 
     private void saveLater() {
