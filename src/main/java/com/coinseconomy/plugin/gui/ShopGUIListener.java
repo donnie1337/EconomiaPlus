@@ -206,7 +206,7 @@ public final class ShopGUIListener implements Listener {
     private int countMaterial(Player player, Material material) {
         int total = 0;
         for (ItemStack current : player.getInventory().getStorageContents()) {
-            if (current != null && current.getType() == material) {
+            if (current != null && current.getType() == material && isPlainItem(current)) {
                 total += current.getAmount();
             }
         }
@@ -219,7 +219,7 @@ public final class ShopGUIListener implements Listener {
 
         for (int i = 0; i < contents.length && remaining > 0; i++) {
             ItemStack current = contents[i];
-            if (current == null || current.getType() != material) continue;
+            if (current == null || current.getType() != material || !isPlainItem(current)) continue;
 
             int removed = Math.min(current.getAmount(), remaining);
             int newAmount = current.getAmount() - removed;
@@ -231,6 +231,10 @@ public final class ShopGUIListener implements Listener {
                 current.setAmount(newAmount);
             }
         }
+    }
+
+    private boolean isPlainItem(ItemStack item) {
+        return item != null && !item.hasItemMeta() && item.getEnchantments().isEmpty();
     }
 
     private String transactionDetail(ShopItem item, int amount) {
