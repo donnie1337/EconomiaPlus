@@ -20,10 +20,14 @@ import java.util.Locale;
 
 public final class ShopGUI {
 
-    public static final int MAIN_SIZE = 36;
+    // Layout principal intencionalmente compacto: 4 linhas, sem linha extra de navegação.
+    private static final int MAIN_ROWS = 4;
+    public static final int MAIN_SIZE = MAIN_ROWS * 9;
     public static final int CATEGORY_SIZE = 54;
     public static final int ITEMS_PER_PAGE = 21;
 
+    // Mantém a organização visual do menu principal:
+    // perfil no topo, categorias em duas linhas centrais e atalhos na última linha.
     private static final int[] CATEGORY_SLOTS = {10, 11, 12, 13, 14, 15, 19, 20, 21, 22};
     private static final int[] ITEM_SLOTS = {
             10, 11, 12, 13, 14, 15, 16,
