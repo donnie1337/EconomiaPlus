@@ -2,10 +2,10 @@ name: EconomiaPlus
 version: '${project.version}'
 main: com.coinseconomy.plugin.CoinsEconomyPlugin
 api-version: '26.3'
-author: SeuNome
+author: donnie1337
 description: >
-  Sistema de economia independente com API própria. Inclui /coins, /pagar,
-  /cobrar e um ranking (/topcoins) dos 10 jogadores com mais coins.
+  Sistema de economia independente com carteira, pagamentos, banco, histórico,
+  ranking, Magnata, Loja de Coins e API própria.
 
 commands:
   coins:
