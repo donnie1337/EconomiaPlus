@@ -14,27 +14,27 @@ categorias:
       - "Compre e venda itens"
       - "relacionados a farming"
     itens:
-      WHEAT: { nome: "Trigo", compra: 104.0, venda: 12.6 }
-      POTATO: { nome: "Batata", compra: 78.0, venda: 10.5 }
-      POISONOUS_POTATO: { nome: "Batata Venenosa", compra: 182.0, venda: 17.5 }
-      CARROT: { nome: "Cenoura", compra: 78.0, venda: 10.5 }
-      COCOA_BEANS: { nome: "Cacau", compra: 117.0, venda: 14.0 }
-      BEETROOT: { nome: "Beterraba", compra: 78.0, venda: 10.5 }
-      SUGAR_CANE: { nome: "Cana-de-Açúcar", compra: 110.5, venda: 14.0 }
-      MELON_SLICE: { nome: "Fatia de Melancia", compra: 52.0, venda: 5.6 }
-      APPLE: { nome: "Maçã", compra: 156.0, venda: 17.5 }
-      SWEET_BERRIES: { nome: "Bagas Doces", compra: 97.5, venda: 10.5 }
-      GLOW_BERRIES: { nome: "Bagas Luminosas", compra: 130.0, venda: 14.0 }
-      BEETROOT_SEEDS: { nome: "Sementes de Beterraba", compra: 91.0, venda: 7.0 }
-      PUMPKIN: { nome: "Abóbora", compra: 169.0, venda: 21.0 }
-      CACTUS: { nome: "Cacto", compra: 156.0, venda: 17.5 }
-      BAMBOO: { nome: "Bambu", compra: 84.5, venda: 8.4 }
-      NETHER_WART: { nome: "Fungo do Nether", compra: 234.0, venda: 28.0 }
-      BROWN_MUSHROOM: { nome: "Cogumelo Marrom", compra: 130.0, venda: 14.0 }
-      RED_MUSHROOM: { nome: "Cogumelo Vermelho", compra: 130.0, venda: 14.0 }
-      MELON: { nome: "Melancia", compra: 234.0, venda: 24.5 }
-      MELON_SEEDS: { nome: "Sementes de Melancia", compra: 97.5, venda: 7.0 }
-      PUMPKIN_SEEDS: { nome: "Sementes de Abóbora", compra: 97.5, venda: 7.0 }
+      WHEAT: { nome: "Trigo", compra: 104.0, venda: 5.0 }
+      POTATO: { nome: "Batata", compra: 78.0, venda: 4.2 }
+      POISONOUS_POTATO: { nome: "Batata Venenosa", compra: 182.0, venda: 7.0 }
+      CARROT: { nome: "Cenoura", compra: 78.0, venda: 4.2 }
+      COCOA_BEANS: { nome: "Cacau", compra: 117.0, venda: 5.6 }
+      BEETROOT: { nome: "Beterraba", compra: 78.0, venda: 4.2 }
+      SUGAR_CANE: { nome: "Cana-de-Açúcar", compra: 110.5, venda: 5.6 }
+      MELON_SLICE: { nome: "Fatia de Melancia", compra: 52.0, venda: 2.2 }
+      APPLE: { nome: "Maçã", compra: 156.0, venda: 7.0 }
+      SWEET_BERRIES: { nome: "Bagas Doces", compra: 97.5, venda: 4.2 }
+      GLOW_BERRIES: { nome: "Bagas Luminosas", compra: 130.0, venda: 5.6 }
+      BEETROOT_SEEDS: { nome: "Sementes de Beterraba", compra: 91.0, venda: 2.8 }
+      PUMPKIN: { nome: "Abóbora", compra: 169.0, venda: 8.4 }
+      CACTUS: { nome: "Cacto", compra: 156.0, venda: 7.0 }
+      BAMBOO: { nome: "Bambu", compra: 84.5, venda: 3.4 }
+      NETHER_WART: { nome: "Fungo do Nether", compra: 234.0, venda: 11.2 }
+      BROWN_MUSHROOM: { nome: "Cogumelo Marrom", compra: 130.0, venda: 5.6 }
+      RED_MUSHROOM: { nome: "Cogumelo Vermelho", compra: 130.0, venda: 5.6 }
+      MELON: { nome: "Melancia", compra: 234.0, venda: 9.8 }
+      MELON_SEEDS: { nome: "Sementes de Melancia", compra: 97.5, venda: 2.8 }
+      PUMPKIN_SEEDS: { nome: "Sementes de Abóbora", compra: 97.5, venda: 2.8 }
 
   utilitarios:
     nome: "Utilitários"
@@ -136,25 +136,25 @@ categorias:
       - "criaturas do servidor"
     itens:
       HONEYCOMB: { nome: "Favo de Mel", compra: 180.0, venda: 0.0 }
-      PHANTOM_MEMBRANE: { nome: "Membrana de Phantom", compra: 780.0, venda: 104.0 }
-      PRISMARINE_CRYSTALS: { nome: "Cristais de Prismarinho", compra: 0.0, venda: 50.0 }
-      EGG: { nome: "Ovo", compra: 54.0, venda: 6.4 }
-      FEATHER: { nome: "Pena", compra: 66.0, venda: 8.0 }
-      LEATHER: { nome: "Couro", compra: 156.0, venda: 20.0 }
-      SPIDER_EYE: { nome: "Olho de Aranha", compra: 144.0, venda: 17.6 }
-      STRING: { nome: "Linha", compra: 96.0, venda: 12.0 }
-      ROTTEN_FLESH: { nome: "Carne Podre", compra: 48.0, venda: 5.6 }
-      GUNPOWDER: { nome: "Pólvora", compra: 240.0, venda: 32.0 }
-      ARROW: { nome: "Flecha", compra: 84.0, venda: 8.0 }
-      BOW: { nome: "Arco", compra: 650.0, venda: 15.0 }
-      BONE: { nome: "Osso", compra: 108.0, venda: 14.4 }
-      SLIME_BALL: { nome: "Bola de Slime", compra: 420.0, venda: 56.0 }
-      BLAZE_ROD: { nome: "Vara de Blaze", compra: 1020.0, venda: 136.0 }
-      ENDER_PEARL: { nome: "Pérola do End", compra: 840.0, venda: 112.0 }
-      MAGMA_CREAM: { nome: "Creme de Magma", compra: 600.0, venda: 80.0 }
-      PRISMARINE_SHARD: { nome: "Fragmento de Prismarinho", compra: 0.0, venda: 45.0 }
-      INK_SAC: { nome: "Bolsa de Tinta", compra: 108.0, venda: 14.4 }
-      SCUTE: { nome: "Escama de Tartaruga", compra: 1140.0, venda: 144.0 }
+      PHANTOM_MEMBRANE: { nome: "Membrana de Phantom", compra: 780.0, venda: 41.6 }
+      PRISMARINE_CRYSTALS: { nome: "Cristais de Prismarinho", compra: 0.0, venda: 20.0 }
+      EGG: { nome: "Ovo", compra: 54.0, venda: 2.6 }
+      FEATHER: { nome: "Pena", compra: 66.0, venda: 3.2 }
+      LEATHER: { nome: "Couro", compra: 156.0, venda: 8.0 }
+      SPIDER_EYE: { nome: "Olho de Aranha", compra: 144.0, venda: 7.0 }
+      STRING: { nome: "Linha", compra: 96.0, venda: 4.8 }
+      ROTTEN_FLESH: { nome: "Carne Podre", compra: 48.0, venda: 2.2 }
+      GUNPOWDER: { nome: "Pólvora", compra: 240.0, venda: 12.8 }
+      ARROW: { nome: "Flecha", compra: 84.0, venda: 3.2 }
+      BOW: { nome: "Arco", compra: 650.0, venda: 6.0 }
+      BONE: { nome: "Osso", compra: 108.0, venda: 5.8 }
+      SLIME_BALL: { nome: "Bola de Slime", compra: 420.0, venda: 22.4 }
+      BLAZE_ROD: { nome: "Vara de Blaze", compra: 1020.0, venda: 54.4 }
+      ENDER_PEARL: { nome: "Pérola do End", compra: 840.0, venda: 44.8 }
+      MAGMA_CREAM: { nome: "Creme de Magma", compra: 600.0, venda: 32.0 }
+      PRISMARINE_SHARD: { nome: "Fragmento de Prismarinho", compra: 0.0, venda: 18.0 }
+      INK_SAC: { nome: "Bolsa de Tinta", compra: 108.0, venda: 5.8 }
+      SCUTE: { nome: "Escama de Tartaruga", compra: 1140.0, venda: 57.6 }
 
   minerios:
     nome: "Minérios"
@@ -164,51 +164,51 @@ categorias:
       - "Minérios preciosos e"
       - "materiais de mineração"
     itens:
-      NETHERITE_INGOT: { nome: "Barra de Netherita", compra: 0.0, venda: 50000.0 }
-      NETHERITE_SCRAP: { nome: "Fragmento de Netherita", compra: 0.0, venda: 14000.0 }
-      EMERALD: { nome: "Esmeralda", compra: 0.0, venda: 300.0 }
-      DIAMOND: { nome: "Diamante", compra: 0.0, venda: 700.0 }
-      AMETHYST_SHARD: { nome: "Fragmento de Ametista", compra: 0.0, venda: 90.0 }
-      QUARTZ: { nome: "Quartzo", compra: 0.0, venda: 35.0 }
-      GOLD_INGOT: { nome: "Barra de Ouro", compra: 0.0, venda: 160.0 }
-      LAPIS_LAZULI: { nome: "Lápis-Lazúli", compra: 0.0, venda: 30.0 }
-      RAW_COPPER: { nome: "Cobre Bruto", compra: 0.0, venda: 22.0 }
-      COPPER_INGOT: { nome: "Barra de Cobre", compra: 0.0, venda: 28.0 }
-      IRON_INGOT: { nome: "Barra de Ferro", compra: 0.0, venda: 90.0 }
-      COAL: { nome: "Carvão", compra: 0.0, venda: 18.0 }
-      GOLD_ORE: { nome: "Minério de Ouro", compra: 0.0, venda: 180.0 }
-      DEEPSLATE_GOLD_ORE: { nome: "Minério de Ouro de Ardósia", compra: 0.0, venda: 190.0 }
-      LAPIS_ORE: { nome: "Minério de Lápis-Lazúli", compra: 0.0, venda: 110.0 }
-      DEEPSLATE_LAPIS_ORE: { nome: "Minério de Lápis de Ardósia", compra: 0.0, venda: 120.0 }
-      COPPER_ORE: { nome: "Minério de Cobre", compra: 0.0, venda: 60.0 }
-      DEEPSLATE_COPPER_ORE: { nome: "Minério de Cobre de Ardósia", compra: 0.0, venda: 70.0 }
-      IRON_ORE: { nome: "Minério de Ferro", compra: 0.0, venda: 110.0 }
-      DEEPSLATE_IRON_ORE: { nome: "Minério de Ferro de Ardósia", compra: 0.0, venda: 120.0 }
-      REDSTONE_ORE: { nome: "Minério de Redstone", compra: 0.0, venda: 85.0 }
-      DEEPSLATE_REDSTONE_ORE: { nome: "Minério de Redstone de Ardósia", compra: 0.0, venda: 95.0 }
-      DIAMOND_ORE: { nome: "Minério de Diamante", compra: 0.0, venda: 850.0 }
-      DEEPSLATE_DIAMOND_ORE: { nome: "Minério de Diamante de Ardósia", compra: 0.0, venda: 900.0 }
-      EMERALD_ORE: { nome: "Minério de Esmeralda", compra: 0.0, venda: 460.0 }
-      DEEPSLATE_EMERALD_ORE: { nome: "Minério de Esmeralda de Ardósia", compra: 0.0, venda: 500.0 }
-      RAW_IRON: { nome: "Ferro Bruto", compra: 0.0, venda: 75.0 }
-      RAW_GOLD: { nome: "Ouro Bruto", compra: 0.0, venda: 140.0 }
-      FLINT: { nome: "Sílex", compra: 0.0, venda: 15.0 }
-      CHARCOAL: { nome: "Carvão Vegetal", compra: 0.0, venda: 18.0 }
-      AMETHYST_BLOCK: { nome: "Bloco de Ametista", compra: 0.0, venda: 300.0 }
-      BUDDING_AMETHYST: { nome: "Ametista Brotante", compra: 0.0, venda: 1000.0 }
-      DIAMOND_BLOCK: { nome: "Bloco de Diamante", compra: 0.0, venda: 6300.0 }
-      GOLD_BLOCK: { nome: "Bloco de Ouro", compra: 0.0, venda: 1440.0 }
-      IRON_BLOCK: { nome: "Bloco de Ferro", compra: 0.0, venda: 810.0 }
-      EMERALD_BLOCK: { nome: "Bloco de Esmeralda", compra: 0.0, venda: 2700.0 }
-      COPPER_BLOCK: { nome: "Bloco de Cobre", compra: 0.0, venda: 252.0 }
-      COAL_BLOCK: { nome: "Bloco de Carvão", compra: 0.0, venda: 162.0 }
-      LAPIS_BLOCK: { nome: "Bloco de Lápis-Lazúli", compra: 0.0, venda: 270.0 }
-      REDSTONE_BLOCK: { nome: "Bloco de Redstone", compra: 0.0, venda: 270.0 }
-      NETHERITE_BLOCK: { nome: "Bloco de Netherita", compra: 0.0, venda: 450000.0 }
-      RAW_IRON_BLOCK: { nome: "Bloco de Ferro Bruto", compra: 0.0, venda: 675.0 }
-      RAW_GOLD_BLOCK: { nome: "Bloco de Ouro Bruto", compra: 0.0, venda: 1260.0 }
-      RAW_COPPER_BLOCK: { nome: "Bloco de Cobre Bruto", compra: 0.0, venda: 198.0 }
-      QUARTZ_BLOCK: { nome: "Bloco de Quartzo", compra: 0.0, venda: 140.0 }
+      NETHERITE_INGOT: { nome: "Barra de Netherita", compra: 0.0, venda: 20000.0 }
+      NETHERITE_SCRAP: { nome: "Fragmento de Netherita", compra: 0.0, venda: 5600.0 }
+      EMERALD: { nome: "Esmeralda", compra: 0.0, venda: 120.0 }
+      DIAMOND: { nome: "Diamante", compra: 0.0, venda: 280.0 }
+      AMETHYST_SHARD: { nome: "Fragmento de Ametista", compra: 0.0, venda: 36.0 }
+      QUARTZ: { nome: "Quartzo", compra: 0.0, venda: 14.0 }
+      GOLD_INGOT: { nome: "Barra de Ouro", compra: 0.0, venda: 64.0 }
+      LAPIS_LAZULI: { nome: "Lápis-Lazúli", compra: 0.0, venda: 12.0 }
+      RAW_COPPER: { nome: "Cobre Bruto", compra: 0.0, venda: 8.8 }
+      COPPER_INGOT: { nome: "Barra de Cobre", compra: 0.0, venda: 11.2 }
+      IRON_INGOT: { nome: "Barra de Ferro", compra: 0.0, venda: 36.0 }
+      COAL: { nome: "Carvão", compra: 0.0, venda: 7.2 }
+      GOLD_ORE: { nome: "Minério de Ouro", compra: 0.0, venda: 72.0 }
+      DEEPSLATE_GOLD_ORE: { nome: "Minério de Ouro de Ardósia", compra: 0.0, venda: 76.0 }
+      LAPIS_ORE: { nome: "Minério de Lápis-Lazúli", compra: 0.0, venda: 44.0 }
+      DEEPSLATE_LAPIS_ORE: { nome: "Minério de Lápis de Ardósia", compra: 0.0, venda: 48.0 }
+      COPPER_ORE: { nome: "Minério de Cobre", compra: 0.0, venda: 24.0 }
+      DEEPSLATE_COPPER_ORE: { nome: "Minério de Cobre de Ardósia", compra: 0.0, venda: 28.0 }
+      IRON_ORE: { nome: "Minério de Ferro", compra: 0.0, venda: 44.0 }
+      DEEPSLATE_IRON_ORE: { nome: "Minério de Ferro de Ardósia", compra: 0.0, venda: 48.0 }
+      REDSTONE_ORE: { nome: "Minério de Redstone", compra: 0.0, venda: 34.0 }
+      DEEPSLATE_REDSTONE_ORE: { nome: "Minério de Redstone de Ardósia", compra: 0.0, venda: 38.0 }
+      DIAMOND_ORE: { nome: "Minério de Diamante", compra: 0.0, venda: 340.0 }
+      DEEPSLATE_DIAMOND_ORE: { nome: "Minério de Diamante de Ardósia", compra: 0.0, venda: 360.0 }
+      EMERALD_ORE: { nome: "Minério de Esmeralda", compra: 0.0, venda: 184.0 }
+      DEEPSLATE_EMERALD_ORE: { nome: "Minério de Esmeralda de Ardósia", compra: 0.0, venda: 200.0 }
+      RAW_IRON: { nome: "Ferro Bruto", compra: 0.0, venda: 30.0 }
+      RAW_GOLD: { nome: "Ouro Bruto", compra: 0.0, venda: 56.0 }
+      FLINT: { nome: "Sílex", compra: 0.0, venda: 6.0 }
+      CHARCOAL: { nome: "Carvão Vegetal", compra: 0.0, venda: 7.2 }
+      AMETHYST_BLOCK: { nome: "Bloco de Ametista", compra: 0.0, venda: 120.0 }
+      BUDDING_AMETHYST: { nome: "Ametista Brotante", compra: 0.0, venda: 400.0 }
+      DIAMOND_BLOCK: { nome: "Bloco de Diamante", compra: 0.0, venda: 2520.0 }
+      GOLD_BLOCK: { nome: "Bloco de Ouro", compra: 0.0, venda: 576.0 }
+      IRON_BLOCK: { nome: "Bloco de Ferro", compra: 0.0, venda: 324.0 }
+      EMERALD_BLOCK: { nome: "Bloco de Esmeralda", compra: 0.0, venda: 1080.0 }
+      COPPER_BLOCK: { nome: "Bloco de Cobre", compra: 0.0, venda: 100.8 }
+      COAL_BLOCK: { nome: "Bloco de Carvão", compra: 0.0, venda: 64.8 }
+      LAPIS_BLOCK: { nome: "Bloco de Lápis-Lazúli", compra: 0.0, venda: 108.0 }
+      REDSTONE_BLOCK: { nome: "Bloco de Redstone", compra: 0.0, venda: 108.0 }
+      NETHERITE_BLOCK: { nome: "Bloco de Netherita", compra: 0.0, venda: 180000.0 }
+      RAW_IRON_BLOCK: { nome: "Bloco de Ferro Bruto", compra: 0.0, venda: 270.0 }
+      RAW_GOLD_BLOCK: { nome: "Bloco de Ouro Bruto", compra: 0.0, venda: 504.0 }
+      RAW_COPPER_BLOCK: { nome: "Bloco de Cobre Bruto", compra: 0.0, venda: 79.2 }
+      QUARTZ_BLOCK: { nome: "Bloco de Quartzo", compra: 0.0, venda: 56.0 }
 
   blocos:
     nome: "Blocos"
