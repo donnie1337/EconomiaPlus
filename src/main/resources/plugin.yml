@@ -40,6 +40,9 @@ commands:
     usage: "/<command>"
     permission: coinseconomy.loja
     permission-message: "§cVocê não tem permissão para usar este comando."
+  cancelar:
+    description: Cancela uma operação bancária pendente.
+    usage: "/<command>"
 
 permissions:
   coinseconomy.*:

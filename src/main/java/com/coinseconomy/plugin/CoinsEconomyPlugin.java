@@ -146,6 +146,18 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
 
         ShopCommand shopCommand = new ShopCommand(economyManager, shopManager);
         getCommand("loja").setExecutor(shopCommand);
+
+        getCommand("cancelar").setExecutor((sender, command, label, args) -> {
+            if (!(sender instanceof org.bukkit.entity.Player player)) {
+                sender.sendMessage("Apenas jogadores podem usar este comando.");
+                return true;
+            }
+
+            if (!bankOperationInput.cancelFromCommand(player)) {
+                player.sendMessage("§c§lʙᴀɴᴄᴏ §8• §fVocê não possui nenhuma operação bancária pendente.");
+            }
+            return true;
+        });
     }
 
     private void registrarEventos() {

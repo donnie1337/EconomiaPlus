@@ -83,6 +83,15 @@ public final class BankOperationInputListener implements Listener {
         return pending.containsKey(uuid);
     }
 
+    public boolean cancelFromCommand(Player player) {
+        UUID uuid = player.getUniqueId();
+        if (!pending.containsKey(uuid)) return false;
+
+        cancelPending(uuid, true);
+        player.sendMessage(color("&c&lʙᴀɴᴄᴏ &8• &fOperação bancária cancelada."));
+        return true;
+    }
+
     @EventHandler(priority = EventPriority.LOWEST)
     public void onChat(AsyncPlayerChatEvent event) {
         UUID uuid = event.getPlayer().getUniqueId();
@@ -101,8 +110,7 @@ public final class BankOperationInputListener implements Listener {
         event.setCancelled(true);
 
         if (event.getMessage().trim().equalsIgnoreCase("/" + CANCEL_WORD)) {
-            cancelPending(uuid, true);
-            event.getPlayer().sendMessage(color("&c&lʙᴀɴᴄᴏ &8• &fOperação bancária cancelada."));
+            cancelFromCommand(event.getPlayer());
             return;
         }
 
