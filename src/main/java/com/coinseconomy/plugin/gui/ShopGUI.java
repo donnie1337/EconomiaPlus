@@ -9,6 +9,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
@@ -178,9 +179,22 @@ public final class ShopGUI {
         if (meta != null) {
             meta.setDisplayName(color(name));
             meta.setLore(lore.stream().map(ShopGUI::color).toList());
+            hideAdditionalTooltip(meta);
             stack.setItemMeta(meta);
         }
         return stack;
+    }
+
+    private static void hideAdditionalTooltip(ItemMeta meta) {
+        try {
+            meta.addItemFlags(ItemFlag.valueOf("HIDE_ADDITIONAL_TOOLTIP"));
+        } catch (IllegalArgumentException ignored) {
+            try {
+                meta.addItemFlags(ItemFlag.valueOf("HIDE_ITEM_SPECIFICS"));
+            } catch (IllegalArgumentException ignoredToo) {
+                // Compatibilidade com APIs que não expõem flags de tooltip adicional.
+            }
+        }
     }
 
     private static String percent(double value) {
