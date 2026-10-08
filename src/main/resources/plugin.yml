@@ -34,6 +34,12 @@ commands:
     usage: "/<command>"
     permission: coinseconomy.banco
     permission-message: "§cVocê não tem permissão para usar este comando."
+  loja:
+    aliases: [shop]
+    description: Abre a Loja de Coins.
+    usage: "/<command>"
+    permission: coinseconomy.loja
+    permission-message: "§cVocê não tem permissão para usar este comando."
 
 permissions:
   coinseconomy.*:
@@ -45,6 +51,7 @@ permissions:
       coinseconomy.cobrar: true
       coinseconomy.top: true
       coinseconomy.banco: true
+      coinseconomy.loja: true
       coinseconomy.admin: true
   coinseconomy.coins:
     description: Permite ver o próprio saldo e o saldo de outros jogadores.
@@ -60,6 +67,9 @@ permissions:
     default: true
   coinseconomy.banco:
     description: Permite abrir o menu /banco.
+    default: true
+  coinseconomy.loja:
+    description: Permite abrir a Loja de Coins.
     default: true
   coinseconomy.admin:
     description: Permite usar "/coins give" e "/coins set" para gerenciar o saldo de qualquer jogador.

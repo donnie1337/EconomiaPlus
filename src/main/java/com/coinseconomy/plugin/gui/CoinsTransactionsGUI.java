@@ -159,6 +159,16 @@ public final class CoinsTransactionsGUI {
                 prefix = "&c-";
                 description = "&fQuantia removida: &c";
             }
+            case SHOP_BUY -> {
+                material = Material.CHEST;
+                prefix = "&c-";
+                description = "&fCompra na loja (" + transaction.detail() + "): &c";
+            }
+            case SHOP_SELL -> {
+                material = Material.EMERALD;
+                prefix = "&a+";
+                description = "&fVenda na loja (" + transaction.detail() + "): &a";
+            }
             default -> throw new IllegalStateException("Tipo de transação desconhecido.");
         }
 

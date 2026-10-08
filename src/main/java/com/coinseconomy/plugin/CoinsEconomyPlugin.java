@@ -5,16 +5,19 @@ import com.coinseconomy.plugin.commands.CobrarCommand;
 import com.coinseconomy.plugin.commands.CoinsCommand;
 import com.coinseconomy.plugin.commands.PagarCommand;
 import com.coinseconomy.plugin.commands.TopCoinsCommand;
+import com.coinseconomy.plugin.commands.ShopCommand;
 import com.coinseconomy.plugin.economy.EconomyManager;
 import com.coinseconomy.plugin.bank.BankManager;
 import com.coinseconomy.plugin.bank.BankOperationInputListener;
 import com.coinseconomy.plugin.transactions.WalletTransactionManager;
 import com.coinseconomy.plugin.wallet.WalletSettingsManager;
+import com.coinseconomy.plugin.shop.ShopManager;
 import com.coinseconomy.plugin.api.EconomyApi;
 import org.bukkit.plugin.ServicePriority;
 import com.coinseconomy.plugin.gui.TopCoinsGUIListener;
 import com.coinseconomy.plugin.gui.BankGUIListener;
 import com.coinseconomy.plugin.gui.CoinsWalletGUIListener;
+import com.coinseconomy.plugin.gui.ShopGUIListener;
 import com.coinseconomy.plugin.listeners.JoinListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -33,6 +36,7 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
     private BankOperationInputListener bankOperationInput;
     private WalletTransactionManager walletTransactionManager;
     private WalletSettingsManager walletSettingsManager;
+    private ShopManager shopManager;
 
     @Override
     public void onEnable() {
@@ -49,6 +53,8 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
         this.walletTransactionManager.load();
         this.walletSettingsManager = new WalletSettingsManager(this);
         this.walletSettingsManager.load();
+        this.shopManager = new ShopManager(this);
+        this.shopManager.load();
         this.bankOperationInput = new BankOperationInputListener(this, economyManager, bankManager);
 
         registrarApi();
@@ -137,11 +143,15 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
 
         BankCommand bankCommand = new BankCommand(this, economyManager, bankManager);
         getCommand("banco").setExecutor(bankCommand);
+
+        ShopCommand shopCommand = new ShopCommand(economyManager, shopManager);
+        getCommand("loja").setExecutor(shopCommand);
     }
 
     private void registrarEventos() {
         Bukkit.getPluginManager().registerEvents(new TopCoinsGUIListener(economyManager), this);
         Bukkit.getPluginManager().registerEvents(new CoinsWalletGUIListener(this, economyManager), this);
+        Bukkit.getPluginManager().registerEvents(new ShopGUIListener(this, economyManager, shopManager), this);
         Bukkit.getPluginManager().registerEvents(new BankGUIListener(this, economyManager, bankManager, bankOperationInput), this);
         Bukkit.getPluginManager().registerEvents(bankOperationInput, this);
         Bukkit.getPluginManager().registerEvents(new JoinListener(economyManager), this);
@@ -180,6 +190,10 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
 
     public WalletSettingsManager getWalletSettingsManager() {
         return walletSettingsManager;
+    }
+
+    public ShopManager getShopManager() {
+        return shopManager;
     }
 
     public boolean isMagnata(java.util.UUID playerId) {

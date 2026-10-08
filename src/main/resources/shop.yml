@@ -1,0 +1,229 @@
+# Loja de Coins
+# Os preços abaixo são valores iniciais de balanceamento e podem ser alterados sem recompilar.
+# Valores <= 0 desativam aquela operação.
+perfil:
+  desconto-percentual: 0.0
+  bonus-venda-percentual: 0.0
+
+categorias:
+  plantacoes:
+    nome: "Plantações"
+    icone: WHEAT
+    cor: "&a"
+    descricao:
+      - "Compre e venda itens"
+      - "relacionados a farming"
+    itens:
+      WHEAT_SEEDS: { nome: "Sementes de Trigo", compra: 390.0, venda: 6.5 }
+      WHEAT: { nome: "Trigo", compra: 80.0, venda: 18.0 }
+      POTATO: { nome: "Batata", compra: 60.0, venda: 15.0 }
+      POISONOUS_POTATO: { nome: "Batata Venenosa", compra: 140.0, venda: 25.0 }
+      CARROT: { nome: "Cenoura", compra: 60.0, venda: 15.0 }
+      COCOA_BEANS: { nome: "Cacau", compra: 90.0, venda: 20.0 }
+      BEETROOT: { nome: "Beterraba", compra: 60.0, venda: 15.0 }
+      SUGAR_CANE: { nome: "Cana-de-Açúcar", compra: 85.0, venda: 20.0 }
+      MELON_SLICE: { nome: "Fatia de Melancia", compra: 40.0, venda: 8.0 }
+      APPLE: { nome: "Maçã", compra: 120.0, venda: 25.0 }
+      SWEET_BERRIES: { nome: "Bagas Doces", compra: 75.0, venda: 15.0 }
+      GLOW_BERRIES: { nome: "Bagas Luminosas", compra: 100.0, venda: 20.0 }
+      BEETROOT_SEEDS: { nome: "Sementes de Beterraba", compra: 70.0, venda: 10.0 }
+      PUMPKIN: { nome: "Abóbora", compra: 130.0, venda: 30.0 }
+      CACTUS: { nome: "Cacto", compra: 120.0, venda: 25.0 }
+      BAMBOO: { nome: "Bambu", compra: 65.0, venda: 12.0 }
+      NETHER_WART: { nome: "Fungo do Nether", compra: 180.0, venda: 40.0 }
+      BROWN_MUSHROOM: { nome: "Cogumelo Marrom", compra: 100.0, venda: 20.0 }
+      RED_MUSHROOM: { nome: "Cogumelo Vermelho", compra: 100.0, venda: 20.0 }
+
+  utilitarios:
+    nome: "Utilitários"
+    icone: WATER_BUCKET
+    cor: "&b"
+    descricao:
+      - "Itens úteis para ajudar"
+      - "a criar suas farms"
+    itens:
+      DIRT: { nome: "Terra", compra: 25.0, venda: 4.0 }
+      GRASS_BLOCK: { nome: "Bloco de Grama", compra: 45.0, venda: 7.0 }
+      SAND: { nome: "Areia", compra: 35.0, venda: 6.0 }
+      RED_SAND: { nome: "Areia Vermelha", compra: 45.0, venda: 7.0 }
+      OAK_SAPLING: { nome: "Muda de Carvalho", compra: 70.0, venda: 10.0 }
+      SPRUCE_SAPLING: { nome: "Muda de Pinheiro", compra: 70.0, venda: 10.0 }
+      BIRCH_SAPLING: { nome: "Muda de Bétula", compra: 70.0, venda: 10.0 }
+      DARK_OAK_SAPLING: { nome: "Muda de Carvalho Escuro", compra: 90.0, venda: 12.0 }
+      ACACIA_SAPLING: { nome: "Muda de Acácia", compra: 70.0, venda: 10.0 }
+      JUNGLE_SAPLING: { nome: "Muda da Selva", compra: 90.0, venda: 12.0 }
+      OAK_PLANKS: { nome: "Tábuas de Carvalho", compra: 30.0, venda: 5.0 }
+      ICE: { nome: "Gelo", compra: 120.0, venda: 20.0 }
+      PODZOL: { nome: "Podzol", compra: 90.0, venda: 15.0 }
+      END_STONE: { nome: "Pedra do End", compra: 150.0, venda: 30.0 }
+
+  comidas:
+    nome: "Comidas"
+    icone: COOKED_CHICKEN
+    cor: "&e"
+    descricao:
+      - "Alimentos para restaurar sua"
+      - "fome durante sua jornada"
+    itens:
+      COD: { nome: "Bacalhau Cru", compra: 55.0, venda: 10.0 }
+      COOKED_COD: { nome: "Bacalhau Assado", compra: 80.0, venda: 15.0 }
+      SALMON: { nome: "Salmão Cru", compra: 70.0, venda: 12.0 }
+      COOKED_SALMON: { nome: "Salmão Assado", compra: 95.0, venda: 18.0 }
+      BEEF: { nome: "Carne Crua", compra: 75.0, venda: 15.0 }
+      COOKED_BEEF: { nome: "Bife", compra: 110.0, venda: 22.0 }
+      PORKCHOP: { nome: "Costeleta Crua", compra: 75.0, venda: 15.0 }
+      BAKED_POTATO: { nome: "Batata Assada", compra: 75.0, venda: 14.0 }
+      MUTTON: { nome: "Carneiro Cru", compra: 70.0, venda: 14.0 }
+      COOKED_MUTTON: { nome: "Carneiro Assado", compra: 100.0, venda: 20.0 }
+      CHICKEN: { nome: "Frango Cru", compra: 65.0, venda: 12.0 }
+      COOKED_CHICKEN: { nome: "Frango Assado", compra: 95.0, venda: 18.0 }
+
+  drops:
+    nome: "Drops de Mobs"
+    icone: ROTTEN_FLESH
+    cor: "&c"
+    descricao:
+      - "Itens dropados por"
+      - "criaturas do servidor"
+    itens:
+      HONEYCOMB: { nome: "Favo de Mel", compra: 180.0, venda: 35.0 }
+      PHANTOM_MEMBRANE: { nome: "Membrana de Phantom", compra: 650.0, venda: 130.0 }
+      PRISMARINE_CRYSTALS: { nome: "Cristais de Prismarinho", compra: 250.0, venda: 50.0 }
+      EGG: { nome: "Ovo", compra: 45.0, venda: 8.0 }
+      FEATHER: { nome: "Pena", compra: 55.0, venda: 10.0 }
+      LEATHER: { nome: "Couro", compra: 130.0, venda: 25.0 }
+      SPIDER_EYE: { nome: "Olho de Aranha", compra: 120.0, venda: 22.0 }
+      STRING: { nome: "Linha", compra: 80.0, venda: 15.0 }
+      RABBIT_FOOT: { nome: "Pé de Coelho", compra: 900.0, venda: 180.0 }
+      ROTTEN_FLESH: { nome: "Carne Podre", compra: 40.0, venda: 7.0 }
+      GUNPOWDER: { nome: "Pólvora", compra: 200.0, venda: 40.0 }
+      ARROW: { nome: "Flecha", compra: 70.0, venda: 10.0 }
+      BONE: { nome: "Osso", compra: 90.0, venda: 18.0 }
+      SLIME_BALL: { nome: "Bola de Slime", compra: 350.0, venda: 70.0 }
+      TADPOLE_SPAWN_EGG: { nome: "Ovo Gerador de Girino", compra: 750000.0, venda: 1000.0 }
+
+  minerios:
+    nome: "Minérios"
+    icone: DIAMOND
+    cor: "&9"
+    descricao:
+      - "Minérios preciosos e"
+      - "materiais de mineração"
+    itens:
+      NETHERITE_INGOT: { nome: "Barra de Netherita", compra: 250000.0, venda: 50000.0 }
+      NETHERITE_SCRAP: { nome: "Fragmento de Netherita", compra: 70000.0, venda: 14000.0 }
+      EMERALD: { nome: "Esmeralda", compra: 1500.0, venda: 300.0 }
+      DIAMOND: { nome: "Diamante", compra: 3500.0, venda: 700.0 }
+      AMETHYST_SHARD: { nome: "Fragmento de Ametista", compra: 450.0, venda: 90.0 }
+      QUARTZ: { nome: "Quartzo", compra: 180.0, venda: 35.0 }
+      GOLD_INGOT: { nome: "Barra de Ouro", compra: 800.0, venda: 160.0 }
+      LAPIS_LAZULI: { nome: "Lápis-Lazúli", compra: 160.0, venda: 30.0 }
+      RAW_COPPER: { nome: "Cobre Bruto", compra: 120.0, venda: 22.0 }
+      COPPER_INGOT: { nome: "Barra de Cobre", compra: 150.0, venda: 28.0 }
+      IRON_INGOT: { nome: "Barra de Ferro", compra: 450.0, venda: 90.0 }
+      COAL: { nome: "Carvão", compra: 100.0, venda: 18.0 }
+      GOLD_ORE: { nome: "Minério de Ouro", compra: 900.0, venda: 180.0 }
+      DEEPSLATE_GOLD_ORE: { nome: "Minério de Ouro de Ardósia", compra: 950.0, venda: 190.0 }
+      LAPIS_ORE: { nome: "Minério de Lápis-Lazúli", compra: 550.0, venda: 110.0 }
+      DEEPSLATE_LAPIS_ORE: { nome: "Minério de Lápis de Ardósia", compra: 600.0, venda: 120.0 }
+      COPPER_ORE: { nome: "Minério de Cobre", compra: 300.0, venda: 60.0 }
+      DEEPSLATE_COPPER_ORE: { nome: "Minério de Cobre de Ardósia", compra: 350.0, venda: 70.0 }
+      IRON_ORE: { nome: "Minério de Ferro", compra: 550.0, venda: 110.0 }
+      DEEPSLATE_IRON_ORE: { nome: "Minério de Ferro de Ardósia", compra: 600.0, venda: 120.0 }
+
+  blocos:
+    nome: "Blocos"
+    icone: BRICKS
+    cor: "&b"
+    descricao:
+      - "Blocos básicos para"
+      - "construção e estruturas"
+    itens:
+      STONE: { nome: "Pedra", compra: 35.0, venda: 5.0 }
+      COBBLESTONE: { nome: "Pedregulho", compra: 25.0, venda: 4.0 }
+      BRICKS: { nome: "Tijolos", compra: 90.0, venda: 15.0 }
+      DEEPSLATE: { nome: "Ardósia", compra: 45.0, venda: 7.0 }
+      ANDESITE: { nome: "Andesito", compra: 45.0, venda: 7.0 }
+      DIORITE: { nome: "Diorito", compra: 45.0, venda: 7.0 }
+      GRANITE: { nome: "Granito", compra: 45.0, venda: 7.0 }
+      GLASS: { nome: "Vidro", compra: 55.0, venda: 8.0 }
+      OBSIDIAN: { nome: "Obsidiana", compra: 500.0, venda: 90.0 }
+      NETHERRACK: { nome: "Netherrack", compra: 25.0, venda: 4.0 }
+      SOUL_SAND: { nome: "Areia das Almas", compra: 90.0, venda: 15.0 }
+      QUARTZ_BLOCK: { nome: "Bloco de Quartzo", compra: 850.0, venda: 150.0 }
+
+  coloridos:
+    nome: "Blocos Coloridos"
+    icone: MAGENTA_CONCRETE
+    cor: "&e"
+    descricao:
+      - "Blocos coloridos e"
+      - "materiais para decoração"
+    itens:
+      WHITE_CONCRETE: { nome: "Concreto Branco", compra: 80.0, venda: 12.0 }
+      ORANGE_CONCRETE: { nome: "Concreto Laranja", compra: 80.0, venda: 12.0 }
+      MAGENTA_CONCRETE: { nome: "Concreto Magenta", compra: 80.0, venda: 12.0 }
+      LIGHT_BLUE_CONCRETE: { nome: "Concreto Azul-Claro", compra: 80.0, venda: 12.0 }
+      YELLOW_CONCRETE: { nome: "Concreto Amarelo", compra: 80.0, venda: 12.0 }
+      LIME_CONCRETE: { nome: "Concreto Verde-Limão", compra: 80.0, venda: 12.0 }
+      PINK_CONCRETE: { nome: "Concreto Rosa", compra: 80.0, venda: 12.0 }
+      GRAY_CONCRETE: { nome: "Concreto Cinza", compra: 80.0, venda: 12.0 }
+      LIGHT_GRAY_CONCRETE: { nome: "Concreto Cinza-Claro", compra: 80.0, venda: 12.0 }
+      CYAN_CONCRETE: { nome: "Concreto Ciano", compra: 80.0, venda: 12.0 }
+      PURPLE_CONCRETE: { nome: "Concreto Roxo", compra: 80.0, venda: 12.0 }
+      BLUE_CONCRETE: { nome: "Concreto Azul", compra: 80.0, venda: 12.0 }
+      BROWN_CONCRETE: { nome: "Concreto Marrom", compra: 80.0, venda: 12.0 }
+      GREEN_CONCRETE: { nome: "Concreto Verde", compra: 80.0, venda: 12.0 }
+      RED_CONCRETE: { nome: "Concreto Vermelho", compra: 80.0, venda: 12.0 }
+      BLACK_CONCRETE: { nome: "Concreto Preto", compra: 80.0, venda: 12.0 }
+
+  decoracoes:
+    nome: "Decorações"
+    icone: ITEM_FRAME
+    cor: "&d"
+    descricao:
+      - "Itens decorativos para"
+      - "embelezar suas construções"
+    itens:
+      ITEM_FRAME: { nome: "Moldura", compra: 180.0, venda: 25.0 }
+      GLOW_ITEM_FRAME: { nome: "Moldura Brilhante", compra: 350.0, venda: 60.0 }
+      PAINTING: { nome: "Quadro", compra: 220.0, venda: 35.0 }
+      LANTERN: { nome: "Lanterna", compra: 250.0, venda: 45.0 }
+      SOUL_LANTERN: { nome: "Lanterna das Almas", compra: 300.0, venda: 50.0 }
+      FLOWER_POT: { nome: "Vaso de Flores", compra: 120.0, venda: 20.0 }
+      BOOKSHELF: { nome: "Estante de Livros", compra: 420.0, venda: 75.0 }
+      ARMOR_STAND: { nome: "Suporte de Armadura", compra: 350.0, venda: 60.0 }
+
+  redstone:
+    nome: "Redstone"
+    icone: REDSTONE
+    cor: "&c"
+    descricao:
+      - "Componentes e circuitos"
+      - "de redstone para automação"
+    itens:
+      REDSTONE: { nome: "Redstone", compra: 120.0, venda: 22.0 }
+      REPEATER: { nome: "Repetidor", compra: 280.0, venda: 50.0 }
+      COMPARATOR: { nome: "Comparador", compra: 350.0, venda: 65.0 }
+      PISTON: { nome: "Pistão", compra: 400.0, venda: 70.0 }
+      STICKY_PISTON: { nome: "Pistão Grudento", compra: 650.0, venda: 120.0 }
+      OBSERVER: { nome: "Observador", compra: 450.0, venda: 80.0 }
+      HOPPER: { nome: "Funil", compra: 900.0, venda: 160.0 }
+      DISPENSER: { nome: "Ejetor", compra: 450.0, venda: 80.0 }
+      DROPPER: { nome: "Liberador", compra: 400.0, venda: 70.0 }
+      REDSTONE_LAMP: { nome: "Lâmpada de Redstone", compra: 500.0, venda: 90.0 }
+
+  outros:
+    nome: "Outros"
+    icone: FIREWORK_ROCKET
+    cor: "&e"
+    descricao:
+      - "Itens diversos que não"
+      - "se encaixam em outras categorias"
+    itens:
+      FIREWORK_ROCKET: { nome: "Foguete", compra: 220.0, venda: 35.0 }
+      BOOK: { nome: "Livro", compra: 160.0, venda: 25.0 }
+      NAME_TAG: { nome: "Etiqueta", compra: 1500.0, venda: 250.0 }
+      SADDLE: { nome: "Sela", compra: 2200.0, venda: 350.0 }
+      LEAD: { nome: "Laço", compra: 450.0, venda: 75.0 }
+      EXPERIENCE_BOTTLE: { nome: "Frasco de Experiência", compra: 900.0, venda: 120.0 }

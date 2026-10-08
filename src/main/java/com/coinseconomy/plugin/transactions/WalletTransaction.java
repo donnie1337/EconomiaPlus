@@ -7,6 +7,8 @@ public record WalletTransaction(Type type, double amount, long timestamp, String
         BANK_DEPOSIT,
         BANK_WITHDRAW,
         ADMIN_ADD,
-        ADMIN_REMOVE
+        ADMIN_REMOVE,
+        SHOP_BUY,
+        SHOP_SELL
     }
 }
