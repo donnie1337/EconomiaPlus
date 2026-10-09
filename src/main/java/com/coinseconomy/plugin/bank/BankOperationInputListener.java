@@ -2,6 +2,7 @@ package com.coinseconomy.plugin.bank;
 
 import com.coinseconomy.plugin.CoinsEconomyPlugin;
 import com.coinseconomy.plugin.economy.EconomyManager;
+import com.coinseconomy.plugin.economy.MoneyParser;
 import com.coinseconomy.plugin.transactions.WalletTransaction;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.event.ClickEvent;
@@ -167,12 +168,22 @@ public final class BankOperationInputListener implements Listener {
         }
 
         if (current.operation() == Operation.DEPOSIT) {
-            if (!economy.sacar(player, amount)) {
-                player.sendMessage(color("&c&lʙᴀɴᴄᴏ &8• &fVocê não possui Coins suficientes na carteira."));
-                return;
+            synchronized (plugin.getPersistenceLock()) {
+                if (!bank.canDeposit(player.getUniqueId(), amount)) {
+                    player.sendMessage(color("&c&lʙᴀɴᴄᴏ &8• &fO banco não pode receber esse valor com segurança."));
+                    return;
+                }
+                if (!economy.sacar(player, amount)) {
+                    player.sendMessage(color("&c&lʙᴀɴᴄᴏ &8• &fVocê não possui Coins suficientes na carteira."));
+                    return;
+                }
+
+                // Primeiro persiste o débito da carteira; assim uma queda nunca duplica Coins.
+                economy.save();
+                bank.deposit(player.getUniqueId(), amount);
+                bank.save();
             }
 
-            bank.deposit(player.getUniqueId(), amount);
             plugin.getWalletTransactionManager().record(
                     player.getUniqueId(),
                     WalletTransaction.Type.BANK_DEPOSIT,
@@ -190,12 +201,21 @@ public final class BankOperationInputListener implements Listener {
             return;
         }
 
-        if (!bank.withdraw(player.getUniqueId(), amount)) {
-            player.sendMessage(color("&c&lʙᴀɴᴄᴏ &8• &fVocê não possui Coins suficientes no banco."));
-            return;
-        }
+        synchronized (plugin.getPersistenceLock()) {
+            if (!economy.canDeposit(player.getUniqueId(), amount)) {
+                player.sendMessage(color("&c&lʙᴀɴᴄᴏ &8• &fSua carteira não pode receber esse valor com segurança."));
+                return;
+            }
+            if (!bank.withdraw(player.getUniqueId(), amount)) {
+                player.sendMessage(color("&c&lʙᴀɴᴄᴏ &8• &fVocê não possui Coins suficientes no banco."));
+                return;
+            }
 
-        economy.depositar(player, amount);
+            // Primeiro persiste o débito bancário; só depois credita a carteira.
+            bank.save();
+            economy.depositar(player, amount);
+            economy.save();
+        }
         plugin.getWalletTransactionManager().record(
                 player.getUniqueId(),
                 WalletTransaction.Type.BANK_WITHDRAW,
@@ -211,38 +231,7 @@ public final class BankOperationInputListener implements Listener {
     }
 
     private double parseAmount(String raw) {
-        if (raw == null) return Double.NaN;
-
-        String value = raw.trim().toUpperCase(Locale.ROOT).replace(" ", "");
-        if (value.isEmpty()) return Double.NaN;
-
-        double multiplier = 1.0D;
-        char last = value.charAt(value.length() - 1);
-        switch (last) {
-            case 'K' -> { multiplier = 1_000.0D; value = value.substring(0, value.length() - 1); }
-            case 'M' -> { multiplier = 1_000_000.0D; value = value.substring(0, value.length() - 1); }
-            case 'B' -> { multiplier = 1_000_000_000.0D; value = value.substring(0, value.length() - 1); }
-            case 'T' -> { multiplier = 1_000_000_000_000.0D; value = value.substring(0, value.length() - 1); }
-            default -> { }
-        }
-
-        if (value.isEmpty()) return Double.NaN;
-
-        String normalized;
-        if (value.contains(",")) {
-            normalized = value.replace(".", "").replace(',', '.');
-        } else if (value.matches("\\d{1,3}(\\.\\d{3})+")) {
-            normalized = value.replace(".", "");
-        } else {
-            normalized = value;
-        }
-
-        try {
-            double parsed = Double.parseDouble(normalized) * multiplier;
-            return Double.isFinite(parsed) ? parsed : Double.NaN;
-        } catch (NumberFormatException ignored) {
-            return Double.NaN;
-        }
+        return MoneyParser.parse(raw);
     }
 
     private void finish(UUID uuid) {
