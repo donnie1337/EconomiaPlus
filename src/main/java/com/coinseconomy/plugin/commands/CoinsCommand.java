@@ -257,6 +257,8 @@ public class CoinsCommand implements CommandExecutor, TabCompleter {
             }
         }
 
+        economia.save();
+
         double novoSaldo = economia.getSaldo(alvo.getUniqueId());
         sender.sendMessage(ChatColor.GREEN + "Saldo de " + alvo.getName() + " agora é " +
                 economia.formatar(novoSaldo) + ".");
