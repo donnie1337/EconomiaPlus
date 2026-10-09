@@ -60,7 +60,7 @@ public final class BankOperationInputListener implements Listener {
         player.sendMessage(Component.empty());
 
         if (operation == Operation.DEPOSIT) {
-            player.sendMessage(color("&5&lBANCO &8• &fDepósito"));
+            player.sendMessage(color("&5&lBANCO &8• &fDepósito bancário"));
             player.sendMessage(Component.empty());
             player.sendMessage(color("&fDigite no chat o valor que deseja &adepositar&f."));
         } else {
