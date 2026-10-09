@@ -39,6 +39,7 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
     private WalletTransactionManager walletTransactionManager;
     private WalletSettingsManager walletSettingsManager;
     private ShopManager shopManager;
+    private final Object persistenceLock = new Object();
 
     @Override
     public void onEnable() {
@@ -70,17 +71,11 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        if (economyManager != null) {
-            economyManager.save();
-        }
-        if (bankManager != null) {
-            bankManager.save();
-        }
-        if (walletTransactionManager != null) {
-            walletTransactionManager.save();
-        }
-        if (walletSettingsManager != null) {
-            walletSettingsManager.save();
+        synchronized (persistenceLock) {
+            if (economyManager != null) economyManager.save();
+            if (bankManager != null) bankManager.save();
+            if (walletTransactionManager != null) walletTransactionManager.save();
+            if (walletSettingsManager != null) walletSettingsManager.save();
         }
         Bukkit.getServicesManager().unregisterAll(this);
         getLogger().info("EconomiaPlus foi desativado. Dados salvos em disco.");
@@ -179,10 +174,12 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
         Bukkit.getScheduler().runTaskTimerAsynchronously(
                 this,
                 () -> {
-                    economyManager.save();
-                    if (bankManager != null) bankManager.save();
-                    if (walletTransactionManager != null) walletTransactionManager.save();
-                    if (walletSettingsManager != null) walletSettingsManager.save();
+                    synchronized (persistenceLock) {
+                        economyManager.save();
+                        if (bankManager != null) bankManager.save();
+                        if (walletTransactionManager != null) walletTransactionManager.save();
+                        if (walletSettingsManager != null) walletSettingsManager.save();
+                    }
                 },
                 intervalo,
                 intervalo
@@ -211,6 +208,10 @@ public final class CoinsEconomyPlugin extends JavaPlugin {
 
     public ShopManager getShopManager() {
         return shopManager;
+    }
+
+    public Object getPersistenceLock() {
+        return persistenceLock;
     }
 
     public boolean isMagnata(java.util.UUID playerId) {
