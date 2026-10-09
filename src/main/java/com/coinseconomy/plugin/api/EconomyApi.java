@@ -27,6 +27,8 @@ public interface EconomyApi {
 
     boolean sacar(OfflinePlayer jogador, double quantidade);
 
+    boolean transferir(OfflinePlayer origem, OfflinePlayer destino, double quantidade);
+
     void definirSaldo(OfflinePlayer jogador, double quantidade);
 
     String getNomeConhecido(UUID uuid);
