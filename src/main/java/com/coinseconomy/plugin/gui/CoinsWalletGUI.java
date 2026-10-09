@@ -45,7 +45,7 @@ public final class CoinsWalletGUI {
 
         inventory.setItem(SLOT_INFORMACOES, item(
                 Material.NETHER_BRICKS,
-                "&bSUAS INFORMAÇÕES",
+                "&bSuas informações",
                 List.of(
                         "",
                         "&7Sua carteira está com",
@@ -61,7 +61,7 @@ public final class CoinsWalletGUI {
 
         inventory.setItem(SLOT_TRANSACOES, item(
                 Material.PAPER,
-                "&bTRANSAÇÕES",
+                "&bTransações",
                 List.of(
                         "",
                         "&7Acompanhe tudo que entrou",
@@ -75,7 +75,7 @@ public final class CoinsWalletGUI {
 
         inventory.setItem(SLOT_TOP, item(
                 Material.BOOK,
-                "&bTOP JOGADORES",
+                "&bTop jogadores",
                 List.of(
                         "",
                         "&7Veja quem domina a economia",
@@ -97,7 +97,7 @@ public final class CoinsWalletGUI {
         if (top.isEmpty()) {
             return item(
                     Material.EMERALD_BLOCK,
-                    "&bMAGNATA",
+                    "&bMagnata",
                     List.of(
                             "",
                             "&7Ainda não existe um Magnata.",
@@ -113,7 +113,7 @@ public final class CoinsWalletGUI {
         ItemStack stack = new ItemStack(Material.EMERALD_BLOCK);
         ItemMeta meta = stack.getItemMeta();
         if (meta != null) {
-            meta.setDisplayName(color("&bMAGNATA"));
+            meta.setDisplayName(color("&bMagnata"));
             meta.setLore(List.of(
                     "",
                     color("&7O jogador no topo da economia."),
