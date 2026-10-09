@@ -2,6 +2,7 @@ package com.coinseconomy.plugin.commands;
 
 import com.coinseconomy.plugin.CoinsEconomyPlugin;
 import com.coinseconomy.plugin.economy.EconomyManager;
+import com.coinseconomy.plugin.economy.MoneyParser;
 import com.coinseconomy.plugin.transactions.WalletTransaction;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -49,15 +50,8 @@ public class CobrarCommand implements CommandExecutor, TabCompleter {
             return true;
         }
 
-        double quantidade;
-        try {
-            quantidade = Double.parseDouble(args[1].replace(",", "."));
-        } catch (NumberFormatException e) {
-            sender.sendMessage(ChatColor.RED + "Quantidade inválida.");
-            return true;
-        }
-
-        if (quantidade <= 0) {
+        double quantidade = MoneyParser.parse(args[1]);
+        if (!Double.isFinite(quantidade) || quantidade <= 0) {
             sender.sendMessage(ChatColor.RED + "A quantidade deve ser maior que zero.");
             return true;
         }
@@ -78,6 +72,8 @@ public class CobrarCommand implements CommandExecutor, TabCompleter {
         } else {
             economia.sacar(alvo, quantidade);
         }
+
+        economia.save();
 
         plugin.getWalletTransactionManager().record(
                 alvo.getUniqueId(),
