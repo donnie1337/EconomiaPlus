@@ -2,6 +2,7 @@ package com.coinseconomy.plugin.economy;
 
 import com.coinseconomy.plugin.CoinsEconomyPlugin;
 import com.coinseconomy.plugin.api.EconomyApi;
+import com.coinseconomy.plugin.util.AtomicYamlSaver;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -93,7 +94,7 @@ public class EconomyManager implements EconomyApi {
      * Salva todos os saldos em disco. Seguro para ser chamado de forma
      * assíncrona (usa apenas as próprias estruturas em memória).
      */
-    public void save() {
+    public synchronized void save() {
         FileConfiguration data = new YamlConfiguration();
 
         lock.readLock().lock();
@@ -108,7 +109,7 @@ public class EconomyManager implements EconomyApi {
         }
 
         try {
-            data.save(dataFile);
+            AtomicYamlSaver.save(data, dataFile);
         } catch (IOException e) {
             plugin.getLogger().log(Level.SEVERE, "Não foi possível salvar o arquivo data.yml", e);
         }
