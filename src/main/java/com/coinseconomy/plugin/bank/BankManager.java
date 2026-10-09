@@ -126,12 +126,19 @@ public final class BankManager {
         return normalize(balances.getOrDefault(uuid, 0.0D));
     }
 
+    public synchronized boolean canDeposit(UUID uuid, double amount) {
+        if (uuid == null || !Double.isFinite(amount) || amount <= 0.0D) return false;
+        return Double.isFinite(balances.getOrDefault(uuid, 0.0D) + amount);
+    }
+
     public synchronized void deposit(UUID uuid, double amount) {
         if (uuid == null || !Double.isFinite(amount) || amount <= 0.0D) return;
 
         long now = System.currentTimeMillis();
         applyInterest(uuid, now, true);
-        balances.put(uuid, normalize(balances.getOrDefault(uuid, 0.0D) + amount));
+        double rawBalance = balances.getOrDefault(uuid, 0.0D) + amount;
+        if (!Double.isFinite(rawBalance)) return;
+        balances.put(uuid, normalize(rawBalance));
         lastInterestAt.put(uuid, now);
         addHistory(uuid, new BankTransaction(BankTransaction.Type.DEPOSIT, amount, now));
         saveLater();
