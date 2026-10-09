@@ -50,7 +50,7 @@ public final class BankOperationInputListener implements Listener {
         BukkitTask timeout = Bukkit.getScheduler().runTaskLater(plugin, () -> {
             PendingOperation current = pending.remove(player.getUniqueId());
             if (current != null && player.isOnline()) {
-                player.sendMessage(color("&5&lBANCO &8• &fTempo esgotado. A operação bancária foi cancelada."));
+                player.sendMessage(color("&5[Banco] &8• &fTempo esgotado. A operação bancária foi cancelada."));
             }
         }, timeoutSeconds * 20L);
 
@@ -60,11 +60,11 @@ public final class BankOperationInputListener implements Listener {
         player.sendMessage(Component.empty());
 
         if (operation == Operation.DEPOSIT) {
-            player.sendMessage(color("&5&lBANCO &8• &fDepósito bancário"));
+            player.sendMessage(color("&5[Banco] &8• &fDepósito bancário"));
             player.sendMessage(Component.empty());
             player.sendMessage(color("&fDigite no chat o valor que deseja &adepositar&f."));
         } else {
-            player.sendMessage(color("&5&lBANCO &8• &fSaque"));
+            player.sendMessage(color("&5[Banco] &8• &fSaque"));
             player.sendMessage(Component.empty());
             player.sendMessage(color("&fDigite no chat o valor que deseja &csacar&f."));
         }
@@ -79,7 +79,7 @@ public final class BankOperationInputListener implements Listener {
                                     if (audience instanceof Player clickedPlayer) {
                                         if (!cancelFromCommand(clickedPlayer)) {
                                             clickedPlayer.sendMessage(color(
-                                                    "&5&lBANCO &8• &fNão há nenhuma operação bancária pendente para cancelar."
+                                                    "&5[Banco] &8• &fNão há nenhuma operação bancária pendente para cancelar."
                                             ));
                                         }
                                     }
@@ -104,7 +104,7 @@ public final class BankOperationInputListener implements Listener {
         if (!pending.containsKey(uuid)) return false;
 
         cancelPending(uuid, true);
-        player.sendMessage(color("&5&lBANCO &8• &fOperação bancária cancelada."));
+        player.sendMessage(color("&5[Banco] &8• &fOperação bancária cancelada."));
         return true;
     }
 
@@ -145,7 +145,7 @@ public final class BankOperationInputListener implements Listener {
         String input = rawInput == null ? "" : rawInput.trim();
         if (CANCEL_WORD.equalsIgnoreCase(input)) {
             cancelPending(player.getUniqueId(), true);
-            player.sendMessage(color("&5&lBANCO &8• &fOperação bancária cancelada."));
+            player.sendMessage(color("&5[Banco] &8• &fOperação bancária cancelada."));
             return;
         }
 
@@ -166,7 +166,7 @@ public final class BankOperationInputListener implements Listener {
 
         double minimum = Math.max(0.0D, plugin.getConfig().getDouble("banco.operacoes.minimo", 1000.0D));
         if (amount + 0.0000001D < minimum) {
-            player.sendMessage(color("&5&lBANCO &8• &fO valor mínimo para esta operação é &a"
+            player.sendMessage(color("&5[Banco] &8• &fO valor mínimo para esta operação é &a"
                     + compact(minimum) + " Coins&f."));
             return;
         }
@@ -174,11 +174,11 @@ public final class BankOperationInputListener implements Listener {
         if (current.operation() == Operation.DEPOSIT) {
             synchronized (plugin.getPersistenceLock()) {
                 if (!bank.canDeposit(player.getUniqueId(), amount)) {
-                    player.sendMessage(color("&5&lBANCO &8• &fO banco não pode receber esse valor com segurança."));
+                    player.sendMessage(color("&5[Banco] &8• &fO banco não pode receber esse valor com segurança."));
                     return;
                 }
                 if (!economy.sacar(player, amount)) {
-                    player.sendMessage(color("&5&lBANCO &8• &fVocê não possui Coins suficientes na carteira."));
+                    player.sendMessage(color("&5[Banco] &8• &fVocê não possui Coins suficientes na carteira."));
                     return;
                 }
 
@@ -195,23 +195,23 @@ public final class BankOperationInputListener implements Listener {
                     "Banco"
             );
             finish(player.getUniqueId());
-            player.sendMessage(color("&5&lBANCO &8• &fVocê depositou &a" + compact(amount) + " Coins &fcom sucesso."));
+            player.sendMessage(color("&5[Banco] &8• &fVocê depositou &a" + compact(amount) + " Coins &fcom sucesso."));
             return;
         }
 
         int dailyLimit = plugin.getConfig().getInt("banco.operacoes.limite-saques-diarios", 10);
         if (!bank.canWithdraw(player.getUniqueId(), dailyLimit)) {
-            player.sendMessage(color("&5&lBANCO &8• &fVocê atingiu o limite diário de saques."));
+            player.sendMessage(color("&5[Banco] &8• &fVocê atingiu o limite diário de saques."));
             return;
         }
 
         synchronized (plugin.getPersistenceLock()) {
             if (!economy.canDeposit(player.getUniqueId(), amount)) {
-                player.sendMessage(color("&5&lBANCO &8• &fSua carteira não pode receber esse valor com segurança."));
+                player.sendMessage(color("&5[Banco] &8• &fSua carteira não pode receber esse valor com segurança."));
                 return;
             }
             if (!bank.withdraw(player.getUniqueId(), amount)) {
-                player.sendMessage(color("&5&lBANCO &8• &fVocê não possui Coins suficientes no banco."));
+                player.sendMessage(color("&5[Banco] &8• &fVocê não possui Coins suficientes no banco."));
                 return;
             }
 
@@ -227,11 +227,11 @@ public final class BankOperationInputListener implements Listener {
                 "Banco"
         );
         finish(player.getUniqueId());
-        player.sendMessage(color("&5&lBANCO &8• &fVocê sacou &a" + compact(amount) + " Coins &fcom sucesso."));
+        player.sendMessage(color("&5[Banco] &8• &fVocê sacou &a" + compact(amount) + " Coins &fcom sucesso."));
     }
 
     private void sendInvalid(Player player) {
-        player.sendMessage(color("&5&lBANCO &8• &fAção não cancelada. Digite uma quantidade ou &7cancelar &fpara cancelar!"));
+        player.sendMessage(color("&5[Banco] &8• &fAção não cancelada. Digite uma quantidade ou &7cancelar &fpara cancelar!"));
     }
 
     private double parseAmount(String raw) {
