@@ -77,7 +77,11 @@ public final class BankOperationInputListener implements Listener {
                                 .decorate(net.kyori.adventure.text.format.TextDecoration.BOLD)
                                 .clickEvent(ClickEvent.callback((Audience audience) -> {
                                     if (audience instanceof Player clickedPlayer) {
-                                        cancelFromCommand(clickedPlayer);
+                                        if (!cancelFromCommand(clickedPlayer)) {
+                                            clickedPlayer.sendMessage(color(
+                                                    "&5&lBANCO &8• &fNão há nenhuma operação bancária pendente para cancelar."
+                                            ));
+                                        }
                                     }
                                 }))
                                 .hoverEvent(HoverEvent.showText(
