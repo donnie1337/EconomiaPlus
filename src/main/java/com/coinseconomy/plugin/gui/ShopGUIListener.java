@@ -94,6 +94,10 @@ public final class ShopGUIListener implements Listener {
         }
 
         double price = shop.finalBuyPrice(item) * amount;
+        if (!Double.isFinite(price) || price <= 0.0D) {
+            player.sendMessage(color("&c&lʟᴏᴊᴀ &8• &fPreço inválido. Avise a administração."));
+            return;
+        }
         if (!economy.tem(player.getUniqueId(), price)) {
             player.sendMessage(color("&c&lʟᴏᴊᴀ &8• &fVocê não possui Coins suficientes."));
             return;
@@ -126,7 +130,12 @@ public final class ShopGUIListener implements Listener {
     }
 
     private void completeBuy(Player player, ShopItem item, ShopGUIHolder holder, int amount, double price) {
+        ItemStack[] inventoryBefore = cloneStorage(player.getInventory().getStorageContents());
         if (!economy.sacar(player, price)) return;
+
+        // Persiste o débito antes de entregar o item. Em uma queda abrupta,
+        // isso evita que o jogador fique com item e Coins restaurados.
+        economy.save();
 
         int remaining = amount;
         int maxStack = item.material().getMaxStackSize();
@@ -134,13 +143,16 @@ public final class ShopGUIListener implements Listener {
             int stackAmount = Math.min(remaining, maxStack);
             Map<Integer, ItemStack> leftovers = player.getInventory().addItem(new ItemStack(item.material(), stackAmount));
             if (!leftovers.isEmpty()) {
+                player.getInventory().setStorageContents(inventoryBefore);
                 economy.depositar(player, price);
-                removeAmount(player, item.material(), amount - remaining);
+                economy.save();
+                player.sendMessage(color("&c&lʟᴏᴊᴀ &8• &fA compra não pôde ser concluída e foi revertida."));
                 return;
             }
             remaining -= stackAmount;
         }
 
+        player.saveData();
         plugin.getWalletTransactionManager().record(
                 player.getUniqueId(),
                 WalletTransaction.Type.SHOP_BUY,
@@ -173,9 +185,24 @@ public final class ShopGUIListener implements Listener {
     }
 
     private void completeSell(Player player, ShopItem item, ShopGUIHolder holder, int amount) {
-        removeAmount(player, item.material(), amount);
         double price = shop.finalSellPrice(item) * amount;
+        if (!Double.isFinite(price) || price <= 0.0D || !economy.canDeposit(player.getUniqueId(), price)) {
+            player.sendMessage(color("&c&lʟᴏᴊᴀ &8• &fA venda não pôde ser concluída com segurança."));
+            return;
+        }
+
+        ItemStack[] inventoryBefore = cloneStorage(player.getInventory().getStorageContents());
+        int removed = removeAmount(player, item.material(), amount);
+        if (removed != amount) {
+            player.getInventory().setStorageContents(inventoryBefore);
+            player.sendMessage(color("&c&lʟᴏᴊᴀ &8• &fOs itens mudaram durante a venda. Operação cancelada."));
+            return;
+        }
+
+        // Persiste a remoção antes de creditar Coins para impedir rollback lucrativo.
+        player.saveData();
         economy.depositar(player, price);
+        economy.save();
 
         plugin.getWalletTransactionManager().record(
                 player.getUniqueId(),
@@ -213,7 +240,7 @@ public final class ShopGUIListener implements Listener {
         return total;
     }
 
-    private void removeAmount(Player player, Material material, int amount) {
+    private int removeAmount(Player player, Material material, int amount) {
         int remaining = amount;
         ItemStack[] contents = player.getInventory().getStorageContents();
 
@@ -231,6 +258,15 @@ public final class ShopGUIListener implements Listener {
                 current.setAmount(newAmount);
             }
         }
+        return amount - remaining;
+    }
+
+    private ItemStack[] cloneStorage(ItemStack[] contents) {
+        ItemStack[] copy = new ItemStack[contents.length];
+        for (int i = 0; i < contents.length; i++) {
+            copy[i] = contents[i] == null ? null : contents[i].clone();
+        }
+        return copy;
     }
 
     private boolean isPlainItem(ItemStack item) {
