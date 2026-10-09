@@ -144,13 +144,18 @@ public class EconomyManager implements EconomyApi {
                 && getSaldo(uuid) + 0.0000001D >= normalize(quantidade);
     }
 
+    public synchronized boolean canDeposit(UUID uuid, double quantidade) {
+        if (uuid == null || !Double.isFinite(quantidade) || quantidade <= 0.0D) return false;
+        return Double.isFinite(getSaldo(uuid) + quantidade);
+    }
+
     public synchronized void depositar(OfflinePlayer jogador, double quantidade) {
         if (jogador == null || !Double.isFinite(quantidade) || quantidade <= 0.0D) return;
         UUID uuid = jogador.getUniqueId();
         garantirConta(uuid, jogador.getName());
-        double novoSaldo = normalize(getSaldo(uuid) + quantidade);
-        if (!Double.isFinite(novoSaldo)) return;
-        saldos.put(uuid, novoSaldo);
+        double bruto = getSaldo(uuid) + quantidade;
+        if (!Double.isFinite(bruto)) return;
+        saldos.put(uuid, normalize(bruto));
         magnataDirty = true;
     }
 
@@ -184,11 +189,11 @@ public class EconomyManager implements EconomyApi {
         double saldoOrigem = getSaldo(origem.getUniqueId());
         if (saldoOrigem + 0.0000001D < valor) return false;
 
-        double saldoDestino = normalize(getSaldo(destino.getUniqueId()) + valor);
-        if (!Double.isFinite(saldoDestino)) return false;
+        double brutoDestino = getSaldo(destino.getUniqueId()) + valor;
+        if (!Double.isFinite(brutoDestino)) return false;
 
         saldos.put(origem.getUniqueId(), normalize(saldoOrigem - valor));
-        saldos.put(destino.getUniqueId(), saldoDestino);
+        saldos.put(destino.getUniqueId(), normalize(brutoDestino));
         magnataDirty = true;
         return true;
     }
