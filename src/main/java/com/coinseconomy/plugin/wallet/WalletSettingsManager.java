@@ -1,6 +1,7 @@
 package com.coinseconomy.plugin.wallet;
 
 import com.coinseconomy.plugin.CoinsEconomyPlugin;
+import com.coinseconomy.plugin.util.AtomicYamlSaver;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -46,7 +47,7 @@ public final class WalletSettingsManager {
         try {
             File parent = dataFile.getParentFile();
             if (parent != null) parent.mkdirs();
-            data.save(dataFile);
+            AtomicYamlSaver.save(data, dataFile);
         } catch (IOException exception) {
             plugin.getLogger().log(Level.SEVERE, "Não foi possível salvar wallet-settings.yml", exception);
         }
