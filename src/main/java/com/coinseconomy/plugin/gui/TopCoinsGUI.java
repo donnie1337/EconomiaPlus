@@ -41,16 +41,31 @@ public final class TopCoinsGUI {
         Inventory inventario = Bukkit.createInventory(holder, TAMANHO, "Coins • Top Jogadores");
         holder.setInventory(inventario);
 
-        int inicio = paginaValida * POR_PAGINA;
-        for (int i = 0; i < POR_PAGINA; i++) {
-            int indice = inicio + i;
-            if (indice >= ranking.size()) break;
+        if (ranking.isEmpty()) {
+            inventario.setItem(13, criarBotao(
+                    Material.GRAY_DYE,
+                    "&7Nenhum jogador no ranking",
+                    List.of(
+                            "",
+                            "&7Ainda não há jogadores",
+                            "&7com Coins suficientes para aparecer aqui.",
+                            "",
+                            "&8Quando alguém possuir Coins,",
+                            "&8o ranking será exibido neste menu."
+                    )
+            ));
+        } else {
+            int inicio = paginaValida * POR_PAGINA;
+            for (int i = 0; i < POR_PAGINA; i++) {
+                int indice = inicio + i;
+                if (indice >= ranking.size()) break;
 
-            Map.Entry<UUID, Double> entrada = ranking.get(indice);
-            inventario.setItem(
-                    SLOTS_JOGADORES[i],
-                    criarCabeca(economia, entrada.getKey(), entrada.getValue(), indice + 1)
-            );
+                Map.Entry<UUID, Double> entrada = ranking.get(indice);
+                inventario.setItem(
+                        SLOTS_JOGADORES[i],
+                        criarCabeca(economia, entrada.getKey(), entrada.getValue(), indice + 1)
+                );
+            }
         }
 
         if (paginaValida > 0) {
